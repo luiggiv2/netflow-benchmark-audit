@@ -1,0 +1,8 @@
+Withdrawn five-tuple split: group size and exact-vector leakage (NF-v3, canonical rows)
+Generated: 2026-10-07T04:24:08.013311+00:00
+Key: canonical label, IPs, ports, protocol. Leakage: test rows whose 49-feature vector occurs in train
+(grouped split of the keys, seed 42).
+
+NF-ToN-IoT-v3            canonical rows 24,675,841; keys 11,032,561; rows per key mean 2.24, median 1, max 883,575; test rows with their vector in train 1,552,534 / 3,683,220 (42.2 %)
+NF-BoT-IoT-v3            canonical rows 16,932,193; keys 5,773,282; rows per key mean 2.93, median 2, max 968; test rows with their vector in train 48,351 / 2,535,571 (1.9 %)
+NF-CSE-CIC-IDS2018-v3    canonical rows 19,925,279; keys 12,602,058; rows per key mean 1.58, median 1, max 38,122; test rows with their vector in train 330,912 / 2,981,530 (11.1 %)

@@ -1,0 +1,70 @@
+{
+  "dataset": "NF-CSE-CIC-IDS2018-v3",
+  "generated_utc": "2026-10-02T17:09:26.785555+00:00",
+  "rows": 20115529,
+  "class_rows": {
+    "Benign": 17514626,
+    "FTP-BruteForce": 386720,
+    "SSH-Bruteforce": 188474,
+    "DoS_attacks-GoldenEye": 61300,
+    "DoS_attacks-Slowloris": 36040,
+    "DoS_attacks-SlowHTTPTest": 105550,
+    "DoS_attacks-Hulk": 100076,
+    "DDoS_attacks-LOIC-HTTP": 288589,
+    "DDOS_attack-LOIC-UDP": 3450,
+    "DDOS_attack-HOIC": 1032311,
+    "Brute_Force_-Web": 1618,
+    "Brute_Force_-XSS": 480,
+    "SQL_Injection": 440,
+    "Infiltration": 188152,
+    "Bot": 207703
+  },
+  "checks": {
+    "dir_duration_gt": {
+      "rows": 4106,
+      "per_class": {
+        "Benign": 3873,
+        "DoS_attacks-GoldenEye": 2,
+        "DoS_attacks-Slowloris": 6,
+        "DoS_attacks-Hulk": 73,
+        "DDoS_attacks-LOIC-HTTP": 105,
+        "DDOS_attack-LOIC-UDP": 10,
+        "Brute_Force_-Web": 1,
+        "SQL_Injection": 2,
+        "Infiltration": 32,
+        "Brute_Force_-XSS": 2
+      }
+    },
+    "size_bins_gt_pkts": {
+      "rows": 1099186,
+      "per_class": {
+        "Benign": 1081684,
+        "Infiltration": 17502
+      }
+    }
+  },
+  "constant_features": [
+    "FTP_COMMAND_RET_CODE"
+  ],
+  "constant_values": {
+    "FTP_COMMAND_RET_CODE": 0.0
+  },
+  "duration_near_2p32_values": {},
+  "service_ports": {
+    "FTP-BruteForce": {
+      "rows": 386720,
+      "expected_port_share": 1.0,
+      "top_ports": {
+        "21": 386720
+      }
+    },
+    "SSH-Bruteforce": {
+      "rows": 188474,
+      "expected_port_share": 0.999681653702898,
+      "top_ports": {
+        "22": 188414,
+        "21": 60
+      }
+    }
+  }
+}

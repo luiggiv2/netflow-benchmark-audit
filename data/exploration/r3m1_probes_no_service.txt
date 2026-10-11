@@ -1,0 +1,97 @@
+Major issue 1 (third reviewer report): RQ2 probes without L7_PROTO and the ICMP fields
+Generated: 2026-10-10T16:53:20.760893+00:00
+Balanced samples and common split as in 34_shortcut_probes.py --common (keyed on the 40 features of set A,
+seed 42). A = 40 features; C = A without ports, TTL, TCP window and DNS fields (32);
+D = C without L7_PROTO, ICMP_TYPE, ICMP_IPV4_TYPE (29). 'D copy': share of test rows whose set-D vector is in the
+training sample; 'no copy': depth-3 scores on the test rows without such a copy.
+
+== NF-ToN-IoT-v2
+  class                         d1 A  d1 C  d1 D  d3 A  d3 C  d3 D D copy | no copy:    rows     A     C     D | depth-1 rule C | depth-1 rule D
+  backdoor                      1.00  1.00  1.00  1.00  1.00  1.00  94.2% | no copy:     753  0.83  0.83  0.83 | OUT_PKTS > 27 | OUT_PKTS > 27
+  ddos                          0.94  0.90  0.90  0.96  0.93  0.93  55.1% | no copy:  83,911  0.95  0.87  0.87 | CLIENT_TCP_FLAGS > 17.5 | CLIENT_TCP_FLAGS > 17.5
+  dos                           0.91  0.91  0.91  0.97  0.98  0.98  96.2% | no copy:   7,578  0.67  0.68  0.68 | SRC_TO_DST_AVG_THROUGHPUT > 388000 | SRC_TO_DST_AVG_THROUGHPUT > 388000
+  injection                     0.94  0.92  0.92  0.96  0.97  0.95  56.8% | no copy:  86,383  0.94  0.80  0.75 | CLIENT_TCP_FLAGS > 17.5 | CLIENT_TCP_FLAGS > 17.5
+  mitm                          0.94  0.93  0.93  0.96  0.96  0.96  77.2% | no copy:     507  0.89  0.88  0.88 | PROTOCOL > 11.5 | PROTOCOL > 11.5
+  password                      0.94  0.91  0.90  0.98  0.97  0.93  49.8% | no copy: 100,390  0.99  0.86  0.68 | L7_PROTO > 0.5 | SRC_TO_DST_SECOND_BYTES > 59.5
+  ransomware                    0.96  0.96  0.96  0.98  0.97  0.97  44.4% | no copy:     434  0.96  0.87  0.89 | TCP_FLAGS > 23 | TCP_FLAGS > 23
+  scanning                      0.69  0.66  0.66  0.95  0.95  0.96  95.9% | no copy:   8,245  0.57  0.55  0.57 | SRC_TO_DST_AVG_THROUGHPUT > 380000 | SRC_TO_DST_AVG_THROUGHPUT > 380000
+  xss                           0.94  0.93  0.93  0.98  0.96  0.96  75.4% | no copy:  49,049  0.96  0.81  0.81 | MAX_IP_PKT_LEN > 64.5 | MAX_IP_PKT_LEN > 64.5
+
+== NF-BoT-IoT-v2
+  class                         d1 A  d1 C  d1 D  d3 A  d3 C  d3 D D copy | no copy:    rows     A     C     D | depth-1 rule C | depth-1 rule D
+  DDoS                          0.96  0.96  0.98  1.00  1.00  1.00  47.4% | no copy:  22,151  0.99  0.99  0.99 | L7_PROTO > 185 | MAX_IP_PKT_LEN <= 29
+  DoS                           0.91  0.94  0.94  0.96  1.00  1.00  45.5% | no copy:  22,951  1.00  1.00  0.99 | IN_BYTES > 137.5 | IN_BYTES > 137.5
+  Reconnaissance                0.84  0.84  0.84  0.99  0.99  0.99  70.1% | no copy:  12,588  0.98  0.98  0.98 | SERVER_TCP_FLAGS > 17.5 | SERVER_TCP_FLAGS > 17.5
+  Theft                         0.90  0.90  0.90  0.98  0.98  0.98  42.0% | no copy:     167  0.97  0.97  0.97 | SRC_TO_DST_SECOND_BYTES > 58 | SRC_TO_DST_SECOND_BYTES > 58
+
+== NF-CSE-CIC-IDS2018-v2
+  class                         d1 A  d1 C  d1 D  d3 A  d3 C  d3 D D copy | no copy:    rows     A     C     D | depth-1 rule C | depth-1 rule D
+  Bot                           1.00  1.00  0.88  1.00  1.00  0.98  37.5% | no copy:   1,661  1.00  1.00  0.94 | L7_PROTO > 129 | TCP_FLAGS > 218.5
+  Brute Force -Web              0.94  0.94  0.94  0.99  0.97  0.99  23.1% | no copy:     489  1.00  0.95  0.99 | DURATION_IN > 1 | DURATION_IN > 1
+  Brute Force -XSS              0.90  0.90  0.90  0.99  0.99  0.99  18.1% | no copy:     236  1.00  1.00  1.00 | DURATION_IN > 0.5 | DURATION_IN > 0.5
+  DDOS attack-HOIC              1.00  0.98  0.98  1.00  1.00  1.00  65.2% | no copy:  69,494  1.00  1.00  1.00 | DURATION_IN > 0.5 | DURATION_IN > 0.5
+  DDOS attack-LOIC-UDP          1.00  1.00  1.00  1.00  1.00  1.00  23.3% | no copy:     506  1.00  1.00  1.00 | IN_PKTS > 524.5 | IN_PKTS > 524.5
+  DDoS attacks-LOIC-HTTP        0.73  0.73  0.73  0.75  0.75  1.00  83.3% | no copy:  16,202  0.99  0.99  1.00 | DURATION_IN > 14 | DURATION_IN > 14
+  DoS attacks-GoldenEye         0.98  0.97  0.97  1.00  1.00  1.00  34.0% | no copy:   5,489  1.00  1.00  1.00 | DURATION_IN > 8 | DURATION_IN > 8
+  DoS attacks-Hulk              0.97  0.97  0.97  1.00  1.00  1.00  37.6% | no copy:  81,514  1.00  1.00  1.00 | DURATION_IN > 43 | DURATION_IN > 43
+  DoS attacks-SlowHTTPTest      1.00  1.00  1.00  1.00  1.00  1.00  30.5% | no copy:   5,581  1.00  1.00  1.00 | SRC_TO_DST_AVG_THROUGHPUT <= 48000 | SRC_TO_DST_AVG_THROUGHPUT <= 48000
+  DoS attacks-Slowloris         0.97  0.89  0.84  1.00  1.00  0.99  29.8% | no copy:     243  1.00  0.99  0.99 | L7_PROTO > 6.35 | RETRANSMITTED_IN_BYTES > 1656
+  FTP-BruteForce                1.00  1.00  1.00  1.00  1.00  1.00  33.8% | no copy:   3,059  1.00  1.00  1.00 | SRC_TO_DST_AVG_THROUGHPUT <= 40000 | SRC_TO_DST_AVG_THROUGHPUT <= 40000
+  Infiltration                  0.63  0.62  0.62  0.67  0.65  0.65  79.6% | no copy:   7,671  0.72  0.60  0.60 | CLIENT_TCP_FLAGS <= 16.5 | CLIENT_TCP_FLAGS <= 16.5
+  SQL Injection                 0.93  0.91  0.91  0.95  0.94  0.95  12.3% | no copy:     135  0.94  0.93  0.94 | DURATION_OUT > 0.5 | DURATION_IN > 0.5
+  SSH-Bruteforce                1.00  1.00  0.99  1.00  1.00  1.00  36.0% | no copy:  13,500  1.00  1.00  1.00 | L7_PROTO > 91.85 | NUM_PKTS_128_TO_256_BYTES > 6.5
+
+== NF-ToN-IoT-v3
+  class                         d1 A  d1 C  d1 D  d3 A  d3 C  d3 D D copy | no copy:    rows     A     C     D | depth-1 rule C | depth-1 rule D
+  Backdoor                      0.92  0.92  0.92  1.00  0.92  0.92  92.3% | no copy:   5,522  0.99  0.99  0.99 | ICMP_IPV4_TYPE > 47.5 | RETRANSMITTED_IN_BYTES > 46
+  ddos                          0.92  0.86  0.86  0.94  0.88  0.88  67.9% | no copy:  17,258  0.90  0.89  0.88 | NUM_PKTS_UP_TO_128_BYTES > 2.5 | NUM_PKTS_UP_TO_128_BYTES > 2.5
+  dos                           0.93  0.93  0.93  0.96  0.97  0.97  94.0% | no copy:   3,620  0.82  0.88  0.88 | DST_TO_SRC_SECOND_BYTES > 4.5 | DST_TO_SRC_SECOND_BYTES > 4.5
+  injection                     0.93  0.94  0.94  0.97  0.96  0.96  50.9% | no copy:  56,371  0.93  0.86  0.86 | NUM_PKTS_UP_TO_128_BYTES > 2.5 | NUM_PKTS_UP_TO_128_BYTES > 2.5
+  mitm                          0.93  0.94  0.94  0.96  0.97  0.96  52.1% | no copy:     884  0.90  0.82  0.80 | OUT_BYTES > 73 | OUT_BYTES > 73
+  password                      0.96  0.97  0.97  0.99  0.99  0.99  46.3% | no copy:  90,086  0.97  0.93  0.93 | NUM_PKTS_UP_TO_128_BYTES > 5.5 | NUM_PKTS_UP_TO_128_BYTES > 5.5
+  ransomware                    0.95  0.95  0.95  0.98  0.98  0.98  43.5% | no copy:     582  0.94  0.95  0.93 | NUM_PKTS_128_TO_256_BYTES > 0.5 | NUM_PKTS_128_TO_256_BYTES > 0.5
+  scanning                      0.72  0.72  0.72  0.79  0.79  0.74  93.7% | no copy:   8,390  0.73  0.74  0.75 | IN_BYTES <= 48.5 | IN_BYTES <= 48.5
+  xss                           0.95  0.95  0.95  0.98  0.97  0.96  68.4% | no copy:  62,595  0.93  0.88  0.81 | OUT_BYTES > 59.5 | OUT_BYTES > 59.5
+
+== NF-BoT-IoT-v3
+  class                         d1 A  d1 C  d1 D  d3 A  d3 C  d3 D D copy | no copy:    rows     A     C     D | depth-1 rule C | depth-1 rule D
+  DDoS                          0.96  0.96  0.96  1.00  0.99  0.99  39.2% | no copy:   8,872  0.99  0.99  0.99 | SRC_TO_DST_AVG_THROUGHPUT <= 598.5 | SRC_TO_DST_AVG_THROUGHPUT <= 598.5
+  DoS                           0.98  0.98  0.98  0.99  0.99  0.99  39.2% | no copy:   8,876  0.98  0.98  0.98 | DST_TO_SRC_SECOND_BYTES <= 0.0284089 | DST_TO_SRC_SECOND_BYTES <= 0.0284089
+  Reconnaissance                0.88  0.74  0.74  0.93  0.92  0.92  87.3% | no copy:   1,858  0.88  0.83  0.83 | MAX_IP_PKT_LEN > 41 | MAX_IP_PKT_LEN > 41
+  Theft                         0.98  0.64  0.64  1.00  0.98  0.99  39.6% | no copy:      81  1.00  0.94  0.96 | SRC_TO_DST_AVG_THROUGHPUT > 358400 | SRC_TO_DST_AVG_THROUGHPUT > 358400
+
+== NF-CSE-CIC-IDS2018-v3
+  class                         d1 A  d1 C  d1 D  d3 A  d3 C  d3 D D copy | no copy:    rows     A     C     D | depth-1 rule C | depth-1 rule D
+  Bot                           0.97  0.90  0.90  1.00  0.99  0.99  23.5% | no copy:  16,564  1.00  0.99  0.99 | DST_TO_SRC_SECOND_BYTES > 21.5 | DST_TO_SRC_SECOND_BYTES > 21.5
+  Brute_Force_-Web              0.79  0.79  0.79  0.91  0.91  0.89  36.3% | no copy:     205  0.91  0.91  0.88 | OUT_BYTES <= 80.5 | OUT_BYTES <= 80.5
+  Brute_Force_-XSS             too few class rows in train or test
+  DDOS_attack-HOIC              1.00  0.91  0.91  1.00  1.00  1.00  24.4% | no copy: 147,161  1.00  1.00  1.00 | CLIENT_TCP_FLAGS > 218.5 | CLIENT_TCP_FLAGS > 218.5
+  DDOS_attack-LOIC-UDP          1.00  1.00  1.00  1.00  1.00  1.00  12.9% | no copy:     840  1.00  1.00  1.00 | IN_PKTS > 468.5 | IN_PKTS > 468.5
+  DDoS_attacks-LOIC-HTTP        0.97  0.97  0.97  0.98  0.97  0.98  24.5% | no copy:  64,011  0.97  0.97  0.97 | TCP_FLAGS > 222.5 | TCP_FLAGS > 222.5
+  DoS_attacks-GoldenEye         0.88  0.77  0.77  1.00  0.98  0.98  30.4% | no copy:  14,024  1.00  0.99  0.99 | NUM_PKTS_128_TO_256_BYTES <= 0.5 | NUM_PKTS_128_TO_256_BYTES <= 0.5
+  DoS_attacks-Hulk              0.98  0.96  0.96  1.00  1.00  1.00  22.7% | no copy:  23,133  1.00  1.00  1.00 | NUM_PKTS_512_TO_1024_BYTES > 1.5 | NUM_PKTS_512_TO_1024_BYTES > 1.5
+  DoS_attacks-SlowHTTPTest     too few class rows in train or test
+  DoS_attacks-Slowloris         0.79  0.79  0.79  0.96  0.97  0.96  21.2% | no copy:   3,598  0.96  0.96  0.95 | OUT_BYTES <= 120.5 | OUT_BYTES <= 120.5
+  FTP-BruteForce               too few class rows in train or test
+  Infiltration                  0.64  0.64  0.64  0.67  0.67  0.66  60.7% | no copy:  22,655  0.62  0.62  0.63 | DST_TO_SRC_AVG_THROUGHPUT > 8746.5 | DST_TO_SRC_AVG_THROUGHPUT > 8746.5
+  SQL_Injection                 0.85  0.85  0.85  0.89  0.89  0.89   3.6% | no copy:      27  0.89  0.89  0.89 | NUM_PKTS_512_TO_1024_BYTES > 5 | NUM_PKTS_512_TO_1024_BYTES > 5
+  SSH-Bruteforce                1.00  1.00  1.00  1.00  1.00  1.00  23.8% | no copy:  45,509  1.00  1.00  1.00 | NUM_PKTS_128_TO_256_BYTES > 6.5 | NUM_PKTS_128_TO_256_BYTES > 6.5
+
+Summary (classes with macro-F1 >= 0.95 / classes scored; losses = depth-3 macro-F1 difference)
+  NF-v2: A depth 1: 12/27; A depth 3: 23/27; C depth 1: 11/27; C depth 3: 22/27; D depth 1: 10/27; D depth 3: 23/27
+    A - C, all test rows: median 0.000, max 0.028 (NF-ToN-IoT-v2 ddos, 0.96 -> 0.93); >= 0.05 in 0 of 27
+    A - D, all test rows: median 0.000, max 0.051 (NF-ToN-IoT-v2 password, 0.98 -> 0.93); >= 0.05 in 1 of 27
+    C - D, all test rows: median 0.000, max 0.035 (NF-ToN-IoT-v2 password, 0.97 -> 0.93); >= 0.05 in 0 of 27
+    A - C, test rows without a set-D copy (27 classes scorable): median 0.001, max 0.148 (NF-ToN-IoT-v2 xss, 0.96 -> 0.81); >= 0.05 in 6 of 27
+    A - D, test rows without a set-D copy (27 classes scorable): median 0.001, max 0.307 (NF-ToN-IoT-v2 password, 0.99 -> 0.68); >= 0.05 in 7 of 27
+    share of test rows with a set-D copy in training: median 45.5%, max 96.2%
+  NF-v3: A depth 1: 10/24; A depth 3: 18/24; C depth 1: 7/24; C depth 3: 17/24; D depth 1: 7/24; D depth 3: 17/24
+    A - C, all test rows: median 0.002, max 0.075 (NF-ToN-IoT-v3 Backdoor, 1.00 -> 0.92); >= 0.05 in 2 of 24
+    A - D, all test rows: median 0.003, max 0.075 (NF-ToN-IoT-v3 Backdoor, 1.00 -> 0.92); >= 0.05 in 3 of 24
+    C - D, all test rows: median 0.000, max 0.051 (NF-ToN-IoT-v3 scanning, 0.79 -> 0.74); >= 0.05 in 1 of 24
+    A - C, test rows without a set-D copy (24 classes scorable): median 0.000, max 0.087 (NF-ToN-IoT-v3 mitm, 0.90 -> 0.82); >= 0.05 in 4 of 24
+    A - D, test rows without a set-D copy (24 classes scorable): median 0.003, max 0.115 (NF-ToN-IoT-v3 xss, 0.93 -> 0.81); >= 0.05 in 3 of 24
+    share of test rows with a set-D copy in training: median 39.4%, max 94.0%
+  All 51 classes: C - D loss >= 0.05 (depth 3, all test rows) in 1: NF-ToN-IoT-v3 scanning 0.79 -> 0.74
+  Classes whose depth-1 rule in C uses L7_PROTO or an ICMP field: 6; their depth-1 score C -> D: NF-ToN-IoT-v2 password 0.91 -> 0.90 (SRC_TO_DST_SECOND_BYTES > 59.5); NF-BoT-IoT-v2 DDoS 0.96 -> 0.98 (MAX_IP_PKT_LEN <= 29); NF-CSE-CIC-IDS2018-v2 Bot 1.00 -> 0.88 (TCP_FLAGS > 218.5); NF-CSE-CIC-IDS2018-v2 DoS attacks-Slowloris 0.89 -> 0.84 (RETRANSMITTED_IN_BYTES > 1656); NF-CSE-CIC-IDS2018-v2 SSH-Bruteforce 1.00 -> 0.99 (NUM_PKTS_128_TO_256_BYTES > 6.5); NF-ToN-IoT-v3 Backdoor 0.92 -> 0.92 (RETRANSMITTED_IN_BYTES > 46)
+Stored common-split values (sets A and C, depth 1 and 3) reproduced in 51 of 51 classes

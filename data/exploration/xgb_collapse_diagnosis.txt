@@ -1,0 +1,33 @@
+XGBoost collapse diagnosis: NF-CSE-CIC-IDS2018-v3 CAN G0 seed 3
+Generated: 2026-10-06T20:30:30.501868+00:00  xgboost 3.3.0
+
+train rows 1,023,146, test rows 3,396,383, features 48
+train class counts: Benign 300,000, Bot_or_Backdoor 145,973, CredentialAttack 132,014, DDoS 300,000, DoS 144,765, Injection 394
+
+-- reproduction (library defaults)
+   train macro-F1 0.1085  test macro-F1 0.0876
+   test per-class F1: Benign 0.427, Bot_or_Backdoor 0.000, CredentialAttack 0.000, DDoS 0.062, DoS 0.037, Injection 0.000
+   test predicted share: Benign 0.439, Bot_or_Backdoor 0.307, CredentialAttack 0.017, DDoS 0.016, DoS 0.189, Injection 0.031
+   non-finite probabilities in first 200k test rows: 0
+
+feature magnitude in the training sample (columns with max |x| >= 1e9 or NaN):
+
+training mlogloss by round (200k-row subsample of the training sample):
+   r0:0.9167, r1:0.6076, r2:0.5136, r5:0.1745, r10:0.104, r20:0.06814, r50:0.02674, r99:30.21
+   min 0.02662 at round 49; non-finite rounds 0
+
+-- features clipped to |x| <= 1e9
+   train macro-F1 0.1085  test macro-F1 0.0876
+   test per-class F1: Benign 0.427, Bot_or_Backdoor 0.000, CredentialAttack 0.000, DDoS 0.062, DoS 0.037, Injection 0.000
+   test predicted share: Benign 0.439, Bot_or_Backdoor 0.307, CredentialAttack 0.017, DDoS 0.016, DoS 0.189, Injection 0.031
+   non-finite probabilities in first 200k test rows: 0
+-- max_delta_step=1
+   train macro-F1 0.9851  test macro-F1 0.6153
+   test per-class F1: Benign 0.912, Bot_or_Backdoor 1.000, CredentialAttack 0.127, DDoS 0.980, DoS 0.339, Injection 0.333
+   test predicted share: Benign 0.912, Bot_or_Backdoor 0.012, CredentialAttack 0.008, DDoS 0.061, DoS 0.008, Injection 0.000
+   non-finite probabilities in first 200k test rows: 0
+-- tree_method=exact
+   train macro-F1 0.8337  test macro-F1 0.5591
+   test per-class F1: Benign 0.994, Bot_or_Backdoor 0.822, CredentialAttack 0.127, DDoS 0.974, DoS 0.404, Injection 0.034
+   test predicted share: Benign 0.759, Bot_or_Backdoor 0.016, CredentialAttack 0.009, DDoS 0.061, DoS 0.154, Injection 0.000
+   non-finite probabilities in first 200k test rows: 0

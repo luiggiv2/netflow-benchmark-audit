@@ -1,0 +1,1231 @@
+{
+  "generated_utc": "2026-10-05T01:33:51.141912+00:00",
+  "sign_tests": [
+    {
+      "task": "BIN",
+      "condition": "R0",
+      "scope": "all",
+      "threshold": 0.0,
+      "cases": 24,
+      "better": 14,
+      "similar": 0,
+      "worse": 10,
+      "p_value": 0.5412561893463135
+    },
+    {
+      "task": "BIN",
+      "condition": "R0",
+      "scope": "all",
+      "threshold": 0.01,
+      "cases": 24,
+      "better": 6,
+      "similar": 12,
+      "worse": 6,
+      "p_value": 1.0
+    },
+    {
+      "task": "BIN",
+      "condition": "R0",
+      "scope": "all",
+      "threshold": 0.02,
+      "cases": 24,
+      "better": 3,
+      "similar": 16,
+      "worse": 5,
+      "p_value": 0.7265625
+    },
+    {
+      "task": "BIN",
+      "condition": "R0",
+      "scope": "all",
+      "threshold": 0.05,
+      "cases": 24,
+      "better": 2,
+      "similar": 22,
+      "worse": 0,
+      "p_value": 0.5
+    },
+    {
+      "task": "BIN",
+      "condition": "R0",
+      "scope": "off floor",
+      "threshold": 0.0,
+      "cases": 24,
+      "better": 14,
+      "similar": 0,
+      "worse": 10,
+      "p_value": 0.5412561893463135
+    },
+    {
+      "task": "BIN",
+      "condition": "R0",
+      "scope": "off floor",
+      "threshold": 0.01,
+      "cases": 24,
+      "better": 6,
+      "similar": 12,
+      "worse": 6,
+      "p_value": 1.0
+    },
+    {
+      "task": "BIN",
+      "condition": "R0",
+      "scope": "off floor",
+      "threshold": 0.02,
+      "cases": 24,
+      "better": 3,
+      "similar": 16,
+      "worse": 5,
+      "p_value": 0.7265625
+    },
+    {
+      "task": "BIN",
+      "condition": "R0",
+      "scope": "off floor",
+      "threshold": 0.05,
+      "cases": 24,
+      "better": 2,
+      "similar": 22,
+      "worse": 0,
+      "p_value": 0.5
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NC",
+      "scope": "all",
+      "threshold": 0.0,
+      "cases": 24,
+      "better": 3,
+      "similar": 12,
+      "worse": 9,
+      "p_value": 0.14599609375
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NC",
+      "scope": "all",
+      "threshold": 0.01,
+      "cases": 24,
+      "better": 2,
+      "similar": 16,
+      "worse": 6,
+      "p_value": 0.2890625
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NC",
+      "scope": "all",
+      "threshold": 0.02,
+      "cases": 24,
+      "better": 2,
+      "similar": 18,
+      "worse": 4,
+      "p_value": 0.6875
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NC",
+      "scope": "all",
+      "threshold": 0.05,
+      "cases": 24,
+      "better": 1,
+      "similar": 20,
+      "worse": 3,
+      "p_value": 0.625
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NC",
+      "scope": "off floor",
+      "threshold": 0.0,
+      "cases": 24,
+      "better": 3,
+      "similar": 12,
+      "worse": 9,
+      "p_value": 0.14599609375
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NC",
+      "scope": "off floor",
+      "threshold": 0.01,
+      "cases": 24,
+      "better": 2,
+      "similar": 16,
+      "worse": 6,
+      "p_value": 0.2890625
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NC",
+      "scope": "off floor",
+      "threshold": 0.02,
+      "cases": 24,
+      "better": 2,
+      "similar": 18,
+      "worse": 4,
+      "p_value": 0.6875
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NC",
+      "scope": "off floor",
+      "threshold": 0.05,
+      "cases": 24,
+      "better": 1,
+      "similar": 20,
+      "worse": 3,
+      "p_value": 0.625
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NP",
+      "scope": "all",
+      "threshold": 0.0,
+      "cases": 24,
+      "better": 2,
+      "similar": 0,
+      "worse": 22,
+      "p_value": 3.5881996154785156e-05
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NP",
+      "scope": "all",
+      "threshold": 0.01,
+      "cases": 24,
+      "better": 1,
+      "similar": 5,
+      "worse": 18,
+      "p_value": 7.62939453125e-05
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NP",
+      "scope": "all",
+      "threshold": 0.02,
+      "cases": 24,
+      "better": 1,
+      "similar": 7,
+      "worse": 16,
+      "p_value": 0.000274658203125
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NP",
+      "scope": "all",
+      "threshold": 0.05,
+      "cases": 24,
+      "better": 1,
+      "similar": 13,
+      "worse": 10,
+      "p_value": 0.01171875
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NP",
+      "scope": "off floor",
+      "threshold": 0.0,
+      "cases": 24,
+      "better": 2,
+      "similar": 0,
+      "worse": 22,
+      "p_value": 3.5881996154785156e-05
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NP",
+      "scope": "off floor",
+      "threshold": 0.01,
+      "cases": 24,
+      "better": 1,
+      "similar": 5,
+      "worse": 18,
+      "p_value": 7.62939453125e-05
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NP",
+      "scope": "off floor",
+      "threshold": 0.02,
+      "cases": 24,
+      "better": 1,
+      "similar": 7,
+      "worse": 16,
+      "p_value": 0.000274658203125
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NP",
+      "scope": "off floor",
+      "threshold": 0.05,
+      "cases": 24,
+      "better": 1,
+      "similar": 13,
+      "worse": 10,
+      "p_value": 0.01171875
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NI",
+      "scope": "all",
+      "threshold": 0.0,
+      "cases": 24,
+      "better": 6,
+      "similar": 0,
+      "worse": 18,
+      "p_value": 0.022655844688415527
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NI",
+      "scope": "all",
+      "threshold": 0.01,
+      "cases": 24,
+      "better": 4,
+      "similar": 2,
+      "worse": 18,
+      "p_value": 0.004343509674072266
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NI",
+      "scope": "all",
+      "threshold": 0.02,
+      "cases": 24,
+      "better": 4,
+      "similar": 4,
+      "worse": 16,
+      "p_value": 0.01181793212890625
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NI",
+      "scope": "all",
+      "threshold": 0.05,
+      "cases": 24,
+      "better": 2,
+      "similar": 9,
+      "worse": 13,
+      "p_value": 0.00738525390625
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NI",
+      "scope": "off floor",
+      "threshold": 0.0,
+      "cases": 24,
+      "better": 6,
+      "similar": 0,
+      "worse": 18,
+      "p_value": 0.022655844688415527
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NI",
+      "scope": "off floor",
+      "threshold": 0.01,
+      "cases": 24,
+      "better": 4,
+      "similar": 2,
+      "worse": 18,
+      "p_value": 0.004343509674072266
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NI",
+      "scope": "off floor",
+      "threshold": 0.02,
+      "cases": 24,
+      "better": 4,
+      "similar": 4,
+      "worse": 16,
+      "p_value": 0.01181793212890625
+    },
+    {
+      "task": "BIN",
+      "condition": "G-NI",
+      "scope": "off floor",
+      "threshold": 0.05,
+      "cases": 24,
+      "better": 2,
+      "similar": 9,
+      "worse": 13,
+      "p_value": 0.00738525390625
+    },
+    {
+      "task": "CORE",
+      "condition": "R0",
+      "scope": "all",
+      "threshold": 0.0,
+      "cases": 24,
+      "better": 10,
+      "similar": 3,
+      "worse": 11,
+      "p_value": 1.0
+    },
+    {
+      "task": "CORE",
+      "condition": "R0",
+      "scope": "all",
+      "threshold": 0.01,
+      "cases": 24,
+      "better": 3,
+      "similar": 18,
+      "worse": 3,
+      "p_value": 1.0
+    },
+    {
+      "task": "CORE",
+      "condition": "R0",
+      "scope": "all",
+      "threshold": 0.02,
+      "cases": 24,
+      "better": 2,
+      "similar": 20,
+      "worse": 2,
+      "p_value": 1.0
+    },
+    {
+      "task": "CORE",
+      "condition": "R0",
+      "scope": "all",
+      "threshold": 0.05,
+      "cases": 24,
+      "better": 0,
+      "similar": 22,
+      "worse": 2,
+      "p_value": 0.5
+    },
+    {
+      "task": "CORE",
+      "condition": "R0",
+      "scope": "off floor",
+      "threshold": 0.0,
+      "cases": 17,
+      "better": 10,
+      "similar": 0,
+      "worse": 7,
+      "p_value": 0.629058837890625
+    },
+    {
+      "task": "CORE",
+      "condition": "R0",
+      "scope": "off floor",
+      "threshold": 0.01,
+      "cases": 17,
+      "better": 3,
+      "similar": 11,
+      "worse": 3,
+      "p_value": 1.0
+    },
+    {
+      "task": "CORE",
+      "condition": "R0",
+      "scope": "off floor",
+      "threshold": 0.02,
+      "cases": 17,
+      "better": 2,
+      "similar": 13,
+      "worse": 2,
+      "p_value": 1.0
+    },
+    {
+      "task": "CORE",
+      "condition": "R0",
+      "scope": "off floor",
+      "threshold": 0.05,
+      "cases": 17,
+      "better": 0,
+      "similar": 15,
+      "worse": 2,
+      "p_value": 0.5
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NC",
+      "scope": "all",
+      "threshold": 0.0,
+      "cases": 24,
+      "better": 7,
+      "similar": 12,
+      "worse": 5,
+      "p_value": 0.7744140625
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NC",
+      "scope": "all",
+      "threshold": 0.01,
+      "cases": 24,
+      "better": 1,
+      "similar": 22,
+      "worse": 1,
+      "p_value": 1.0
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NC",
+      "scope": "all",
+      "threshold": 0.02,
+      "cases": 24,
+      "better": 1,
+      "similar": 23,
+      "worse": 0,
+      "p_value": 1.0
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NC",
+      "scope": "all",
+      "threshold": 0.05,
+      "cases": 24,
+      "better": 1,
+      "similar": 23,
+      "worse": 0,
+      "p_value": 1.0
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NC",
+      "scope": "off floor",
+      "threshold": 0.0,
+      "cases": 17,
+      "better": 5,
+      "similar": 8,
+      "worse": 4,
+      "p_value": 1.0
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NC",
+      "scope": "off floor",
+      "threshold": 0.01,
+      "cases": 17,
+      "better": 1,
+      "similar": 15,
+      "worse": 1,
+      "p_value": 1.0
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NC",
+      "scope": "off floor",
+      "threshold": 0.02,
+      "cases": 17,
+      "better": 1,
+      "similar": 16,
+      "worse": 0,
+      "p_value": 1.0
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NC",
+      "scope": "off floor",
+      "threshold": 0.05,
+      "cases": 17,
+      "better": 1,
+      "similar": 16,
+      "worse": 0,
+      "p_value": 1.0
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NP",
+      "scope": "all",
+      "threshold": 0.0,
+      "cases": 24,
+      "better": 4,
+      "similar": 2,
+      "worse": 18,
+      "p_value": 0.004343509674072266
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NP",
+      "scope": "all",
+      "threshold": 0.01,
+      "cases": 24,
+      "better": 0,
+      "similar": 20,
+      "worse": 4,
+      "p_value": 0.125
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NP",
+      "scope": "all",
+      "threshold": 0.02,
+      "cases": 24,
+      "better": 0,
+      "similar": 21,
+      "worse": 3,
+      "p_value": 0.25
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NP",
+      "scope": "all",
+      "threshold": 0.05,
+      "cases": 24,
+      "better": 0,
+      "similar": 21,
+      "worse": 3,
+      "p_value": 0.25
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NP",
+      "scope": "off floor",
+      "threshold": 0.0,
+      "cases": 17,
+      "better": 4,
+      "similar": 0,
+      "worse": 13,
+      "p_value": 0.049041748046875
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NP",
+      "scope": "off floor",
+      "threshold": 0.01,
+      "cases": 17,
+      "better": 0,
+      "similar": 13,
+      "worse": 4,
+      "p_value": 0.125
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NP",
+      "scope": "off floor",
+      "threshold": 0.02,
+      "cases": 17,
+      "better": 0,
+      "similar": 14,
+      "worse": 3,
+      "p_value": 0.25
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NP",
+      "scope": "off floor",
+      "threshold": 0.05,
+      "cases": 17,
+      "better": 0,
+      "similar": 14,
+      "worse": 3,
+      "p_value": 0.25
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NI",
+      "scope": "all",
+      "threshold": 0.0,
+      "cases": 24,
+      "better": 6,
+      "similar": 0,
+      "worse": 18,
+      "p_value": 0.022655844688415527
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NI",
+      "scope": "all",
+      "threshold": 0.01,
+      "cases": 24,
+      "better": 1,
+      "similar": 16,
+      "worse": 7,
+      "p_value": 0.0703125
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NI",
+      "scope": "all",
+      "threshold": 0.02,
+      "cases": 24,
+      "better": 0,
+      "similar": 20,
+      "worse": 4,
+      "p_value": 0.125
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NI",
+      "scope": "all",
+      "threshold": 0.05,
+      "cases": 24,
+      "better": 0,
+      "similar": 21,
+      "worse": 3,
+      "p_value": 0.25
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NI",
+      "scope": "off floor",
+      "threshold": 0.0,
+      "cases": 17,
+      "better": 3,
+      "similar": 0,
+      "worse": 14,
+      "p_value": 0.012725830078125
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NI",
+      "scope": "off floor",
+      "threshold": 0.01,
+      "cases": 17,
+      "better": 1,
+      "similar": 9,
+      "worse": 7,
+      "p_value": 0.0703125
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NI",
+      "scope": "off floor",
+      "threshold": 0.02,
+      "cases": 17,
+      "better": 0,
+      "similar": 13,
+      "worse": 4,
+      "p_value": 0.125
+    },
+    {
+      "task": "CORE",
+      "condition": "G-NI",
+      "scope": "off floor",
+      "threshold": 0.05,
+      "cases": 17,
+      "better": 0,
+      "similar": 14,
+      "worse": 3,
+      "p_value": 0.25
+    }
+  ],
+  "collapse_into_bot": [
+    {
+      "source": "NF-CSE-CIC-IDS2018-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "rf",
+      "condition": "G-NC",
+      "seeds": 5,
+      "max_dos_f1": 0.00011,
+      "max_ddos_f1": 0.0,
+      "benign_f1": [
+        0.00758,
+        0.00763
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "rf",
+      "condition": "G-NI",
+      "seeds": 5,
+      "max_dos_f1": 0.00014,
+      "max_ddos_f1": 0.0,
+      "benign_f1": [
+        0.00732,
+        0.00765
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "rf",
+      "condition": "G-NP",
+      "seeds": 5,
+      "max_dos_f1": 2e-05,
+      "max_ddos_f1": 0.0,
+      "benign_f1": [
+        0.00719,
+        0.00759
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "rf",
+      "condition": "G0",
+      "seeds": 5,
+      "max_dos_f1": 0.00011,
+      "max_ddos_f1": 0.0,
+      "benign_f1": [
+        0.00758,
+        0.00763
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "rf",
+      "condition": "R0",
+      "seeds": 5,
+      "max_dos_f1": 0.00012,
+      "max_ddos_f1": 0.0,
+      "benign_f1": [
+        0.00759,
+        0.00759
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "xgb",
+      "condition": "G-NC",
+      "seeds": 5,
+      "max_dos_f1": 0.00097,
+      "max_ddos_f1": 0.34855,
+      "benign_f1": [
+        0.00725,
+        0.00786
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "xgb",
+      "condition": "G-NI",
+      "seeds": 5,
+      "max_dos_f1": 0.00123,
+      "max_ddos_f1": 0.0,
+      "benign_f1": [
+        0.00718,
+        0.00755
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "xgb",
+      "condition": "G-NP",
+      "seeds": 5,
+      "max_dos_f1": 0.00097,
+      "max_ddos_f1": 1e-05,
+      "benign_f1": [
+        0.00651,
+        0.00722
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "xgb",
+      "condition": "G0",
+      "seeds": 5,
+      "max_dos_f1": 0.00097,
+      "max_ddos_f1": 0.34855,
+      "benign_f1": [
+        0.00725,
+        0.00786
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "xgb",
+      "condition": "R0",
+      "seeds": 5,
+      "max_dos_f1": 0.00103,
+      "max_ddos_f1": 3e-05,
+      "benign_f1": [
+        0.0069,
+        0.00726
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "rf",
+      "condition": "G-NC",
+      "seeds": 5,
+      "max_dos_f1": 0.00549,
+      "max_ddos_f1": 0.0,
+      "benign_f1": [
+        0.00669,
+        0.00681
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "rf",
+      "condition": "G-NI",
+      "seeds": 5,
+      "max_dos_f1": 0.00559,
+      "max_ddos_f1": 4e-05,
+      "benign_f1": [
+        0.00671,
+        0.00679
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "rf",
+      "condition": "G-NP",
+      "seeds": 5,
+      "max_dos_f1": 0.00256,
+      "max_ddos_f1": 4e-05,
+      "benign_f1": [
+        0.00665,
+        0.00671
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "rf",
+      "condition": "G0",
+      "seeds": 5,
+      "max_dos_f1": 0.00128,
+      "max_ddos_f1": 0.0,
+      "benign_f1": [
+        0.00668,
+        0.00681
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "rf",
+      "condition": "R0",
+      "seeds": 5,
+      "max_dos_f1": 0.00113,
+      "max_ddos_f1": 0.0,
+      "benign_f1": [
+        0.00671,
+        0.0068
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "xgb",
+      "condition": "G-NC",
+      "seeds": 5,
+      "max_dos_f1": 0.00605,
+      "max_ddos_f1": 3e-05,
+      "benign_f1": [
+        0.00619,
+        0.00676
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "xgb",
+      "condition": "G-NI",
+      "seeds": 5,
+      "max_dos_f1": 0.00823,
+      "max_ddos_f1": 4e-05,
+      "benign_f1": [
+        0.00629,
+        0.00665
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "xgb",
+      "condition": "G-NP",
+      "seeds": 5,
+      "max_dos_f1": 0.00114,
+      "max_ddos_f1": 4e-05,
+      "benign_f1": [
+        0.0062,
+        0.00665
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "xgb",
+      "condition": "G0",
+      "seeds": 5,
+      "max_dos_f1": 0.00614,
+      "max_ddos_f1": 0.0,
+      "benign_f1": [
+        0.00619,
+        0.0067
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "xgb",
+      "condition": "R0",
+      "seeds": 5,
+      "max_dos_f1": 0.00513,
+      "max_ddos_f1": 4e-05,
+      "benign_f1": [
+        0.00634,
+        0.00668
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "rf",
+      "condition": "G-NC",
+      "seeds": 5,
+      "max_dos_f1": 0.0,
+      "max_ddos_f1": 0.0,
+      "benign_f1": [
+        0.00754,
+        0.00756
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "rf",
+      "condition": "G-NI",
+      "seeds": 5,
+      "max_dos_f1": 0.0,
+      "max_ddos_f1": 0.0,
+      "benign_f1": [
+        0.00747,
+        0.00757
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "rf",
+      "condition": "G-NP",
+      "seeds": 5,
+      "max_dos_f1": 0.0,
+      "max_ddos_f1": 0.0,
+      "benign_f1": [
+        0.00754,
+        0.00759
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "rf",
+      "condition": "G0",
+      "seeds": 5,
+      "max_dos_f1": 0.0,
+      "max_ddos_f1": 0.0,
+      "benign_f1": [
+        0.00754,
+        0.00756
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "rf",
+      "condition": "R0",
+      "seeds": 5,
+      "max_dos_f1": 0.0,
+      "max_ddos_f1": 0.0,
+      "benign_f1": [
+        0.00756,
+        0.00757
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "xgb",
+      "condition": "G-NC",
+      "seeds": 5,
+      "max_dos_f1": 0.0,
+      "max_ddos_f1": 0.00038,
+      "benign_f1": [
+        0.00755,
+        0.00759
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "xgb",
+      "condition": "G-NI",
+      "seeds": 5,
+      "max_dos_f1": 0.0,
+      "max_ddos_f1": 5e-05,
+      "benign_f1": [
+        0.00743,
+        0.00753
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "xgb",
+      "condition": "G-NP",
+      "seeds": 5,
+      "max_dos_f1": 0.0,
+      "max_ddos_f1": 0.00096,
+      "benign_f1": [
+        0.00747,
+        0.00765
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "xgb",
+      "condition": "G0",
+      "seeds": 5,
+      "max_dos_f1": 0.0,
+      "max_ddos_f1": 0.00038,
+      "benign_f1": [
+        0.00755,
+        0.00759
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "xgb",
+      "condition": "R0",
+      "seeds": 5,
+      "max_dos_f1": 0.0,
+      "max_ddos_f1": 8e-05,
+      "benign_f1": [
+        0.00756,
+        0.0076
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "rf",
+      "condition": "G-NC",
+      "seeds": 5,
+      "max_dos_f1": 0.0,
+      "max_ddos_f1": 0.00475,
+      "benign_f1": [
+        0.00651,
+        0.00675
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "rf",
+      "condition": "G-NI",
+      "seeds": 5,
+      "max_dos_f1": 0.0,
+      "max_ddos_f1": 0.00215,
+      "benign_f1": [
+        0.00646,
+        0.00656
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "rf",
+      "condition": "G-NP",
+      "seeds": 5,
+      "max_dos_f1": 0.0,
+      "max_ddos_f1": 0.00113,
+      "benign_f1": [
+        0.00651,
+        0.00654
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "rf",
+      "condition": "G0",
+      "seeds": 5,
+      "max_dos_f1": 0.0,
+      "max_ddos_f1": 0.00205,
+      "benign_f1": [
+        0.00658,
+        0.00676
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "rf",
+      "condition": "R0",
+      "seeds": 5,
+      "max_dos_f1": 0.0,
+      "max_ddos_f1": 0.00093,
+      "benign_f1": [
+        0.00669,
+        0.00676
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "xgb",
+      "condition": "G-NC",
+      "seeds": 5,
+      "max_dos_f1": 0.0028,
+      "max_ddos_f1": 0.50058,
+      "benign_f1": [
+        0.00648,
+        0.01043
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "xgb",
+      "condition": "G-NI",
+      "seeds": 5,
+      "max_dos_f1": 0.0,
+      "max_ddos_f1": 0.0019,
+      "benign_f1": [
+        0.00646,
+        0.0067
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "xgb",
+      "condition": "G-NP",
+      "seeds": 5,
+      "max_dos_f1": 0.0001,
+      "max_ddos_f1": 0.01458,
+      "benign_f1": [
+        0.00631,
+        0.00668
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "xgb",
+      "condition": "G0",
+      "seeds": 5,
+      "max_dos_f1": 0.29625,
+      "max_ddos_f1": 0.4686,
+      "benign_f1": [
+        0.00658,
+        0.00982
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "xgb",
+      "condition": "R0",
+      "seeds": 5,
+      "max_dos_f1": 0.00012,
+      "max_ddos_f1": 0.48041,
+      "benign_f1": [
+        0.00633,
+        0.00977
+      ]
+    }
+  ]
+}

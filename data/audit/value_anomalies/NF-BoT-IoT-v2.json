@@ -1,0 +1,62 @@
+{
+  "dataset": "NF-BoT-IoT-v2",
+  "generated_utc": "2026-10-02T18:15:59.347346+00:00",
+  "rows": 37763497,
+  "class_rows": {
+    "DoS": 16673183,
+    "DDoS": 18331847,
+    "Reconnaissance": 2620999,
+    "Benign": 135037,
+    "Theft": 2431
+  },
+  "checks": {
+    "rate_over_100gbps": {
+      "rows": 7117,
+      "per_class": {
+        "Benign": 6813,
+        "Reconnaissance": 249,
+        "Theft": 47,
+        "DoS": 7,
+        "DDoS": 1
+      }
+    },
+    "duration_near_2p32": {
+      "rows": 35170968,
+      "per_class": {
+        "DoS": 15949609,
+        "DDoS": 18016736,
+        "Reconnaissance": 1118815,
+        "Benign": 84928,
+        "Theft": 880
+      }
+    },
+    "bytes_below_ip_hdr": {
+      "rows": 95,
+      "per_class": {
+        "Reconnaissance": 95
+      }
+    },
+    "size_bins_gt_pkts": {
+      "rows": 316,
+      "per_class": {
+        "Reconnaissance": 316
+      }
+    },
+    "dns_ttl_over_2p31": {
+      "rows": 320,
+      "per_class": {
+        "Reconnaissance": 320
+      }
+    }
+  },
+  "constant_features": [],
+  "constant_values": {},
+  "duration_near_2p32_values": {
+    "4294951": 355147,
+    "4293967": 319315,
+    "4294092": 299888,
+    "4293842": 298503,
+    "4293717": 295202
+  },
+  "service_ports": {}
+}

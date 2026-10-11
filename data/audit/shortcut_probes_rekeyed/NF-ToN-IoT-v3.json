@@ -1,0 +1,1038 @@
+{
+  "dataset": "NF-ToN-IoT-v3",
+  "generated_utc": "2026-10-02T21:38:41.839166+00:00",
+  "caps": {
+    "train": 200000,
+    "test": 100000
+  },
+  "feature_sets": {
+    "A": [
+      "L4_DST_PORT",
+      "PROTOCOL",
+      "L7_PROTO",
+      "IN_BYTES",
+      "IN_PKTS",
+      "OUT_BYTES",
+      "OUT_PKTS",
+      "TCP_FLAGS",
+      "CLIENT_TCP_FLAGS",
+      "SERVER_TCP_FLAGS",
+      "FLOW_DURATION_MILLISECONDS",
+      "DURATION_IN",
+      "DURATION_OUT",
+      "MIN_TTL",
+      "MAX_TTL",
+      "LONGEST_FLOW_PKT",
+      "SHORTEST_FLOW_PKT",
+      "MIN_IP_PKT_LEN",
+      "MAX_IP_PKT_LEN",
+      "SRC_TO_DST_SECOND_BYTES",
+      "DST_TO_SRC_SECOND_BYTES",
+      "RETRANSMITTED_IN_BYTES",
+      "RETRANSMITTED_IN_PKTS",
+      "RETRANSMITTED_OUT_BYTES",
+      "RETRANSMITTED_OUT_PKTS",
+      "SRC_TO_DST_AVG_THROUGHPUT",
+      "DST_TO_SRC_AVG_THROUGHPUT",
+      "NUM_PKTS_UP_TO_128_BYTES",
+      "NUM_PKTS_128_TO_256_BYTES",
+      "NUM_PKTS_256_TO_512_BYTES",
+      "NUM_PKTS_512_TO_1024_BYTES",
+      "NUM_PKTS_1024_TO_1514_BYTES",
+      "TCP_WIN_MAX_IN",
+      "TCP_WIN_MAX_OUT",
+      "ICMP_TYPE",
+      "ICMP_IPV4_TYPE",
+      "DNS_QUERY_ID",
+      "DNS_QUERY_TYPE",
+      "DNS_TTL_ANSWER",
+      "FTP_COMMAND_RET_CODE"
+    ],
+    "B": [
+      "PROTOCOL",
+      "L7_PROTO",
+      "IN_BYTES",
+      "IN_PKTS",
+      "OUT_BYTES",
+      "OUT_PKTS",
+      "TCP_FLAGS",
+      "CLIENT_TCP_FLAGS",
+      "SERVER_TCP_FLAGS",
+      "FLOW_DURATION_MILLISECONDS",
+      "DURATION_IN",
+      "DURATION_OUT",
+      "MIN_TTL",
+      "MAX_TTL",
+      "LONGEST_FLOW_PKT",
+      "SHORTEST_FLOW_PKT",
+      "MIN_IP_PKT_LEN",
+      "MAX_IP_PKT_LEN",
+      "SRC_TO_DST_SECOND_BYTES",
+      "DST_TO_SRC_SECOND_BYTES",
+      "RETRANSMITTED_IN_BYTES",
+      "RETRANSMITTED_IN_PKTS",
+      "RETRANSMITTED_OUT_BYTES",
+      "RETRANSMITTED_OUT_PKTS",
+      "SRC_TO_DST_AVG_THROUGHPUT",
+      "DST_TO_SRC_AVG_THROUGHPUT",
+      "NUM_PKTS_UP_TO_128_BYTES",
+      "NUM_PKTS_128_TO_256_BYTES",
+      "NUM_PKTS_256_TO_512_BYTES",
+      "NUM_PKTS_512_TO_1024_BYTES",
+      "NUM_PKTS_1024_TO_1514_BYTES",
+      "TCP_WIN_MAX_IN",
+      "TCP_WIN_MAX_OUT",
+      "ICMP_TYPE",
+      "ICMP_IPV4_TYPE",
+      "DNS_QUERY_ID",
+      "DNS_QUERY_TYPE",
+      "DNS_TTL_ANSWER",
+      "FTP_COMMAND_RET_CODE"
+    ],
+    "C": [
+      "PROTOCOL",
+      "L7_PROTO",
+      "IN_BYTES",
+      "IN_PKTS",
+      "OUT_BYTES",
+      "OUT_PKTS",
+      "TCP_FLAGS",
+      "CLIENT_TCP_FLAGS",
+      "SERVER_TCP_FLAGS",
+      "FLOW_DURATION_MILLISECONDS",
+      "DURATION_IN",
+      "DURATION_OUT",
+      "LONGEST_FLOW_PKT",
+      "SHORTEST_FLOW_PKT",
+      "MIN_IP_PKT_LEN",
+      "MAX_IP_PKT_LEN",
+      "SRC_TO_DST_SECOND_BYTES",
+      "DST_TO_SRC_SECOND_BYTES",
+      "RETRANSMITTED_IN_BYTES",
+      "RETRANSMITTED_IN_PKTS",
+      "RETRANSMITTED_OUT_BYTES",
+      "RETRANSMITTED_OUT_PKTS",
+      "SRC_TO_DST_AVG_THROUGHPUT",
+      "DST_TO_SRC_AVG_THROUGHPUT",
+      "NUM_PKTS_UP_TO_128_BYTES",
+      "NUM_PKTS_128_TO_256_BYTES",
+      "NUM_PKTS_256_TO_512_BYTES",
+      "NUM_PKTS_512_TO_1024_BYTES",
+      "NUM_PKTS_1024_TO_1514_BYTES",
+      "ICMP_TYPE",
+      "ICMP_IPV4_TYPE",
+      "FTP_COMMAND_RET_CODE"
+    ]
+  },
+  "classes": {
+    "Backdoor": {
+      "sets": {
+        "A": {
+          "f1_d1": 0.9206170069126212,
+          "rules_d1": [
+            {
+              "path": "ICMP_TYPE > 12160",
+              "class_share": 0.9929,
+              "samples": 126694
+            }
+          ],
+          "f1_d2": 0.9236506092391843,
+          "rules_d2": [
+            {
+              "path": "ICMP_TYPE > 12160 and MAX_TTL > 125",
+              "class_share": 0.9999,
+              "samples": 125800
+            }
+          ],
+          "f1_d3": 0.9982281377222779
+        },
+        "B": {
+          "f1_d1": 0.9952388617648548,
+          "rules_d1": [
+            {
+              "path": "ICMP_IPV4_TYPE > 47.5",
+              "class_share": 0.99,
+              "samples": 136209
+            }
+          ],
+          "f1_d2": 0.9968869258417112,
+          "rules_d2": [
+            {
+              "path": "ICMP_IPV4_TYPE > 47.5 and MAX_TTL > 125",
+              "class_share": 0.9998,
+              "samples": 134860
+            }
+          ],
+          "f1_d3": 0.9983926091647005
+        },
+        "C": {
+          "f1_d1": 0.8999084529988292,
+          "rules_d1": [
+            {
+              "path": "ICMP_IPV4_TYPE > 47.5",
+              "class_share": 0.9912,
+              "samples": 136534
+            }
+          ],
+          "f1_d2": 0.9033156121588902,
+          "rules_d2": [
+            {
+              "path": "ICMP_IPV4_TYPE > 47.5 and SHORTEST_FLOW_PKT <= 46",
+              "class_share": 0.9997,
+              "samples": 135375
+            }
+          ],
+          "f1_d3": 0.9939871716687841
+        }
+      },
+      "rows_by_set": {
+        "A": {
+          "train_rows": {
+            "benign": 127460,
+            "class": 127460
+          },
+          "test_rows": {
+            "benign": 35838,
+            "class": 35838
+          }
+        },
+        "B": {
+          "train_rows": {
+            "benign": 139476,
+            "class": 139476
+          },
+          "test_rows": {
+            "benign": 24574,
+            "class": 24574
+          }
+        },
+        "C": {
+          "train_rows": {
+            "benign": 142212,
+            "class": 142212
+          },
+          "test_rows": {
+            "benign": 29936,
+            "class": 29936
+          }
+        }
+      }
+    },
+    "ddos": {
+      "sets": {
+        "A": {
+          "f1_d1": 0.9245341130925624,
+          "rules_d1": [
+            {
+              "path": "TCP_WIN_MAX_IN > 29113.5",
+              "class_share": 0.9684,
+              "samples": 191593
+            }
+          ],
+          "f1_d2": 0.9315022895973177,
+          "rules_d2": [
+            {
+              "path": "TCP_WIN_MAX_IN > 29113.5 and SHORTEST_FLOW_PKT > 50",
+              "class_share": 0.9898,
+              "samples": 187341
+            }
+          ],
+          "f1_d3": 0.9380770744369242
+        },
+        "B": {
+          "f1_d1": 0.9456855988750478,
+          "rules_d1": [
+            {
+              "path": "TCP_WIN_MAX_IN > 29080",
+              "class_share": 0.9586,
+              "samples": 157707
+            }
+          ],
+          "f1_d2": 0.9499334232556973,
+          "rules_d2": [
+            {
+              "path": "TCP_WIN_MAX_IN > 29080 and SHORTEST_FLOW_PKT > 48",
+              "class_share": 0.9862,
+              "samples": 152975
+            }
+          ],
+          "f1_d3": 0.9428527357106153
+        },
+        "C": {
+          "f1_d1": 0.924454192436758,
+          "rules_d1": [
+            {
+              "path": "NUM_PKTS_UP_TO_128_BYTES > 2.5",
+              "class_share": 0.9179,
+              "samples": 199846
+            }
+          ],
+          "f1_d2": 0.9391935525135195,
+          "rules_d2": [
+            {
+              "path": "NUM_PKTS_UP_TO_128_BYTES > 2.5 and MIN_IP_PKT_LEN > 50",
+              "class_share": 0.9715,
+              "samples": 188204
+            }
+          ],
+          "f1_d3": 0.9460011497007841
+        }
+      },
+      "rows_by_set": {
+        "A": {
+          "train_rows": {
+            "benign": 200000,
+            "class": 200000
+          },
+          "test_rows": {
+            "benign": 26912,
+            "class": 26912
+          }
+        },
+        "B": {
+          "train_rows": {
+            "benign": 166830,
+            "class": 166830
+          },
+          "test_rows": {
+            "benign": 100000,
+            "class": 100000
+          }
+        },
+        "C": {
+          "train_rows": {
+            "benign": 200000,
+            "class": 200000
+          },
+          "test_rows": {
+            "benign": 32377,
+            "class": 32377
+          }
+        }
+      }
+    },
+    "dos": {
+      "sets": {
+        "A": {
+          "f1_d1": 0.9264800268505908,
+          "rules_d1": [
+            {
+              "path": "DST_TO_SRC_SECOND_BYTES > 4.5",
+              "class_share": 0.9015,
+              "samples": 151779
+            }
+          ],
+          "f1_d2": 0.9470241753594568,
+          "rules_d2": [
+            {
+              "path": "DST_TO_SRC_SECOND_BYTES > 4.5 and L4_DST_PORT <= 6527.5",
+              "class_share": 0.9357,
+              "samples": 146234
+            },
+            {
+              "path": "DST_TO_SRC_SECOND_BYTES <= 4.5 and MIN_IP_PKT_LEN > 53",
+              "class_share": 0.5338,
+              "samples": 6654
+            }
+          ],
+          "f1_d3": 0.9644384850907379
+        },
+        "B": {
+          "f1_d1": 0.942887230792254,
+          "rules_d1": [
+            {
+              "path": "DST_TO_SRC_SECOND_BYTES > 4.5",
+              "class_share": 0.8783,
+              "samples": 153002
+            }
+          ],
+          "f1_d2": 0.9493707793693756,
+          "rules_d2": [
+            {
+              "path": "DST_TO_SRC_SECOND_BYTES > 4.5 and CLIENT_TCP_FLAGS <= 16.5",
+              "class_share": 0.9187,
+              "samples": 145471
+            }
+          ],
+          "f1_d3": 0.9624051648973959
+        },
+        "C": {
+          "f1_d1": 0.9183719557655603,
+          "rules_d1": [
+            {
+              "path": "DST_TO_SRC_SECOND_BYTES > 4.5",
+              "class_share": 0.8729,
+              "samples": 162505
+            }
+          ],
+          "f1_d2": 0.931786109937687,
+          "rules_d2": [
+            {
+              "path": "DST_TO_SRC_SECOND_BYTES > 4.5 and CLIENT_TCP_FLAGS <= 16.5",
+              "class_share": 0.9137,
+              "samples": 154545
+            }
+          ],
+          "f1_d3": 0.9325348221182057
+        }
+      },
+      "rows_by_set": {
+        "A": {
+          "train_rows": {
+            "benign": 142506,
+            "class": 142506
+          },
+          "test_rows": {
+            "benign": 30358,
+            "class": 30358
+          }
+        },
+        "B": {
+          "train_rows": {
+            "benign": 139988,
+            "class": 139988
+          },
+          "test_rows": {
+            "benign": 32494,
+            "class": 32494
+          }
+        },
+        "C": {
+          "train_rows": {
+            "benign": 147141,
+            "class": 147141
+          },
+          "test_rows": {
+            "benign": 31660,
+            "class": 31660
+          }
+        }
+      }
+    },
+    "injection": {
+      "sets": {
+        "A": {
+          "f1_d1": 0.932601775848686,
+          "rules_d1": [
+            {
+              "path": "L4_DST_PORT <= 443.5",
+              "class_share": 0.8867,
+              "samples": 225177
+            }
+          ],
+          "f1_d2": 0.9643330835014882,
+          "rules_d2": [
+            {
+              "path": "L4_DST_PORT <= 443.5 and CLIENT_TCP_FLAGS > 16.5",
+              "class_share": 0.984,
+              "samples": 191629
+            },
+            {
+              "path": "L4_DST_PORT > 443.5 and SERVER_TCP_FLAGS > 30.5",
+              "class_share": 1.0,
+              "samples": 194
+            }
+          ],
+          "f1_d3": 0.966325439419949
+        },
+        "B": {
+          "f1_d1": 0.9462005424043242,
+          "rules_d1": [
+            {
+              "path": "MIN_TTL > 63.5",
+              "class_share": 0.9128,
+              "samples": 206995
+            }
+          ],
+          "f1_d2": 0.9473093514707569,
+          "rules_d2": [
+            {
+              "path": "MIN_TTL > 63.5 and SERVER_TCP_FLAGS > 16.5",
+              "class_share": 0.9542,
+              "samples": 194640
+            }
+          ],
+          "f1_d3": 0.9722566895311877
+        },
+        "C": {
+          "f1_d1": 0.924105197409588,
+          "rules_d1": [
+            {
+              "path": "NUM_PKTS_UP_TO_128_BYTES > 2.5",
+              "class_share": 0.9199,
+              "samples": 203582
+            }
+          ],
+          "f1_d2": 0.9341154669045948,
+          "rules_d2": [
+            {
+              "path": "NUM_PKTS_UP_TO_128_BYTES > 2.5 and SERVER_TCP_FLAGS > 16.5",
+              "class_share": 0.9544,
+              "samples": 194178
+            }
+          ],
+          "f1_d3": 0.9697519106827843
+        }
+      },
+      "rows_by_set": {
+        "A": {
+          "train_rows": {
+            "benign": 200000,
+            "class": 200000
+          },
+          "test_rows": {
+            "benign": 57427,
+            "class": 57427
+          }
+        },
+        "B": {
+          "train_rows": {
+            "benign": 200000,
+            "class": 200000
+          },
+          "test_rows": {
+            "benign": 57727,
+            "class": 57727
+          }
+        },
+        "C": {
+          "train_rows": {
+            "benign": 200000,
+            "class": 200000
+          },
+          "test_rows": {
+            "benign": 59792,
+            "class": 59792
+          }
+        }
+      }
+    },
+    "mitm": {
+      "sets": {
+        "A": {
+          "f1_d1": 0.9291597516749646,
+          "rules_d1": [
+            {
+              "path": "L4_DST_PORT <= 450.5",
+              "class_share": 0.8926,
+              "samples": 4703
+            }
+          ],
+          "f1_d2": 0.9608980996843999,
+          "rules_d2": [
+            {
+              "path": "L4_DST_PORT <= 450.5 and MAX_IP_PKT_LEN > 50.5",
+              "class_share": 0.9366,
+              "samples": 4481
+            }
+          ],
+          "f1_d3": 0.9608980996843999
+        },
+        "B": {
+          "f1_d1": 0.9458491410273919,
+          "rules_d1": [
+            {
+              "path": "OUT_BYTES > 72.5",
+              "class_share": 0.9211,
+              "samples": 4410
+            }
+          ],
+          "f1_d2": 0.9677615452495343,
+          "rules_d2": [
+            {
+              "path": "OUT_BYTES > 72.5 and MIN_TTL <= 96",
+              "class_share": 0.9394,
+              "samples": 4324
+            },
+            {
+              "path": "OUT_BYTES <= 72.5 and TCP_WIN_MAX_OUT > 251.5",
+              "class_share": 0.8081,
+              "samples": 172
+            }
+          ],
+          "f1_d3": 0.9714109277684517
+        },
+        "C": {
+          "f1_d1": 0.9495958429561201,
+          "rules_d1": [
+            {
+              "path": "OUT_BYTES > 72.5",
+              "class_share": 0.9105,
+              "samples": 4369
+            }
+          ],
+          "f1_d2": 0.9490255266007472,
+          "rules_d2": [
+            {
+              "path": "OUT_BYTES > 72.5 and DST_TO_SRC_AVG_THROUGHPUT <= 1.03467e+06",
+              "class_share": 0.9325,
+              "samples": 4252
+            }
+          ],
+          "f1_d3": 0.9530339691170759
+        }
+      },
+      "rows_by_set": {
+        "A": {
+          "train_rows": {
+            "benign": 4202,
+            "class": 4202
+          },
+          "test_rows": {
+            "benign": 922,
+            "class": 922
+          }
+        },
+        "B": {
+          "train_rows": {
+            "benign": 4293,
+            "class": 4293
+          },
+          "test_rows": {
+            "benign": 822,
+            "class": 822
+          }
+        },
+        "C": {
+          "train_rows": {
+            "benign": 4263,
+            "class": 4263
+          },
+          "test_rows": {
+            "benign": 873,
+            "class": 873
+          }
+        }
+      }
+    },
+    "password": {
+      "sets": {
+        "A": {
+          "f1_d1": 0.9611251983655267,
+          "rules_d1": [
+            {
+              "path": "TCP_WIN_MAX_IN > 29181",
+              "class_share": 0.9697,
+              "samples": 197701
+            }
+          ],
+          "f1_d2": 0.9898934127883725,
+          "rules_d2": [
+            {
+              "path": "TCP_WIN_MAX_IN > 29181 and L4_DST_PORT <= 95",
+              "class_share": 0.9853,
+              "samples": 194558
+            },
+            {
+              "path": "TCP_WIN_MAX_IN <= 29181 and FTP_COMMAND_RET_CODE > 290.5",
+              "class_share": 0.9496,
+              "samples": 6812
+            }
+          ],
+          "f1_d3": 0.9940971175019708
+        },
+        "B": {
+          "f1_d1": 0.9743418301069438,
+          "rules_d1": [
+            {
+              "path": "TCP_WIN_MAX_IN > 29181",
+              "class_share": 0.9614,
+              "samples": 199043
+            }
+          ],
+          "f1_d2": 0.9929999427423317,
+          "rules_d2": [
+            {
+              "path": "TCP_WIN_MAX_IN > 29181 and TCP_WIN_MAX_IN <= 29377.5",
+              "class_share": 0.9757,
+              "samples": 196127
+            },
+            {
+              "path": "TCP_WIN_MAX_IN <= 29181 and FTP_COMMAND_RET_CODE > 290.5",
+              "class_share": 0.9375,
+              "samples": 7391
+            }
+          ],
+          "f1_d3": 0.9959449811683911
+        },
+        "C": {
+          "f1_d1": 0.9566376573971316,
+          "rules_d1": [
+            {
+              "path": "NUM_PKTS_UP_TO_128_BYTES > 5.5",
+              "class_share": 0.945,
+              "samples": 198671
+            }
+          ],
+          "f1_d2": 0.9668324107498607,
+          "rules_d2": [
+            {
+              "path": "NUM_PKTS_UP_TO_128_BYTES > 5.5 and IN_BYTES <= 543",
+              "class_share": 0.9735,
+              "samples": 192583
+            }
+          ],
+          "f1_d3": 0.9836652433668889
+        }
+      },
+      "rows_by_set": {
+        "A": {
+          "train_rows": {
+            "benign": 200000,
+            "class": 200000
+          },
+          "test_rows": {
+            "benign": 83858,
+            "class": 83858
+          }
+        },
+        "B": {
+          "train_rows": {
+            "benign": 200000,
+            "class": 200000
+          },
+          "test_rows": {
+            "benign": 100000,
+            "class": 100000
+          }
+        },
+        "C": {
+          "train_rows": {
+            "benign": 200000,
+            "class": 200000
+          },
+          "test_rows": {
+            "benign": 94656,
+            "class": 94656
+          }
+        }
+      }
+    },
+    "ransomware": {
+      "sets": {
+        "A": {
+          "f1_d1": 0.9475567993241408,
+          "rules_d1": [
+            {
+              "path": "NUM_PKTS_128_TO_256_BYTES > 0.5",
+              "class_share": 0.9614,
+              "samples": 2719
+            }
+          ],
+          "f1_d2": 0.9543099729974867,
+          "rules_d2": [
+            {
+              "path": "NUM_PKTS_128_TO_256_BYTES > 0.5 and L7_PROTO <= 11",
+              "class_share": 0.9765,
+              "samples": 2676
+            },
+            {
+              "path": "NUM_PKTS_128_TO_256_BYTES <= 0.5 and MIN_TTL > 63.5",
+              "class_share": 0.5202,
+              "samples": 321
+            }
+          ],
+          "f1_d3": 0.9844654922779923
+        },
+        "B": {
+          "f1_d1": 0.8113438818104624,
+          "rules_d1": [
+            {
+              "path": "MAX_TTL > 63.5",
+              "class_share": 0.9103,
+              "samples": 2476
+            }
+          ],
+          "f1_d2": 0.8118461918543094,
+          "rules_d2": [
+            {
+              "path": "MAX_TTL > 63.5 and NUM_PKTS_128_TO_256_BYTES > 0.5",
+              "class_share": 0.9675,
+              "samples": 2124
+            },
+            {
+              "path": "MAX_TTL > 63.5 and NUM_PKTS_128_TO_256_BYTES <= 0.5",
+              "class_share": 0.5653,
+              "samples": 352
+            },
+            {
+              "path": "MAX_TTL <= 63.5 and TCP_FLAGS > 27.5",
+              "class_share": 0.9508,
+              "samples": 61
+            }
+          ],
+          "f1_d3": 0.8212668446733093
+        },
+        "C": {
+          "f1_d1": 0.9694983315691794,
+          "rules_d1": [
+            {
+              "path": "NUM_PKTS_128_TO_256_BYTES > 0.5",
+              "class_share": 0.9346,
+              "samples": 2782
+            }
+          ],
+          "f1_d2": 0.9803921568627451,
+          "rules_d2": [
+            {
+              "path": "NUM_PKTS_128_TO_256_BYTES > 0.5 and L7_PROTO <= 11",
+              "class_share": 0.9608,
+              "samples": 2706
+            },
+            {
+              "path": "NUM_PKTS_128_TO_256_BYTES <= 0.5 and SERVER_TCP_FLAGS > 26.5",
+              "class_share": 0.8974,
+              "samples": 156
+            }
+          ],
+          "f1_d3": 0.9836599562129545
+        }
+      },
+      "rows_by_set": {
+        "A": {
+          "train_rows": {
+            "benign": 2847,
+            "class": 2847
+          },
+          "test_rows": {
+            "benign": 515,
+            "class": 515
+          }
+        },
+        "B": {
+          "train_rows": {
+            "benign": 2442,
+            "class": 2442
+          },
+          "test_rows": {
+            "benign": 1077,
+            "class": 1077
+          }
+        },
+        "C": {
+          "train_rows": {
+            "benign": 2962,
+            "class": 2962
+          },
+          "test_rows": {
+            "benign": 459,
+            "class": 459
+          }
+        }
+      }
+    },
+    "scanning": {
+      "sets": {
+        "A": {
+          "f1_d1": 0.7223636156309454,
+          "rules_d1": [
+            {
+              "path": "IN_BYTES <= 48.5",
+              "class_share": 0.6725,
+              "samples": 286706
+            }
+          ],
+          "f1_d2": 0.7360422528466433,
+          "rules_d2": [
+            {
+              "path": "IN_BYTES <= 48.5 and L7_PROTO <= 1.5",
+              "class_share": 0.5213,
+              "samples": 180361
+            },
+            {
+              "path": "IN_BYTES <= 48.5 and L7_PROTO > 1.5",
+              "class_share": 0.9288,
+              "samples": 106345
+            },
+            {
+              "path": "IN_BYTES > 48.5 and TCP_FLAGS > 27.5",
+              "class_share": 0.7762,
+              "samples": 5723
+            }
+          ],
+          "f1_d3": 0.7866423501052445
+        },
+        "B": {
+          "f1_d1": 0.5057509518433431,
+          "rules_d1": [
+            {
+              "path": "LONGEST_FLOW_PKT <= 49",
+              "class_share": 0.6896,
+              "samples": 278833
+            }
+          ],
+          "f1_d2": 0.54174247577175,
+          "rules_d2": [
+            {
+              "path": "LONGEST_FLOW_PKT <= 49 and NUM_PKTS_UP_TO_128_BYTES <= 1.5",
+              "class_share": 0.7708,
+              "samples": 225552
+            },
+            {
+              "path": "LONGEST_FLOW_PKT > 49 and TCP_FLAGS > 27.5",
+              "class_share": 0.781,
+              "samples": 8140
+            }
+          ],
+          "f1_d3": 0.5430432048865305
+        },
+        "C": {
+          "f1_d1": 0.7318523864071298,
+          "rules_d1": [
+            {
+              "path": "IN_BYTES <= 49",
+              "class_share": 0.6732,
+              "samples": 286956
+            }
+          ],
+          "f1_d2": 0.8416683039364619,
+          "rules_d2": [
+            {
+              "path": "IN_BYTES <= 49 and L7_PROTO <= 1.5",
+              "class_share": 0.5438,
+              "samples": 181562
+            },
+            {
+              "path": "IN_BYTES <= 49 and L7_PROTO > 1.5",
+              "class_share": 0.8961,
+              "samples": 105394
+            },
+            {
+              "path": "IN_BYTES > 49 and TCP_FLAGS > 27.5",
+              "class_share": 0.7028,
+              "samples": 5891
+            }
+          ],
+          "f1_d3": 0.8515088070207847
+        }
+      },
+      "rows_by_set": {
+        "A": {
+          "train_rows": {
+            "benign": 200000,
+            "class": 200000
+          },
+          "test_rows": {
+            "benign": 66494,
+            "class": 66494
+          }
+        },
+        "B": {
+          "train_rows": {
+            "benign": 200000,
+            "class": 200000
+          },
+          "test_rows": {
+            "benign": 83163,
+            "class": 83163
+          }
+        },
+        "C": {
+          "train_rows": {
+            "benign": 200000,
+            "class": 200000
+          },
+          "test_rows": {
+            "benign": 11791,
+            "class": 11791
+          }
+        }
+      }
+    },
+    "xss": {
+      "sets": {
+        "A": {
+          "f1_d1": 0.9458895342738733,
+          "rules_d1": [
+            {
+              "path": "L4_DST_PORT <= 80.5",
+              "class_share": 0.9065,
+              "samples": 220601
+            }
+          ],
+          "f1_d2": 0.9652431510637709,
+          "rules_d2": [
+            {
+              "path": "L4_DST_PORT <= 80.5 and OUT_BYTES > 51",
+              "class_share": 0.9403,
+              "samples": 209677
+            }
+          ],
+          "f1_d3": 0.977175921304688
+        },
+        "B": {
+          "f1_d1": 0.967219112536218,
+          "rules_d1": [
+            {
+              "path": "OUT_BYTES > 59",
+              "class_share": 0.8938,
+              "samples": 219623
+            }
+          ],
+          "f1_d2": 0.9732393325855005,
+          "rules_d2": [
+            {
+              "path": "OUT_BYTES > 59 and SHORTEST_FLOW_PKT <= 68.5",
+              "class_share": 0.9203,
+              "samples": 213137
+            }
+          ],
+          "f1_d3": 0.978733142207169
+        },
+        "C": {
+          "f1_d1": 0.9563307223214645,
+          "rules_d1": [
+            {
+              "path": "OUT_BYTES > 59.5",
+              "class_share": 0.8881,
+              "samples": 220353
+            }
+          ],
+          "f1_d2": 0.9676865088687234,
+          "rules_d2": [
+            {
+              "path": "OUT_BYTES > 59.5 and SHORTEST_FLOW_PKT <= 68.5",
+              "class_share": 0.9173,
+              "samples": 213183
+            }
+          ],
+          "f1_d3": 0.977055713050726
+        }
+      },
+      "rows_by_set": {
+        "A": {
+          "train_rows": {
+            "benign": 200000,
+            "class": 200000
+          },
+          "test_rows": {
+            "benign": 99104,
+            "class": 99104
+          }
+        },
+        "B": {
+          "train_rows": {
+            "benign": 200000,
+            "class": 200000
+          },
+          "test_rows": {
+            "benign": 99762,
+            "class": 99762
+          }
+        },
+        "C": {
+          "train_rows": {
+            "benign": 200000,
+            "class": 200000
+          },
+          "test_rows": {
+            "benign": 94656,
+            "class": 94656
+          }
+        }
+      }
+    }
+  },
+  "elapsed_s": 36.3,
+  "split": "grouped per feature set, seed 42"
+}

@@ -1,0 +1,21 @@
+RQ2 summary under several macro-F1 thresholds (from data/audit/shortcut_probes/*.json)
+Generated: 2026-10-02T18:25:49.399188+00:00
+
+NF-v2: 27 classes probed
+  F1 >= 0.80: A depth 1 25/27; A depth 3 26/27; C depth 1 25/27; C depth 3 26/27
+  F1 >= 0.90: A depth 1 24/27; A depth 3 26/27; C depth 1 22/27; C depth 3 26/27
+  F1 >= 0.95: A depth 1 13/27; A depth 3 25/27; C depth 1 11/27; C depth 3 24/27
+  F1 >= 0.99: A depth 1 7/27; A depth 3 15/27; C depth 1 6/27; C depth 3 13/27
+  median F1: A depth 1 0.948; A depth 3 0.993; C depth 1 0.933; C depth 3 0.988
+  F1 loss from A to C, depth 1: median 0.004, max 0.087
+  F1 loss from A to C, depth 3: median 0.000, max 0.032
+
+NF-v3: 26 classes probed
+  F1 >= 0.80: A depth 1 23/26; A depth 3 24/26; C depth 1 21/26; C depth 3 24/26
+  F1 >= 0.90: A depth 1 20/26; A depth 3 23/26; C depth 1 18/26; C depth 3 23/26
+  F1 >= 0.95: A depth 1 13/26; A depth 3 21/26; C depth 1 10/26; C depth 3 20/26
+  F1 >= 0.99: A depth 1 5/26; A depth 3 11/26; C depth 1 2/26; C depth 3 8/26
+  median F1: A depth 1 0.951; A depth 3 0.979; C depth 1 0.933; C depth 3 0.980
+  F1 loss from A to C, depth 1: median 0.005, max 0.157
+  F1 loss from A to C, depth 3: median 0.002, max 0.028
+

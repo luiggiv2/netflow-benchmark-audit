@@ -1,0 +1,48 @@
+Inspection of the undetermined findings F1b and F2d (P3.7)
+Generated: 2026-10-02T17:34:03.681399+00:00
+
+== F1b: exact duplicate records in NF-CSE-CIC-IDS2018-v3 Infiltration (FTP-BruteForce as control)
+[Infiltration] rows 188,152; distinct records 115,805
+  copies per record (rows): 1x 43,732, 2x 143,598, 3x 822
+  distance in the file between first and last copy (rows): min 1, median 1, max 53; most frequent 1 (69.8 % of records)
+  class rows span file positions 14,113,452 to 18,279,200
+  duplicated rows 144,420: days 2018-03-01 (63.8 %), 2018-02-28 (36.2 %)
+    dst port 53 (58.7 %), 443 (8.6 %), 3389 (8.2 %), 135 (1.0 %), 80 (1.0 %); protocol 17 (60.1 %), 6 (39.9 %)
+    src IP 172.31.69.13 (26.8 %), 172.31.69.16 (13.0 %), 172.31.69.17 (12.3 %); dst IP 172.31.0.2 (58.7 %), 172.31.69.7 (6.2 %), 172.31.69.15 (4.5 %)
+    packets per flow 2 (74.2 %), 15 (5.7 %), 4 (5.3 %), 9 (1.0 %)
+  single rows 43,732: days 2018-02-28 (73.2 %), 2018-03-01 (26.8 %)
+    dst port 53 (42.5 %), 443 (7.3 %), 3389 (5.1 %), 135 (2.7 %), 445 (2.4 %); protocol 6 (55.5 %), 17 (44.3 %), 2 (0.1 %)
+    src IP 172.31.69.24 (30.4 %), 172.31.69.9 (17.6 %), 172.31.69.13 (17.2 %); dst IP 172.31.0.2 (42.4 %), 172.31.69.7 (25.5 %), 172.31.69.9 (2.9 %)
+    packets per flow 2 (74.3 %), 4 (5.8 %), 15 (2.7 %), 9 (2.0 %)
+
+[FTP-BruteForce] rows 386,720; distinct records 193,360
+  copies per record (rows): 2x 386,720
+  distance in the file between first and last copy (rows): min 1, median 6, max 22; most frequent 1 (10.9 % of records)
+  class rows span file positions 396,828 to 1,098,096
+  duplicated rows 386,720: days 2018-02-14 (100.0 %)
+    dst port 21 (100.0 %); protocol 6 (100.0 %)
+    src IP 18.221.219.4 (100.0 %); dst IP 172.31.69.25 (100.0 %)
+    packets per flow 2 (100.0 %)
+
+== F2d: CIC web attacks
+[v2] web-attack rows 3,502; main source IP 18.218.115.60 (96.8 %)
+  all rows from 18.218.115.60 by label: DDOS attack-HOIC 108,519, DDoS attacks-LOIC-HTTP 28,999, Brute Force -Web 2,077, Brute Force -XSS 880, SQL Injection 432, DDOS attack-LOIC-UDP 202
+  records (all columns except labels) from 18.218.115.60 carrying >1 label: 2,887; label sets: Brute Force -Web / DDOS attack-HOIC 1,746; Brute Force -XSS / DDOS attack-HOIC 738; DDOS attack-HOIC / SQL Injection 338; Brute Force -Web / DDOS attack-HOIC / SQL Injection 34; Brute Force -Web / Brute Force -XSS / DDOS attack-HOIC 20
+
+[v3] web-attack rows 2,538; source IPs 52.14.77.172 398, 13.58.42.57 396, 18.218.115.60 251, 13.58.82.37 199
+  time window per label for these source IPs (UTC):
+    Benign                   rows     3,273  2018-02-21 12:33 to 2018-03-02 20:05  days: 2018-03-01 (36.7 %), 2018-03-02 (29.1 %), 2018-02-28 (18.3 %), 2018-02-21 (15.9 %)
+    Brute_Force_-Web         rows       364  2018-02-22 12:24 to 2018-02-22 21:29  days: 2018-02-22 (100.0 %)
+    Brute_Force_-XSS         rows       440  2018-02-22 12:25 to 2018-02-22 21:29  days: 2018-02-22 (100.0 %)
+    DDOS_attack-HOIC         rows   103,588  2018-02-21 18:11 to 2018-02-21 19:05  days: 2018-02-21 (100.0 %)
+    DDOS_attack-LOIC-UDP     rows       340  2018-02-21 14:09 to 2018-02-21 14:42  days: 2018-02-21 (100.0 %)
+    DDoS_attacks-LOIC-HTTP   rows    27,436  2018-02-20 14:14 to 2018-02-20 17:29  days: 2018-02-20 (100.0 %)
+    SQL_Injection            rows       440  2018-02-22 15:09 to 2018-02-22 20:28  days: 2018-02-22 (100.0 %)
+  vectors (41 features) carrying >1 of web labels / Benign: 161; rows 11,542
+  of those vectors, rows of the different labels within 1 minute of each other: 117 of 161
+  source IPs of the conflicting rows by label:
+    Benign                    10,243 rows; src 13.58.42.57 (10.0 %), 52.14.77.172 (10.0 %), 13.58.82.37 (9.9 %); days 2018-02-22 (19.1 %), 2018-03-01 (15.3 %), 2018-03-02 (12.8 %)
+    Brute_Force_-Web             431 rows; src 52.14.77.172 (19.5 %), 13.58.42.57 (19.0 %), 13.58.82.37 (18.8 %); days 2018-02-22 (100.0 %)
+    Brute_Force_-XSS             480 rows; src 52.14.77.172 (41.5 %), 13.58.42.57 (41.2 %), 18.218.115.60 (9.0 %); days 2018-02-22 (100.0 %)
+    SQL_Injection                388 rows; src 13.58.82.37 (29.9 %), 13.58.42.57 (29.9 %), 52.14.77.172 (29.6 %); days 2018-02-22 (100.0 %)
+

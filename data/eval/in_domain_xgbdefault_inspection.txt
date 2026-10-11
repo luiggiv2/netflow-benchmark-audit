@@ -1,0 +1,117 @@
+P4.2b inspection of the in-domain results (no experiment re-run except part 3)
+Generated: 2026-10-03T16:18:07.703094+00:00
+Base key: all features but L4_SRC_PORT.
+
+== Part 1, NF-ToN-IoT-v3: 27,520,260 rows, 7,299,522 distinct vectors; largest 10 vectors hold 19.3%, largest 100 22.9%; 24,017 vectors hold half of the rows
+  native class                        rows    vectors   top1  top10 top100     half    largest
+  Backdoor                         203,384     20,650   3.5%  19.5%  49.0%      109      7,064
+  Benign                        16,792,214  2,892,079   5.3%  11.9%  14.6%   17,188    883,575
+  ddos                           4,141,256    538,350  40.4%  76.7%  81.3%        2  1,671,924
+  dos                              203,456    198,539   0.2%   0.9%   1.8%   96,811        342
+  injection                        381,777    350,074   0.6%   1.8%   4.8%  159,186      2,344
+  mitm                               6,013      5,008   0.4%   1.9%   6.3%    2,002         25
+  password                       1,594,777    697,419   3.4%  10.3%  24.4%   10,941     54,266
+  ransomware                         3,971      2,830   9.0%  21.8%  29.2%      845        357
+  scanning                       1,358,977    226,783  19.6%  35.6%  41.8%      813    265,628
+  xss                            2,834,435  2,581,528   0.2%   0.6%   1.0% 1,164,311      6,400
+-- Part 2, NF-ToN-IoT-v3: rows in vectors with >1 canonical label 11,792,729 (42.9%); with both binary labels 11,718,203 (42.6%) in 208,486 vectors
+  Benign / Reconnaissance                       vectors   151,716  rows   7,830,299
+  (excluded) / Benign / DDoS / Injection        vectors       109  rows   1,907,652
+  (excluded) / Benign / CredentialAttack / DDoS / Injection vectors        15  rows     914,930
+  Benign / CredentialAttack                     vectors     6,716  rows     595,881
+  Benign / DDoS / Injection                     vectors        34  rows     187,921
+  Benign / DDoS                                 vectors    35,294  rows     108,146
+  (excluded) / Benign                           vectors    12,616  rows      53,997
+  DDoS / Injection                              vectors       221  rows      49,734
+
+== Part 1, NF-BoT-IoT-v3: 16,933,808 rows, 1,561,202 distinct vectors; largest 10 vectors hold 2.3%, largest 100 3.1%; 105,473 vectors hold half of the rows
+  native class                        rows    vectors   top1  top10 top100     half    largest
+  Benign                            51,989     26,532   2.9%   5.9%   9.1%    3,912      1,536
+  DDoS                           7,150,882    287,453   1.2%   1.4%   2.5%   43,083     86,005
+  DoS                            8,034,190    354,734   1.5%   3.0%   4.5%   52,232    122,631
+  Reconnaissance                 1,695,132    899,045   1.3%   4.5%   6.3%   98,029     22,084
+  Theft                              1,615        448  67.5%  71.8%  78.5%        1      1,090
+-- Part 2, NF-BoT-IoT-v3: rows in vectors with >1 canonical label 681,097 (4.0%); with both binary labels 408,113 (2.4%) in 6,757 vectors
+  Benign / Reconnaissance                       vectors     6,757  rows     408,113
+  DDoS / DoS                                    vectors       251  rows     272,961
+  DDoS / DoS / Reconnaissance                   vectors         1  rows          23
+
+== Part 1, NF-CSE-CIC-IDS2018-v3: 20,115,529 rows, 14,647,955 distinct vectors; largest 10 vectors hold 4.6%, largest 100 7.2%; 4,590,191 vectors hold half of the rows
+  native class                        rows    vectors   top1  top10 top100     half    largest
+  Benign                        17,514,626 13,833,033   0.5%   2.5%   4.5% 5,075,720     90,163
+  Bot                              207,703      2,804  13.2%  70.5%  94.9%        5     27,491
+  Brute_Force_-Web                   1,618      1,105  11.5%  26.8%  37.9%      296        186
+  Brute_Force_-XSS                     480         66  65.6%  87.9% 100.0%        1        315
+  DDOS_attack-HOIC               1,032,311    244,060   0.4%   2.5%  10.5%    7,193      3,826
+  DDOS_attack-LOIC-UDP               3,450      1,723   0.1%   0.7%   5.9%      861          4
+  DDoS_attacks-LOIC-HTTP           288,589    265,827   2.9%   3.0%   3.3%  121,533      8,325
+  DoS_attacks-GoldenEye             61,300     27,410   6.5%   9.4%  10.4%   12,085      4,006
+  DoS_attacks-Hulk                 100,076    100,072   0.0%   0.0%   0.1%   50,034          4
+  DoS_attacks-SlowHTTPTest         105,550          1 100.0% 100.0% 100.0%        1    105,550
+  DoS_attacks-Slowloris             36,040      3,510  33.0%  62.4%  73.5%        2     11,890
+  FTP-BruteForce                   386,720          1 100.0% 100.0% 100.0%        1    386,720
+  Infiltration                     188,152     84,089   0.4%   1.3%   3.3%   24,070        658
+  SQL_Injection                        440        116  62.9%  75.9%  96.4%        1        277
+  SSH-Bruteforce                   188,474     93,980   0.0%   0.1%   0.2%   46,862         60
+-- Part 2, NF-CSE-CIC-IDS2018-v3: rows in vectors with >1 canonical label 879,375 (4.4%); with both binary labels 386,952 (1.9%) in 9,737 vectors
+  CredentialAttack / DoS                        vectors         1  rows     492,330
+  (excluded) / Benign                           vectors     9,714  rows     374,522
+  Benign / DDoS                                 vectors         1  rows       8,519
+  (excluded) / Benign / Injection               vectors        19  rows       3,846
+  (excluded) / Injection                        vectors        46  rows          93
+  Benign / Injection                            vectors         2  rows          63
+  Benign / DoS                                  vectors         1  rows           2
+
+== Part 1, NF-ToN-IoT-v2: 16,940,496 rows, 3,277,362 distinct vectors; largest 10 vectors hold 6.3%, largest 100 12.1%; 4,934 vectors hold half of the rows
+  native class                        rows    vectors   top1  top10 top100     half    largest
+  Benign                         6,099,469  1,083,794   0.6%   1.5%   6.6%      935     34,417
+  backdoor                          16,809        137  58.7%  99.1%  99.8%        1      9,862
+  ddos                           2,026,234    268,694   4.2%  18.1%  43.5%      177     84,546
+  dos                              712,609    321,217   0.0%   0.0%   0.2%   61,438         22
+  injection                        684,465    162,910   3.3%  13.3%  28.4%      732     22,884
+  mitm                               7,723      7,647   0.2%   0.6%   2.3%    3,786         18
+  password                       1,153,323    182,637   4.1%  19.8%  48.8%      119     47,654
+  ransomware                         3,425        559  40.8%  62.0%  86.1%        4      1,397
+  scanning                       3,781,419    295,952  10.4%  19.7%  23.3%   26,646    394,339
+  xss                            2,455,020    953,815   0.1%   0.6%   3.3%   50,778      1,768
+-- Part 2, NF-ToN-IoT-v2: rows in vectors with >1 canonical label 0 (0.0%); with both binary labels 0 (0.0%) in 0 vectors
+
+== Part 1, NF-BoT-IoT-v2: 37,763,497 rows, 357,532 distinct vectors; largest 10 vectors hold 5.3%, largest 100 24.1%; 383 vectors hold half of the rows
+  native class                        rows    vectors   top1  top10 top100     half    largest
+  Benign                           135,037    107,809   1.2%   3.5%   4.5%   40,291      1,561
+  DDoS                          18,331,847     17,705   1.7%   7.8%  42.1%      140    315,053
+  DoS                           16,673,183     39,941   3.1%   9.2%  36.5%      193    524,096
+  Reconnaissance                 2,620,999    191,266   1.8%  13.3%  23.1%    2,227     46,375
+  Theft                              2,431        811  44.9%  59.5%  69.3%        3      1,091
+-- Part 2, NF-BoT-IoT-v2: rows in vectors with >1 canonical label 0 (0.0%); with both binary labels 0 (0.0%) in 0 vectors
+
+== Part 1, NF-CSE-CIC-IDS2018-v2: 18,893,708 rows, 9,035,510 distinct vectors; largest 10 vectors hold 3.4%, largest 100 9.5%; 223,327 vectors hold half of the rows
+  native class                        rows    vectors   top1  top10 top100     half    largest
+  Benign                        16,635,567  8,488,924   0.8%   3.2%   9.2%  450,435    129,152
+  Bot                              143,097        472  91.3%  96.1%  99.6%        1    130,725
+  Brute Force -Web                   2,143      1,496   3.0%   9.0%  25.3%      425         64
+  Brute Force -XSS                     927        793   0.5%   4.4%  25.2%      330          5
+  DDOS attack-HOIC               1,080,858     95,740   0.5%   3.2%  15.5%    1,301      5,072
+  DDOS attack-LOIC-UDP               2,112      2,107   0.2%   0.7%   5.0%    1,051          5
+  DDoS attacks-LOIC-HTTP           307,300     16,791  12.2%  64.2%  92.2%        6     37,621
+  DoS attacks-GoldenEye             27,723     27,018   0.0%   0.2%   1.2%   13,157          7
+  DoS attacks-Hulk                 432,648    311,534   0.0%   0.2%   1.6%   95,210        113
+  DoS attacks-SlowHTTPTest          14,116         15  25.6% 100.0% 100.0%        3      3,618
+  DoS attacks-Slowloris              9,512        188  25.2%  84.4%  98.8%        3      2,395
+  FTP-BruteForce                    25,933         19  17.9% 100.0% 100.0%        3      4,645
+  Infiltration                     116,361     77,735   1.3%   5.2%  10.2%   19,555      1,519
+  SQL Injection                        432        340   1.4%  10.4%  44.4%      124          6
+  SSH-Bruteforce                    94,979     14,701   9.7%  45.6%  82.5%       13      9,172
+-- Part 2, NF-CSE-CIC-IDS2018-v2: rows in vectors with >1 canonical label 446,185 (2.4%); with both binary labels 0 (0.0%) in 0 vectors
+  (excluded) / DDoS                             vectors     1,650  rows     343,762
+  (excluded) / DDoS / Injection                 vectors       136  rows      83,706
+  DDoS / Injection                              vectors       154  rows      18,639
+  (excluded) / Injection                        vectors         4  rows          78
+
+== Part 3, NF-BoT-IoT-v2: largest DDoS vectors (base key), split per seed, G0 BIN predictions after refitting seed 2 (1 = attack)
+  DDoS rows   315,053  Benign rows with the same vector 0  split {1: 'train', 2: 'test', 3: 'train', 4: 'test', 5: 'test'}  pred xgb 1 rf 0 (RF Benign vote share 0.91)
+  DDoS rows   137,317  Benign rows with the same vector 0  split {1: 'val', 2: 'train', 3: 'train', 4: 'train', 5: 'val'}  pred xgb 1 rf 1 (RF Benign vote share 0.0)
+  DDoS rows   126,954  Benign rows with the same vector 0  split {1: 'val', 2: 'train', 3: 'train', 4: 'val', 5: 'val'}  pred xgb 1 rf 1 (RF Benign vote share 0.0)
+  DDoS rows   126,050  Benign rows with the same vector 0  split {1: 'train', 2: 'train', 3: 'train', 4: 'train', 5: 'train'}  pred xgb 1 rf 1 (RF Benign vote share 0.0)
+  DDoS rows   125,907  Benign rows with the same vector 0  split {1: 'train', 2: 'val', 3: 'train', 4: 'train', 5: 'train'}  pred xgb 1 rf 1 (RF Benign vote share 0.0)
+  non-zero features of the largest DDoS vector: {'L4_DST_PORT': 80.0, 'PROTOCOL': 17.0, 'L7_PROTO': 188.0, 'IN_BYTES': 28.0, 'IN_PKTS': 1.0, 'LONGEST_FLOW_PKT': 28.0, 'SHORTEST_FLOW_PKT': 28.0, 'MAX_IP_PKT_LEN': 28.0, 'SRC_TO_DST_SECOND_BYTES': 28.0, 'SRC_TO_DST_AVG_THROUGHPUT': 224000.0, 'NUM_PKTS_UP_TO_128_BYTES': 1.0}

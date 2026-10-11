@@ -1,0 +1,30 @@
+Sensitivity of the main XGBoost results to the setting: library default against max_delta_step=1
+Generated: 2026-10-08T23:31:53.865937+00:00
+Sources: data/eval/in_domain*, cross*, shap* (default: *_xgbdefault). Random forest runs are the same.
+
+== XGBoost default
+  in-domain
+    G0 seed range >= 0.05 in 5 of 12 XGBoost cells (median range 0.037); R0 median above G0 in 11 of 12
+    G-TS minus R0 (points): BoT-v3 BIN +5.7; BoT-v3 CAN +3.7; CSE-v3 BIN -8.0; CSE-v3 CAN -16.7; ToN-v3 BIN +8.3; ToN-v3 CAN +9.3
+  cross-dataset
+    BIN G-NP: strict worse 22, better 2 of 24; at 0.02 worse 16, better 1
+    BIN G-NI: strict worse 18, better 6 of 24; at 0.02 worse 16, better 4
+    CORE into NF-BoT-IoT: DoS and DDoS F1 < 0.01 in every seed in 34 of 40 combinations
+  SHAP
+    ports and identity in the G0 top-5: median 40 % over 12 cells
+    Q4 verdicts (original reply set): {'refuted': 18, 'inconclusive': 2}
+    source vs target Spearman, median: BIN 0.89, CORE 0.95
+
+== XGBoost max_delta_step=1
+  in-domain
+    G0 seed range >= 0.05 in 4 of 12 XGBoost cells (median range 0.026); R0 median above G0 in 11 of 12
+    G-TS minus R0 (points): BoT-v3 BIN +5.7; BoT-v3 CAN +3.6; CSE-v3 BIN -8.2; CSE-v3 CAN +17.8; ToN-v3 BIN +8.4; ToN-v3 CAN +9.3
+  cross-dataset
+    BIN G-NP: strict worse 21, better 3 of 24; at 0.02 worse 13, better 2
+    BIN G-NI: strict worse 18, better 6 of 24; at 0.02 worse 16, better 3
+    CORE into NF-BoT-IoT: DoS and DDoS F1 < 0.01 in every seed in 34 of 40 combinations
+  SHAP
+    ports and identity in the G0 top-5: median 40 % over 12 cells
+    Q4 verdicts (original reply set): {'refuted': 19, 'inconclusive': 1}
+    source vs target Spearman, median: BIN 0.91, CORE 0.97
+

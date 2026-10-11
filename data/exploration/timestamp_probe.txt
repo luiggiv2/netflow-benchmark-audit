@@ -1,0 +1,41 @@
+FLOW_START_MILLISECONDS alone: attack class vs benign, macro F1 on the grouped test split
+Generated: 2026-10-02T21:01:34.200769+00:00
+Balanced samples; reference = depth-3 macro F1 with 41 features, no timestamps (set A of script 34).
+
+== NF-ToN-IoT-v3
+  class                        test rows  ts d1  ts d3  41f d3
+  Backdoor                        30,166  0.940  0.993   0.999
+  ddos                           100,000  0.750  0.836   0.975
+  dos                             30,439  0.742  0.996   0.964
+  injection                       57,059  0.748  0.998   0.966
+  mitm                               911  0.950  0.950   0.971
+  password                       100,000  0.923  0.995   0.994
+  ransomware                         653  0.925  0.998   0.981
+  scanning                       100,000  0.726  0.891   0.842
+  xss                            100,000  0.928  0.990   0.975
+
+== NF-BoT-IoT-v3
+  class                        test rows  ts d1  ts d3  41f d3
+  DDoS                             7,775  0.981  0.987   0.997
+  DoS                              7,775  0.967  0.987   0.983
+  Reconnaissance                   7,775  0.542  0.601   0.924
+  Theft                              249  0.998  0.998   0.974
+
+== NF-CSE-CIC-IDS2018-v3
+  class                        test rows  ts d1  ts d3  41f d3
+  Bot                             31,152  0.964  0.965   1.000
+  Brute_Force_-Web                   224  0.700  0.921   0.944
+  Brute_Force_-XSS                    46  0.693  0.967   0.423
+  DDOS_attack-HOIC               100,000  0.776  0.995   1.000
+  DDOS_attack-LOIC-UDP               482  0.804  0.995   1.000
+  DDoS_attacks-LOIC-HTTP          43,220  0.843  0.993   0.978
+  DoS_attacks-GoldenEye            9,248  0.946  0.996   0.995
+  DoS_attacks-Hulk                15,179  0.881  0.998   0.999
+  DoS_attacks-SlowHTTPTest        15,701  0.894  0.995   1.000
+  DoS_attacks-Slowloris            5,432  0.936  0.997   0.978
+  FTP-BruteForce                  57,494  0.979  0.991   1.000
+  Infiltration                    28,677  0.837  0.886   0.666
+  SQL_Injection                too few rows
+  SSH-Bruteforce                  27,964  0.963  0.992   1.000
+
+NF-v3 classes probed: 26; timestamp depth-3 macro F1 >= 0.95: 21; >= 0.90: 22; median 0.993

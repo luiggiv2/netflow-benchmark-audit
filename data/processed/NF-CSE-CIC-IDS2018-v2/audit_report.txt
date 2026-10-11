@@ -1,0 +1,24 @@
+Audit report for NF-CSE-CIC-IDS2018-v2
+Generated: 2026-10-01T22:28:33.886554+00:00
+Elapsed:   71.0s
+Result:    10 passed, 0 failed (out of 10)
+
+Checks:
+  [I1] OK    raw CSV SHA-1 matches loader manifest
+  [I2] OK    data.parquet SHA-1 matches loader manifest
+  [I3] OK    tabular.parquet SHA-1 matches tabular manifest
+  [I5] OK    values of data.parquet equal the raw CSV (all numeric columns)
+  [C1] OK    row counts equal in data and tabular
+  [C2] OK    metadata SHA-1 identical in data and tabular
+  [C3] OK    canonical x split crosstab identical in data and tabular
+  [N1] OK    tabular.parquet holds no Inf
+  [N2] OK    tabular values equal normalised data.parquet values
+  [N5] OK    no feature vector appears in more than one split
+
+Measured values:
+  rows: raw 18,893,708 | data 18,893,708 | tabular 18,893,708
+  metadata SHA-1 (data and tabular): d297bd2ddda3b852cac4a0fdab49e34637d85cd9
+  unique feature vectors in tabular: 17,126,727
+  feature vectors in more than one split: 0
+  exact test/train sample: 19,792 distinct test vectors sampled of 2,834,301 test rows; found in train: 0
+  non-finite values per feature in data.parquet: none

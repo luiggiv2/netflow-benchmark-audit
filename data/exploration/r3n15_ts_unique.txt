@@ -1,0 +1,16 @@
+Uniqueness of the feature vectors with and without the absolute timestamps (NF-v3)
+Generated: 2026-10-10T22:21:04.822100+00:00
+Source: cached row hashes of the grouped-split keys (results/eval/cache/<dataset>/hash_<set>.npy)
+
+== NF-ToN-IoT-v3
+  G0 key (48 features): rows 27,520,260; distinct vectors 7,299,522 (26.52 % of rows); rows on a vector that occurs once 6,274,719 (22.80 %); largest vector 1,672,654 rows
+  G-TS key (48 features + 2 timestamps): rows 27,520,260; distinct vectors 23,846,557 (86.65 % of rows); rows on a vector that occurs once 22,604,201 (82.14 %); largest vector 437 rows
+
+== NF-BoT-IoT-v3
+  G0 key (48 features): rows 16,933,808; distinct vectors 1,561,202 (9.22 % of rows); rows on a vector that occurs once 893,888 (5.28 %); largest vector 208,636 rows
+  G-TS key (48 features + 2 timestamps): rows 16,933,808; distinct vectors 2,463,703 (14.55 % of rows); rows on a vector that occurs once 1,851,635 (10.93 %); largest vector 384 rows
+
+== NF-CSE-CIC-IDS2018-v3
+  G0 key (48 features): rows 20,115,529; distinct vectors 14,647,955 (72.82 % of rows); rows on a vector that occurs once 13,627,531 (67.75 %); largest vector 492,330 rows
+  G-TS key (48 features + 2 timestamps): rows 20,115,529; distinct vectors 19,175,993 (95.33 % of rows); rows on a vector that occurs once 18,677,970 (92.85 %); largest vector 100 rows
+

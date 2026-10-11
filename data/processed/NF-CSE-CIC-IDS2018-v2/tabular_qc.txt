@@ -1,0 +1,13 @@
+Tabular QC report for NF-CSE-CIC-IDS2018-v2
+Generated: 2026-10-01T22:27:22.562633+00:00
+Input:  data/processed/NF-CSE-CIC-IDS2018-v2/data.parquet  SHA-1 59fbe713c6c09abb1d0c68ef9d42665d6cc072ae
+Rows processed: 18,893,708
+Features: 41 (identifiers, absolute timestamps and labels excluded)
+
+Inf converted to NaN per column:
+  none
+
+NaN per column in tabular.parquet (source NaN + converted Inf):
+  none
+
+tabular.parquet  0b136454441bc61285c6bfd981cdd04c3c469bc8  (657.7 MB)

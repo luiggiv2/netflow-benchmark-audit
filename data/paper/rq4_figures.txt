@@ -1,0 +1,22 @@
+RQ4 figures (P5.6). Commit 058136dbca63437fc75bbc4287391fe69775f2ec
+  F9 NF-ToN-IoT-v2          G0   BIN: ports and service 0.40, identity 0.12, timestamps 0.00, other 0.48
+  F9 NF-ToN-IoT-v2          G0   CAN: ports and service 0.32, identity 0.36, timestamps 0.00, other 0.32
+  F9 NF-BoT-IoT-v2          G0   BIN: ports and service 0.40, identity 0.00, timestamps 0.00, other 0.60
+  F9 NF-BoT-IoT-v2          G0   CAN: ports and service 0.32, identity 0.00, timestamps 0.00, other 0.68
+  F9 NF-CSE-CIC-IDS2018-v2  G0   BIN: ports and service 0.28, identity 0.36, timestamps 0.00, other 0.36
+  F9 NF-CSE-CIC-IDS2018-v2  G0   CAN: ports and service 0.40, identity 0.52, timestamps 0.00, other 0.08
+  F9 NF-ToN-IoT-v3          G0   BIN: ports and service 0.36, identity 0.20, timestamps 0.00, other 0.44
+  F9 NF-ToN-IoT-v3          G0   CAN: ports and service 0.20, identity 0.20, timestamps 0.00, other 0.60
+  F9 NF-BoT-IoT-v3          G0   BIN: ports and service 0.20, identity 0.00, timestamps 0.00, other 0.80
+  F9 NF-BoT-IoT-v3          G0   CAN: ports and service 0.20, identity 0.00, timestamps 0.00, other 0.80
+  F9 NF-CSE-CIC-IDS2018-v3  G0   BIN: ports and service 0.32, identity 0.44, timestamps 0.00, other 0.24
+  F9 NF-CSE-CIC-IDS2018-v3  G0   CAN: ports and service 0.24, identity 0.60, timestamps 0.00, other 0.16
+  F9 NF-ToN-IoT-v3          G-TS BIN: ports and service 0.40, identity 0.04, timestamps 0.40, other 0.16
+  F9 NF-ToN-IoT-v3          G-TS CAN: ports and service 0.20, identity 0.00, timestamps 0.40, other 0.40
+  F9 NF-BoT-IoT-v3          G-TS BIN: ports and service 0.20, identity 0.20, timestamps 0.36, other 0.24
+  F9 NF-BoT-IoT-v3          G-TS CAN: ports and service 0.20, identity 0.20, timestamps 0.40, other 0.20
+  F9 NF-CSE-CIC-IDS2018-v3  G-TS BIN: ports and service 0.24, identity 0.32, timestamps 0.36, other 0.08
+  F9 NF-CSE-CIC-IDS2018-v3  G-TS CAN: ports and service 0.20, identity 0.20, timestamps 0.40, other 0.20
+  F10 24 pairs; Spearman median 0.92 (min 0.85); drop 14.0 to 99.7 points
+  F10 BIN: median Spearman 0.907
+  F10 CORE: median Spearman 0.968

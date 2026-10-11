@@ -1,0 +1,4 @@
+P4.3 table vs row scoring (2026-10-07T01:16:56.596916+00:00): NF-BoT-IoT-v3 -> NF-ToN-IoT-v3, seed 1
+  BIN: rows macro-F1 0.3973 table 0.3973; dedup 0.53118 / 0.53118; ceiling 0.95908 / 0.95908; no conflicts 0.4264 / 0.4264; CI rows [0.33706, 0.4552] table [0.33996, 0.4539]; identical: True
+  CORE: rows macro-F1 0.30255 table 0.30255; dedup 0.28761 / 0.28761; ceiling 0.99373 / 0.99373; no conflicts 0.31903 / 0.31903; CI rows [0.26926, 0.33369] table [0.26762, 0.33294]; identical: True
+  IDENTICAL: True

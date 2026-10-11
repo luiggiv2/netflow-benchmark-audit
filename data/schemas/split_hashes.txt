@@ -1,0 +1,11 @@
+Split hashes (P4.6): SHA-1 of every partition used in the study
+Generated: 2026-10-05T15:41:15.954769+00:00  Producer: scripts/48_split_hashes.py
+Codes 0 train, 1 val, 2 test, one per row in official CSV order (replication: 0 train, 2 test, one
+per sampled row). Check: recompute with nfv3_config.py and compare with data/schemas/split_hashes.csv.
+
+NF-ToN-IoT-v3: 26 partitions; phase1 7b8c25387d386474a141d43a07af0afb90eefc81 (train/val/test 19,356,849/4,074,578/4,088,833)
+NF-BoT-IoT-v3: 26 partitions; phase1 91cd2d083d0395ee8156182bc8a1ba21ae4b7f28 (train/val/test 11,851,442/2,539,486/2,542,880)
+NF-CSE-CIC-IDS2018-v3: 26 partitions; phase1 945526e983f1f6d6ecb2a9b24d314e2df09cecbf (train/val/test 14,018,512/3,075,898/3,021,119)
+NF-ToN-IoT-v2: 36 partitions; phase1 78afa8141286e1631b842cd81f0bf87db2183cc4 (train/val/test 11,859,319/2,546,179/2,534,998)
+NF-BoT-IoT-v2: 36 partitions; phase1 41f5581ab140e4e9871da6a67177aa1daaeaeedc (train/val/test 26,435,042/5,664,794/5,663,661)
+NF-CSE-CIC-IDS2018-v2: 36 partitions; phase1 7edb18151da60f9a4a4e760863a052c68cda2c6c (train/val/test 13,228,790/2,830,617/2,834,301)

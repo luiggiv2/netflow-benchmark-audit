@@ -1,0 +1,176 @@
+{
+ "provenance": {
+  "commit": "30d7967cc6ddcab50c11dcceb4ad91faf48284b3",
+  "dirty": false,
+  "script_sha1": "99dd0592c89c7b7fedefb391611b9efc6612e870",
+  "generated_utc": "2026-10-11T00:50:24.852150+00:00"
+ },
+ "datasets": {
+  "NF-ToN-IoT-v3": {
+   "rows": 27520260,
+   "native_classes": 10,
+   "native_counts": {
+    "Backdoor": 203384,
+    "Benign": 16792214,
+    "ddos": 4141256,
+    "dos": 203456,
+    "injection": 381777,
+    "mitm": 6013,
+    "password": 1594777,
+    "ransomware": 3971,
+    "scanning": 1358977,
+    "xss": 2834435
+   },
+   "canonical_counts": {
+    "Benign": 16792214,
+    "DDoS": 4141256,
+    "CredentialAttack": 1594777,
+    "Reconnaissance": 1358977,
+    "Injection": 381777,
+    "DoS": 203456,
+    "Bot_or_Backdoor": 203384
+   },
+   "excluded_rows": 2844419,
+   "benign_rows": 16792214,
+   "model_features": 49,
+   "netflow_fields": 53
+  },
+  "NF-BoT-IoT-v3": {
+   "rows": 16933808,
+   "native_classes": 5,
+   "native_counts": {
+    "Benign": 51989,
+    "DDoS": 7150882,
+    "DoS": 8034190,
+    "Reconnaissance": 1695132,
+    "Theft": 1615
+   },
+   "canonical_counts": {
+    "DoS": 8034190,
+    "DDoS": 7150882,
+    "Reconnaissance": 1695132,
+    "Benign": 51989
+   },
+   "excluded_rows": 1615,
+   "benign_rows": 51989,
+   "model_features": 49,
+   "netflow_fields": 53
+  },
+  "NF-CSE-CIC-IDS2018-v3": {
+   "rows": 20115529,
+   "native_classes": 15,
+   "native_counts": {
+    "Benign": 17514626,
+    "Bot": 207703,
+    "Brute_Force_-Web": 1618,
+    "Brute_Force_-XSS": 480,
+    "DDOS_attack-HOIC": 1032311,
+    "DDOS_attack-LOIC-UDP": 3450,
+    "DDoS_attacks-LOIC-HTTP": 288589,
+    "DoS_attacks-GoldenEye": 61300,
+    "DoS_attacks-Hulk": 100076,
+    "DoS_attacks-SlowHTTPTest": 105550,
+    "DoS_attacks-Slowloris": 36040,
+    "FTP-BruteForce": 386720,
+    "Infiltration": 188152,
+    "SQL_Injection": 440,
+    "SSH-Bruteforce": 188474
+   },
+   "canonical_counts": {
+    "Benign": 17514626,
+    "DDoS": 1324350,
+    "CredentialAttack": 575194,
+    "DoS": 302966,
+    "Bot_or_Backdoor": 207703,
+    "Injection": 440
+   },
+   "excluded_rows": 190250,
+   "benign_rows": 17514626,
+   "model_features": 49,
+   "netflow_fields": 53
+  },
+  "NF-ToN-IoT-v2": {
+   "rows": 16940496,
+   "native_classes": 10,
+   "native_counts": {
+    "Benign": 6099469,
+    "backdoor": 16809,
+    "ddos": 2026234,
+    "dos": 712609,
+    "injection": 684465,
+    "mitm": 7723,
+    "password": 1153323,
+    "ransomware": 3425,
+    "scanning": 3781419,
+    "xss": 2455020
+   },
+   "canonical_counts": {
+    "Benign": 6099469,
+    "Reconnaissance": 3781419,
+    "DDoS": 2026234,
+    "CredentialAttack": 1153323,
+    "DoS": 712609,
+    "Injection": 684465,
+    "Bot_or_Backdoor": 16809
+   },
+   "excluded_rows": 2466168,
+   "benign_rows": 6099469,
+   "model_features": 41,
+   "netflow_fields": 43
+  },
+  "NF-BoT-IoT-v2": {
+   "rows": 37763497,
+   "native_classes": 5,
+   "native_counts": {
+    "Benign": 135037,
+    "DDoS": 18331847,
+    "DoS": 16673183,
+    "Reconnaissance": 2620999,
+    "Theft": 2431
+   },
+   "canonical_counts": {
+    "DDoS": 18331847,
+    "DoS": 16673183,
+    "Reconnaissance": 2620999,
+    "Benign": 135037
+   },
+   "excluded_rows": 2431,
+   "benign_rows": 135037,
+   "model_features": 41,
+   "netflow_fields": 43
+  },
+  "NF-CSE-CIC-IDS2018-v2": {
+   "rows": 18893708,
+   "native_classes": 15,
+   "native_counts": {
+    "Benign": 16635567,
+    "Bot": 143097,
+    "Brute Force -Web": 2143,
+    "Brute Force -XSS": 927,
+    "DDOS attack-HOIC": 1080858,
+    "DDOS attack-LOIC-UDP": 2112,
+    "DDoS attacks-LOIC-HTTP": 307300,
+    "DoS attacks-GoldenEye": 27723,
+    "DoS attacks-Hulk": 432648,
+    "DoS attacks-SlowHTTPTest": 14116,
+    "DoS attacks-Slowloris": 9512,
+    "FTP-BruteForce": 25933,
+    "Infiltration": 116361,
+    "SQL Injection": 432,
+    "SSH-Bruteforce": 94979
+   },
+   "canonical_counts": {
+    "Benign": 16635567,
+    "DDoS": 1390270,
+    "DoS": 483999,
+    "Bot_or_Backdoor": 143097,
+    "CredentialAttack": 120912,
+    "Injection": 432
+   },
+   "excluded_rows": 119431,
+   "benign_rows": 16635567,
+   "model_features": 41,
+   "netflow_fields": 43
+  }
+ }
+}

@@ -1,0 +1,53 @@
+M8a: Q4 criterion with the original and the expanded reply set (CORE G0 XGBoost -> NF-BoT-IoT DoS/DDoS)
+Generated: 2026-10-08T14:10:42.698168+00:00
+Expanded set = original (OUT_PKTS, OUT_BYTES, DURATION_OUT, SERVER_TCP_FLAGS, DST_TO_SRC_*) + MIN_IP_PKT_LEN, RETRANSMITTED_OUT_BYTES, RETRANSMITTED_OUT_PKTS, TCP_FLAGS, TCP_WIN_MAX_OUT
+
+== NF-ToN-IoT-v2 (40 features; reply features: original 6, expanded 11; chance in a random top-5: 0.75 / 1.38)
+  seed 1: top-5 ['SHORTEST_FLOW_PKT', 'L7_PROTO', 'DURATION_IN', 'OUT_BYTES', 'MIN_IP_PKT_LEN']
+          original: 1 in top-5 -> refuted      share 0.17 | expanded: 2 in top-5 -> inconclusive share 0.26  [stored verdict reproduced: True]
+  seed 2: top-5 ['SHORTEST_FLOW_PKT', 'DURATION_IN', 'OUT_BYTES', 'MIN_IP_PKT_LEN', 'SRC_TO_DST_SECOND_BYTES']
+          original: 1 in top-5 -> refuted      share 0.19 | expanded: 2 in top-5 -> inconclusive share 0.33  [stored verdict reproduced: True]
+  seed 3: top-5 ['SHORTEST_FLOW_PKT', 'DURATION_IN', 'OUT_BYTES', 'L7_PROTO', 'SRC_TO_DST_AVG_THROUGHPUT']
+          original: 1 in top-5 -> refuted      share 0.18 | expanded: 1 in top-5 -> refuted      share 0.24  [stored verdict reproduced: True]
+  seed 4: top-5 ['DURATION_IN', 'SHORTEST_FLOW_PKT', 'MIN_IP_PKT_LEN', 'SRC_TO_DST_SECOND_BYTES', 'OUT_BYTES']
+          original: 1 in top-5 -> refuted      share 0.10 | expanded: 2 in top-5 -> inconclusive share 0.29  [stored verdict reproduced: True]
+  seed 5: top-5 ['SHORTEST_FLOW_PKT', 'MIN_IP_PKT_LEN', 'OUT_BYTES', 'L7_PROTO', 'DURATION_IN']
+          original: 1 in top-5 -> refuted      share 0.21 | expanded: 2 in top-5 -> inconclusive share 0.37  [stored verdict reproduced: True]
+
+== NF-CSE-CIC-IDS2018-v2 (40 features; reply features: original 6, expanded 11; chance in a random top-5: 0.75 / 1.38)
+  seed 1: top-5 ['NUM_PKTS_128_TO_256_BYTES', 'LONGEST_FLOW_PKT', 'TCP_FLAGS', 'TCP_WIN_MAX_IN', 'SRC_TO_DST_AVG_THROUGHPUT']
+          original: 0 in top-5 -> refuted      share 0.04 | expanded: 1 in top-5 -> refuted      share 0.23  [stored verdict reproduced: True]
+  seed 2: top-5 ['IN_BYTES', 'TCP_WIN_MAX_IN', 'TCP_FLAGS', 'LONGEST_FLOW_PKT', 'NUM_PKTS_UP_TO_128_BYTES']
+          original: 0 in top-5 -> refuted      share 0.07 | expanded: 1 in top-5 -> refuted      share 0.20  [stored verdict reproduced: True]
+  seed 3: top-5 ['LONGEST_FLOW_PKT', 'NUM_PKTS_128_TO_256_BYTES', 'TCP_WIN_MAX_IN', 'SERVER_TCP_FLAGS', 'OUT_BYTES']
+          original: 2 in top-5 -> inconclusive share 0.18 | expanded: 2 in top-5 -> inconclusive share 0.27  [stored verdict reproduced: True]
+  seed 4: top-5 ['LONGEST_FLOW_PKT', 'TCP_FLAGS', 'TCP_WIN_MAX_IN', 'L7_PROTO', 'NUM_PKTS_128_TO_256_BYTES']
+          original: 0 in top-5 -> refuted      share 0.03 | expanded: 1 in top-5 -> refuted      share 0.29  [stored verdict reproduced: True]
+  seed 5: top-5 ['TCP_FLAGS', 'NUM_PKTS_128_TO_256_BYTES', 'TCP_WIN_MAX_IN', 'IN_PKTS', 'OUT_BYTES']
+          original: 1 in top-5 -> refuted      share 0.15 | expanded: 2 in top-5 -> inconclusive share 0.40  [stored verdict reproduced: True]
+
+== NF-ToN-IoT-v3 (48 features; reply features: original 10, expanded 15; chance in a random top-5: 1.04 / 1.56)
+  seed 1: top-5 ['SHORTEST_FLOW_PKT', 'SRC_TO_DST_IAT_MAX', 'LONGEST_FLOW_PKT', 'OUT_BYTES', 'SRC_TO_DST_AVG_THROUGHPUT']
+          original: 1 in top-5 -> refuted      share 0.18 | expanded: 1 in top-5 -> refuted      share 0.21  [stored verdict reproduced: True]
+  seed 2: top-5 ['FLOW_DURATION_MILLISECONDS', 'LONGEST_FLOW_PKT', 'SRC_TO_DST_AVG_THROUGHPUT', 'SHORTEST_FLOW_PKT', 'MIN_TTL']
+          original: 0 in top-5 -> refuted      share 0.02 | expanded: 0 in top-5 -> refuted      share 0.07  [stored verdict reproduced: True]
+  seed 3: top-5 ['LONGEST_FLOW_PKT', 'SHORTEST_FLOW_PKT', 'SRC_TO_DST_IAT_MAX', 'MIN_TTL', 'SRC_TO_DST_AVG_THROUGHPUT']
+          original: 0 in top-5 -> refuted      share 0.07 | expanded: 0 in top-5 -> refuted      share 0.15  [stored verdict reproduced: True]
+  seed 4: top-5 ['SHORTEST_FLOW_PKT', 'LONGEST_FLOW_PKT', 'SRC_TO_DST_AVG_THROUGHPUT', 'DST_TO_SRC_AVG_THROUGHPUT', 'L7_PROTO']
+          original: 1 in top-5 -> refuted      share 0.09 | expanded: 1 in top-5 -> refuted      share 0.13  [stored verdict reproduced: True]
+  seed 5: top-5 ['SHORTEST_FLOW_PKT', 'SRC_TO_DST_AVG_THROUGHPUT', 'L7_PROTO', 'DST_TO_SRC_AVG_THROUGHPUT', 'SRC_TO_DST_IAT_MAX']
+          original: 1 in top-5 -> refuted      share 0.11 | expanded: 1 in top-5 -> refuted      share 0.19  [stored verdict reproduced: True]
+
+== NF-CSE-CIC-IDS2018-v3 (48 features; reply features: original 10, expanded 15; chance in a random top-5: 1.04 / 1.56)
+  seed 1: top-5 ['TCP_WIN_MAX_IN', 'CLIENT_TCP_FLAGS', 'LONGEST_FLOW_PKT', 'TCP_FLAGS', 'SRC_TO_DST_AVG_THROUGHPUT']
+          original: 0 in top-5 -> refuted      share 0.03 | expanded: 1 in top-5 -> refuted      share 0.15  [stored verdict reproduced: True]
+  seed 2: top-5 ['TCP_WIN_MAX_IN', 'LONGEST_FLOW_PKT', 'CLIENT_TCP_FLAGS', 'TCP_FLAGS', 'SRC_TO_DST_AVG_THROUGHPUT']
+          original: 0 in top-5 -> refuted      share 0.03 | expanded: 1 in top-5 -> refuted      share 0.15  [stored verdict reproduced: True]
+  seed 3: top-5 ['TCP_WIN_MAX_IN', 'SRC_TO_DST_AVG_THROUGHPUT', 'TCP_FLAGS', 'LONGEST_FLOW_PKT', 'CLIENT_TCP_FLAGS']
+          original: 0 in top-5 -> refuted      share 0.02 | expanded: 1 in top-5 -> refuted      share 0.15  [stored verdict reproduced: True]
+  seed 4: top-5 ['TCP_WIN_MAX_IN', 'TCP_FLAGS', 'LONGEST_FLOW_PKT', 'CLIENT_TCP_FLAGS', 'NUM_PKTS_512_TO_1024_BYTES']
+          original: 0 in top-5 -> refuted      share 0.01 | expanded: 1 in top-5 -> refuted      share 0.14  [stored verdict reproduced: True]
+  seed 5: top-5 ['TCP_WIN_MAX_IN', 'CLIENT_TCP_FLAGS', 'TCP_FLAGS', 'LONGEST_FLOW_PKT', 'SRC_TO_DST_AVG_THROUGHPUT']
+          original: 0 in top-5 -> refuted      share 0.00 | expanded: 1 in top-5 -> refuted      share 0.10  [stored verdict reproduced: True]
+
+Stored original-set results reproduced in 20 of 20 runs

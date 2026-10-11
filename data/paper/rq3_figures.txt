@@ -1,0 +1,43 @@
+RQ3 figures and Table 6 (P5.6). Commit 7f20a17f8a861a44e7b1325b3f3327171014508d
+  F6 NF-ToN-IoT-v2          BIN xgb R0 0.992-0.993  G0 0.969-0.986
+  F6 NF-ToN-IoT-v2          BIN rf  R0 0.995-0.995  G0 0.825-0.985
+  F6 NF-BoT-IoT-v2          BIN xgb R0 0.990-0.991  G0 0.986-0.991
+  F6 NF-BoT-IoT-v2          BIN rf  R0 0.992-0.992  G0 0.542-0.992
+  F6 NF-CSE-CIC-IDS2018-v2  BIN xgb R0 0.985-0.985  G0 0.980-0.983
+  F6 NF-CSE-CIC-IDS2018-v2  BIN rf  R0 0.833-0.834  G0 0.807-0.832
+  F6 NF-ToN-IoT-v3          BIN xgb R0 0.872-0.873  G0 0.831-0.860
+  F6 NF-ToN-IoT-v3          BIN rf  R0 0.885-0.886  G0 0.859-0.880
+  F6 NF-BoT-IoT-v3          BIN xgb R0 0.848-0.857  G0 0.792-0.850
+  F6 NF-BoT-IoT-v3          BIN rf  R0 0.851-0.855  G0 0.807-0.864
+  F6 NF-CSE-CIC-IDS2018-v3  BIN xgb R0 0.947-0.951  G0 0.942-0.973
+  F6 NF-CSE-CIC-IDS2018-v3  BIN rf  R0 0.833-0.835  G0 0.823-0.907
+  F6 NF-ToN-IoT-v2          CAN xgb R0 0.968-0.968  G0 0.789-0.927
+  F6 NF-ToN-IoT-v2          CAN rf  R0 0.975-0.976  G0 0.760-0.920
+  F6 NF-BoT-IoT-v2          CAN xgb R0 0.973-0.974  G0 0.954-0.974
+  F6 NF-BoT-IoT-v2          CAN rf  R0 0.992-0.993  G0 0.691-0.941
+  F6 NF-CSE-CIC-IDS2018-v2  CAN xgb R0 0.872-0.888  G0 0.857-0.874
+  F6 NF-CSE-CIC-IDS2018-v2  CAN rf  R0 0.869-0.885  G0 0.857-0.874
+  F6 NF-ToN-IoT-v3          CAN xgb R0 0.858-0.859  G0 0.823-0.847
+  F6 NF-ToN-IoT-v3          CAN rf  R0 0.862-0.863  G0 0.832-0.846
+  F6 NF-BoT-IoT-v3          CAN xgb R0 0.914-0.921  G0 0.844-0.916
+  F6 NF-BoT-IoT-v3          CAN rf  R0 0.919-0.921  G0 0.844-0.926
+  F6 NF-CSE-CIC-IDS2018-v3  CAN xgb R0 0.815-0.824  G0 0.615-0.881
+  F6 NF-CSE-CIC-IDS2018-v3  CAN rf  R0 0.814-0.826  G0 0.621-0.884
+  F7 BIN v2 XGBoost G0: ToN->ToN 0.98; ToN->BoT 0.33; ToN->CIC 0.45; BoT->ToN 0.46; BoT->BoT 0.99; BoT->CIC 0.81; CIC->ToN 0.50; CIC->BoT 0.51; CIC->CIC 0.98
+  F7 BIN v3 XGBoost G0: ToN->ToN 0.84; ToN->BoT 0.49; ToN->CIC 0.42; BoT->ToN 0.40; BoT->BoT 0.83; BoT->CIC 0.69; CIC->ToN 0.69; CIC->BoT 0.13; CIC->CIC 0.94
+  F7 CORE v2 XGBoost G0: ToN->ToN 0.98; ToN->BoT 0.00; ToN->CIC 0.28; BoT->ToN 0.29; BoT->BoT 0.68; BoT->CIC 0.44; CIC->ToN 0.28; CIC->BoT 0.00; CIC->CIC 1.00
+  F7 CORE v3 XGBoost G0: ToN->ToN 0.93; ToN->BoT 0.02; ToN->CIC 0.30; BoT->ToN 0.30; BoT->BoT 0.99; BoT->CIC 0.39; CIC->ToN 0.30; CIC->BoT 0.00; CIC->CIC 0.99
+  F8 trace BIN G-NP (split of the condition): worse than G0 in 21 of 24 cases (strict, medians over seeds)
+  F8 trace BIN G-NI (split of the condition): worse than G0 in 18 of 24 cases (strict, medians over seeds)
+  F8 BIN G-NP0 (split of G0): worse than G0 in 18 of 24 cases (strict, medians over seeds)
+  F8 BIN G-NI0 (split of G0): worse than G0 in 18 of 24 cases (strict, medians over seeds)
+  T6 NF-ToN-IoT-v2: published 77.33; L0 98.03, L0k 93.33, L0t 92.61, L1 59.13, L2 59.13, L3 59.13, L4 59.10; L1 range 51.75-74.58
+  T6 NF-BoT-IoT-v2: published 99.82; L0 99.88, L0k 99.88, L0t 99.88, L1 99.87, L2 99.87, L3 99.87, L4 99.87; L1 range 99.80-99.94
+  T6 NF-CSE-CIC-IDS2018-v2: published 95.44; L0 96.68, L0k 96.64, L0t 96.64, L1 93.72, L2 93.72, L3 93.53, L4 93.78; L1 range 83.85-95.65
+  T6b NF-ToN-IoT -> NF-BoT-IoT: published 46.75; L0 15.10; L1 18.27
+  T6b NF-ToN-IoT -> NF-CSE-CIC-IDS2018: published 4.5; L0 21.93; L1 16.87
+  T6b NF-BoT-IoT -> NF-CSE-CIC-IDS2018: published 22.32; L0 21.35; L1 21.35
+  T6b NF-BoT-IoT -> NF-ToN-IoT: published 85.5; L0 78.05; L1 78.05
+  T6b NF-CSE-CIC-IDS2018 -> NF-BoT-IoT: published 12.91; L0 0.14; L1 0.09
+  T6b NF-CSE-CIC-IDS2018 -> NF-ToN-IoT: published 30.28; L0 8.89; L1 8.72
+  S4 random-forest cross-dataset table written

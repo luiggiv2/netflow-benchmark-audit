@@ -1,0 +1,10 @@
+Partition checksums (third reviewer report, minor 19)
+provenance: {"commit": "c03f05819df98162c276a67867d1971274dffc18", "dirty": false, "script_sha1": "fcbe296590777fe50943f7c09f6d53a32bd8e6d1", "generated_utc": "2026-10-10T22:46:09.299159+00:00"}
+definition: SHA-256 of the sorted 0-based row positions in the published CSV, as little-endian uint64; matches_stored_counts compares the recomputed training and test row counts with those stored with the runs (probes: per-class balanced counts of the seed-42 probes; null where no run stores them)
+
+  in_domain: 360 partitions; matches stored counts: {'True': 360}
+  cross: 510 partitions; matches stored counts: {'True': 510}
+  replication: 105 partitions; matches stored counts: {'True': 105}
+  probes: 36 partitions; matches stored counts: {'True': 6, 'None': 30}
+
+partitions whose recomputed counts differ from the stored runs: 0

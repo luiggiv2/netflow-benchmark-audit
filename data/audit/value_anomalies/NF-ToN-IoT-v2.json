@@ -1,0 +1,77 @@
+{
+  "dataset": "NF-ToN-IoT-v2",
+  "generated_utc": "2026-10-02T18:15:48.030041+00:00",
+  "rows": 16940496,
+  "class_rows": {
+    "ransomware": 3425,
+    "Benign": 6099469,
+    "xss": 2455020,
+    "scanning": 3781419,
+    "password": 1153323,
+    "dos": 712609,
+    "ddos": 2026234,
+    "injection": 684465,
+    "mitm": 7723,
+    "backdoor": 16809
+  },
+  "checks": {
+    "rate_over_100gbps": {
+      "rows": 2030,
+      "per_class": {
+        "Benign": 1612,
+        "mitm": 317,
+        "scanning": 1,
+        "injection": 2,
+        "ddos": 73,
+        "xss": 3,
+        "password": 22
+      }
+    },
+    "duration_near_2p32": {
+      "rows": 3127422,
+      "per_class": {
+        "ransomware": 309,
+        "Benign": 491120,
+        "xss": 217755,
+        "scanning": 223578,
+        "dos": 6040,
+        "injection": 239361,
+        "password": 472446,
+        "ddos": 1475691,
+        "mitm": 867,
+        "backdoor": 255
+      }
+    },
+    "bytes_below_ip_hdr": {
+      "rows": 33871,
+      "per_class": {
+        "scanning": 20,
+        "Benign": 623,
+        "password": 33228
+      }
+    },
+    "size_bins_gt_pkts": {
+      "rows": 96818,
+      "per_class": {
+        "xss": 178,
+        "scanning": 290,
+        "Benign": 29185,
+        "mitm": 2057,
+        "dos": 82,
+        "password": 64974,
+        "ddos": 32,
+        "injection": 20
+      }
+    }
+  },
+  "constant_features": [],
+  "constant_values": {},
+  "duration_near_2p32_values": {
+    "4294951": 306357,
+    "4294952": 181554,
+    "4294936": 140581,
+    "4294920": 136014,
+    "4294889": 82994
+  },
+  "service_ports": {}
+}

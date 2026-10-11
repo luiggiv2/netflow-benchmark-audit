@@ -1,0 +1,13 @@
+Tabular QC report for NF-ToN-IoT-v3
+Generated: 2026-10-01T20:20:05.644832+00:00
+Input:  data/processed/NF-ToN-IoT-v3/data.parquet  SHA-1 506f057847180a4762d68da9fb500b45092b55bb
+Rows processed: 27,520,260
+Features: 49 (identifiers, absolute timestamps and labels excluded)
+
+Inf converted to NaN per column:
+  none
+
+NaN per column in tabular.parquet (source NaN + converted Inf):
+  none
+
+tabular.parquet  40c0f1235a9bacd55815366e4d9b642d76c8066e  (445.5 MB)

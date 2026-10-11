@@ -1,0 +1,570 @@
+{
+  "dataset": "NF-ToN-IoT-v3",
+  "rows": 27520260,
+  "generated_utc": "2026-10-02T21:29:07.506309+00:00",
+  "R1_stored_split_mismatches": 0,
+  "keys": {
+    "base": {
+      "n_features": 48,
+      "features": [
+        "L4_DST_PORT",
+        "PROTOCOL",
+        "L7_PROTO",
+        "IN_BYTES",
+        "IN_PKTS",
+        "OUT_BYTES",
+        "OUT_PKTS",
+        "TCP_FLAGS",
+        "CLIENT_TCP_FLAGS",
+        "SERVER_TCP_FLAGS",
+        "FLOW_DURATION_MILLISECONDS",
+        "DURATION_IN",
+        "DURATION_OUT",
+        "MIN_TTL",
+        "MAX_TTL",
+        "LONGEST_FLOW_PKT",
+        "SHORTEST_FLOW_PKT",
+        "MIN_IP_PKT_LEN",
+        "MAX_IP_PKT_LEN",
+        "SRC_TO_DST_SECOND_BYTES",
+        "DST_TO_SRC_SECOND_BYTES",
+        "RETRANSMITTED_IN_BYTES",
+        "RETRANSMITTED_IN_PKTS",
+        "RETRANSMITTED_OUT_BYTES",
+        "RETRANSMITTED_OUT_PKTS",
+        "SRC_TO_DST_AVG_THROUGHPUT",
+        "DST_TO_SRC_AVG_THROUGHPUT",
+        "NUM_PKTS_UP_TO_128_BYTES",
+        "NUM_PKTS_128_TO_256_BYTES",
+        "NUM_PKTS_256_TO_512_BYTES",
+        "NUM_PKTS_512_TO_1024_BYTES",
+        "NUM_PKTS_1024_TO_1514_BYTES",
+        "TCP_WIN_MAX_IN",
+        "TCP_WIN_MAX_OUT",
+        "ICMP_TYPE",
+        "ICMP_IPV4_TYPE",
+        "DNS_QUERY_ID",
+        "DNS_QUERY_TYPE",
+        "DNS_TTL_ANSWER",
+        "FTP_COMMAND_RET_CODE",
+        "SRC_TO_DST_IAT_MIN",
+        "SRC_TO_DST_IAT_MAX",
+        "SRC_TO_DST_IAT_AVG",
+        "SRC_TO_DST_IAT_STDDEV",
+        "DST_TO_SRC_IAT_MIN",
+        "DST_TO_SRC_IAT_MAX",
+        "DST_TO_SRC_IAT_AVG",
+        "DST_TO_SRC_IAT_STDDEV"
+      ],
+      "distinct_vectors": 7299522,
+      "V1": {
+        "1": {
+          "hashes_in_two_splits": 0,
+          "shares": [
+            0.7438,
+            0.1278,
+            0.1284
+          ]
+        },
+        "2": {
+          "hashes_in_two_splits": 0,
+          "shares": [
+            0.6981,
+            0.1781,
+            0.1238
+          ]
+        },
+        "3": {
+          "hashes_in_two_splits": 0,
+          "shares": [
+            0.6784,
+            0.182,
+            0.1397
+          ]
+        }
+      },
+      "V3_per_class_seed1": {
+        "(excluded)": {
+          "train": 1993899,
+          "val": 428632,
+          "test": 421888,
+          "test_share": 0.1483,
+          "flag": false
+        },
+        "Benign": {
+          "train": 11858330,
+          "val": 2454187,
+          "test": 2479697,
+          "test_share": 0.1477,
+          "flag": false
+        },
+        "Bot_or_Backdoor": {
+          "train": 146104,
+          "val": 28414,
+          "test": 28866,
+          "test_share": 0.1419,
+          "flag": false
+        },
+        "CredentialAttack": {
+          "train": 1159745,
+          "val": 210910,
+          "test": 224122,
+          "test_share": 0.1405,
+          "flag": false
+        },
+        "DDoS": {
+          "train": 3820864,
+          "val": 173881,
+          "test": 146511,
+          "test_share": 0.0354,
+          "flag": false
+        },
+        "DoS": {
+          "train": 141927,
+          "val": 30885,
+          "test": 30644,
+          "test_share": 0.1506,
+          "flag": false
+        },
+        "Injection": {
+          "train": 267443,
+          "val": 57857,
+          "test": 56477,
+          "test_share": 0.1479,
+          "flag": false
+        },
+        "Reconnaissance": {
+          "train": 1080865,
+          "val": 133629,
+          "test": 144483,
+          "test_share": 0.1063,
+          "flag": false
+        }
+      },
+      "V2_exact_seed1": {
+        "sampled_distinct_test_vectors": 13170,
+        "found_in_train": 0
+      }
+    },
+    "noport": {
+      "n_features": 47,
+      "features": [
+        "PROTOCOL",
+        "L7_PROTO",
+        "IN_BYTES",
+        "IN_PKTS",
+        "OUT_BYTES",
+        "OUT_PKTS",
+        "TCP_FLAGS",
+        "CLIENT_TCP_FLAGS",
+        "SERVER_TCP_FLAGS",
+        "FLOW_DURATION_MILLISECONDS",
+        "DURATION_IN",
+        "DURATION_OUT",
+        "MIN_TTL",
+        "MAX_TTL",
+        "LONGEST_FLOW_PKT",
+        "SHORTEST_FLOW_PKT",
+        "MIN_IP_PKT_LEN",
+        "MAX_IP_PKT_LEN",
+        "SRC_TO_DST_SECOND_BYTES",
+        "DST_TO_SRC_SECOND_BYTES",
+        "RETRANSMITTED_IN_BYTES",
+        "RETRANSMITTED_IN_PKTS",
+        "RETRANSMITTED_OUT_BYTES",
+        "RETRANSMITTED_OUT_PKTS",
+        "SRC_TO_DST_AVG_THROUGHPUT",
+        "DST_TO_SRC_AVG_THROUGHPUT",
+        "NUM_PKTS_UP_TO_128_BYTES",
+        "NUM_PKTS_128_TO_256_BYTES",
+        "NUM_PKTS_256_TO_512_BYTES",
+        "NUM_PKTS_512_TO_1024_BYTES",
+        "NUM_PKTS_1024_TO_1514_BYTES",
+        "TCP_WIN_MAX_IN",
+        "TCP_WIN_MAX_OUT",
+        "ICMP_TYPE",
+        "ICMP_IPV4_TYPE",
+        "DNS_QUERY_ID",
+        "DNS_QUERY_TYPE",
+        "DNS_TTL_ANSWER",
+        "FTP_COMMAND_RET_CODE",
+        "SRC_TO_DST_IAT_MIN",
+        "SRC_TO_DST_IAT_MAX",
+        "SRC_TO_DST_IAT_AVG",
+        "SRC_TO_DST_IAT_STDDEV",
+        "DST_TO_SRC_IAT_MIN",
+        "DST_TO_SRC_IAT_MAX",
+        "DST_TO_SRC_IAT_AVG",
+        "DST_TO_SRC_IAT_STDDEV"
+      ],
+      "distinct_vectors": 5886034,
+      "V1": {
+        "1": {
+          "hashes_in_two_splits": 0,
+          "shares": [
+            0.7792,
+            0.1536,
+            0.0672
+          ]
+        },
+        "2": {
+          "hashes_in_two_splits": 0,
+          "shares": [
+            0.5853,
+            0.192,
+            0.2227
+          ]
+        },
+        "3": {
+          "hashes_in_two_splits": 0,
+          "shares": [
+            0.579,
+            0.1105,
+            0.3105
+          ]
+        }
+      },
+      "V3_per_class_seed1": {
+        "(excluded)": {
+          "train": 1992649,
+          "val": 427243,
+          "test": 424527,
+          "test_share": 0.1492,
+          "flag": false
+        },
+        "Benign": {
+          "train": 14652842,
+          "val": 1236914,
+          "test": 902458,
+          "test_share": 0.0537,
+          "flag": false
+        },
+        "Bot_or_Backdoor": {
+          "train": 143332,
+          "val": 26704,
+          "test": 33348,
+          "test_share": 0.164,
+          "flag": false
+        },
+        "CredentialAttack": {
+          "train": 1155430,
+          "val": 209526,
+          "test": 229821,
+          "test_share": 0.1441,
+          "flag": false
+        },
+        "DDoS": {
+          "train": 1796537,
+          "val": 2204575,
+          "test": 140144,
+          "test_share": 0.0338,
+          "flag": false
+        },
+        "DoS": {
+          "train": 142709,
+          "val": 30851,
+          "test": 29896,
+          "test_share": 0.1469,
+          "flag": false
+        },
+        "Injection": {
+          "train": 268619,
+          "val": 57319,
+          "test": 55839,
+          "test_share": 0.1463,
+          "flag": false
+        },
+        "Reconnaissance": {
+          "train": 1291790,
+          "val": 34906,
+          "test": 32281,
+          "test_share": 0.0238,
+          "flag": false
+        }
+      },
+      "V2_exact_seed1": {
+        "sampled_distinct_test_vectors": 12216,
+        "found_in_train": 0
+      }
+    },
+    "noid": {
+      "n_features": 40,
+      "features": [
+        "PROTOCOL",
+        "L7_PROTO",
+        "IN_BYTES",
+        "IN_PKTS",
+        "OUT_BYTES",
+        "OUT_PKTS",
+        "TCP_FLAGS",
+        "CLIENT_TCP_FLAGS",
+        "SERVER_TCP_FLAGS",
+        "FLOW_DURATION_MILLISECONDS",
+        "DURATION_IN",
+        "DURATION_OUT",
+        "LONGEST_FLOW_PKT",
+        "SHORTEST_FLOW_PKT",
+        "MIN_IP_PKT_LEN",
+        "MAX_IP_PKT_LEN",
+        "SRC_TO_DST_SECOND_BYTES",
+        "DST_TO_SRC_SECOND_BYTES",
+        "RETRANSMITTED_IN_BYTES",
+        "RETRANSMITTED_IN_PKTS",
+        "RETRANSMITTED_OUT_BYTES",
+        "RETRANSMITTED_OUT_PKTS",
+        "SRC_TO_DST_AVG_THROUGHPUT",
+        "DST_TO_SRC_AVG_THROUGHPUT",
+        "NUM_PKTS_UP_TO_128_BYTES",
+        "NUM_PKTS_128_TO_256_BYTES",
+        "NUM_PKTS_256_TO_512_BYTES",
+        "NUM_PKTS_512_TO_1024_BYTES",
+        "NUM_PKTS_1024_TO_1514_BYTES",
+        "ICMP_TYPE",
+        "ICMP_IPV4_TYPE",
+        "FTP_COMMAND_RET_CODE",
+        "SRC_TO_DST_IAT_MIN",
+        "SRC_TO_DST_IAT_MAX",
+        "SRC_TO_DST_IAT_AVG",
+        "SRC_TO_DST_IAT_STDDEV",
+        "DST_TO_SRC_IAT_MIN",
+        "DST_TO_SRC_IAT_MAX",
+        "DST_TO_SRC_IAT_AVG",
+        "DST_TO_SRC_IAT_STDDEV"
+      ],
+      "distinct_vectors": 3884350,
+      "V1": {
+        "1": {
+          "hashes_in_two_splits": 0,
+          "shares": [
+            0.7543,
+            0.1425,
+            0.1032
+          ]
+        },
+        "2": {
+          "hashes_in_two_splits": 0,
+          "shares": [
+            0.643,
+            0.2906,
+            0.0665
+          ]
+        },
+        "3": {
+          "hashes_in_two_splits": 0,
+          "shares": [
+            0.7809,
+            0.0959,
+            0.1232
+          ]
+        }
+      },
+      "V3_per_class_seed1": {
+        "(excluded)": {
+          "train": 1998367,
+          "val": 505938,
+          "test": 340114,
+          "test_share": 0.1196,
+          "flag": false
+        },
+        "Benign": {
+          "train": 11918396,
+          "val": 2906605,
+          "test": 1967213,
+          "test_share": 0.1172,
+          "flag": false
+        },
+        "Bot_or_Backdoor": {
+          "train": 134048,
+          "val": 28132,
+          "test": 41204,
+          "test_share": 0.2026,
+          "flag": false
+        },
+        "CredentialAttack": {
+          "train": 1125884,
+          "val": 220382,
+          "test": 248511,
+          "test_share": 0.1558,
+          "flag": false
+        },
+        "DDoS": {
+          "train": 3854406,
+          "val": 145136,
+          "test": 141714,
+          "test_share": 0.0342,
+          "flag": false
+        },
+        "DoS": {
+          "train": 159396,
+          "val": 24610,
+          "test": 19450,
+          "test_share": 0.0956,
+          "flag": false
+        },
+        "Injection": {
+          "train": 267886,
+          "val": 58813,
+          "test": 55078,
+          "test_share": 0.1443,
+          "flag": false
+        },
+        "Reconnaissance": {
+          "train": 1299586,
+          "val": 33282,
+          "test": 26109,
+          "test_share": 0.0192,
+          "flag": false
+        }
+      },
+      "V2_exact_seed1": {
+        "sampled_distinct_test_vectors": 5573,
+        "found_in_train": 0
+      }
+    },
+    "ts": {
+      "n_features": 50,
+      "features": [
+        "L4_DST_PORT",
+        "PROTOCOL",
+        "L7_PROTO",
+        "IN_BYTES",
+        "IN_PKTS",
+        "OUT_BYTES",
+        "OUT_PKTS",
+        "TCP_FLAGS",
+        "CLIENT_TCP_FLAGS",
+        "SERVER_TCP_FLAGS",
+        "FLOW_DURATION_MILLISECONDS",
+        "DURATION_IN",
+        "DURATION_OUT",
+        "MIN_TTL",
+        "MAX_TTL",
+        "LONGEST_FLOW_PKT",
+        "SHORTEST_FLOW_PKT",
+        "MIN_IP_PKT_LEN",
+        "MAX_IP_PKT_LEN",
+        "SRC_TO_DST_SECOND_BYTES",
+        "DST_TO_SRC_SECOND_BYTES",
+        "RETRANSMITTED_IN_BYTES",
+        "RETRANSMITTED_IN_PKTS",
+        "RETRANSMITTED_OUT_BYTES",
+        "RETRANSMITTED_OUT_PKTS",
+        "SRC_TO_DST_AVG_THROUGHPUT",
+        "DST_TO_SRC_AVG_THROUGHPUT",
+        "NUM_PKTS_UP_TO_128_BYTES",
+        "NUM_PKTS_128_TO_256_BYTES",
+        "NUM_PKTS_256_TO_512_BYTES",
+        "NUM_PKTS_512_TO_1024_BYTES",
+        "NUM_PKTS_1024_TO_1514_BYTES",
+        "TCP_WIN_MAX_IN",
+        "TCP_WIN_MAX_OUT",
+        "ICMP_TYPE",
+        "ICMP_IPV4_TYPE",
+        "DNS_QUERY_ID",
+        "DNS_QUERY_TYPE",
+        "DNS_TTL_ANSWER",
+        "FTP_COMMAND_RET_CODE",
+        "SRC_TO_DST_IAT_MIN",
+        "SRC_TO_DST_IAT_MAX",
+        "SRC_TO_DST_IAT_AVG",
+        "SRC_TO_DST_IAT_STDDEV",
+        "DST_TO_SRC_IAT_MIN",
+        "DST_TO_SRC_IAT_MAX",
+        "DST_TO_SRC_IAT_AVG",
+        "DST_TO_SRC_IAT_STDDEV",
+        "FLOW_START_MILLISECONDS",
+        "FLOW_END_MILLISECONDS"
+      ],
+      "distinct_vectors": 23846557,
+      "V1": {
+        "1": {
+          "hashes_in_two_splits": 0,
+          "shares": [
+            0.6996,
+            0.1501,
+            0.1502
+          ]
+        },
+        "2": {
+          "hashes_in_two_splits": 0,
+          "shares": [
+            0.6998,
+            0.1502,
+            0.15
+          ]
+        },
+        "3": {
+          "hashes_in_two_splits": 0,
+          "shares": [
+            0.6999,
+            0.1502,
+            0.1499
+          ]
+        }
+      },
+      "V3_per_class_seed1": {
+        "(excluded)": {
+          "train": 1992163,
+          "val": 425689,
+          "test": 426567,
+          "test_share": 0.15,
+          "flag": false
+        },
+        "Benign": {
+          "train": 11748901,
+          "val": 2521003,
+          "test": 2522310,
+          "test_share": 0.1502,
+          "flag": false
+        },
+        "Bot_or_Backdoor": {
+          "train": 141842,
+          "val": 30768,
+          "test": 30774,
+          "test_share": 0.1513,
+          "flag": false
+        },
+        "CredentialAttack": {
+          "train": 1115960,
+          "val": 238800,
+          "test": 240017,
+          "test_share": 0.1505,
+          "flag": false
+        },
+        "DDoS": {
+          "train": 2895929,
+          "val": 623928,
+          "test": 621399,
+          "test_share": 0.1501,
+          "flag": false
+        },
+        "DoS": {
+          "train": 142536,
+          "val": 30402,
+          "test": 30518,
+          "test_share": 0.15,
+          "flag": false
+        },
+        "Injection": {
+          "train": 266712,
+          "val": 57322,
+          "test": 57743,
+          "test_share": 0.1512,
+          "flag": false
+        },
+        "Reconnaissance": {
+          "train": 950340,
+          "val": 204188,
+          "test": 204449,
+          "test_share": 0.1504,
+          "flag": false
+        }
+      },
+      "V2_exact_seed1": {
+        "sampled_distinct_test_vectors": 19747,
+        "found_in_train": 0
+      }
+    }
+  },
+  "elapsed_s": 159.2
+}

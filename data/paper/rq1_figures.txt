@@ -1,0 +1,24 @@
+RQ1 figures (P5.6). Commit 071b59df4723c6fc217f38f1f962d1295252685a
+
+F2 (percent of rows; v2, v3)
+  NF-ToN-IoT           repeated (key 40)  80.65  77.28   minority (key 40)  0.00  4.12   repeated (key 41)  22.46  46.80
+  NF-BoT-IoT           repeated (key 40)  99.05  92.70   minority (key 40)  0.00  1.49   repeated (key 41)  19.45   1.48
+  NF-CSE-CIC-IDS2018   repeated (key 40)  52.18  35.38   minority (key 40)  0.02  0.66   repeated (key 41)   9.35  14.13
+  records repeated in every column (% of class; v2, v3):
+    ToN backdoor           0.00  50.00
+    ToN mitm               0.00  12.39
+    CIC Slowloris          0.00  50.00
+    CIC SSH-Bruteforce     0.00  50.00
+    CIC FTP-BruteForce     0.00  50.00
+    CIC LOIC-UDP           0.00  50.00
+    CIC GoldenEye          0.00  50.00
+    CIC Bot                0.00  46.34
+    CIC Infil.             0.48  38.45
+    CIC XSS                0.00   4.17
+F4 FLOW_DURATION_MILLISECONDS
+  NF-ToN-IoT-v2            zero  81.54 %  >=4,000,000 ms  18.46 %  other   0.00 %  max 4,294,966
+  NF-BoT-IoT-v2            zero   6.87 %  >=4,000,000 ms  93.13 %  other   0.00 %  max 4,294,966
+  NF-CSE-CIC-IDS2018-v2    zero  86.62 %  >=4,000,000 ms  13.38 %  other   0.00 %  max 4,294,967
+  NF-ToN-IoT-v3            zero   0.00 %  >=4,000,000 ms   0.00 %  other 100.00 %  max 120,999
+  NF-BoT-IoT-v3            zero   6.21 %  >=4,000,000 ms   0.00 %  other  93.79 %  max 120,998
+  NF-CSE-CIC-IDS2018-v3    zero   0.00 %  >=4,000,000 ms   0.00 %  other 100.00 %  max 120,999

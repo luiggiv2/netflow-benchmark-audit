@@ -1,0 +1,114 @@
+P4.3b robustness (2026-10-07T01:23:38.229653+00:00)
+
+Part 4. Robustness of the P4.3 claims
+Sign test (two-sided binomial, p = 0.5) of better vs worse cases against G0 on the target; a case is a
+direction x model (median over seeds). threshold 0 = strict sign; 'all' = 24 cases, 'off floor' = cases
+whose G0 target median macro-F1 is at least 0.05.
+
+  task cond  cases       thr   n better similar worse         p
+  BIN  R0    all        0.00  24     12       0    12         1
+  BIN  R0    all        0.01  24      5      12     7      0.77
+  BIN  R0    all        0.02  24      3      18     3         1
+  BIN  R0    all        0.05  24      1      22     1         1
+  BIN  R0    off floor  0.00  24     12       0    12         1
+  BIN  R0    off floor  0.01  24      5      12     7      0.77
+  BIN  R0    off floor  0.02  24      3      18     3         1
+  BIN  R0    off floor  0.05  24      1      22     1         1
+  BIN  G-NC  all        0.00  24      3      12     9      0.15
+  BIN  G-NC  all        0.01  24      2      16     6      0.29
+  BIN  G-NC  all        0.02  24      2      18     4      0.69
+  BIN  G-NC  all        0.05  24      0      20     4      0.12
+  BIN  G-NC  off floor  0.00  24      3      12     9      0.15
+  BIN  G-NC  off floor  0.01  24      2      16     6      0.29
+  BIN  G-NC  off floor  0.02  24      2      18     4      0.69
+  BIN  G-NC  off floor  0.05  24      0      20     4      0.12
+  BIN  G-NP  all        0.00  24      3       0    21   0.00028
+  BIN  G-NP  all        0.01  24      2       5    17   0.00073
+  BIN  G-NP  all        0.02  24      2       9    13    0.0074
+  BIN  G-NP  all        0.05  24      1      14     9     0.021
+  BIN  G-NP  off floor  0.00  24      3       0    21   0.00028
+  BIN  G-NP  off floor  0.01  24      2       5    17   0.00073
+  BIN  G-NP  off floor  0.02  24      2       9    13    0.0074
+  BIN  G-NP  off floor  0.05  24      1      14     9     0.021
+  BIN  G-NI  all        0.00  24      6       0    18     0.023
+  BIN  G-NI  all        0.01  24      4       2    18    0.0043
+  BIN  G-NI  all        0.02  24      3       5    16    0.0044
+  BIN  G-NI  all        0.05  24      2       9    13    0.0074
+  BIN  G-NI  off floor  0.00  24      6       0    18     0.023
+  BIN  G-NI  off floor  0.01  24      4       2    18    0.0043
+  BIN  G-NI  off floor  0.02  24      3       5    16    0.0044
+  BIN  G-NI  off floor  0.05  24      2       9    13    0.0074
+  CORE R0    all        0.00  24     12       3     9      0.66
+  CORE R0    all        0.01  24      3      17     4         1
+  CORE R0    all        0.02  24      1      22     1         1
+  CORE R0    all        0.05  24      1      22     1         1
+  CORE R0    off floor  0.00  16     11       0     5      0.21
+  CORE R0    off floor  0.01  16      3      10     3         1
+  CORE R0    off floor  0.02  16      1      14     1         1
+  CORE R0    off floor  0.05  16      1      14     1         1
+  CORE G-NC  all        0.00  24      7      12     5      0.77
+  CORE G-NC  all        0.01  24      2      21     1         1
+  CORE G-NC  all        0.02  24      2      22     0       0.5
+  CORE G-NC  all        0.05  24      1      23     0         1
+  CORE G-NC  off floor  0.00  16      5       8     3      0.73
+  CORE G-NC  off floor  0.01  16      1      14     1         1
+  CORE G-NC  off floor  0.02  16      1      15     0         1
+  CORE G-NC  off floor  0.05  16      0      16     0       nan
+  CORE G-NP  all        0.00  24      7       2    15      0.13
+  CORE G-NP  all        0.01  24      0      20     4      0.12
+  CORE G-NP  all        0.02  24      0      22     2       0.5
+  CORE G-NP  all        0.05  24      0      22     2       0.5
+  CORE G-NP  off floor  0.00  16      6       0    10      0.45
+  CORE G-NP  off floor  0.01  16      0      13     3      0.25
+  CORE G-NP  off floor  0.02  16      0      14     2       0.5
+  CORE G-NP  off floor  0.05  16      0      14     2       0.5
+  CORE G-NI  all        0.00  24      7       0    17     0.064
+  CORE G-NI  all        0.01  24      3      16     5      0.73
+  CORE G-NI  all        0.02  24      1      20     3      0.62
+  CORE G-NI  all        0.05  24      0      22     2       0.5
+  CORE G-NI  off floor  0.00  16      4       0    12     0.077
+  CORE G-NI  off floor  0.01  16      3       9     4         1
+  CORE G-NI  off floor  0.02  16      1      12     3      0.62
+  CORE G-NI  off floor  0.05  16      0      14     2       0.5
+
+  CORE per-class F1 into NF-BoT-IoT, every seed: max over seeds of DoS and DDoS F1, and Benign F1 range
+    CIC-v2 -> BoT-v2       rf  G-NC  n=5  max DoS F1 0.0001  max DDoS F1 0.0000  Benign F1 0.0076-0.0076
+    CIC-v2 -> BoT-v2       rf  G-NI  n=5  max DoS F1 0.0001  max DDoS F1 0.0000  Benign F1 0.0073-0.0076
+    CIC-v2 -> BoT-v2       rf  G-NP  n=5  max DoS F1 0.0000  max DDoS F1 0.0000  Benign F1 0.0072-0.0076
+    CIC-v2 -> BoT-v2       rf  G0    n=5  max DoS F1 0.0001  max DDoS F1 0.0000  Benign F1 0.0076-0.0076
+    CIC-v2 -> BoT-v2       rf  R0    n=5  max DoS F1 0.0001  max DDoS F1 0.0000  Benign F1 0.0076-0.0076
+    CIC-v2 -> BoT-v2       xgb G-NC  n=5  max DoS F1 0.0010  max DDoS F1 0.9853  Benign F1 0.0065-0.0143
+    CIC-v2 -> BoT-v2       xgb G-NI  n=5  max DoS F1 0.0012  max DDoS F1 0.0000  Benign F1 0.0072-0.0076
+    CIC-v2 -> BoT-v2       xgb G-NP  n=5  max DoS F1 0.0010  max DDoS F1 0.0000  Benign F1 0.0065-0.0072
+    CIC-v2 -> BoT-v2       xgb G0    n=5  max DoS F1 0.0010  max DDoS F1 0.9853  Benign F1 0.0065-0.0143
+    CIC-v2 -> BoT-v2       xgb R0    n=5  max DoS F1 0.0011  max DDoS F1 0.0001  Benign F1 0.0073-0.0073
+    CIC-v3 -> BoT-v3       rf  G-NC  n=5  max DoS F1 0.0055  max DDoS F1 0.0000  Benign F1 0.0067-0.0068
+    CIC-v3 -> BoT-v3       rf  G-NI  n=5  max DoS F1 0.0056  max DDoS F1 0.0000  Benign F1 0.0067-0.0068
+    CIC-v3 -> BoT-v3       rf  G-NP  n=5  max DoS F1 0.0026  max DDoS F1 0.0000  Benign F1 0.0066-0.0067
+    CIC-v3 -> BoT-v3       rf  G0    n=5  max DoS F1 0.0013  max DDoS F1 0.0000  Benign F1 0.0067-0.0068
+    CIC-v3 -> BoT-v3       rf  R0    n=5  max DoS F1 0.0011  max DDoS F1 0.0000  Benign F1 0.0067-0.0068
+    CIC-v3 -> BoT-v3       xgb G-NC  n=5  max DoS F1 0.0014  max DDoS F1 0.0000  Benign F1 0.0062-0.0068
+    CIC-v3 -> BoT-v3       xgb G-NI  n=5  max DoS F1 0.0083  max DDoS F1 0.0000  Benign F1 0.0063-0.0067
+    CIC-v3 -> BoT-v3       xgb G-NP  n=5  max DoS F1 0.0012  max DDoS F1 0.0000  Benign F1 0.0062-0.0067
+    CIC-v3 -> BoT-v3       xgb G0    n=5  max DoS F1 0.0062  max DDoS F1 0.0004  Benign F1 0.0062-0.0067
+    CIC-v3 -> BoT-v3       xgb R0    n=5  max DoS F1 0.0011  max DDoS F1 0.0000  Benign F1 0.0063-0.0067
+    ToN-v2 -> BoT-v2       rf  G-NC  n=5  max DoS F1 0.0000  max DDoS F1 0.0000  Benign F1 0.0075-0.0076
+    ToN-v2 -> BoT-v2       rf  G-NI  n=5  max DoS F1 0.0000  max DDoS F1 0.0000  Benign F1 0.0075-0.0076
+    ToN-v2 -> BoT-v2       rf  G-NP  n=5  max DoS F1 0.0000  max DDoS F1 0.0000  Benign F1 0.0075-0.0076
+    ToN-v2 -> BoT-v2       rf  G0    n=5  max DoS F1 0.0000  max DDoS F1 0.0000  Benign F1 0.0075-0.0076
+    ToN-v2 -> BoT-v2       rf  R0    n=5  max DoS F1 0.0000  max DDoS F1 0.0000  Benign F1 0.0076-0.0076
+    ToN-v2 -> BoT-v2       xgb G-NC  n=5  max DoS F1 0.0000  max DDoS F1 0.0000  Benign F1 0.0075-0.0076
+    ToN-v2 -> BoT-v2       xgb G-NI  n=5  max DoS F1 0.0000  max DDoS F1 0.0026  Benign F1 0.0074-0.0077
+    ToN-v2 -> BoT-v2       xgb G-NP  n=5  max DoS F1 0.0000  max DDoS F1 0.0000  Benign F1 0.0075-0.0076
+    ToN-v2 -> BoT-v2       xgb G0    n=5  max DoS F1 0.0000  max DDoS F1 0.0000  Benign F1 0.0075-0.0076
+    ToN-v2 -> BoT-v2       xgb R0    n=5  max DoS F1 0.0000  max DDoS F1 0.0000  Benign F1 0.0076-0.0076
+    ToN-v3 -> BoT-v3       rf  G-NC  n=5  max DoS F1 0.0000  max DDoS F1 0.0047  Benign F1 0.0065-0.0067
+    ToN-v3 -> BoT-v3       rf  G-NI  n=5  max DoS F1 0.0000  max DDoS F1 0.0022  Benign F1 0.0065-0.0066
+    ToN-v3 -> BoT-v3       rf  G-NP  n=5  max DoS F1 0.0000  max DDoS F1 0.0011  Benign F1 0.0065-0.0065
+    ToN-v3 -> BoT-v3       rf  G0    n=5  max DoS F1 0.0000  max DDoS F1 0.0021  Benign F1 0.0066-0.0068
+    ToN-v3 -> BoT-v3       rf  R0    n=5  max DoS F1 0.0000  max DDoS F1 0.0009  Benign F1 0.0067-0.0068
+    ToN-v3 -> BoT-v3       xgb G-NC  n=5  max DoS F1 0.0001  max DDoS F1 0.4926  Benign F1 0.0096-0.0111
+    ToN-v3 -> BoT-v3       xgb G-NI  n=5  max DoS F1 0.0001  max DDoS F1 0.0022  Benign F1 0.0065-0.0067
+    ToN-v3 -> BoT-v3       xgb G-NP  n=5  max DoS F1 0.0068  max DDoS F1 0.0571  Benign F1 0.0065-0.0067
+    ToN-v3 -> BoT-v3       xgb G0    n=5  max DoS F1 0.0069  max DDoS F1 0.4745  Benign F1 0.0065-0.0098
+    ToN-v3 -> BoT-v3       xgb R0    n=5  max DoS F1 0.0133  max DDoS F1 0.4161  Benign F1 0.0066-0.0087

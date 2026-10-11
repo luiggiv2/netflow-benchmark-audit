@@ -1,0 +1,100 @@
+{
+  "dataset": "NF-ToN-IoT-v2",
+  "generated_utc": "2026-10-02T02:42:11.335727+00:00",
+  "script": "scripts/01_load_nfv3.py",
+  "environment": {
+    "pandas": "3.0.3",
+    "numpy": "2.4.6"
+  },
+  "input": {
+    "path": "9bafce9d380588c2_MOHANAD_A4706/data/NF-ToN-IoT-v2.csv",
+    "sha1": "c0e014512c9a825146c52982d3cf12d3fce1ccc9"
+  },
+  "config": {
+    "split_method": "grouped by pandas.util.hash_pandas_object of the normalised 41-feature vector, mixed with the seed constant through splitmix64, modulo 100",
+    "split_seed": 42,
+    "split_seed_const": "0xf119a835ed784c12",
+    "train_high": 70,
+    "val_high": 85,
+    "class_mapping_path": "data/schemas/class_mapping_v2.csv",
+    "class_mapping_sha1": "97d99d2afc8f0c8541de6d732631fc9cd6b3b952"
+  },
+  "typo_correction": {
+    "from": "Infilteration",
+    "to": "Infiltration",
+    "rows_affected": 0
+  },
+  "outputs": {
+    "parquet": {
+      "path": "data/processed/NF-ToN-IoT-v2/data.parquet",
+      "sha1": "d65614dbed3ba677f8ab1900cdf4650c11ff42ce",
+      "size_bytes": 264583302,
+      "rows": 16940496,
+      "columns": 48
+    },
+    "qc_report": "data/processed/NF-ToN-IoT-v2/qc_report.txt",
+    "log": "data/processed/NF-ToN-IoT-v2/load.log"
+  },
+  "qc_summary": {
+    "class_counts": {
+      "Benign": {
+        "train": 4267507,
+        "val": 916776,
+        "test": 915186,
+        "total": 6099469
+      },
+      "Reconnaissance": {
+        "train": 2649694,
+        "val": 569931,
+        "test": 561794,
+        "total": 3781419
+      },
+      "": {
+        "train": 1726007,
+        "val": 369885,
+        "test": 370276,
+        "total": 2466168
+      },
+      "DDoS": {
+        "train": 1417717,
+        "val": 304649,
+        "test": 303868,
+        "total": 2026234
+      },
+      "CredentialAttack": {
+        "train": 808622,
+        "val": 172752,
+        "test": 171949,
+        "total": 1153323
+      },
+      "DoS": {
+        "train": 498853,
+        "val": 106695,
+        "test": 107061,
+        "total": 712609
+      },
+      "Injection": {
+        "train": 479097,
+        "val": 102956,
+        "test": 102412,
+        "total": 684465
+      },
+      "Bot_or_Backdoor": {
+        "train": 11822,
+        "val": 2535,
+        "test": 2452,
+        "total": 16809
+      }
+    },
+    "duplicates_and_conflicts": {
+      "rows": 16940496,
+      "unique_feature_vectors": 13135881,
+      "duplicate_rows": 3804615,
+      "canonical_rows": 14474328,
+      "conflicting_vectors": 0,
+      "conflicting_rows": 0,
+      "conflict_label_sets": {}
+    },
+    "warnings": []
+  }
+}

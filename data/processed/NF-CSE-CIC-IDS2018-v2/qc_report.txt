@@ -1,0 +1,39 @@
+QC report for NF-CSE-CIC-IDS2018-v2
+Generated: 2026-10-02T02:43:01.606001+00:00
+Total rows: 18,893,708
+Columns:    48
+Split: grouped by seeded hash of the normalised 41-feature vector, seed 42, 70/15/15
+
+Rows per canonical class per split:
+  class                     train          val         test        total     tr%    va%    te%  status
+  Benign               11,648,029    2,490,957    2,496,581   16,635,567   70.0%  15.0%  15.0%  OK
+  DDoS                    972,436      208,774      209,060    1,390,270   69.9%  15.0%  15.0%  OK
+  DoS                     339,428       72,750       71,821      483,999   70.1%  15.0%  14.8%  OK
+  Bot_or_Backdoor         100,278       21,929       20,890      143,097   70.1%  15.3%  14.6%  OK
+  CredentialAttack         84,618       18,213       18,081      120,912   70.0%  15.1%  15.0%  OK
+  (excluded)               83,690       17,930       17,811      119,431   70.1%  15.0%  14.9%  OK
+  Injection                   311           64           57          432   72.0%  14.8%  13.2%  val<1000, test<1000
+
+WARNINGS:
+  - Injection: val<1000, test<1000 (val=64, test=57, test share=13.2%)
+
+Exact duplicates on the normalised 41-feature vector:
+  unique feature vectors: 17,126,727 of 18,893,708 rows
+  duplicate rows:         1,766,981 (9.35%)
+  Duplicates stay within one split by construction of the key.
+
+Conflicting labels (identical vector, more than one canonical label; kept in the data, irreducible error floor):
+  vectors: 372   rows: 753 (0.00% of canonical rows)
+    DDoS / Injection                                372 vectors
+
+Implementation sanity check (holds by construction; the audit verifies it independently on tabular.parquet):
+  feature hashes assigned to more than one split: 0
+
+Source-IP overlap across splits (informative; expected given the testbed structure):
+  unique src IPs in train: 185,000
+  unique src IPs in val  : 77,099
+  unique src IPs in test : 77,858
+  shared train/test: 57,005
+
+NaN and Inf per column (stored as-is; the serializer converts Inf to NaN for the tabular representation):
+  none

@@ -1,0 +1,26 @@
+origin,id,finding,nf_v2,nf_v3,confidence
+Introduced by the NF-v3 release,F1,"Records repeated in every column, timestamps included",At most 0.7 % of a class,"50 % of six classes; CIC Bot 46 %, Infiltration 38 %, ToN mitm 12 %",High
+Introduced by the NF-v3 release,F2b,ToN and BoT: flows of the attacker hosts during the attack sessions labelled both as the attack and as Benign (identical minimal flows),None,"ToN: 154,390 vectors with scanning, 35,683 with ddos, 7,479 with password; BoT: 6,714 with Reconnaissance",High (cause: medium)
+Introduced by the NF-v3 release,F2c,BoT: identical port-80 flows labelled DoS and DDoS,None,"2,414 vectors (719,378 rows)",Medium
+Introduced by the NF-v3 release,F15,Label spelling changed between releases,n.a.,Case and separators differ from v2,High
+Introduced by the NF-v2 release,F8,Non-zero flow durations stored as 2^32/1000 ms minus the duration,13–93 % of rows; 100 % of CIC HOIC,Absent; durations below 121 s,High
+Introduced by the NF-v2 release,F2d (v2),CIC: the same record labelled as a web attack and as DDoS-HOIC,"2,876 records identical in every field (11 more with two web-attack labels)",Absent,Medium
+Release-dependent,F17,Class sizes differ strongly between releases,e.g. ToN Benign 6.1 M,16.8 M,Medium
+Release-dependent,F19,Web attacks attributed to different source hosts,96.8 % from one host,39 % from three other hosts; 10 % from the v2 host,Medium
+Release documentation,F16,Feature dictionary errors,DURATION_OUT described as client to server,"Same, plus errors in the IAT descriptions (new in v3)",High
+Release documentation,F18,Web pages or publications disagree with the files,CIC web attacks,BoT Theft count; BoT total in Luay et al.,High
+Release documentation,F14,Label misspelled as Infilteration (carried from v2 to v3),Present,Present,Medium
+NetFlow export,F9,Impossible byte rates,Finite values above 100 Gbit/s,Non-finite values (6.2 % of BoT),High
+NetFlow export,F10,Packet-size bins above the packet count; bytes below the IPv4 header,Up to 5.9 % of rows,Up to 5.5 % of rows,High
+Inherited from the parent,F2a,CIC FTP-BruteForce and DoS-SlowHTTPTest on identical vectors (refused connections),Masked: no conflict,"One vector holding all 492,270 rows of both classes and 60 SSH-Bruteforce rows",High
+Inherited from the parent,F2d (v3),CIC web attacks on identical vectors with Benign or with another web attack,"None with Benign (see F2d, v2)","234 vectors (37,671 rows), 182 of them with Benign",Medium
+Inherited from the parent,F3,Rows that repeat a feature vector of the same file,52.2–99.1 % of rows,35.4–92.7 % of rows,High
+Inherited from the parent,F4,A single feature or a depth-3 tree separates most classes,HDF mean 0.96 (without ports),HDF mean 0.94 (without ports),High
+Inherited from the parent,F5,Low diversity and traffic collapse,TC mean 0.82,TC mean 0.90,High
+Inherited from the parent,F6,"Attack-labelled flows to background-service ports (unclear ground truth), more frequent in the NF releases",e.g. ToN dos UGT 0.86 (parent 0.03),0.47,High
+Inherited from the parent,F7,Wrong-label signal in CIC Infiltration,WL 0.39,WL 0.61,High
+Inherited from the parent,F12,FTP return code always 0 despite an FTP brute-force class,Present,Present,High
+Inherited from the parent,F13,SSH brute-force flows sent to the FTP port,30 rows,60 rows,Medium
+Inherited from the parent,F20,Absolute timestamps encode the attack schedule (exposed as features by NF-v3),n.a. (no timestamps),Start time alone separates 18 of 24 classes,High
+Undetermined,F2e,"CIC: identical one-packet flows (DHCP, NTP, HTTPS) labelled Benign and Infiltration",None,"10,203 vectors (471,244 rows)",Low
+Undetermined,F11,DNS TTL above 2^31 in BoT Reconnaissance,320 rows,320 rows,Low

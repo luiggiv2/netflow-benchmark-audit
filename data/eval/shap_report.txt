@@ -1,0 +1,200 @@
+P4.5 SHAP explanations (research/phase4_protocol.md §18)
+Generated: 2026-10-07T02:13:37.342363+00:00
+Importance = mean |SHAP| on test rows (equal per class). Values: median [min, max] over seeds.
+
+Q1. Share of the top-5 / top-10 features that are ports, identity features or timestamps
+  NF-BoT-IoT-v2          G-NI  BIN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  | seed 1 top5: SRC_TO_DST_SECOND_BYTES, L7_PROTO, CLIENT_TCP_FLAGS, LONGEST_FLOW_PKT, SERVER_TCP_FLAGS
+  NF-BoT-IoT-v2          G-NI  CAN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  | seed 1 top5: L7_PROTO, FLOW_DURATION_MILLISECONDS, DURATION_IN, LONGEST_FLOW_PKT, SRC_TO_DST_SECOND_BYTES
+  NF-BoT-IoT-v2          G-NP  BIN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.10]  | seed 1 top5: CLIENT_TCP_FLAGS, L7_PROTO, DURATION_IN, IN_BYTES, LONGEST_FLOW_PKT
+  NF-BoT-IoT-v2          G-NP  CAN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.00 [0.00, 0.00] top10 0.10 [0.00, 0.20]  | seed 1 top5: L7_PROTO, FLOW_DURATION_MILLISECONDS, DURATION_IN, IN_BYTES, LONGEST_FLOW_PKT
+  NF-BoT-IoT-v2          G0    BIN  rf  n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.20 [0.00, 0.20] top10 0.10 [0.00, 0.30]  | seed 1 top5: TCP_WIN_MAX_IN, L4_DST_PORT, CLIENT_TCP_FLAGS, FLOW_DURATION_MILLISECONDS, L7_PROTO
+  NF-BoT-IoT-v2          G0    BIN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.00 [0.00, 0.00] top10 0.20 [0.10, 0.20]  | seed 1 top5: L4_DST_PORT, SERVER_TCP_FLAGS, CLIENT_TCP_FLAGS, L7_PROTO, DURATION_IN
+  NF-BoT-IoT-v2          G0    CAN  rf  n=5  ports top5 0.00 [0.00, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.20 [0.20, 0.20] top10 0.20 [0.10, 0.20]  | seed 1 top5: TCP_WIN_MAX_OUT, FLOW_DURATION_MILLISECONDS, DURATION_IN, SERVER_TCP_FLAGS, L7_PROTO
+  NF-BoT-IoT-v2          G0    CAN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.10]  | seed 1 top5: L4_DST_PORT, LONGEST_FLOW_PKT, FLOW_DURATION_MILLISECONDS, IN_BYTES, DURATION_IN
+  NF-BoT-IoT-v2          G0    CORE rf  n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.00 [0.00, 0.20] top10 0.10 [0.00, 0.20]  | seed 1 top5: FLOW_DURATION_MILLISECONDS, DURATION_IN, MAX_IP_PKT_LEN, LONGEST_FLOW_PKT, L4_DST_PORT
+  NF-BoT-IoT-v2          G0    CORE xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.00 [0.00, 0.00] top10 0.10 [0.10, 0.10]  | seed 1 top5: L4_DST_PORT, IN_BYTES, L7_PROTO, FLOW_DURATION_MILLISECONDS, NUM_PKTS_128_TO_256_BYTES
+  NF-BoT-IoT-v3          G-NI  BIN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  | seed 1 top5: SRC_TO_DST_SECOND_BYTES, SHORTEST_FLOW_PKT, SRC_TO_DST_IAT_MAX, DST_TO_SRC_SECOND_BYTES, IN_BYTES
+  NF-BoT-IoT-v3          G-NI  CAN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  | seed 1 top5: IN_BYTES, SRC_TO_DST_IAT_MIN, DST_TO_SRC_SECOND_BYTES, DST_TO_SRC_AVG_THROUGHPUT, DURATION_IN
+  NF-BoT-IoT-v3          G-NP  BIN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.00 [0.00, 0.00] top10 0.10 [0.00, 0.20]  | seed 1 top5: SRC_TO_DST_SECOND_BYTES, SRC_TO_DST_IAT_MIN, SRC_TO_DST_IAT_MAX, SHORTEST_FLOW_PKT, DST_TO_SRC_SECOND_BYTES
+  NF-BoT-IoT-v3          G-NP  CAN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.00 [0.00, 0.00] top10 0.10 [0.00, 0.10]  | seed 1 top5: SRC_TO_DST_IAT_MIN, SRC_TO_DST_SECOND_BYTES, SRC_TO_DST_AVG_THROUGHPUT, SRC_TO_DST_IAT_AVG, DST_TO_SRC_SECOND_BYTES
+  NF-BoT-IoT-v3          G-TS  BIN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  timestamps top5 0.40 [0.20, 0.40] top10 0.20 [0.20, 0.20]  | seed 1 top5: FLOW_START_MILLISECONDS, L4_DST_PORT, SHORTEST_FLOW_PKT, TCP_WIN_MAX_IN, TCP_FLAGS
+  NF-BoT-IoT-v3          G-TS  CAN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  timestamps top5 0.40 [0.40, 0.40] top10 0.20 [0.20, 0.20]  | seed 1 top5: FLOW_START_MILLISECONDS, FLOW_END_MILLISECONDS, L4_DST_PORT, DST_TO_SRC_SECOND_BYTES, TCP_WIN_MAX_IN
+  NF-BoT-IoT-v3          G0    BIN  rf  n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.00 [0.00, 0.20] top10 0.10 [0.00, 0.10]  | seed 1 top5: L4_DST_PORT, IN_BYTES, L7_PROTO, FLOW_DURATION_MILLISECONDS, SRC_TO_DST_AVG_THROUGHPUT
+  NF-BoT-IoT-v3          G0    BIN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.00 [0.00, 0.00] top10 0.10 [0.10, 0.10]  | seed 1 top5: L4_DST_PORT, SRC_TO_DST_IAT_MIN, SHORTEST_FLOW_PKT, SRC_TO_DST_SECOND_BYTES, SRC_TO_DST_AVG_THROUGHPUT
+  NF-BoT-IoT-v3          G0    CAN  rf  n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.20 [0.00, 0.20] top10 0.10 [0.10, 0.10]  | seed 1 top5: L4_DST_PORT, SRC_TO_DST_IAT_MAX, SRC_TO_DST_IAT_MIN, TCP_WIN_MAX_IN, SRC_TO_DST_IAT_STDDEV
+  NF-BoT-IoT-v3          G0    CAN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.00 [0.00, 0.00] top10 0.10 [0.00, 0.10]  | seed 1 top5: L4_DST_PORT, SRC_TO_DST_IAT_MIN, SRC_TO_DST_AVG_THROUGHPUT, IN_BYTES, DST_TO_SRC_SECOND_BYTES
+  NF-BoT-IoT-v3          G0    CORE rf  n=5  ports top5 0.20 [0.00, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.00 [0.00, 0.00] top10 0.10 [0.00, 0.10]  | seed 1 top5: SRC_TO_DST_IAT_MAX, SRC_TO_DST_IAT_MIN, L4_DST_PORT, SRC_TO_DST_IAT_STDDEV, FLOW_DURATION_MILLISECONDS
+  NF-BoT-IoT-v3          G0    CORE xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  | seed 1 top5: SRC_TO_DST_IAT_MIN, L4_DST_PORT, DST_TO_SRC_SECOND_BYTES, L7_PROTO, IN_BYTES
+  NF-CSE-CIC-IDS2018-v2  G-NI  BIN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  | seed 1 top5: DURATION_IN, L7_PROTO, LONGEST_FLOW_PKT, CLIENT_TCP_FLAGS, SRC_TO_DST_AVG_THROUGHPUT
+  NF-CSE-CIC-IDS2018-v2  G-NI  CAN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  | seed 1 top5: L7_PROTO, TCP_FLAGS, CLIENT_TCP_FLAGS, NUM_PKTS_UP_TO_128_BYTES, NUM_PKTS_128_TO_256_BYTES
+  NF-CSE-CIC-IDS2018-v2  G-NP  BIN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.40 [0.40, 0.60] top10 0.40 [0.40, 0.40]  | seed 1 top5: TCP_WIN_MAX_IN, DURATION_IN, L7_PROTO, TCP_FLAGS, MIN_TTL
+  NF-CSE-CIC-IDS2018-v2  G-NP  CAN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.60 [0.40, 0.60] top10 0.30 [0.30, 0.40]  | seed 1 top5: L7_PROTO, MIN_TTL, NUM_PKTS_128_TO_256_BYTES, NUM_PKTS_UP_TO_128_BYTES, MAX_TTL
+  NF-CSE-CIC-IDS2018-v2  G0    BIN  rf  n=5  ports top5 0.00 [0.00, 0.20] top10 0.00 [0.00, 0.10]  identity top5 0.40 [0.20, 0.60] top10 0.20 [0.10, 0.30]  | seed 1 top5: TCP_WIN_MAX_OUT, DNS_QUERY_ID, TCP_WIN_MAX_IN, L4_DST_PORT, RETRANSMITTED_OUT_PKTS
+  NF-CSE-CIC-IDS2018-v2  G0    BIN  xgb n=5  ports top5 0.00 [0.00, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.40 [0.20, 0.40] top10 0.40 [0.30, 0.40]  | seed 1 top5: DURATION_IN, TCP_WIN_MAX_OUT, TCP_WIN_MAX_IN, L7_PROTO, L4_DST_PORT
+  NF-CSE-CIC-IDS2018-v2  G0    CAN  rf  n=5  ports top5 0.20 [0.00, 0.20] top10 0.10 [0.00, 0.10]  identity top5 0.20 [0.00, 0.40] top10 0.20 [0.00, 0.30]  | seed 1 top5: L7_PROTO, OUT_PKTS, TCP_FLAGS, CLIENT_TCP_FLAGS, MIN_TTL
+  NF-CSE-CIC-IDS2018-v2  G0    CAN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.60 [0.40, 0.60] top10 0.40 [0.30, 0.40]  | seed 1 top5: L4_DST_PORT, L7_PROTO, MIN_TTL, MAX_TTL, TCP_WIN_MAX_IN
+  NF-CSE-CIC-IDS2018-v2  G0    CORE rf  n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.10]  | seed 1 top5: L7_PROTO, L4_DST_PORT, FLOW_DURATION_MILLISECONDS, DURATION_IN, DURATION_OUT
+  NF-CSE-CIC-IDS2018-v2  G0    CORE xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.10 [0.10, 0.10]  identity top5 0.40 [0.40, 0.40] top10 0.40 [0.30, 0.40]  | seed 1 top5: MIN_TTL, DURATION_IN, MAX_TTL, CLIENT_TCP_FLAGS, NUM_PKTS_512_TO_1024_BYTES
+  NF-CSE-CIC-IDS2018-v3  G-NI  BIN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  | seed 1 top5: TCP_FLAGS, L7_PROTO, IN_BYTES, SERVER_TCP_FLAGS, LONGEST_FLOW_PKT
+  NF-CSE-CIC-IDS2018-v3  G-NI  CAN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  | seed 1 top5: TCP_FLAGS, L7_PROTO, LONGEST_FLOW_PKT, NUM_PKTS_128_TO_256_BYTES, IN_BYTES
+  NF-CSE-CIC-IDS2018-v3  G-NP  BIN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.40 [0.40, 0.60] top10 0.40 [0.30, 0.40]  | seed 1 top5: TCP_WIN_MAX_IN, TCP_FLAGS, TCP_WIN_MAX_OUT, L7_PROTO, MAX_TTL
+  NF-CSE-CIC-IDS2018-v3  G-NP  CAN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.60 [0.60, 0.60] top10 0.40 [0.30, 0.40]  | seed 1 top5: TCP_WIN_MAX_IN, MIN_TTL, L7_PROTO, MAX_TTL, TCP_FLAGS
+  NF-CSE-CIC-IDS2018-v3  G-TS  BIN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.40 [0.20, 0.40] top10 0.20 [0.20, 0.30]  timestamps top5 0.40 [0.20, 0.40] top10 0.20 [0.20, 0.20]  | seed 1 top5: TCP_WIN_MAX_IN, FLOW_START_MILLISECONDS, L4_DST_PORT, TCP_FLAGS, MIN_TTL
+  NF-CSE-CIC-IDS2018-v3  G-TS  CAN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.20 [0.20, 0.20] top10 0.30 [0.30, 0.40]  timestamps top5 0.40 [0.40, 0.40] top10 0.20 [0.20, 0.20]  | seed 1 top5: FLOW_END_MILLISECONDS, L4_DST_PORT, FLOW_START_MILLISECONDS, TCP_WIN_MAX_IN, TCP_FLAGS
+  NF-CSE-CIC-IDS2018-v3  G0    BIN  rf  n=5  ports top5 0.00 [0.00, 0.20] top10 0.00 [0.00, 0.10]  identity top5 0.40 [0.20, 0.60] top10 0.20 [0.10, 0.30]  | seed 1 top5: TCP_WIN_MAX_OUT, NUM_PKTS_1024_TO_1514_BYTES, TCP_FLAGS, NUM_PKTS_512_TO_1024_BYTES, FTP_COMMAND_RET_CODE
+  NF-CSE-CIC-IDS2018-v3  G0    BIN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.40 [0.40, 0.60] top10 0.30 [0.30, 0.40]  | seed 1 top5: TCP_WIN_MAX_IN, L4_DST_PORT, TCP_FLAGS, L7_PROTO, TCP_WIN_MAX_OUT
+  NF-CSE-CIC-IDS2018-v3  G0    CAN  rf  n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.20 [0.00, 0.40] top10 0.20 [0.10, 0.30]  | seed 1 top5: L4_DST_PORT, LONGEST_FLOW_PKT, SHORTEST_FLOW_PKT, NUM_PKTS_UP_TO_128_BYTES, NUM_PKTS_512_TO_1024_BYTES
+  NF-CSE-CIC-IDS2018-v3  G0    CAN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.60 [0.60, 0.60] top10 0.30 [0.30, 0.40]  | seed 1 top5: L4_DST_PORT, TCP_WIN_MAX_IN, L7_PROTO, MAX_TTL, MIN_TTL
+  NF-CSE-CIC-IDS2018-v3  G0    CORE rf  n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.20]  | seed 1 top5: L4_DST_PORT, L7_PROTO, TCP_WIN_MAX_IN, PROTOCOL, IN_BYTES
+  NF-CSE-CIC-IDS2018-v3  G0    CORE xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.60 [0.40, 0.60] top10 0.30 [0.30, 0.30]  | seed 1 top5: TCP_FLAGS, TCP_WIN_MAX_IN, MAX_TTL, MIN_TTL, L4_DST_PORT
+  NF-ToN-IoT-v2          G-NI  BIN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  | seed 1 top5: L7_PROTO, SRC_TO_DST_SECOND_BYTES, SERVER_TCP_FLAGS, LONGEST_FLOW_PKT, CLIENT_TCP_FLAGS
+  NF-ToN-IoT-v2          G-NI  CAN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  | seed 1 top5: L7_PROTO, SRC_TO_DST_SECOND_BYTES, SHORTEST_FLOW_PKT, LONGEST_FLOW_PKT, PROTOCOL
+  NF-ToN-IoT-v2          G-NP  BIN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.20 [0.20, 0.40] top10 0.20 [0.10, 0.30]  | seed 1 top5: TCP_WIN_MAX_IN, SERVER_TCP_FLAGS, LONGEST_FLOW_PKT, L7_PROTO, IN_BYTES
+  NF-ToN-IoT-v2          G-NP  CAN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.40 [0.40, 0.60] top10 0.30 [0.20, 0.40]  | seed 1 top5: L7_PROTO, TCP_WIN_MAX_IN, SRC_TO_DST_SECOND_BYTES, MIN_TTL, SHORTEST_FLOW_PKT
+  NF-ToN-IoT-v2          G0    BIN  rf  n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.40 [0.00, 0.40] top10 0.40 [0.00, 0.40]  | seed 1 top5: L4_DST_PORT, L7_PROTO, TCP_WIN_MAX_OUT, FLOW_DURATION_MILLISECONDS, TCP_WIN_MAX_IN
+  NF-ToN-IoT-v2          G0    BIN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.20 [0.00, 0.20] top10 0.10 [0.10, 0.20]  | seed 1 top5: L4_DST_PORT, SRC_TO_DST_AVG_THROUGHPUT, SRC_TO_DST_SECOND_BYTES, L7_PROTO, FLOW_DURATION_MILLISECONDS
+  NF-ToN-IoT-v2          G0    CAN  rf  n=5  ports top5 0.20 [0.00, 0.20] top10 0.10 [0.00, 0.10]  identity top5 0.20 [0.20, 0.40] top10 0.30 [0.20, 0.40]  | seed 1 top5: L4_DST_PORT, L7_PROTO, TCP_WIN_MAX_OUT, NUM_PKTS_UP_TO_128_BYTES, TCP_WIN_MAX_IN
+  NF-ToN-IoT-v2          G0    CAN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.40 [0.20, 0.40] top10 0.30 [0.20, 0.30]  | seed 1 top5: L4_DST_PORT, TCP_WIN_MAX_IN, LONGEST_FLOW_PKT, SRC_TO_DST_SECOND_BYTES, MIN_TTL
+  NF-ToN-IoT-v2          G0    CORE rf  n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.40 [0.20, 0.60] top10 0.40 [0.30, 0.50]  | seed 1 top5: L4_DST_PORT, L7_PROTO, TCP_WIN_MAX_IN, DNS_QUERY_TYPE, TCP_FLAGS
+  NF-ToN-IoT-v2          G0    CORE xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.40 [0.20, 0.40] top10 0.30 [0.30, 0.40]  | seed 1 top5: TCP_WIN_MAX_IN, L4_DST_PORT, IN_BYTES, LONGEST_FLOW_PKT, DNS_QUERY_ID
+  NF-ToN-IoT-v3          G-NI  BIN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  | seed 1 top5: OUT_BYTES, SHORTEST_FLOW_PKT, NUM_PKTS_UP_TO_128_BYTES, SERVER_TCP_FLAGS, IN_BYTES
+  NF-ToN-IoT-v3          G-NI  CAN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  | seed 1 top5: IN_BYTES, LONGEST_FLOW_PKT, L7_PROTO, SHORTEST_FLOW_PKT, CLIENT_TCP_FLAGS
+  NF-ToN-IoT-v3          G-NP  BIN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.20 [0.20, 0.40] top10 0.20 [0.10, 0.20]  | seed 1 top5: TCP_WIN_MAX_IN, OUT_BYTES, SHORTEST_FLOW_PKT, L7_PROTO, SERVER_TCP_FLAGS
+  NF-ToN-IoT-v3          G-NP  CAN  xgb n=5  ports top5 0.00 [0.00, 0.00] top10 0.00 [0.00, 0.00]  identity top5 0.20 [0.20, 0.20] top10 0.30 [0.20, 0.30]  | seed 1 top5: IN_BYTES, TCP_WIN_MAX_IN, L7_PROTO, SHORTEST_FLOW_PKT, LONGEST_FLOW_PKT
+  NF-ToN-IoT-v3          G-TS  BIN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.00 [0.00, 0.20] top10 0.20 [0.10, 0.20]  timestamps top5 0.40 [0.40, 0.40] top10 0.20 [0.20, 0.20]  | seed 1 top5: L4_DST_PORT, FLOW_START_MILLISECONDS, FLOW_END_MILLISECONDS, L7_PROTO, OUT_BYTES
+  NF-ToN-IoT-v3          G-TS  CAN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.00 [0.00, 0.00] top10 0.10 [0.10, 0.10]  timestamps top5 0.40 [0.40, 0.40] top10 0.20 [0.20, 0.20]  | seed 1 top5: FLOW_END_MILLISECONDS, FLOW_START_MILLISECONDS, L4_DST_PORT, LONGEST_FLOW_PKT, IN_BYTES
+  NF-ToN-IoT-v3          G0    BIN  rf  n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.40 [0.20, 0.40] top10 0.30 [0.10, 0.30]  | seed 1 top5: L4_DST_PORT, L7_PROTO, IN_BYTES, TCP_WIN_MAX_OUT, DNS_QUERY_ID
+  NF-ToN-IoT-v3          G0    BIN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.20 [0.20, 0.20] top10 0.20 [0.20, 0.30]  | seed 1 top5: L4_DST_PORT, TCP_WIN_MAX_IN, SHORTEST_FLOW_PKT, SRC_TO_DST_AVG_THROUGHPUT, L7_PROTO
+  NF-ToN-IoT-v3          G0    CAN  rf  n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.20 [0.20, 0.20] top10 0.20 [0.10, 0.30]  | seed 1 top5: L4_DST_PORT, TCP_WIN_MAX_IN, L7_PROTO, IN_BYTES, CLIENT_TCP_FLAGS
+  NF-ToN-IoT-v3          G0    CAN  xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.20 [0.20, 0.20] top10 0.20 [0.20, 0.20]  | seed 1 top5: L4_DST_PORT, IN_BYTES, LONGEST_FLOW_PKT, TCP_WIN_MAX_IN, SHORTEST_FLOW_PKT
+  NF-ToN-IoT-v3          G0    CORE rf  n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.20 [0.00, 0.40] top10 0.30 [0.10, 0.50]  | seed 1 top5: L4_DST_PORT, TCP_WIN_MAX_IN, DNS_QUERY_TYPE, MIN_IP_PKT_LEN, IN_BYTES
+  NF-ToN-IoT-v3          G0    CORE xgb n=5  ports top5 0.20 [0.20, 0.20] top10 0.10 [0.10, 0.10]  identity top5 0.20 [0.20, 0.40] top10 0.30 [0.30, 0.40]  | seed 1 top5: L4_DST_PORT, TCP_WIN_MAX_IN, IN_BYTES, DST_TO_SRC_SECOND_BYTES, LONGEST_FLOW_PKT
+
+Q2. Rank stability: across seeds (pairs) and against G0 (same seed); Jaccard@10, Spearman
+  NF-BoT-IoT-v2          G-NI  BIN  xgb seeds: J@10 0.67 [0.54, 0.82]  rho 0.96 [0.94, 0.97]  | vs G0: J@10 0.82 [0.54, 0.82]  rho 0.95 [0.93, 0.96]
+  NF-BoT-IoT-v2          G-NI  CAN  xgb seeds: J@10 0.82 [0.82, 1.00]  rho 0.97 [0.95, 0.98]  | vs G0: J@10 0.82 [0.82, 1.00]  rho 0.96 [0.95, 0.98]
+  NF-BoT-IoT-v2          G-NP  BIN  xgb seeds: J@10 0.67 [0.43, 0.82]  rho 0.92 [0.91, 0.96]  | vs G0: J@10 0.67 [0.43, 0.67]  rho 0.92 [0.87, 0.94]
+  NF-BoT-IoT-v2          G-NP  CAN  xgb seeds: J@10 0.67 [0.54, 1.00]  rho 0.97 [0.94, 0.98]  | vs G0: J@10 0.82 [0.54, 0.82]  rho 0.96 [0.94, 0.97]
+  NF-BoT-IoT-v2          G0    BIN  rf  seeds: J@10 0.43 [0.43, 0.67]  rho 0.64 [0.40, 0.74]
+  NF-BoT-IoT-v2          G0    BIN  xgb seeds: J@10 0.67 [0.54, 0.82]  rho 0.97 [0.95, 0.97]
+  NF-BoT-IoT-v2          G0    CAN  rf  seeds: J@10 0.48 [0.33, 0.82]  rho 0.76 [0.69, 0.86]
+  NF-BoT-IoT-v2          G0    CAN  xgb seeds: J@10 1.00 [0.82, 1.00]  rho 0.98 [0.97, 0.98]
+  NF-BoT-IoT-v2          G0    CORE rf  seeds: J@10 0.48 [0.33, 0.82]  rho 0.89 [0.83, 0.97]
+  NF-BoT-IoT-v2          G0    CORE xgb seeds: J@10 0.82 [0.54, 1.00]  rho 0.95 [0.94, 0.98]
+  NF-BoT-IoT-v3          G-NI  BIN  xgb seeds: J@10 0.67 [0.54, 0.82]  rho 0.93 [0.88, 0.96]  | vs G0: J@10 0.67 [0.54, 0.82]  rho 0.91 [0.86, 0.94]
+  NF-BoT-IoT-v3          G-NI  CAN  xgb seeds: J@10 0.67 [0.54, 0.82]  rho 0.97 [0.95, 0.98]  | vs G0: J@10 0.67 [0.67, 0.82]  rho 0.96 [0.95, 0.98]
+  NF-BoT-IoT-v3          G-NP  BIN  xgb seeds: J@10 0.54 [0.43, 0.67]  rho 0.93 [0.88, 0.96]  | vs G0: J@10 0.54 [0.43, 0.82]  rho 0.93 [0.92, 0.94]
+  NF-BoT-IoT-v3          G-NP  CAN  xgb seeds: J@10 0.67 [0.67, 0.82]  rho 0.97 [0.94, 0.98]  | vs G0: J@10 0.67 [0.67, 0.82]  rho 0.97 [0.95, 0.98]
+  NF-BoT-IoT-v3          G-TS  BIN  xgb seeds: J@10 0.60 [0.54, 0.82]  rho 0.96 [0.94, 0.97]  | vs G0: J@10 0.54 [0.43, 0.67]  rho 0.93 [0.92, 0.95]
+  NF-BoT-IoT-v3          G-TS  CAN  xgb seeds: J@10 0.67 [0.54, 0.82]  rho 0.97 [0.95, 0.98]  | vs G0: J@10 0.43 [0.33, 0.67]  rho 0.93 [0.92, 0.96]
+  NF-BoT-IoT-v3          G0    BIN  rf  seeds: J@10 0.48 [0.33, 0.67]  rho 0.78 [0.56, 0.92]
+  NF-BoT-IoT-v3          G0    BIN  xgb seeds: J@10 0.82 [0.67, 1.00]  rho 0.95 [0.92, 0.96]
+  NF-BoT-IoT-v3          G0    CAN  rf  seeds: J@10 0.67 [0.43, 0.82]  rho 0.81 [0.68, 0.88]
+  NF-BoT-IoT-v3          G0    CAN  xgb seeds: J@10 0.74 [0.67, 1.00]  rho 0.98 [0.97, 0.99]
+  NF-BoT-IoT-v3          G0    CORE rf  seeds: J@10 0.82 [0.67, 1.00]  rho 0.50 [0.25, 0.71]
+  NF-BoT-IoT-v3          G0    CORE xgb seeds: J@10 0.74 [0.54, 0.82]  rho 0.96 [0.92, 0.97]
+  NF-CSE-CIC-IDS2018-v2  G-NI  BIN  xgb seeds: J@10 0.67 [0.43, 0.82]  rho 0.94 [0.89, 0.97]  | vs G0: J@10 0.54 [0.43, 0.82]  rho 0.90 [0.88, 0.94]
+  NF-CSE-CIC-IDS2018-v2  G-NI  CAN  xgb seeds: J@10 0.82 [0.67, 1.00]  rho 0.98 [0.93, 0.99]  | vs G0: J@10 0.54 [0.54, 0.82]  rho 0.93 [0.86, 0.95]
+  NF-CSE-CIC-IDS2018-v2  G-NP  BIN  xgb seeds: J@10 0.82 [0.67, 1.00]  rho 0.92 [0.87, 0.96]  | vs G0: J@10 0.82 [0.67, 1.00]  rho 0.90 [0.88, 0.95]
+  NF-CSE-CIC-IDS2018-v2  G-NP  CAN  xgb seeds: J@10 0.82 [0.67, 1.00]  rho 0.96 [0.93, 0.99]  | vs G0: J@10 0.67 [0.54, 0.67]  rho 0.95 [0.88, 0.95]
+  NF-CSE-CIC-IDS2018-v2  G0    BIN  rf  seeds: J@10 0.54 [0.33, 0.82]  rho 0.88 [0.81, 0.94]
+  NF-CSE-CIC-IDS2018-v2  G0    BIN  xgb seeds: J@10 1.00 [0.67, 1.00]  rho 0.96 [0.95, 0.97]
+  NF-CSE-CIC-IDS2018-v2  G0    CAN  rf  seeds: J@10 0.33 [0.18, 0.67]  rho 0.38 [0.32, 0.79]
+  NF-CSE-CIC-IDS2018-v2  G0    CAN  xgb seeds: J@10 0.82 [0.82, 1.00]  rho 0.98 [0.97, 0.99]
+  NF-CSE-CIC-IDS2018-v2  G0    CORE rf  seeds: J@10 0.43 [0.25, 1.00]  rho nan [0.12, 1.00]
+  NF-CSE-CIC-IDS2018-v2  G0    CORE xgb seeds: J@10 0.67 [0.54, 0.82]  rho 0.94 [0.92, 0.96]
+  NF-CSE-CIC-IDS2018-v3  G-NI  BIN  xgb seeds: J@10 0.82 [0.54, 1.00]  rho 0.94 [0.88, 0.96]  | vs G0: J@10 0.67 [0.54, 0.67]  rho 0.83 [0.80, 0.88]
+  NF-CSE-CIC-IDS2018-v3  G-NI  CAN  xgb seeds: J@10 0.82 [0.54, 1.00]  rho 0.95 [0.86, 0.96]  | vs G0: J@10 0.67 [0.33, 0.67]  rho 0.84 [0.74, 0.85]
+  NF-CSE-CIC-IDS2018-v3  G-NP  BIN  xgb seeds: J@10 0.82 [0.67, 1.00]  rho 0.93 [0.92, 0.96]  | vs G0: J@10 0.67 [0.54, 1.00]  rho 0.93 [0.87, 0.94]
+  NF-CSE-CIC-IDS2018-v3  G-NP  CAN  xgb seeds: J@10 0.54 [0.33, 1.00]  rho 0.87 [0.84, 0.98]  | vs G0: J@10 0.43 [0.43, 0.67]  rho 0.83 [0.80, 0.89]
+  NF-CSE-CIC-IDS2018-v3  G-TS  BIN  xgb seeds: J@10 0.74 [0.54, 0.82]  rho 0.94 [0.91, 0.95]  | vs G0: J@10 0.43 [0.43, 0.54]  rho 0.83 [0.79, 0.86]
+  NF-CSE-CIC-IDS2018-v3  G-TS  CAN  xgb seeds: J@10 0.82 [0.82, 1.00]  rho 0.97 [0.96, 0.98]  | vs G0: J@10 0.43 [0.43, 0.54]  rho 0.85 [0.78, 0.92]
+  NF-CSE-CIC-IDS2018-v3  G0    BIN  rf  seeds: J@10 0.43 [0.33, 0.67]  rho 0.89 [0.84, 0.95]
+  NF-CSE-CIC-IDS2018-v3  G0    BIN  xgb seeds: J@10 0.74 [0.67, 0.82]  rho 0.93 [0.91, 0.95]
+  NF-CSE-CIC-IDS2018-v3  G0    CAN  rf  seeds: J@10 0.25 [0.11, 0.43]  rho 0.33 [-0.05, 0.48]
+  NF-CSE-CIC-IDS2018-v3  G0    CAN  xgb seeds: J@10 0.54 [0.33, 0.67]  rho 0.85 [0.81, 0.93]
+  NF-CSE-CIC-IDS2018-v3  G0    CORE rf  seeds: J@10 0.82 [0.54, 1.00]  rho 0.66 [0.37, 0.86]
+  NF-CSE-CIC-IDS2018-v3  G0    CORE xgb seeds: J@10 0.60 [0.43, 0.82]  rho 0.91 [0.83, 0.95]
+  NF-ToN-IoT-v2          G-NI  BIN  xgb seeds: J@10 0.67 [0.54, 0.82]  rho 0.94 [0.91, 0.97]  | vs G0: J@10 0.67 [0.43, 0.82]  rho 0.86 [0.83, 0.89]
+  NF-ToN-IoT-v2          G-NI  CAN  xgb seeds: J@10 0.67 [0.54, 1.00]  rho 0.96 [0.93, 0.99]  | vs G0: J@10 0.54 [0.54, 0.82]  rho 0.91 [0.87, 0.94]
+  NF-ToN-IoT-v2          G-NP  BIN  xgb seeds: J@10 0.54 [0.43, 0.67]  rho 0.92 [0.89, 0.95]  | vs G0: J@10 0.54 [0.33, 0.67]  rho 0.88 [0.85, 0.90]
+  NF-ToN-IoT-v2          G-NP  CAN  xgb seeds: J@10 0.67 [0.54, 0.82]  rho 0.97 [0.96, 0.98]  | vs G0: J@10 0.82 [0.67, 0.82]  rho 0.97 [0.95, 0.98]
+  NF-ToN-IoT-v2          G0    BIN  rf  seeds: J@10 0.54 [0.25, 0.82]  rho 0.44 [0.26, 0.79]
+  NF-ToN-IoT-v2          G0    BIN  xgb seeds: J@10 0.74 [0.67, 0.82]  rho 0.96 [0.95, 0.97]
+  NF-ToN-IoT-v2          G0    CAN  rf  seeds: J@10 0.48 [0.25, 0.82]  rho 0.36 [-0.01, 0.85]
+  NF-ToN-IoT-v2          G0    CAN  xgb seeds: J@10 0.82 [0.82, 1.00]  rho 0.98 [0.98, 0.99]
+  NF-ToN-IoT-v2          G0    CORE rf  seeds: J@10 0.67 [0.33, 1.00]  rho 0.63 [0.40, 0.82]
+  NF-ToN-IoT-v2          G0    CORE xgb seeds: J@10 0.67 [0.54, 0.82]  rho 0.97 [0.96, 0.98]
+  NF-ToN-IoT-v3          G-NI  BIN  xgb seeds: J@10 0.82 [0.82, 1.00]  rho 0.92 [0.89, 0.95]  | vs G0: J@10 0.67 [0.67, 0.82]  rho 0.89 [0.83, 0.91]
+  NF-ToN-IoT-v3          G-NI  CAN  xgb seeds: J@10 1.00 [1.00, 1.00]  rho 0.98 [0.97, 0.99]  | vs G0: J@10 0.82 [0.82, 1.00]  rho 0.96 [0.96, 0.97]
+  NF-ToN-IoT-v3          G-NP  BIN  xgb seeds: J@10 0.67 [0.54, 1.00]  rho 0.92 [0.86, 0.95]  | vs G0: J@10 0.67 [0.54, 0.82]  rho 0.91 [0.91, 0.93]
+  NF-ToN-IoT-v3          G-NP  CAN  xgb seeds: J@10 0.82 [0.82, 1.00]  rho 0.97 [0.95, 0.98]  | vs G0: J@10 0.82 [0.82, 0.82]  rho 0.97 [0.96, 0.98]
+  NF-ToN-IoT-v3          G-TS  BIN  xgb seeds: J@10 0.82 [0.67, 0.82]  rho 0.95 [0.93, 0.97]  | vs G0: J@10 0.67 [0.67, 0.67]  rho 0.92 [0.91, 0.95]
+  NF-ToN-IoT-v3          G-TS  CAN  xgb seeds: J@10 0.82 [0.67, 1.00]  rho 0.95 [0.91, 0.97]  | vs G0: J@10 0.43 [0.33, 0.43]  rho 0.86 [0.84, 0.86]
+  NF-ToN-IoT-v3          G0    BIN  rf  seeds: J@10 0.43 [0.25, 0.54]  rho 0.30 [0.13, 0.76]
+  NF-ToN-IoT-v3          G0    BIN  xgb seeds: J@10 0.82 [0.82, 1.00]  rho 0.94 [0.91, 0.95]
+  NF-ToN-IoT-v3          G0    CAN  rf  seeds: J@10 0.60 [0.43, 0.67]  rho 0.76 [0.58, 0.84]
+  NF-ToN-IoT-v3          G0    CAN  xgb seeds: J@10 0.82 [0.67, 1.00]  rho 0.98 [0.98, 0.99]
+  NF-ToN-IoT-v3          G0    CORE rf  seeds: J@10 0.54 [0.25, 0.67]  rho 0.58 [0.45, 0.87]
+  NF-ToN-IoT-v3          G0    CORE xgb seeds: J@10 0.67 [0.54, 0.82]  rho 0.97 [0.95, 0.98]
+
+Q2b. Same seed, G0: XGBoost mean |SHAP| ranking vs RF permutation ranking (Jaccard@10, Spearman)
+  NF-BoT-IoT-v2          G0    BIN  J@10 0.54 [0.43, 0.67]  rho 0.59 [0.37, 0.67]
+  NF-BoT-IoT-v2          G0    CAN  J@10 0.43 [0.33, 0.54]  rho 0.17 [0.06, 0.26]
+  NF-BoT-IoT-v2          G0    CORE J@10 0.33 [0.18, 0.33]  rho -0.25 [-0.33, -0.16]
+  NF-BoT-IoT-v3          G0    BIN  J@10 0.25 [0.18, 0.43]  rho 0.56 [0.38, 0.69]
+  NF-BoT-IoT-v3          G0    CAN  J@10 0.43 [0.33, 0.67]  rho 0.71 [0.65, 0.77]
+  NF-BoT-IoT-v3          G0    CORE J@10 0.54 [0.43, 0.54]  rho 0.32 [0.07, 0.68]
+  NF-CSE-CIC-IDS2018-v2  G0    BIN  J@10 0.11 [0.05, 0.18]  rho -0.34 [-0.35, -0.19]
+  NF-CSE-CIC-IDS2018-v2  G0    CAN  J@10 0.33 [0.25, 0.43]  rho 0.37 [0.26, 0.69]
+  NF-CSE-CIC-IDS2018-v2  G0    CORE J@10 0.33 [0.18, 0.33]  rho nan [-0.31, 0.44]
+  NF-CSE-CIC-IDS2018-v3  G0    BIN  J@10 0.11 [0.11, 0.25]  rho -0.22 [-0.25, -0.17]
+  NF-CSE-CIC-IDS2018-v3  G0    CAN  J@10 0.25 [0.18, 0.43]  rho 0.34 [0.12, 0.67]
+  NF-CSE-CIC-IDS2018-v3  G0    CORE J@10 0.43 [0.43, 0.43]  rho 0.37 [0.32, 0.49]
+  NF-ToN-IoT-v2          G0    BIN  J@10 0.33 [0.33, 0.54]  rho 0.43 [0.37, 0.71]
+  NF-ToN-IoT-v2          G0    CAN  J@10 0.25 [0.18, 0.33]  rho 0.29 [0.01, 0.65]
+  NF-ToN-IoT-v2          G0    CORE J@10 0.43 [0.25, 0.43]  rho 0.17 [-0.13, 0.26]
+  NF-ToN-IoT-v3          G0    BIN  J@10 0.33 [0.25, 0.54]  rho 0.04 [-0.08, 0.27]
+  NF-ToN-IoT-v3          G0    CAN  J@10 0.43 [0.43, 0.54]  rho 0.54 [0.43, 0.60]
+  NF-ToN-IoT-v3          G0    CORE J@10 0.33 [0.33, 0.33]  rho 0.45 [0.33, 0.52]
+
+Q3. Same G0 model explained on its test rows and on each other dataset (Jaccard@10, Spearman)
+  NF-BoT-IoT-v2          BIN  xgb -> NF-CSE-CIC-IDS2018-v2  J@10 0.43 [0.25, 0.67]  rho 0.88 [0.82, 0.88]
+  NF-BoT-IoT-v2          BIN  xgb -> NF-ToN-IoT-v2          J@10 0.54 [0.54, 0.67]  rho 0.94 [0.90, 0.96]
+  NF-BoT-IoT-v2          CORE xgb -> NF-CSE-CIC-IDS2018-v2  J@10 0.54 [0.43, 0.67]  rho 0.92 [0.89, 0.93]
+  NF-BoT-IoT-v2          CORE xgb -> NF-ToN-IoT-v2          J@10 0.82 [0.67, 0.82]  rho 0.97 [0.97, 0.98]
+  NF-BoT-IoT-v3          BIN  xgb -> NF-CSE-CIC-IDS2018-v3  J@10 0.54 [0.43, 0.54]  rho 0.92 [0.90, 0.94]
+  NF-BoT-IoT-v3          BIN  xgb -> NF-ToN-IoT-v3          J@10 0.54 [0.43, 0.54]  rho 0.91 [0.89, 0.92]
+  NF-BoT-IoT-v3          CORE xgb -> NF-CSE-CIC-IDS2018-v3  J@10 0.67 [0.54, 0.67]  rho 0.97 [0.96, 0.98]
+  NF-BoT-IoT-v3          CORE xgb -> NF-ToN-IoT-v3          J@10 0.54 [0.54, 0.67]  rho 0.98 [0.97, 0.98]
+  NF-CSE-CIC-IDS2018-v2  BIN  xgb -> NF-BoT-IoT-v2          J@10 0.54 [0.43, 0.67]  rho 0.91 [0.89, 0.92]
+  NF-CSE-CIC-IDS2018-v2  BIN  xgb -> NF-ToN-IoT-v2          J@10 0.54 [0.33, 0.67]  rho 0.91 [0.90, 0.92]
+  NF-CSE-CIC-IDS2018-v2  CORE xgb -> NF-BoT-IoT-v2          J@10 0.82 [0.67, 1.00]  rho 0.98 [0.96, 0.99]
+  NF-CSE-CIC-IDS2018-v2  CORE xgb -> NF-ToN-IoT-v2          J@10 1.00 [0.67, 1.00]  rho 0.98 [0.98, 0.99]
+  NF-CSE-CIC-IDS2018-v3  BIN  xgb -> NF-BoT-IoT-v3          J@10 0.54 [0.43, 0.82]  rho 0.89 [0.86, 0.90]
+  NF-CSE-CIC-IDS2018-v3  BIN  xgb -> NF-ToN-IoT-v3          J@10 0.82 [0.54, 1.00]  rho 0.94 [0.91, 0.96]
+  NF-CSE-CIC-IDS2018-v3  CORE xgb -> NF-BoT-IoT-v3          J@10 0.82 [0.54, 0.82]  rho 0.98 [0.96, 0.98]
+  NF-CSE-CIC-IDS2018-v3  CORE xgb -> NF-ToN-IoT-v3          J@10 0.82 [0.67, 1.00]  rho 0.98 [0.98, 0.99]
+  NF-ToN-IoT-v2          BIN  xgb -> NF-BoT-IoT-v2          J@10 0.67 [0.54, 0.67]  rho 0.92 [0.91, 0.94]
+  NF-ToN-IoT-v2          BIN  xgb -> NF-CSE-CIC-IDS2018-v2  J@10 0.67 [0.54, 0.67]  rho 0.88 [0.83, 0.91]
+  NF-ToN-IoT-v2          CORE xgb -> NF-BoT-IoT-v2          J@10 0.67 [0.54, 0.82]  rho 0.93 [0.92, 0.94]
+  NF-ToN-IoT-v2          CORE xgb -> NF-CSE-CIC-IDS2018-v2  J@10 0.43 [0.33, 0.54]  rho 0.85 [0.82, 0.88]
+  NF-ToN-IoT-v3          BIN  xgb -> NF-BoT-IoT-v3          J@10 0.54 [0.54, 0.67]  rho 0.87 [0.82, 0.88]
+  NF-ToN-IoT-v3          BIN  xgb -> NF-CSE-CIC-IDS2018-v3  J@10 0.54 [0.43, 0.54]  rho 0.88 [0.87, 0.91]
+  NF-ToN-IoT-v3          CORE xgb -> NF-BoT-IoT-v3          J@10 0.67 [0.54, 0.67]  rho 0.89 [0.79, 0.91]
+  NF-ToN-IoT-v3          CORE xgb -> NF-CSE-CIC-IDS2018-v3  J@10 0.67 [0.54, 0.67]  rho 0.92 [0.86, 0.92]
+
+Q4. NF-BoT-IoT DoS/DDoS rows explained by ToN and CIC CORE models: verdict per seed (criterion §18),
+    reply features in the top-5 Benign-pushing features, share of positive Benign push from reply features
+  NF-CSE-CIC-IDS2018-v2  xgb -> NF-BoT-IoT-v2: verdicts ['refuted', 'refuted', 'inconclusive', 'refuted', 'refuted'] (majority: refuted); reply in top5 [0, 0, 2, 0, 1]; reply share 0.07 [0.03, 0.18]; DoS/DDoS predicted Benign 1.00 [0.51, 1.00]
+      seed 1 top-5 toward Benign on BoT: ['NUM_PKTS_128_TO_256_BYTES', 'LONGEST_FLOW_PKT', 'TCP_FLAGS', 'TCP_WIN_MAX_IN', 'SRC_TO_DST_AVG_THROUGHPUT']
+      same model on its own DoS/DDoS test rows: reply in top5 [2, 2, 2, 2, 3]; top-5 ['SRC_TO_DST_SECOND_BYTES', 'CLIENT_TCP_FLAGS', 'OUT_PKTS', 'SHORTEST_FLOW_PKT', 'DURATION_OUT']
+  NF-CSE-CIC-IDS2018-v3  xgb -> NF-BoT-IoT-v3: verdicts ['refuted', 'refuted', 'refuted', 'refuted', 'refuted'] (majority: refuted); reply in top5 [0, 0, 0, 0, 0]; reply share 0.02 [0.00, 0.03]; DoS/DDoS predicted Benign 1.00 [1.00, 1.00]
+      seed 1 top-5 toward Benign on BoT: ['TCP_WIN_MAX_IN', 'CLIENT_TCP_FLAGS', 'LONGEST_FLOW_PKT', 'TCP_FLAGS', 'SRC_TO_DST_AVG_THROUGHPUT']
+      same model on its own DoS/DDoS test rows: reply in top5 [3, 3, 0, 4, 1]; top-5 ['OUT_BYTES', 'SRC_TO_DST_AVG_THROUGHPUT', 'SERVER_TCP_FLAGS', 'NUM_PKTS_UP_TO_128_BYTES', 'DURATION_OUT']
+  NF-ToN-IoT-v2          xgb -> NF-BoT-IoT-v2: verdicts ['refuted', 'refuted', 'refuted', 'refuted', 'refuted'] (majority: refuted); reply in top5 [1, 1, 1, 1, 1]; reply share 0.18 [0.10, 0.21]; DoS/DDoS predicted Benign 1.00 [1.00, 1.00]
+      seed 1 top-5 toward Benign on BoT: ['SHORTEST_FLOW_PKT', 'L7_PROTO', 'DURATION_IN', 'OUT_BYTES', 'MIN_IP_PKT_LEN']
+      same model on its own DoS/DDoS test rows: reply in top5 [0, 0, 1, 0, 0]; top-5 ['L7_PROTO', 'DURATION_IN', 'PROTOCOL', 'NUM_PKTS_128_TO_256_BYTES', 'NUM_PKTS_256_TO_512_BYTES']
+  NF-ToN-IoT-v3          xgb -> NF-BoT-IoT-v3: verdicts ['refuted', 'refuted', 'refuted', 'refuted', 'refuted'] (majority: refuted); reply in top5 [1, 0, 0, 1, 1]; reply share 0.09 [0.02, 0.18]; DoS/DDoS predicted Benign 0.98 [0.67, 1.00]
+      seed 1 top-5 toward Benign on BoT: ['SHORTEST_FLOW_PKT', 'SRC_TO_DST_IAT_MAX', 'LONGEST_FLOW_PKT', 'OUT_BYTES', 'SRC_TO_DST_AVG_THROUGHPUT']
+      same model on its own DoS/DDoS test rows: reply in top5 [2, 0, 1, 1, 2]; top-5 ['CLIENT_TCP_FLAGS', 'PROTOCOL', 'OUT_PKTS', 'SRC_TO_DST_IAT_AVG', 'DST_TO_SRC_IAT_AVG']

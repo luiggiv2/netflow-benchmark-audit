@@ -1,0 +1,13 @@
+Table S6: main XGBoost results with the library default and with max_delta_step=1
+provenance: {"commit": "6224fa641fbc9a3b6fc7bacd97238e8c9967cba8", "dirty": false, "script_sha1": "42b35733986010cf79731afa680b1c2d7bfbba39", "generated_utc": "2026-10-10T22:10:08.318500+00:00"}
+
+  In-domain: G0 cells with a seed range of 0.05 or more: default 5 of 12; max_delta_step=1 4 of 12
+  In-domain: cells with R0 above G0: default 11 of 12; max_delta_step=1 11 of 12
+  In-domain: G-TS minus R0, NF-CSE-CIC-IDS2018-v3 CAN (points): default −16.7; max_delta_step=1 +17.8
+  In-domain: G-TS minus R0, other NF-v3 cells (points): default −8.0 to +9.3; max_delta_step=1 −8.2 to +9.3
+  Cross-dataset BIN, without destination port (split of the condition): worse / better: default 22 / 2; max_delta_step=1 21 / 3
+  Cross-dataset BIN, without identity features (split of the condition): worse / better: default 18 / 6; max_delta_step=1 18 / 6
+  CORE into NF-BoT-IoT: DoS and DDoS F1 below 0.01 in every seed: default 34 of 40; max_delta_step=1 34 of 40
+  SHAP: ports, service and identity features in the G0 top-5 (median of seed means): default 46 %; max_delta_step=1 54 %
+  SHAP Q4 (original reply set): refuted / inconclusive seeds: default 18 / 2; max_delta_step=1 19 / 1
+  SHAP: source vs target Spearman, BIN / CORE (median): default 0.89 / 0.95; max_delta_step=1 0.91 / 0.97

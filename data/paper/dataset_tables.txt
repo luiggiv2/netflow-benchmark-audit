@@ -1,0 +1,68 @@
+Dataset tables (P5.4). Commit 30d7967cc6ddcab50c11dcceb4ad91faf48284b3
+
+NF-ToN-IoT-v3: rows 27,520,260; native classes 10; benign 16,792,214 (61.02 %); excluded from taxonomy 2,844,419
+    Backdoor: 203,384
+    Benign: 16,792,214
+    ddos: 4,141,256
+    dos: 203,456
+    injection: 381,777
+    mitm: 6,013
+    password: 1,594,777
+    ransomware: 3,971
+    scanning: 1,358,977
+    xss: 2,834,435
+NF-BoT-IoT-v3: rows 16,933,808; native classes 5; benign 51,989 (0.31 %); excluded from taxonomy 1,615
+    Benign: 51,989
+    DDoS: 7,150,882
+    DoS: 8,034,190
+    Reconnaissance: 1,695,132
+    Theft: 1,615
+NF-CSE-CIC-IDS2018-v3: rows 20,115,529; native classes 15; benign 17,514,626 (87.07 %); excluded from taxonomy 190,250
+    Benign: 17,514,626
+    Bot: 207,703
+    Brute_Force_-Web: 1,618
+    Brute_Force_-XSS: 480
+    DDOS_attack-HOIC: 1,032,311
+    DDOS_attack-LOIC-UDP: 3,450
+    DDoS_attacks-LOIC-HTTP: 288,589
+    DoS_attacks-GoldenEye: 61,300
+    DoS_attacks-Hulk: 100,076
+    DoS_attacks-SlowHTTPTest: 105,550
+    DoS_attacks-Slowloris: 36,040
+    FTP-BruteForce: 386,720
+    Infiltration: 188,152
+    SQL_Injection: 440
+    SSH-Bruteforce: 188,474
+NF-ToN-IoT-v2: rows 16,940,496; native classes 10; benign 6,099,469 (36.01 %); excluded from taxonomy 2,466,168
+    Benign: 6,099,469
+    backdoor: 16,809
+    ddos: 2,026,234
+    dos: 712,609
+    injection: 684,465
+    mitm: 7,723
+    password: 1,153,323
+    ransomware: 3,425
+    scanning: 3,781,419
+    xss: 2,455,020
+NF-BoT-IoT-v2: rows 37,763,497; native classes 5; benign 135,037 (0.36 %); excluded from taxonomy 2,431
+    Benign: 135,037
+    DDoS: 18,331,847
+    DoS: 16,673,183
+    Reconnaissance: 2,620,999
+    Theft: 2,431
+NF-CSE-CIC-IDS2018-v2: rows 18,893,708; native classes 15; benign 16,635,567 (88.05 %); excluded from taxonomy 119,431
+    Benign: 16,635,567
+    Bot: 143,097
+    Brute Force -Web: 2,143
+    Brute Force -XSS: 927
+    DDOS attack-HOIC: 1,080,858
+    DDOS attack-LOIC-UDP: 2,112
+    DDoS attacks-LOIC-HTTP: 307,300
+    DoS attacks-GoldenEye: 27,723
+    DoS attacks-Hulk: 432,648
+    DoS attacks-SlowHTTPTest: 14,116
+    DoS attacks-Slowloris: 9,512
+    FTP-BruteForce: 25,933
+    Infiltration: 116,361
+    SQL Injection: 432
+    SSH-Bruteforce: 94,979

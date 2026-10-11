@@ -1,0 +1,35 @@
+F2b mechanism check: Benign rows sharing a 40-feature vector with an attack label
+Generated: 2026-10-07T04:32:33.958950+00:00
+Windows: flows of the label merged when the gap is <= GAP minutes; 'outside' = start time of the
+Benign row in no window. Attacker hosts = source addresses of the label's rows.
+
+== NF-ToN-IoT-v3 Benign / scanning: label rows 1,358,977 from 17 source hosts (2019-04-23 14:09 to 2019-04-24 07:06 UTC)
+   conflicting Benign rows 6,582,208; from attacker hosts 6,581,291 (100.0 %); all Benign rows from attacker hosts 12,796,343
+   GAP  1 min:    173 windows,     9.5 h; outside: conflicting Benign   0.7 %, of those from attacker hosts   0.7 %; all Benign from attacker hosts  34.9 %
+   GAP  5 min:     10 windows,    14.4 h; outside: conflicting Benign   0.1 %, of those from attacker hosts   0.1 %; all Benign from attacker hosts  34.3 %
+   GAP 30 min:      2 windows,    15.6 h; outside: conflicting Benign   0.0 %, of those from attacker hosts   0.0 %; all Benign from attacker hosts  34.2 %
+
+== NF-ToN-IoT-v3 Benign / ddos: label rows 4,141,256 from 6 source hosts (2019-04-25 14:48 to 2019-04-26 05:01 UTC)
+   conflicting Benign rows 73,821; from attacker hosts 69,346 (93.9 %); all Benign rows from attacker hosts 4,902,202
+   GAP  1 min:      8 windows,    12.9 h; outside: conflicting Benign  10.3 %, of those from attacker hosts   4.6 %; all Benign from attacker hosts  90.4 %
+   GAP  5 min:      2 windows,    13.0 h; outside: conflicting Benign  10.3 %, of those from attacker hosts   4.6 %; all Benign from attacker hosts  90.4 %
+   GAP 30 min:      2 windows,    13.0 h; outside: conflicting Benign  10.3 %, of those from attacker hosts   4.6 %; all Benign from attacker hosts  90.4 %
+
+== NF-ToN-IoT-v3 Benign / password: label rows 1,594,777 from 7 source hosts (2019-04-26 13:45 to 2019-04-27 03:47 UTC)
+   conflicting Benign rows 108,644; from attacker hosts 108,136 (99.5 %); all Benign rows from attacker hosts 9,135,015
+   GAP  1 min:      2 windows,    14.0 h; outside: conflicting Benign   6.4 %, of those from attacker hosts   6.0 %; all Benign from attacker hosts  98.7 %
+   GAP  5 min:      1 windows,    14.0 h; outside: conflicting Benign   6.4 %, of those from attacker hosts   6.0 %; all Benign from attacker hosts  98.7 %
+   GAP 30 min:      1 windows,    14.0 h; outside: conflicting Benign   6.4 %, of those from attacker hosts   6.0 %; all Benign from attacker hosts  98.7 %
+
+== NF-BoT-IoT-v3 Benign / Reconnaissance: label rows 1,695,132 from 8 source hosts (2018-05-15 00:32 to 2018-05-22 10:03 UTC)
+   conflicting Benign rows 30,042; from attacker hosts 30,042 (100.0 %); all Benign rows from attacker hosts 48,453
+   GAP  1 min:     47 windows,    14.5 h; outside: conflicting Benign  74.6 %, of those from attacker hosts  74.6 %; all Benign from attacker hosts  61.2 %
+   GAP  5 min:     24 windows,    15.3 h; outside: conflicting Benign  71.1 %, of those from attacker hosts  71.1 %; all Benign from attacker hosts  56.2 %
+   GAP 30 min:      4 windows,    18.5 h; outside: conflicting Benign   1.0 %, of those from attacker hosts   1.0 %; all Benign from attacker hosts   6.7 %
+
+== NF-CSE-CIC-IDS2018-v3 Benign / Infiltration: label rows 188,152 from 609 source hosts (2018-02-28 12:22 to 2018-03-01 21:40 UTC)
+   conflicting Benign rows 403,411; from attacker hosts 78,152 (19.4 %); all Benign rows from attacker hosts 1,692,636
+   GAP  1 min:      9 windows,    18.6 h; outside: conflicting Benign  72.6 %, of those from attacker hosts  43.4 %; all Benign from attacker hosts  62.7 %
+   GAP  5 min:      3 windows,    18.8 h; outside: conflicting Benign  72.6 %, of those from attacker hosts  43.4 %; all Benign from attacker hosts  62.7 %
+   GAP 30 min:      2 windows,    18.9 h; outside: conflicting Benign  72.6 %, of those from attacker hosts  43.4 %; all Benign from attacker hosts  62.7 %
+

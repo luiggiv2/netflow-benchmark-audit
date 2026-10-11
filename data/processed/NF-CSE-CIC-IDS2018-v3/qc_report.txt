@@ -1,0 +1,41 @@
+QC report for NF-CSE-CIC-IDS2018-v3
+Generated: 2026-09-30T22:54:08.549893+00:00
+Total rows: 20,115,529
+Columns:    58
+Split: grouped by seeded hash of the normalised 49-feature vector, seed 42, 70/15/15
+
+Rows per canonical class per split:
+  class                     train          val         test        total     tr%    va%    te%  status
+  Benign               12,198,036    2,685,011    2,631,579   17,514,626   69.6%  15.3%  15.0%  OK
+  DDoS                    926,852      199,080      198,418    1,324,350   70.0%  15.0%  15.0%  OK
+  CredentialAttack        403,422       86,314       85,458      575,194   70.1%  15.0%  14.9%  OK
+  DoS                     212,236       45,170       45,560      302,966   70.1%  14.9%  15.0%  OK
+  Bot_or_Backdoor         145,412       31,139       31,152      207,703   70.0%  15.0%  15.0%  OK
+  (excluded)              132,144       29,159       28,947      190,250   69.5%  15.3%  15.2%  OK
+  Injection                   410           25            5          440   93.2%   5.7%   1.1%  val<1000, test<1000, test share outside 10-20%
+
+WARNINGS:
+  - Injection: val<1000, test<1000, test share outside 10-20% (val=25, test=5, test share=1.1%)
+
+Exact duplicates on the normalised 49-feature vector:
+  unique feature vectors: 17,454,518 of 20,115,529 rows
+  duplicate rows:         2,661,011 (13.23%)
+  Duplicates stay within one split by construction of the key.
+
+Conflicting labels (identical vector, more than one canonical label; kept in the data, irreducible error floor):
+  vectors: 14,178   rows: 495,578 (2.49% of canonical rows)
+    CredentialAttack / DoS                       14,116 vectors
+    Benign / DDoS                                    35 vectors
+    Benign / Injection                               27 vectors
+
+Implementation sanity check (holds by construction; the audit verifies it independently on tabular.parquet):
+  feature hashes assigned to more than one split: 0
+
+Source-IP overlap across splits (informative; expected given the testbed structure):
+  unique src IPs in train: 151,304
+  unique src IPs in val  : 67,765
+  unique src IPs in test : 67,930
+  shared train/test: 52,019
+
+NaN and Inf per column (stored as-is; the serializer converts Inf to NaN for the tabular representation):
+  none

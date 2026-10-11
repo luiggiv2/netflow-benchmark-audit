@@ -1,0 +1,129 @@
+P4.2 summary for the Phase 4 gate (from data/eval/in_domain/*.jsonl; 5 seeds per cell)
+Generated: 2026-10-05T15:50:29.582148+00:00
+
+1. Seed range (max - min) of macro-F1, G0 vs R0
+   NF-BoT-IoT-v2          BIN rf  G0 0.542-0.992 (range 0.450)  R0 0.992-0.992 (range 0.001)
+   NF-BoT-IoT-v2          BIN xgb G0 0.987-0.990 (range 0.003)  R0 0.990-0.991 (range 0.001)
+   NF-BoT-IoT-v2          CAN rf  G0 0.691-0.941 (range 0.251)  R0 0.992-0.993 (range 0.001)
+   NF-BoT-IoT-v2          CAN xgb G0 0.927-0.970 (range 0.043)  R0 0.974-0.975 (range 0.001)
+   NF-BoT-IoT-v3          BIN rf  G0 0.807-0.864 (range 0.057)  R0 0.851-0.855 (range 0.004)
+   NF-BoT-IoT-v3          BIN xgb G0 0.795-0.851 (range 0.057)  R0 0.848-0.856 (range 0.008)
+   NF-BoT-IoT-v3          CAN rf  G0 0.844-0.926 (range 0.082)  R0 0.919-0.921 (range 0.002)
+   NF-BoT-IoT-v3          CAN xgb G0 0.758-0.917 (range 0.159)  R0 0.914-0.921 (range 0.006)
+   NF-CSE-CIC-IDS2018-v2  BIN rf  G0 0.807-0.832 (range 0.026)  R0 0.833-0.834 (range 0.001)
+   NF-CSE-CIC-IDS2018-v2  BIN xgb G0 0.976-0.981 (range 0.005)  R0 0.984-0.985 (range 0.001)
+   NF-CSE-CIC-IDS2018-v2  CAN rf  G0 0.857-0.874 (range 0.017)  R0 0.869-0.885 (range 0.016)
+   NF-CSE-CIC-IDS2018-v2  CAN xgb G0 0.857-0.873 (range 0.016)  R0 0.872-0.887 (range 0.016)
+   NF-CSE-CIC-IDS2018-v3  BIN rf  G0 0.823-0.907 (range 0.084)  R0 0.833-0.835 (range 0.003)
+   NF-CSE-CIC-IDS2018-v3  BIN xgb G0 0.940-0.972 (range 0.032)  R0 0.947-0.950 (range 0.003)
+   NF-CSE-CIC-IDS2018-v3  CAN rf  G0 0.621-0.884 (range 0.263)  R0 0.814-0.826 (range 0.012)
+   NF-CSE-CIC-IDS2018-v3  CAN xgb G0 0.088-0.880 (range 0.793)  R0 0.459-0.757 (range 0.298)
+   NF-ToN-IoT-v2          BIN rf  G0 0.825-0.985 (range 0.160)  R0 0.995-0.995 (range 0.000)
+   NF-ToN-IoT-v2          BIN xgb G0 0.826-0.986 (range 0.159)  R0 0.993-0.993 (range 0.000)
+   NF-ToN-IoT-v2          CAN rf  G0 0.760-0.920 (range 0.160)  R0 0.975-0.976 (range 0.001)
+   NF-ToN-IoT-v2          CAN xgb G0 0.778-0.922 (range 0.144)  R0 0.968-0.969 (range 0.001)
+   NF-ToN-IoT-v3          BIN rf  G0 0.859-0.880 (range 0.021)  R0 0.885-0.886 (range 0.001)
+   NF-ToN-IoT-v3          BIN xgb G0 0.833-0.859 (range 0.027)  R0 0.873-0.874 (range 0.001)
+   NF-ToN-IoT-v3          CAN rf  G0 0.832-0.846 (range 0.014)  R0 0.862-0.863 (range 0.001)
+   NF-ToN-IoT-v3          CAN xgb G0 0.823-0.847 (range 0.025)  R0 0.858-0.859 (range 0.001)
+   cells with G0 range >= 0.05: 13 of 24; R0 range >= 0.05: 1 of 24; median range G0 0.057, R0 0.001
+
+2. Conflict ceiling of G0 (median over seeds; same for both models)
+   NF-ToN-IoT-v3          BIN: 0.954 [0.952, 0.961]
+   NF-ToN-IoT-v3          CAN: 0.892 [0.889, 0.896]
+   NF-BoT-IoT-v3          BIN: 0.888 [0.877, 0.890]
+   NF-BoT-IoT-v3          CAN: 0.942 [0.937, 0.943]
+   NF-CSE-CIC-IDS2018-v3  BIN: 0.998 [0.997, 0.999]
+   NF-CSE-CIC-IDS2018-v3  CAN: 0.968 [0.743, 0.984]
+   NF-ToN-IoT-v2          BIN: 1.000 [1.000, 1.000]
+   NF-ToN-IoT-v2          CAN: 1.000 [1.000, 1.000]
+   NF-BoT-IoT-v2          BIN: 1.000 [1.000, 1.000]
+   NF-BoT-IoT-v2          CAN: 1.000 [1.000, 1.000]
+   NF-CSE-CIC-IDS2018-v2  BIN: 1.000 [1.000, 1.000]
+   NF-CSE-CIC-IDS2018-v2  CAN: 0.868 [0.866, 0.874]
+
+3. Absolute timestamps (NF-v3): R0 vs G-TS median macro-F1 (both near-random splits)
+   NF-BoT-IoT-v3          BIN rf  R0 0.855 -> G-TS 0.997 (+14.2 points)
+   NF-BoT-IoT-v3          BIN xgb R0 0.850 -> G-TS 0.907 (+5.7 points)
+   NF-BoT-IoT-v3          CAN rf  R0 0.921 -> G-TS 0.998 (+7.7 points)
+   NF-BoT-IoT-v3          CAN xgb R0 0.917 -> G-TS 0.953 (+3.7 points)
+   NF-CSE-CIC-IDS2018-v3  BIN rf  R0 0.834 -> G-TS 0.898 (+6.4 points)
+   NF-CSE-CIC-IDS2018-v3  BIN xgb R0 0.948 -> G-TS 0.868 (-8.0 points)
+   NF-CSE-CIC-IDS2018-v3  CAN rf  R0 0.824 -> G-TS 0.997 (+17.4 points)
+   NF-CSE-CIC-IDS2018-v3  CAN xgb R0 0.637 -> G-TS 0.469 (-16.7 points)
+   NF-ToN-IoT-v3          BIN rf  R0 0.886 -> G-TS 0.963 (+7.7 points)
+   NF-ToN-IoT-v3          BIN xgb R0 0.874 -> G-TS 0.957 (+8.3 points)
+   NF-ToN-IoT-v3          CAN rf  R0 0.863 -> G-TS 0.963 (+10.0 points)
+   NF-ToN-IoT-v3          CAN xgb R0 0.859 -> G-TS 0.952 (+9.3 points)
+
+4. Paired per-seed difference with G0 (points): G-ND (exact duplicate records removed) and G-NC
+   NF-BoT-IoT-v2          BIN rf  G-NC: median +0.00 [+0.00, +0.00]
+   NF-BoT-IoT-v2          BIN xgb G-NC: median +0.00 [+0.00, +0.00]
+   NF-BoT-IoT-v2          CAN rf  G-NC: median +0.00 [+0.00, +0.00]
+   NF-BoT-IoT-v2          CAN xgb G-NC: median +0.00 [+0.00, +0.00]
+   NF-BoT-IoT-v3          BIN rf  G-ND: median +0.00 [+0.00, +0.00]
+   NF-BoT-IoT-v3          BIN rf  G-NC: median +12.55 [+11.82, +13.58]
+   NF-BoT-IoT-v3          BIN xgb G-ND: median +0.00 [+0.00, +0.00]
+   NF-BoT-IoT-v3          BIN xgb G-NC: median +10.78 [+10.56, +16.48]
+   NF-BoT-IoT-v3          CAN rf  G-ND: median +0.00 [+0.00, +0.00]
+   NF-BoT-IoT-v3          CAN rf  G-NC: median +6.68 [+6.18, +12.04]
+   NF-BoT-IoT-v3          CAN xgb G-ND: median +0.00 [+0.00, +0.00]
+   NF-BoT-IoT-v3          CAN xgb G-NC: median +7.42 [+6.42, +19.74]
+   NF-CSE-CIC-IDS2018-v2  BIN rf  G-NC: median +0.00 [+0.00, +0.00]
+   NF-CSE-CIC-IDS2018-v2  BIN xgb G-NC: median +0.00 [+0.00, +0.00]
+   NF-CSE-CIC-IDS2018-v2  CAN rf  G-NC: median +12.05 [+9.41, +13.39]
+   NF-CSE-CIC-IDS2018-v2  CAN xgb G-NC: median +13.13 [+9.41, +13.39]
+   NF-CSE-CIC-IDS2018-v3  BIN rf  G-ND: median +0.67 [-0.73, +0.98]
+   NF-CSE-CIC-IDS2018-v3  BIN rf  G-NC: median +1.63 [-23.35, +1.77]
+   NF-CSE-CIC-IDS2018-v3  BIN xgb G-ND: median +2.74 [+1.40, +3.45]
+   NF-CSE-CIC-IDS2018-v3  BIN xgb G-NC: median +1.13 [-25.13, +1.15]
+   NF-CSE-CIC-IDS2018-v3  CAN rf  G-ND: median +0.49 [-0.71, +1.20]
+   NF-CSE-CIC-IDS2018-v3  CAN rf  G-NC: median +11.74 [+6.02, +36.36]
+   NF-CSE-CIC-IDS2018-v3  CAN xgb G-ND: median +1.13 [-57.18, +45.34]
+   NF-CSE-CIC-IDS2018-v3  CAN xgb G-NC: median +16.30 [+2.57, +90.70]
+   NF-ToN-IoT-v2          BIN rf  G-NC: median +0.00 [+0.00, +0.00]
+   NF-ToN-IoT-v2          BIN xgb G-NC: median +0.00 [+0.00, +0.00]
+   NF-ToN-IoT-v2          CAN rf  G-NC: median +0.00 [+0.00, +0.00]
+   NF-ToN-IoT-v2          CAN xgb G-NC: median +0.00 [+0.00, +0.00]
+   NF-ToN-IoT-v3          BIN rf  G-ND: median +0.17 [-0.24, +0.22]
+   NF-ToN-IoT-v3          BIN rf  G-NC: median +8.57 [+7.67, +9.14]
+   NF-ToN-IoT-v3          BIN xgb G-ND: median +0.08 [-0.62, +0.92]
+   NF-ToN-IoT-v3          BIN xgb G-NC: median +10.09 [+8.78, +10.85]
+   NF-ToN-IoT-v3          CAN rf  G-ND: median +0.08 [-1.16, +0.23]
+   NF-ToN-IoT-v3          CAN rf  G-NC: median +1.51 [+0.90, +1.90]
+   NF-ToN-IoT-v3          CAN xgb G-ND: median +0.09 [-0.03, +1.39]
+   NF-ToN-IoT-v3          CAN xgb G-NC: median +0.79 [-0.01, +2.03]
+   G-ND over NF-ToN-IoT-v3 and NF-CSE-CIC-IDS2018-v3 (NF-BoT-IoT-v3 has no such records): median +0.22 points, IQR [-0.07, +1.13], n=40
+
+5. Random (R0) vs grouped (G0) split: median macro-F1 and R0 leakage (CAN, seed 1)
+   NF-BoT-IoT-v2          BIN rf  G0 0.546  R0 0.992  (+44.7)
+   NF-BoT-IoT-v2          BIN xgb G0 0.989  R0 0.990  (+0.2)
+   NF-BoT-IoT-v2          CAN rf  G0 0.709  R0 0.992  (+28.3)
+   NF-BoT-IoT-v2          CAN xgb G0 0.956  R0 0.975  (+1.9)
+   NF-BoT-IoT-v3          BIN rf  G0 0.861  R0 0.855  (-0.6)
+   NF-BoT-IoT-v3          BIN xgb G0 0.825  R0 0.850  (+2.5)
+   NF-BoT-IoT-v3          CAN rf  G0 0.925  R0 0.921  (-0.4)
+   NF-BoT-IoT-v3          CAN xgb G0 0.908  R0 0.917  (+0.9)
+   NF-CSE-CIC-IDS2018-v2  BIN rf  G0 0.812  R0 0.833  (+2.1)
+   NF-CSE-CIC-IDS2018-v2  BIN xgb G0 0.980  R0 0.985  (+0.4)
+   NF-CSE-CIC-IDS2018-v2  CAN rf  G0 0.868  R0 0.875  (+0.7)
+   NF-CSE-CIC-IDS2018-v2  CAN xgb G0 0.868  R0 0.876  (+0.8)
+   NF-CSE-CIC-IDS2018-v3  BIN rf  G0 0.832  R0 0.834  (+0.2)
+   NF-CSE-CIC-IDS2018-v3  BIN xgb G0 0.944  R0 0.948  (+0.4)
+   NF-CSE-CIC-IDS2018-v3  CAN rf  G0 0.866  R0 0.824  (-4.2)
+   NF-CSE-CIC-IDS2018-v3  CAN xgb G0 0.826  R0 0.637  (-18.9)
+   NF-ToN-IoT-v2          BIN rf  G0 0.976  R0 0.995  (+1.9)
+   NF-ToN-IoT-v2          BIN xgb G0 0.975  R0 0.993  (+1.8)
+   NF-ToN-IoT-v2          CAN rf  G0 0.877  R0 0.975  (+9.8)
+   NF-ToN-IoT-v2          CAN xgb G0 0.886  R0 0.969  (+8.3)
+   NF-ToN-IoT-v3          BIN rf  G0 0.862  R0 0.886  (+2.4)
+   NF-ToN-IoT-v3          BIN xgb G0 0.845  R0 0.874  (+2.9)
+   NF-ToN-IoT-v3          CAN rf  G0 0.834  R0 0.863  (+2.8)
+   NF-ToN-IoT-v3          CAN xgb G0 0.838  R0 0.859  (+2.1)
+   R0 median above G0 median in 20 of 24 cells
+   NF-ToN-IoT-v3          R0 test rows with their vector in train: 0.833
+   NF-BoT-IoT-v3          R0 test rows with their vector in train: 0.941
+   NF-CSE-CIC-IDS2018-v3  R0 test rows with their vector in train: 0.296
+   NF-ToN-IoT-v2          R0 test rows with their vector in train: 0.867
+   NF-BoT-IoT-v2          R0 test rows with their vector in train: 0.994
+   NF-CSE-CIC-IDS2018-v2  R0 test rows with their vector in train: 0.547

@@ -1,0 +1,85 @@
+{
+  "dataset": "NF-BoT-IoT-v3",
+  "generated_utc": "2026-09-30T22:44:36.704724+00:00",
+  "script": "scripts/01_load_nfv3.py",
+  "environment": {
+    "pandas": "3.0.3",
+    "numpy": "2.4.6"
+  },
+  "input": {
+    "path": "d509c9db7490cf92_NFV3DATA-A11964_A11964/data/NF-BoT-IoT-v3.csv",
+    "sha1": "357cc7ffe46ef57ba8193a58d7a66eff5cf44db8"
+  },
+  "config": {
+    "split_method": "grouped by pandas.util.hash_pandas_object of the normalised 49-feature vector, mixed with the seed constant through splitmix64, modulo 100",
+    "split_seed": 42,
+    "split_seed_const": "0xf119a835ed784c12",
+    "train_high": 70,
+    "val_high": 85,
+    "class_mapping_path": "data/schemas/class_mapping.csv",
+    "class_mapping_sha1": "395924d802f2490af7a7f045f82bab7cc72ed03e"
+  },
+  "typo_correction": {
+    "from": "Infilteration",
+    "to": "Infiltration",
+    "rows_affected": 0
+  },
+  "outputs": {
+    "parquet": {
+      "path": "data/processed/NF-BoT-IoT-v3/data.parquet",
+      "sha1": "879295b7fb3299f9100345d72df03f98447abf04",
+      "size_bytes": 88719343,
+      "rows": 16933808,
+      "columns": 58
+    },
+    "qc_report": "data/processed/NF-BoT-IoT-v3/qc_report.txt",
+    "log": "data/processed/NF-BoT-IoT-v3/load.log"
+  },
+  "qc_summary": {
+    "class_counts": {
+      "DoS": {
+        "train": 5623481,
+        "val": 1203601,
+        "test": 1207108,
+        "total": 8034190
+      },
+      "DDoS": {
+        "train": 5004674,
+        "val": 1073045,
+        "test": 1073163,
+        "total": 7150882
+      },
+      "Reconnaissance": {
+        "train": 1185707,
+        "val": 254840,
+        "test": 254585,
+        "total": 1695132
+      },
+      "Benign": {
+        "train": 36431,
+        "val": 7783,
+        "test": 7775,
+        "total": 51989
+      },
+      "": {
+        "train": 1149,
+        "val": 217,
+        "test": 249,
+        "total": 1615
+      }
+    },
+    "duplicates_and_conflicts": {
+      "rows": 16933808,
+      "unique_feature_vectors": 16687490,
+      "duplicate_rows": 246318,
+      "canonical_rows": 16932193,
+      "conflicting_vectors": 44894,
+      "conflicting_rows": 164051,
+      "conflict_label_sets": {
+        "DDoS / DoS": 43626,
+        "Benign / Reconnaissance": 1268
+      }
+    },
+    "warnings": []
+  }
+}

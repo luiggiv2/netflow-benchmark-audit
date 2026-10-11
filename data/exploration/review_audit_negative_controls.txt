@@ -1,0 +1,5 @@
+I5 correct column -> pass
+I5 int32-wrapped column -> ['DNS_TTL_ANSWER: min 0 vs -52218', 'DNS_TTL_ANSWER: max 4294915672 vs 172800', 'DNS_TTL_ANSWER: sum 1374506197229 vs 116662509']
+N5a clean -> 0
+N5a one vector in val and test -> 1
+N5b NaN-keyed test row matched in train -> 1 (expected 1)

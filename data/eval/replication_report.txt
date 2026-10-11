@@ -1,0 +1,76 @@
+P4.4 replication of Layeghy and Portmann (2023), RF, binary, 39 features, 1 M stratified sample
+Generated: 2026-10-05T03:02:57.796693+00:00
+F1 of the attack class in %, median [min, max] over seeds. L0 as published (random 70/30); L0k 5-fold
+CV without shuffling (mean over folds); L0t first 70 % / last 30 % in file order; L1 grouped
+70/30; L2 L1 without conflicting rows; L3 L1 with the F8 duration recovered; L4 L1 without the duration.
+leak = share of test rows whose 39-feature vector occurs in train. pub = published value.
+
+== NF-BoT-IoT-v2 (published in-domain 99.82)
+  L0 n=5 in-domain  99.88 [ 99.88,  99.88] macro  75.39 leak 0.987
+       -> NF-CSE-CIC-IDS2018-v2     21.35 [ 21.35,  21.35] (pub  22.32)
+       -> NF-ToN-IoT-v2             78.05 [ 78.05,  78.05] (pub  85.50)
+  L0k n=5 in-domain  99.88 [ 99.88,  99.88] macro  75.25 leak 0.989
+       -> NF-CSE-CIC-IDS2018-v2     21.35 [ 21.35,  21.35] (pub  22.32)
+       -> NF-ToN-IoT-v2             78.05 [ 78.05,  78.05] (pub  85.50)
+  L0t n=5 in-domain  99.88 [ 99.88,  99.88] macro  76.13 leak 0.987
+       -> NF-CSE-CIC-IDS2018-v2     21.35 [ 21.35,  21.35] (pub  22.32)
+       -> NF-ToN-IoT-v2             78.05 [ 78.05,  78.05] (pub  85.50)
+  L1 n=5 in-domain  99.87 [ 99.80,  99.94] macro  74.40 leak 0.000
+       -> NF-CSE-CIC-IDS2018-v2     21.35 [ 21.35,  21.36] (pub  22.32)
+       -> NF-ToN-IoT-v2             78.05 [ 78.05,  78.08] (pub  85.50)
+  L2 n=5 in-domain  99.87 [ 99.80,  99.94] macro  74.40 leak 0.000 conflicts 0
+       -> NF-CSE-CIC-IDS2018-v2     21.35 [ 21.35,  21.36] (pub  22.32)
+       -> NF-ToN-IoT-v2             78.05 [ 78.05,  78.08] (pub  85.50)
+  L3 n=5 in-domain  99.87 [ 99.80,  99.94] macro  74.40 leak 0.000
+       -> NF-CSE-CIC-IDS2018-v2     21.35 [ 21.35,  21.36] (pub  22.32)
+       -> NF-ToN-IoT-v2             78.05 [ 78.05,  78.08] (pub  85.50)
+  L4 n=5 in-domain  99.87 [ 99.80,  99.95] macro  74.50 leak 0.000
+       -> NF-CSE-CIC-IDS2018-v2     21.35 [ 21.35,  21.36] (pub  22.32)
+       -> NF-ToN-IoT-v2             78.05 [ 78.05,  78.08] (pub  85.50)
+
+== NF-CSE-CIC-IDS2018-v2 (published in-domain 95.44)
+  L0 n=5 in-domain  96.68 [ 96.61,  96.71] macro  98.12 leak 0.452
+       -> NF-BoT-IoT-v2              0.14 [  0.05,   0.16] (pub  12.91)
+       -> NF-ToN-IoT-v2              8.89 [  5.25,  12.67] (pub  30.28)
+  L0k n=5 in-domain  96.64 [ 96.62,  96.67] macro  98.10 leak 0.456
+       -> NF-BoT-IoT-v2              0.08 [  0.07,   0.12] (pub  12.91)
+       -> NF-ToN-IoT-v2              9.13 [  8.75,  10.63] (pub  30.28)
+  L0t n=5 in-domain  96.64 [ 96.48,  96.74] macro  98.10 leak 0.451
+       -> NF-BoT-IoT-v2              0.11 [  0.07,   0.14] (pub  12.91)
+       -> NF-ToN-IoT-v2              9.39 [  5.78,  12.85] (pub  30.28)
+  L1 n=5 in-domain  93.72 [ 83.85,  95.65] macro  96.44 leak 0.000
+       -> NF-BoT-IoT-v2              0.09 [  0.04,   0.11] (pub  12.91)
+       -> NF-ToN-IoT-v2              8.72 [  7.75,  11.38] (pub  30.28)
+  L2 n=5 in-domain  93.72 [ 83.85,  95.65] macro  96.44 leak 0.000 conflicts 0
+       -> NF-BoT-IoT-v2              0.09 [  0.04,   0.11] (pub  12.91)
+       -> NF-ToN-IoT-v2              8.72 [  7.75,  11.38] (pub  30.28)
+  L3 n=5 in-domain  93.53 [ 83.87,  95.64] macro  96.33 leak 0.000
+       -> NF-BoT-IoT-v2              0.05 [  0.02,   0.22] (pub  12.91)
+       -> NF-ToN-IoT-v2              8.59 [  5.33,   9.70] (pub  30.28)
+  L4 n=5 in-domain  93.78 [ 85.63,  95.64] macro  96.47 leak 0.000
+       -> NF-BoT-IoT-v2              0.08 [  0.06,   0.14] (pub  12.91)
+       -> NF-ToN-IoT-v2              9.52 [  8.43,  11.16] (pub  30.28)
+
+== NF-ToN-IoT-v2 (published in-domain 77.33)
+  L0 n=5 in-domain  98.03 [ 97.90,  98.12] macro  97.22 leak 0.782
+       -> NF-BoT-IoT-v2             15.10 [ 12.71,  16.46] (pub  46.75)
+       -> NF-CSE-CIC-IDS2018-v2     21.93 [ 18.56,  22.18] (pub   4.50)
+  L0k n=5 in-domain  93.33 [ 93.16,  93.56] macro  88.81 leak 0.675
+       -> NF-BoT-IoT-v2             11.97 [ 10.64,  14.28] (pub  46.75)
+       -> NF-CSE-CIC-IDS2018-v2     11.27 [  9.45,  16.35] (pub   4.50)
+  L0t n=5 in-domain  92.61 [ 92.02,  92.93] macro  70.53 leak 0.270
+       -> NF-BoT-IoT-v2              8.61 [  7.27,  11.62] (pub  46.75)
+       -> NF-CSE-CIC-IDS2018-v2     20.52 [ 19.52,  21.47] (pub   4.50)
+  L1 n=5 in-domain  59.13 [ 51.75,  74.58] macro  37.55 leak 0.000
+       -> NF-BoT-IoT-v2             18.27 [  8.71,  20.65] (pub  46.75)
+       -> NF-CSE-CIC-IDS2018-v2     16.87 [  2.78,  23.18] (pub   4.50)
+  L2 n=5 in-domain  59.13 [ 51.75,  74.58] macro  37.55 leak 0.000 conflicts 0
+       -> NF-BoT-IoT-v2             18.27 [  8.71,  20.65] (pub  46.75)
+       -> NF-CSE-CIC-IDS2018-v2     16.87 [  2.78,  23.18] (pub   4.50)
+  L3 n=5 in-domain  59.13 [ 51.78,  74.43] macro  37.65 leak 0.000
+       -> NF-BoT-IoT-v2             14.71 [  8.21,  19.68] (pub  46.75)
+       -> NF-CSE-CIC-IDS2018-v2     17.95 [  2.75,  21.47] (pub   4.50)
+  L4 n=5 in-domain  59.10 [ 51.49,  74.43] macro  37.58 leak 0.000
+       -> NF-BoT-IoT-v2             16.90 [  8.21,  20.63] (pub  46.75)
+       -> NF-CSE-CIC-IDS2018-v2     18.99 [  1.31,  23.49] (pub   4.50)
+

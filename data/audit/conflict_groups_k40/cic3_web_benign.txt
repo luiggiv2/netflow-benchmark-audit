@@ -1,0 +1,45 @@
+=== cic3_web_benign: NF-CSE-CIC-IDS2018-v3, labels ['Benign', 'Brute_Force_-Web', 'Brute_Force_-XSS', 'SQL_Injection']
+vectors carrying >= 2 of these labels (40-feature key): 234; rows: 37,671
+
+[Benign] rows 36,085; distinct vectors 182
+  src IP : 151.106.17.146 (8.9 %), 163.172.159.86 (7.8 %), 212.47.252.61 (6.1 %), 212.129.1.60 (5.7 %), 185.94.111.1 (3.0 %) [+1917 more]
+  dst IP : 172.31.69.28 (9.2 %), 172.31.69.7 (2.4 %), 172.31.69.22 (2.1 %), 172.31.69.25 (2.0 %), 172.31.65.66 (1.4 %) [+444 more]
+  dst port: 5060 (49.1 %), 1900 (9.1 %), 500 (8.8 %), 0 (7.2 %), 137 (4.7 %) [+60 more]
+  protocol: 17 (86.0 %), 1 (7.2 %), 6 (6.8 %); L7_PROTO: 100.0 (49.4 %), 12.0 (9.1 %), 79.0 (8.8 %) [+25 more]
+  time   : 2018-02-14 12:29 to 2018-03-02 20:05 UTC
+[Brute_Force_-Web] rows 705; distinct vectors 189
+  src IP : 52.14.77.172 (11.9 %), 13.58.82.37 (11.6 %), 13.58.42.57 (11.6 %), 18.218.115.60 (5.2 %), 5.188.11.188 (5.0 %) [+248 more]
+  dst IP : 172.31.69.28 (100.0 %)
+  dst port: 500 (35.2 %), 445 (14.5 %), 0 (11.5 %), 23 (8.4 %), 80 (5.7 %) [+59 more]
+  protocol: 6 (44.7 %), 17 (43.8 %), 1 (11.5 %); L7_PROTO: 79.0 (35.2 %), 41.0 (14.5 %), 81.0 (11.5 %) [+24 more]
+  time   : 2018-02-22 12:24 to 2018-02-22 21:29 UTC
+[Brute_Force_-XSS] rows 480; distinct vectors 53
+  src IP : 52.14.77.172 (41.5 %), 13.58.42.57 (41.2 %), 18.218.115.60 (9.0 %), 172.31.69.28 (8.3 %)
+  dst IP : 172.31.69.28 (91.7 %), 172.31.69.1 (8.3 %)
+  dst port: 500 (82.7 %), 80 (9.0 %), 67 (8.3 %)
+  protocol: 17 (91.0 %), 6 (9.0 %); L7_PROTO: 79.0 (82.7 %), 7.0 (9.0 %), 18.0 (8.3 %)
+  time   : 2018-02-22 12:25 to 2018-02-22 21:29 UTC
+[SQL_Injection] rows 401; distinct vectors 59
+  src IP : 13.58.82.37 (28.9 %), 13.58.42.57 (28.9 %), 52.14.77.172 (28.7 %), 18.218.115.60 (13.5 %)
+  dst IP : 172.31.69.28 (100.0 %)
+  dst port: 500 (86.5 %), 80 (13.5 %)
+  protocol: 17 (86.5 %), 6 (13.5 %); L7_PROTO: 79.0 (86.5 %), 7.0 (13.5 %)
+  time   : 2018-02-22 15:09 to 2018-02-22 20:28 UTC
+
+Most frequent conflicting vectors (rows per label; non-zero features):
+  - Benign 2,189, Brute_Force_-Web 197, Brute_Force_-XSS 337, SQL_Injection 292
+      L4_DST_PORT=500, PROTOCOL=17, L7_PROTO=79, IN_BYTES=3168, IN_PKTS=6, FLOW_DURATION_MILLISECONDS=89479, DURATION_IN=89479, MIN_TTL=62, MAX_TTL=62, LONGEST_FLOW_PKT=528, SHORTEST_FLOW_PKT=528, MAX_IP_PKT_LEN=528, SRC_TO_DST_AVG_THROUGHPUT=283, NUM_PKTS_512_TO_1024_BYTES=6
+  - Benign 2,235, Brute_Force_-Web 3
+      L4_DST_PORT=5060, PROTOCOL=17, L7_PROTO=100, IN_BYTES=438, IN_PKTS=1, FLOW_DURATION_MILLISECONDS=1, LONGEST_FLOW_PKT=438, SHORTEST_FLOW_PKT=438, MAX_IP_PKT_LEN=438, DST_TO_SRC_SECOND_BYTES=4, SRC_TO_DST_AVG_THROUGHPUT=3504000, NUM_PKTS_256_TO_512_BYTES=1
+  - Benign 2,082, Brute_Force_-Web 5
+      L4_DST_PORT=5060, PROTOCOL=17, L7_PROTO=100, IN_BYTES=434, IN_PKTS=1, FLOW_DURATION_MILLISECONDS=1, LONGEST_FLOW_PKT=434, SHORTEST_FLOW_PKT=434, MAX_IP_PKT_LEN=434, DST_TO_SRC_SECOND_BYTES=4, SRC_TO_DST_AVG_THROUGHPUT=3472000, NUM_PKTS_256_TO_512_BYTES=1
+  - Benign 1,807, Brute_Force_-Web 3
+      L4_DST_PORT=5060, PROTOCOL=17, L7_PROTO=100, IN_BYTES=435, IN_PKTS=1, FLOW_DURATION_MILLISECONDS=1, LONGEST_FLOW_PKT=435, SHORTEST_FLOW_PKT=435, MAX_IP_PKT_LEN=435, DST_TO_SRC_SECOND_BYTES=4, SRC_TO_DST_AVG_THROUGHPUT=3480000, NUM_PKTS_256_TO_512_BYTES=1
+  - Benign 1,740, Brute_Force_-Web 1
+      L4_DST_PORT=5060, PROTOCOL=17, L7_PROTO=100, IN_BYTES=439, IN_PKTS=1, FLOW_DURATION_MILLISECONDS=1, LONGEST_FLOW_PKT=439, SHORTEST_FLOW_PKT=439, MAX_IP_PKT_LEN=439, DST_TO_SRC_SECOND_BYTES=4, SRC_TO_DST_AVG_THROUGHPUT=3512000, NUM_PKTS_256_TO_512_BYTES=1
+  share of conflicting rows in the top 1 / 10 / 100 vectors: 8.0 % / 49.6 % / 99.1 %
+
+Full records (features + IPs + timestamps) carrying >1 label: 440 records, 880 rows (2.34 % of group rows)
+Full-record duplicates within the same label (identical record repeated): 1,373 rows (3.64 % of group rows)
+Exact re-check (no hashing) on 234 sampled vectors: 234 distinct exact vectors with >1 label, 0 with a single label
+

@@ -1,0 +1,47 @@
+N9 check: composition of the minority rows of NF-v3 (native labels)
+Generated: 2026-10-08T18:36:05.440106+00:00
+Minority row: label differs from the majority label of its feature vector. Attacker hosts: source
+addresses that send at least one attack-labelled row in the same dataset.
+
+== NF-ToN-IoT-v3: 27,520,260 rows; 26 source addresses send attack-labelled rows
+  key 40 (40 features): minority rows 1,134,822 (4.12 % of rows) [matches script 30: True]; conflicting vectors 226,146, of which with a tied majority 51,460
+    minority rows on tied vectors (label depends on the tie-break): 62,483 (5.5 %); of the non-tied minority rows, labelled Benign 28.9 %
+    labelled Benign: 309,635 (27.3 % of minority rows); from attacker hosts 100.0 %
+    labelled as an attack: 825,187 (72.7 %); on Benign-majority vectors 97.3 %
+    with Benign as the minority or the majority label: 1,112,537 (98.0 % of minority rows); from attacker hosts 100.0 %
+    top pairs (minority label -> majority label): scanning -> Benign 735,089 (64.8 %); Benign -> scanning 201,911 (17.8 %); Benign -> password 85,700 (7.6 %); ddos -> Benign 35,728 (3.1 %); xss -> Benign 15,457 (1.4 %); Benign -> xss 12,336 (1.1 %); password -> Benign 10,540 (0.9 %); Benign -> ddos 8,337 (0.7 %)
+  key 48 (48 features): minority rows 1,084,683 (3.94 % of rows) [matches script 30: True]; conflicting vectors 212,089, of which with a tied majority 44,696
+    minority rows on tied vectors (label depends on the tie-break): 54,885 (5.1 %); of the non-tied minority rows, labelled Benign 27.2 %
+    labelled Benign: 279,749 (25.8 % of minority rows); from attacker hosts 100.0 %
+    labelled as an attack: 804,934 (74.2 %); on Benign-majority vectors 97.3 %
+    with Benign as the minority or the majority label: 1,063,210 (98.0 % of minority rows); from attacker hosts 100.0 %
+    top pairs (minority label -> majority label): scanning -> Benign 729,094 (67.2 %); Benign -> scanning 199,945 (18.4 %); Benign -> password 63,221 (5.8 %); ddos -> Benign 35,722 (3.3 %); xss -> Benign 9,557 (0.9 %); Benign -> ddos 8,294 (0.8 %); injection -> ddos 7,557 (0.7 %); Benign -> xss 7,173 (0.7 %)
+
+== NF-BoT-IoT-v3: 16,933,808 rows; 8 source addresses send attack-labelled rows
+  key 40 (40 features): minority rows 252,423 (1.49 % of rows) [matches script 30: True]; conflicting vectors 9,128, of which with a tied majority 371
+    minority rows on tied vectors (label depends on the tie-break): 2,020 (0.8 %); of the non-tied minority rows, labelled Benign 5.7 %
+    labelled Benign: 14,234 (5.6 % of minority rows); from attacker hosts 100.0 %
+    labelled as an attack: 238,189 (94.4 %); on Benign-majority vectors 3.8 %
+    with Benign as the minority or the majority label: 23,244 (9.2 % of minority rows); from attacker hosts 100.0 %
+    top pairs (minority label -> majority label): DDoS -> DoS 165,806 (65.7 %); DoS -> DDoS 63,366 (25.1 %); Benign -> Reconnaissance 14,234 (5.6 %); Reconnaissance -> Benign 9,010 (3.6 %); Reconnaissance -> DDoS 7 (0.0 %)
+  key 48 (48 features): minority rows 131,323 (0.78 % of rows) [matches script 30: True]; conflicting vectors 7,009, of which with a tied majority 322
+    minority rows on tied vectors (label depends on the tie-break): 760 (0.6 %); of the non-tied minority rows, labelled Benign 10.8 %
+    labelled Benign: 14,118 (10.8 % of minority rows); from attacker hosts 100.0 %
+    labelled as an attack: 117,205 (89.2 %); on Benign-majority vectors 7.7 %
+    with Benign as the minority or the majority label: 23,119 (17.6 % of minority rows); from attacker hosts 100.0 %
+    top pairs (minority label -> majority label): DDoS -> DoS 100,939 (76.9 %); Benign -> Reconnaissance 14,118 (10.8 %); Reconnaissance -> Benign 9,001 (6.9 %); DoS -> DDoS 7,258 (5.5 %); Reconnaissance -> DDoS 7 (0.0 %)
+
+== NF-CSE-CIC-IDS2018-v3: 20,115,529 rows; 1,158 source addresses send attack-labelled rows
+  key 40 (40 features): minority rows 132,067 (0.66 % of rows) [matches script 30: True]; conflicting vectors 10,425, of which with a tied majority 2,516
+    minority rows on tied vectors (label depends on the tie-break): 3,459 (2.6 %); of the non-tied minority rows, labelled Benign 9.1 %
+    labelled Benign: 11,700 (8.9 % of minority rows); from attacker hosts 71.0 %
+    labelled as an attack: 120,367 (91.1 %); on Benign-majority vectors 12.2 %
+    with Benign as the minority or the majority label: 26,400 (20.0 % of minority rows); from attacker hosts 87.1 %
+    top pairs (minority label -> majority label): DoS_attacks-SlowHTTPTest -> FTP-BruteForce 105,550 (79.9 %); Infiltration -> Benign 13,250 (10.0 %); Benign -> Infiltration 11,505 (8.7 %); Brute_Force_-Web -> Benign 665 (0.5 %); Brute_Force_-XSS -> Benign 437 (0.3 %); SQL_Injection -> Benign 347 (0.3 %); Benign -> DDoS_attacks-LOIC-HTTP 194 (0.1 %); SSH-Bruteforce -> FTP-BruteForce 60 (0.0 %)
+  key 48 (48 features): minority rows 127,866 (0.64 % of rows) [matches script 30: True]; conflicting vectors 9,788, of which with a tied majority 2,486
+    minority rows on tied vectors (label depends on the tie-break): 3,444 (2.7 %); of the non-tied minority rows, labelled Benign 8.1 %
+    labelled Benign: 10,116 (7.9 % of minority rows); from attacker hosts 68.5 %
+    labelled as an attack: 117,750 (92.1 %); on Benign-majority vectors 10.3 %
+    with Benign as the minority or the majority label: 22,206 (17.4 % of minority rows); from attacker hosts 85.7 %
+    top pairs (minority label -> majority label): DoS_attacks-SlowHTTPTest -> FTP-BruteForce 105,550 (82.5 %); Infiltration -> Benign 10,645 (8.3 %); Benign -> Infiltration 9,921 (7.8 %); Brute_Force_-Web -> Benign 664 (0.5 %); Brute_Force_-XSS -> Benign 436 (0.3 %); SQL_Injection -> Benign 344 (0.3 %); Benign -> DDoS_attacks-LOIC-HTTP 194 (0.2 %); SSH-Bruteforce -> FTP-BruteForce 60 (0.0 %)
+

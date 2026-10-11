@@ -1,0 +1,303 @@
+Third reviewer report, major issue 1: L7_PROTO against the destination port; ICMP fields on non-ICMP flows
+Generated: 2026-10-09T14:41:24.578484+00:00
+All rows, raw values of tabular.parquet. Reply = OUT_PKTS > 0. port->L7 / L7->port = share of rows equal to
+the most frequent value given the other field; baseline = share of the most frequent L7_PROTO value.
+Part 2 rules parsed from data/audit/shortcut_probes_common_report.txt (set A = 40 common features; set C = A without
+ports, TTL, TCP window and DNS fields; one grouped split, seed 42); here re-applied to all rows.
+
+== NF-ToN-IoT-v3 (27,520,260 rows)
+-- Part 1: L7_PROTO and L4_DST_PORT
+  all        rows  27,520,260  L7=0  30.7 %  port->L7  90.7 % (master  90.7 %)  baseline  30.7 %  L7->port  62.3 % (L7 != 0, 19,067,762 rows)
+  no reply   rows  11,838,182  L7=0  52.0 %  port->L7  92.3 % (master  92.3 %)  baseline  52.0 %  L7->port  41.7 % (L7 != 0, 5,684,045 rows)
+  reply      rows  15,682,078  L7=0  14.7 %  port->L7  90.1 % (master  90.1 %)  baseline  42.4 %  L7->port  77.3 % (L7 != 0, 13,383,717 rows)
+  L7 != 0 rows off the most frequent destination port of their L7_PROTO value: 7,190,063 (37.7 % of 19,067,762); of these, source port = that port 95.6 %
+  top destination ports (share of rows; L7_PROTO values within the port):
+    port    80   20.5 %  L7: 7 99.6 %, 0 0.4 %, 91 0.0 %
+    port   443   10.1 %  L7: 91 100.0 %, 0 0.0 %, 7 0.0 %
+    port    53    8.6 %  L7: 5 100.0 %, 0 0.0 %, 91 0.0 %
+    port 51642    3.2 %  L7: 5 100.0 %, 7 0.0 %, 91 0.0 %
+    port 52970    1.4 %  L7: 5 99.9 %, 91 0.1 %, 7 0.0 %
+    port 57856    0.9 %  L7: 5 99.8 %, 91 0.1 %, 7 0.1 %
+    port     0    0.9 %  L7: 81 87.6 %, 82 10.1 %, 0 1.8 %
+    port    21    0.8 %  L7: 1 100.0 %, 91 0.0 %, 0 0.0 %
+  top L7_PROTO values != 0 (share of rows; destination ports within the value):
+    L7        7   26.5 %  ports: 80 77.0 %, 9197 0.5 %, 41952 0.3 %  (23,868 distinct ports)
+    L7       91   22.4 %  ports: 443 45.0 %, 9012 0.1 %, 8002 0.0 %  (29,271 distinct ports)
+    L7        5   15.4 %  ports: 53 56.0 %, 51642 20.8 %, 52970 8.9 %  (12,631 distinct ports)
+    L7        1    0.8 %  ports: 21 99.2 %, 587 0.0 %, 43262 0.0 %  (1,133 distinct ports)
+    L7       81    0.8 %  ports: 0 100.0 %  (1 distinct ports)
+    L7      131    0.6 %  ports: 8080 65.7 %, 3128 3.4 %, 49249 2.0 %  (7,728 distinct ports)
+    L7       12    0.3 %  ports: 1900 43.5 %, 50511 0.7 %, 58705 0.4 %  (4,200 distinct ports)
+    L7        3    0.2 %  ports: 587 48.5 %, 25 44.7 %, 53881 0.0 %  (1,605 distinct ports)
+-- Part 2: probe rules re-applied to all rows (class side of each rule)
+  Backdoor  (probe d1 A 0.92, d1 C 0.92)
+    rule A ICMP_TYPE > 12160: class  93.7 %, Benign   0.7 %
+    rule C ICMP_IPV4_TYPE > 47.5: class  93.7 %, Benign   0.7 %
+    both rules on the same side: class 100.0 % of 203,384 rows, Benign 100.0 % of 16,792,214 rows
+  injection  (probe d1 A 0.93, d1 C 0.94)
+    rule A L4_DST_PORT <= 443.5: class  99.8 %, Benign  12.8 %
+    rule C NUM_PKTS_UP_TO_128_BYTES > 2.5: class  93.2 %, Benign   6.3 %
+    both rules on the same side: class  93.0 % of 381,777 rows, Benign  87.3 % of 16,792,214 rows
+  mitm  (probe d1 A 0.93, d1 C 0.94)
+    rule A L4_DST_PORT <= 450.5: class  99.9 %, Benign  12.9 %
+    rule C OUT_BYTES > 73: class  94.0 %, Benign   6.3 %
+    both rules on the same side: class  94.0 % of 6,013 rows, Benign  88.1 % of 16,792,214 rows
+  xss  (probe d1 A 0.95, d1 C 0.95)
+    rule A L4_DST_PORT <= 80.5: class 100.0 %, Benign  10.4 %
+    rule C OUT_BYTES > 59.5: class  98.0 %, Benign   9.2 %
+    both rules on the same side: class  98.0 % of 2,834,435 rows, Benign  92.9 % of 16,792,214 rows
+-- Part 3: ICMP_TYPE and ICMP_IPV4_TYPE by protocol
+  ICMP (1, 58)  rows     216,632  ICMP_TYPE != 0  99.77 %  ICMP_IPV4_TYPE != 0  99.77 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  TCP           rows  22,875,991  ICMP_TYPE != 0   1.88 %  ICMP_IPV4_TYPE != 0   1.88 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  UDP           rows   4,402,790  ICMP_TYPE != 0   0.00 %  ICMP_IPV4_TYPE != 0   0.00 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  other         rows      24,847  ICMP_TYPE != 0   0.00 %  ICMP_IPV4_TYPE != 0   0.00 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  TCP and UDP flows with ICMP_TYPE != 0: 429,291 (1.57 % of TCP and UDP)
+    low byte zero 99.97 %; equal to source port 0.00 %, to destination port 0.00 %; high byte = source-port high byte 0.02 %, = destination-port high byte 0.10 %; 353 distinct values
+    classes (rows with ICMP_TYPE != 0 on TCP/UDP, share of all rows of the class):
+      Backdoor                        190,616   93.7 % of class  (high byte: 144 76 %, 96 15 %, 48 9 %)
+      Benign                          138,224    0.8 % of class  (high byte: 73 35 %, 137 17 %, 44 9 %)
+      ddos                             57,731    1.4 % of class  (high byte: 60 87 %, 123 1 %, 246 1 %)
+      password                         19,367    1.2 % of class  (high byte: 44 54 %, 240 13 %, 104 11 %)
+      xss                              16,015    0.6 % of class  (high byte: 60 28 %, 40 1 %, 127 1 %)
+      injection                         6,126    1.6 % of class  (high byte: 40 95 %, 80 2 %, 60 2 %)
+      ransomware                          468   11.8 % of class  (high byte: 184 59 %, 40 15 %, 224 11 %)
+
+== NF-BoT-IoT-v3 (16,933,808 rows)
+-- Part 1: L7_PROTO and L4_DST_PORT
+  all        rows  16,933,808  L7=0  51.7 %  port->L7  57.2 % (master  57.2 %)  baseline  51.7 %  L7->port  99.0 % (L7 != 0, 8,180,515 rows)
+  no reply   rows  12,102,947  L7=0  59.7 %  port->L7  59.8 % (master  59.8 %)  baseline  59.7 %  L7->port  99.9 % (L7 != 0, 4,872,104 rows)
+  reply      rows   4,830,861  L7=0  31.5 %  port->L7  98.5 % (master  98.6 %)  baseline  65.6 %  L7->port  97.8 % (L7 != 0, 3,308,411 rows)
+  L7 != 0 rows off the most frequent destination port of their L7_PROTO value: 78,844 (1.0 % of 8,180,515); of these, source port = that port 27.6 %
+  top destination ports (share of rows; L7_PROTO values within the port):
+    port    80   89.9 %  L7: 7 52.6 %, 0 47.1 %, 91 0.3 %
+    port  1883    0.1 %  L7: 91 98.4 %, 222 1.0 %, 7 0.2 %
+    port     1    0.1 %  L7: 0 99.1 %, 132 0.1 %, 114 0.1 %
+    port  1880    0.0 %  L7: 91 93.5 %, 7 3.9 %, 0 1.7 %
+    port  3306    0.0 %  L7: 20 92.3 %, 7 2.8 %, 91 2.0 %
+    port    53    0.0 %  L7: 5 93.8 %, 5.239 2.9 %, 5.265 1.7 %
+    port  5432    0.0 %  L7: 91 83.0 %, 19 14.9 %, 7 2.1 %
+    port    21    0.0 %  L7: 1 98.1 %, 0 1.2 %, 7 0.6 %
+  top L7_PROTO values != 0 (share of rows; destination ports within the value):
+    L7        7   47.4 %  ports: 80 99.7 %, 8180 0.0 %, 513 0.0 %  (13,893 distinct ports)
+    L7       91    0.5 %  ports: 80 49.9 %, 1883 30.9 %, 1880 9.4 %  (458 distinct ports)
+    L7       20    0.0 %  ports: 3306 85.6 %, 1 0.1 %, 58368 0.0 %  (1,196 distinct ports)
+    L7        5    0.0 %  ports: 53 94.3 %, 65534 4.4 %, 80 1.3 %  (8 distinct ports)
+    L7        1    0.0 %  ports: 21 99.5 %, 33560 0.0 %, 39014 0.0 %  (20 distinct ports)
+    L7        3    0.0 %  ports: 25 52.4 %, 587 46.5 %, 50418 0.0 %  (30 distinct ports)
+    L7      158    0.0 %  ports: 1719 23.1 %, 1720 20.0 %, 80 11.1 %  (999 distinct ports)
+    L7       51    0.0 %  ports: 993 70.7 %, 143 28.6 %, 111 0.1 %  (15 distinct ports)
+-- Part 2: probe rules re-applied to all rows (class side of each rule)
+  no class with a rule on L4_DST_PORT, L7_PROTO or ICMP fields
+-- Part 3: ICMP_TYPE and ICMP_IPV4_TYPE by protocol
+  ICMP (1, 58)  rows       1,046  ICMP_TYPE != 0 100.00 %  ICMP_IPV4_TYPE != 0 100.00 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  TCP           rows   9,697,139  ICMP_TYPE != 0   0.10 %  ICMP_IPV4_TYPE != 0   0.10 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  UDP           rows   7,235,617  ICMP_TYPE != 0   0.00 %  ICMP_IPV4_TYPE != 0   0.00 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  other         rows           6  ICMP_TYPE != 0   0.00 %  ICMP_IPV4_TYPE != 0   0.00 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  TCP and UDP flows with ICMP_TYPE != 0: 9,776 (0.06 % of TCP and UDP)
+    low byte zero 90.62 %; equal to source port 0.00 %, to destination port 0.00 %; high byte = source-port high byte 0.20 %, = destination-port high byte 0.02 %; 541 distinct values
+    classes (rows with ICMP_TYPE != 0 on TCP/UDP, share of all rows of the class):
+      Reconnaissance                    3,959    0.2 % of class  (high byte: 40 21 %, 74 14 %, 60 11 %)
+      DoS                               3,312    0.0 % of class  (high byte: 40 51 %, 60 8 %, 80 5 %)
+      DDoS                              1,485    0.0 % of class  (high byte: 40 27 %, 60 13 %, 120 3 %)
+      Benign                            1,010    1.9 % of class  (high byte: 236 26 %, 210 10 %, 184 8 %)
+
+== NF-CSE-CIC-IDS2018-v3 (20,115,529 rows)
+-- Part 1: L7_PROTO and L4_DST_PORT
+  all        rows  20,115,529  L7=0   2.7 %  port->L7  96.4 % (master  96.4 %)  baseline  36.4 %  L7->port  93.8 % (L7 != 0, 19,569,220 rows)
+  no reply   rows   1,975,367  L7=0  24.8 %  port->L7  88.9 % (master  88.9 %)  baseline  35.6 %  L7->port  44.2 % (L7 != 0, 1,485,396 rows)
+  reply      rows  18,140,162  L7=0   0.3 %  port->L7  97.5 % (master  97.5 %)  baseline  40.4 %  L7->port  98.2 % (L7 != 0, 18,083,824 rows)
+  L7 != 0 rows off the most frequent destination port of their L7_PROTO value: 1,218,977 (6.2 % of 19,569,220); of these, source port = that port 70.2 %
+  top destination ports (share of rows; L7_PROTO values within the port):
+    port    53   36.4 %  L7: 5 100.0 %
+    port  3389   15.1 %  L7: 88 99.9 %, 91 0.1 %, 0 0.0 %
+    port   443   14.2 %  L7: 91 99.8 %, 0 0.2 %, 188 0.0 %
+    port    80   14.1 %  L7: 7 99.8 %, 265 0.1 %, 0 0.0 %
+    port   445    5.1 %  L7: 10 57.4 %, 41 42.4 %, 0 0.1 %
+    port    21    2.5 %  L7: 1 100.0 %
+    port    22    1.1 %  L7: 92 100.0 %, 0 0.0 %, 7 0.0 %
+    port  8080    1.1 %  L7: 7 94.4 %, 131 5.6 %
+  top L7_PROTO values != 0 (share of rows; destination ports within the value):
+    L7        5   36.4 %  ports: 53 100.0 %, 22083 0.0 %, 8780 0.0 %  (979 distinct ports)
+    L7       88   18.6 %  ports: 3389 81.1 %, 49152 0.0 %, 5985 0.0 %  (61,088 distinct ports)
+    L7        7   15.2 %  ports: 80 92.5 %, 8080 6.7 %, 139 0.0 %  (9,604 distinct ports)
+    L7       91   14.7 %  ports: 443 96.6 %, 3389 0.1 %, 49672 0.0 %  (7,204 distinct ports)
+    L7       10    3.5 %  ports: 445 83.1 %, 138 8.6 %, 137 7.2 %  (47 distinct ports)
+    L7        1    2.5 %  ports: 21 100.0 %, 2433 0.0 %, 4958 0.0 %  (12 distinct ports)
+    L7       41    2.3 %  ports: 445 94.2 %, 36669 0.0 %, 8933 0.0 %  (6,067 distinct ports)
+    L7       92    1.1 %  ports: 22 99.9 %, 3389 0.0 %, 12117 0.0 %  (285 distinct ports)
+-- Part 2: probe rules re-applied to all rows (class side of each rule)
+  Bot  (probe d1 A 0.97, d1 C 0.90)
+    rule A L4_DST_PORT > 8079.5: class 100.0 %, Benign   5.6 %
+    rule C DST_TO_SRC_SECOND_BYTES > 21.5: class  97.9 %, Benign  11.0 %
+    both rules on the same side: class  97.9 % of 207,703 rows, Benign  83.5 % of 17,514,626 rows
+  SSH-Bruteforce  (probe d1 A 1.00, d1 C 1.00)
+    rule A L4_DST_PORT <= 22.5: class 100.0 %, Benign   0.6 %
+    rule C NUM_PKTS_128_TO_256_BYTES > 6.5: class 100.0 %, Benign   0.9 %
+    both rules on the same side: class 100.0 % of 188,474 rows, Benign  98.5 % of 17,514,626 rows
+-- Part 3: ICMP_TYPE and ICMP_IPV4_TYPE by protocol
+  ICMP (1, 58)  rows      48,829  ICMP_TYPE != 0  99.90 %  ICMP_IPV4_TYPE != 0  99.90 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  TCP           rows  12,345,696  ICMP_TYPE != 0  12.47 %  ICMP_IPV4_TYPE != 0  12.47 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  UDP           rows   7,702,479  ICMP_TYPE != 0   0.00 %  ICMP_IPV4_TYPE != 0   0.00 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  other         rows      18,525  ICMP_TYPE != 0   0.00 %  ICMP_IPV4_TYPE != 0   0.00 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  TCP and UDP flows with ICMP_TYPE != 0: 1,538,930 (7.68 % of TCP and UDP)
+    low byte zero 100.00 %; equal to source port 0.01 %, to destination port 0.00 %; high byte = source-port high byte 2.64 %, = destination-port high byte 0.01 %; 272 distinct values
+    classes (rows with ICMP_TYPE != 0 on TCP/UDP, share of all rows of the class):
+      Benign                        1,432,115    8.2 % of class  (high byte: 195 39 %, 246 8 %, 205 6 %)
+      DoS_attacks-Hulk                 81,811   81.7 % of class  (high byte: 60 5 %, 120 2 %, 180 1 %)
+      DoS_attacks-Slowloris            14,558   40.4 % of class  (high byte: 38 43 %, 120 31 %, 234 15 %)
+      Infiltration                      5,142    2.7 % of class  (high byte: 195 42 %, 180 7 %, 246 7 %)
+      DoS_attacks-GoldenEye             2,912    4.8 % of class  (high byte: 60 11 %, 180 10 %, 120 2 %)
+      DDOS_attack-HOIC                  2,108    0.2 % of class  (high byte: 100 5 %, 99 4 %, 123 4 %)
+      Brute_Force_-Web                    164   10.1 % of class  (high byte: 52 71 %, 100 8 %, 48 7 %)
+
+== NF-ToN-IoT-v2 (16,940,496 rows)
+-- Part 1: L7_PROTO and L4_DST_PORT
+  all        rows  16,940,496  L7=0  60.7 %  port->L7  92.8 % (master  94.0 %)  baseline  60.7 %  L7->port  89.8 % (L7 != 0, 6,649,965 rows)
+  no reply   rows   6,269,875  L7=0  82.3 %  port->L7  98.1 % (master  98.2 %)  baseline  82.3 %  L7->port  88.0 % (L7 != 0, 1,106,790 rows)
+  reply      rows  10,670,621  L7=0  48.1 %  port->L7  90.9 % (master  92.8 %)  baseline  48.1 %  L7->port  90.2 % (L7 != 0, 5,543,175 rows)
+  L7 != 0 rows off the most frequent destination port of their L7_PROTO value: 678,010 (10.2 % of 6,649,965); of these, source port = that port 78.4 %
+  top destination ports (share of rows; L7_PROTO values within the port):
+    port    80   23.2 %  L7: 7 95.0 %, 7.178 5.0 %, 0 0.0 %
+    port    53   14.0 %  L7: 0 97.2 %, 5.178 1.2 %, 5 0.4 %
+    port   443   10.4 %  L7: 91 81.1 %, 0 18.6 %, 91.212 0.1 %
+    port    21    0.8 %  L7: 1 96.4 %, 1.178 3.4 %, 0 0.2 %
+    port  9197    0.2 %  L7: 7 97.5 %, 0 2.4 %, 7.131 0.0 %
+    port    22    0.2 %  L7: 92 99.7 %, 0 0.3 %, 92.178 0.0 %
+    port 15600    0.2 %  L7: 0 100.0 %, 37 0.0 %, 184 0.0 %
+    port  8080    0.1 %  L7: 131 76.9 %, 131.7 22.2 %, 7.178 0.5 %
+  top L7_PROTO values != 0 (share of rows; destination ports within the value):
+    L7        7   23.6 %  ports: 80 93.2 %, 9197 1.0 %, 41952 0.5 %  (22,088 distinct ports)
+    L7       91   10.2 %  ports: 443 82.0 %, 49222 0.0 %, 43498 0.0 %  (21,902 distinct ports)
+    L7    7.178    1.2 %  ports: 80 97.5 %, 8080 0.1 %, 38840 0.0 %  (4,024 distinct ports)
+    L7        1    0.8 %  ports: 21 99.4 %, 35028 0.0 %, 49775 0.0 %  (733 distinct ports)
+    L7       92    0.2 %  ports: 22 98.3 %, 47674 0.0 %, 36945 0.0 %  (538 distinct ports)
+    L7      131    0.2 %  ports: 8080 64.0 %, 3128 11.6 %, 49644 0.0 %  (7,054 distinct ports)
+    L7    5.178    0.2 %  ports: 53 99.7 %, 37694 0.0 %, 42382 0.0 %  (85 distinct ports)
+    L7        5    0.1 %  ports: 53 41.2 %, 34713 0.1 %, 57264 0.1 %  (9,774 distinct ports)
+-- Part 2: probe rules re-applied to all rows (class side of each rule)
+  password  (probe d1 A 0.94, d1 C 0.91)
+    rule A L4_DST_PORT <= 80.5: class 100.0 %, Benign  10.5 %
+    rule C L7_PROTO > 0.5: class  99.7 %, Benign  16.4 %
+    both rules on the same side: class  99.7 % of 1,153,323 rows, Benign  78.2 % of 6,099,469 rows
+  xss  (probe d1 A 0.94, d1 C 0.93)
+    rule A L4_DST_PORT <= 80.5: class 100.0 %, Benign  10.5 %
+    rule C MAX_IP_PKT_LEN > 64.5: class  98.6 %, Benign  13.9 %
+    both rules on the same side: class  98.6 % of 2,455,020 rows, Benign  90.4 % of 6,099,469 rows
+-- Part 3: ICMP_TYPE and ICMP_IPV4_TYPE by protocol
+  ICMP (1, 58)  rows      19,174  ICMP_TYPE != 0  98.63 %  ICMP_IPV4_TYPE != 0  98.63 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  TCP           rows  14,427,073  ICMP_TYPE != 0   1.82 %  ICMP_IPV4_TYPE != 0   1.82 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  UDP           rows   2,491,336  ICMP_TYPE != 0   0.00 %  ICMP_IPV4_TYPE != 0   0.00 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  other         rows       2,913  ICMP_TYPE != 0   0.00 %  ICMP_IPV4_TYPE != 0   0.00 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  TCP and UDP flows with ICMP_TYPE != 0: 262,689 (1.55 % of TCP and UDP)
+    low byte zero 99.93 %; equal to source port 0.00 %, to destination port 0.00 %; high byte = source-port high byte 0.20 %, = destination-port high byte 0.11 %; 409 distinct values
+    classes (rows with ICMP_TYPE != 0 on TCP/UDP, share of all rows of the class):
+      password                        145,534   12.6 % of class  (high byte: 5 25 %, 126 25 %, 47 10 %)
+      Benign                           55,825    0.9 % of class  (high byte: 145 14 %, 72 10 %, 209 7 %)
+      xss                              23,618    1.0 % of class  (high byte: 83 1 %, 45 1 %, 111 1 %)
+      ddos                             23,416    1.2 % of class  (high byte: 178 11 %, 146 10 %, 194 7 %)
+      injection                        13,728    2.0 % of class  (high byte: 27 2 %, 5 1 %, 126 1 %)
+      ransomware                          289    8.4 % of class  (high byte: 232 21 %, 184 13 %, 113 10 %)
+
+== NF-BoT-IoT-v2 (37,763,497 rows)
+-- Part 1: L7_PROTO and L4_DST_PORT
+  all        rows  37,763,497  L7=0   4.2 %  port->L7  52.7 % (master  52.7 %)  baseline  48.5 %  L7->port  99.7 % (L7 != 0, 36,178,140 rows)
+  no reply   rows  33,212,624  L7=0   0.1 %  port->L7  55.3 % (master  55.3 %)  baseline  55.2 %  L7->port 100.0 % (L7 != 0, 33,179,348 rows)
+  reply      rows   4,550,873  L7=0  34.1 %  port->L7  96.8 % (master  96.9 %)  baseline  64.8 %  L7->port  97.0 % (L7 != 0, 2,998,792 rows)
+  L7 != 0 rows off the most frequent destination port of their L7_PROTO value: 99,584 (0.3 % of 36,178,140); of these, source port = that port 92.0 %
+  top destination ports (share of rows; L7_PROTO values within the port):
+    port    80   95.6 %  L7: 188 50.8 %, 7 49.1 %, 0 0.1 %
+    port  1883    0.1 %  L7: 0 98.7 %, 222 1.3 %, 7 0.0 %
+    port  1880    0.0 %  L7: 0 96.1 %, 7 3.9 %
+    port    53    0.0 %  L7: 0 60.3 %, 5.126 19.6 %, 5 9.6 %
+    port  5432    0.0 %  L7: 0 84.9 %, 19 14.7 %, 19.7 0.3 %
+    port    21    0.0 %  L7: 1 99.0 %, 1.7 0.8 %, 0 0.2 %
+    port     0    0.0 %  L7: 0 99.8 %, 81.178 0.2 %, 81.126 0.0 %
+    port     1    0.0 %  L7: 238 100.0 %
+  top L7_PROTO values != 0 (share of rows; destination ports within the value):
+    L7      188   48.5 %  ports: 80 100.0 %  (1 distinct ports)
+    L7        7   47.1 %  ports: 80 99.5 %, 8180 0.0 %, 1880 0.0 %  (49,050 distinct ports)
+    L7        1    0.0 %  ports: 21 93.4 %, 80 6.1 %, 33560 0.1 %  (21 distinct ports)
+    L7      238    0.0 %  ports: 1 92.4 %, 80 7.1 %, 33419 0.0 %  (19 distinct ports)
+    L7      158    0.0 %  ports: 1719 24.3 %, 1720 23.1 %, 631 0.1 %  (1,002 distinct ports)
+    L7       20    0.0 %  ports: 3306 74.7 %, 48536 0.1 %, 47706 0.1 %  (460 distinct ports)
+    L7       92    0.0 %  ports: 22 80.5 %, 80 19.2 %, 35128 0.1 %  (6 distinct ports)
+    L7       89    0.0 %  ports: 5900 37.7 %, 5800 30.8 %, 5901 30.1 %  (21 distinct ports)
+-- Part 2: probe rules re-applied to all rows (class side of each rule)
+  DDoS  (probe d1 A 0.96, d1 C 0.96)
+    rule A L7_PROTO > 185: class  99.4 %, Benign   2.2 %
+    rule C L7_PROTO > 185: class  99.4 %, Benign   2.2 %
+    both rules on the same side: class 100.0 % of 18,331,847 rows, Benign 100.0 % of 135,037 rows
+  DoS  (probe d1 A 0.91, d1 C 0.94)
+    rule A L4_DST_PORT <= 80.5: class 100.0 %, Benign  12.1 %
+    rule C IN_BYTES > 137.5: class  99.4 %, Benign  12.2 %
+    both rules on the same side: class  99.4 % of 16,673,183 rows, Benign  90.3 % of 135,037 rows
+-- Part 3: ICMP_TYPE and ICMP_IPV4_TYPE by protocol
+  ICMP (1, 58)  rows       2,553  ICMP_TYPE != 0  97.18 %  ICMP_IPV4_TYPE != 0  94.12 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  TCP           rows  19,411,243  ICMP_TYPE != 0  25.40 %  ICMP_IPV4_TYPE != 0  25.40 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  UDP           rows  18,349,697  ICMP_TYPE != 0   0.00 %  ICMP_IPV4_TYPE != 0   0.00 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  other         rows           4  ICMP_TYPE != 0   0.00 %  ICMP_IPV4_TYPE != 0   0.00 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  TCP and UDP flows with ICMP_TYPE != 0: 4,930,578 (13.06 % of TCP and UDP)
+    low byte zero 99.99 %; equal to source port 0.00 %, to destination port 0.00 %; high byte = source-port high byte 0.38 %, = destination-port high byte 0.00 %; 522 distinct values
+    classes (rows with ICMP_TYPE != 0 on TCP/UDP, share of all rows of the class):
+      DoS                           4,759,404   28.5 % of class  (high byte: 140 96 %, 24 4 %, 164 0 %)
+      Reconnaissance                  143,680    5.5 % of class  (high byte: 140 96 %, 24 1 %, 74 0 %)
+      DDoS                             26,184    0.1 % of class  (high byte: 140 93 %, 24 7 %, 164 0 %)
+      Benign                            1,301    1.0 % of class  (high byte: 6 2 %, 32 2 %, 236 2 %)
+
+== NF-CSE-CIC-IDS2018-v2 (18,893,708 rows)
+-- Part 1: L7_PROTO and L4_DST_PORT
+  all        rows  18,893,708  L7=0  58.5 %  port->L7  74.7 % (master  79.6 %)  baseline  58.5 %  L7->port  99.5 % (L7 != 0, 7,842,248 rows)
+  no reply   rows   1,185,447  L7=0  69.3 %  port->L7  96.5 % (master  97.3 %)  baseline  69.3 %  L7->port  91.7 % (L7 != 0, 363,444 rows)
+  reply      rows  17,708,261  L7=0  57.8 %  port->L7  73.6 % (master  78.4 %)  baseline  57.8 %  L7->port 100.0 % (L7 != 0, 7,478,804 rows)
+  L7 != 0 rows off the most frequent destination port of their L7_PROTO value: 35,383 (0.5 % of 7,842,248); of these, source port = that port 50.3 %
+  top destination ports (share of rows; L7_PROTO values within the port):
+    port    53   40.3 %  L7: 0 68.2 %, 5.126 17.7 %, 5.178 3.8 %
+    port  3389   18.8 %  L7: 0 98.0 %, 88 1.5 %, 88.178 0.3 %
+    port    80   15.5 %  L7: 7 87.0 %, 7.178 6.0 %, 7.126 5.2 %
+    port   443   11.3 %  L7: 0 37.6 %, 91.178 20.7 %, 91.126 19.9 %
+    port   445    6.5 %  L7: 0 57.7 %, 41 42.1 %, 41.178 0.1 %
+    port  8080    0.8 %  L7: 131.7 92.1 %, 131 7.8 %, 131.178 0.1 %
+    port    23    0.8 %  L7: 77 100.0 %, 77.125 0.0 %, 0 0.0 %
+    port    22    0.7 %  L7: 92 99.7 %, 92.178 0.2 %, 92.125 0.1 %
+  top L7_PROTO values != 0 (share of rows; destination ports within the value):
+    L7        7   13.6 %  ports: 80 99.5 %, 5985 0.0 %, 49152 0.0 %  (9,594 distinct ports)
+    L7    5.126    7.1 %  ports: 53 100.0 %, 55453 0.0 %, 60517 0.0 %  (108 distinct ports)
+    L7       41    2.8 %  ports: 445 100.0 %, 56781 0.0 %, 57231 0.0 %  (41 distinct ports)
+    L7   91.178    2.3 %  ports: 443 99.9 %, 51092 0.0 %, 50951 0.0 %  (233 distinct ports)
+    L7   91.126    2.2 %  ports: 443 99.9 %, 53218 0.0 %, 51423 0.0 %  (479 distinct ports)
+    L7    5.178    1.5 %  ports: 53 100.0 %, 61834 0.0 %, 59785 0.0 %  (35 distinct ports)
+    L7    5.119    1.1 %  ports: 53 100.0 %, 56808 0.0 %, 62568 0.0 %  (19 distinct ports)
+    L7    7.178    0.9 %  ports: 80 99.9 %, 230 0.0 %, 114 0.0 %  (180 distinct ports)
+-- Part 2: probe rules re-applied to all rows (class side of each rule)
+  Bot  (probe d1 A 1.00, d1 C 1.00)
+    rule A L7_PROTO > 129: class 100.0 %, Benign   0.3 %
+    rule C L7_PROTO > 129: class 100.0 %, Benign   0.3 %
+    both rules on the same side: class 100.0 % of 143,097 rows, Benign 100.0 % of 16,635,567 rows
+  DoS attacks-Slowloris  (probe d1 A 0.97, d1 C 0.89)
+    rule A TCP_WIN_MAX_IN > 26739: class 100.0 %, Benign   5.6 %
+    rule C L7_PROTO > 6.35: class 100.0 %, Benign  19.7 %
+    both rules on the same side: class 100.0 % of 9,512 rows, Benign  78.1 % of 16,635,567 rows
+  SSH-Bruteforce  (probe d1 A 1.00, d1 C 1.00)
+    rule A L4_DST_PORT <= 22.5: class 100.0 %, Benign   0.4 %
+    rule C L7_PROTO > 91.85: class 100.0 %, Benign   0.6 %
+    both rules on the same side: class 100.0 % of 94,979 rows, Benign  99.5 % of 16,635,567 rows
+-- Part 3: ICMP_TYPE and ICMP_IPV4_TYPE by protocol
+  ICMP (1, 58)  rows      20,658  ICMP_TYPE != 0  65.26 %  ICMP_IPV4_TYPE != 0  65.22 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  TCP           rows  11,049,015  ICMP_TYPE != 0  13.07 %  ICMP_IPV4_TYPE != 0  13.07 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  UDP           rows   7,822,806  ICMP_TYPE != 0   0.00 %  ICMP_IPV4_TYPE != 0   0.00 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  other         rows       1,229  ICMP_TYPE != 0   0.00 %  ICMP_IPV4_TYPE != 0   0.00 %  ICMP_IPV4_TYPE == ICMP_TYPE // 256 100.00 %
+  TCP and UDP flows with ICMP_TYPE != 0: 1,443,815 (7.65 % of TCP and UDP)
+    low byte zero 100.00 %; equal to source port 0.01 %, to destination port 0.00 %; high byte = source-port high byte 2.71 %, = destination-port high byte 0.04 %; 268 distinct values
+    classes (rows with ICMP_TYPE != 0 on TCP/UDP, share of all rows of the class):
+      Benign                        1,243,348    7.5 % of class  (high byte: 195 41 %, 246 9 %, 205 7 %)
+      DoS attacks-Hulk                162,583   37.6 % of class  (high byte: 148 1 %, 146 1 %, 150 1 %)
+      SSH-Bruteforce                   13,831   14.6 % of class  (high byte: 72 8 %, 88 8 %, 144 8 %)
+      DoS attacks-GoldenEye            10,966   39.6 % of class  (high byte: 128 1 %, 208 1 %, 162 1 %)
+      DoS attacks-Slowloris             6,713   70.6 % of class  (high byte: 4 88 %, 50 5 %, 234 3 %)
+      Infiltration                      3,573    3.1 % of class  (high byte: 195 47 %, 246 9 %, 205 6 %)
+      DDOS attack-HOIC                  2,393    0.2 % of class  (high byte: 100 5 %, 75 5 %, 99 4 %)
+
+== Summary of the depth-1 probe rules (51 classes in data/audit/shortcut_probes_common_report.txt)
+  set A: 3 of 51 rules use L7_PROTO or an ICMP field: NF-BoT-IoT-v2 DDoS (L7_PROTO); NF-CSE-CIC-IDS2018-v2 Bot (L7_PROTO); NF-ToN-IoT-v3 Backdoor (ICMP_TYPE)
+  set C: 6 of 51 rules use L7_PROTO or an ICMP field: NF-BoT-IoT-v2 DDoS (L7_PROTO); NF-CSE-CIC-IDS2018-v2 Bot (L7_PROTO); NF-CSE-CIC-IDS2018-v2 DoS attacks-Slowloris (L7_PROTO); NF-CSE-CIC-IDS2018-v2 SSH-Bruteforce (L7_PROTO); NF-ToN-IoT-v2 password (L7_PROTO); NF-ToN-IoT-v3 Backdoor (ICMP_IPV4_TYPE)
+  set A rules on L4_DST_PORT: 9; their set-C rule uses L7_PROTO or an ICMP field in 2: NF-CSE-CIC-IDS2018-v2 SSH-Bruteforce (L7_PROTO); NF-ToN-IoT-v2 password (L7_PROTO)

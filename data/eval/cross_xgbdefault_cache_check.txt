@@ -1,0 +1,4 @@
+P4.3 cache check (2026-10-03T16:58:25.090515+00:00): NF-BoT-IoT-v3 G0 BIN xgb seed 1
+  stored P4.2: macro-F1 0.85013, train 937,282, test 2,477,703
+  from cache:  macro-F1 0.85013, train 937,282, test 2,477,703
+  IDENTICAL: True

@@ -1,0 +1,531 @@
+{
+  "dataset": "NF-ToN-IoT-v3",
+  "generated_utc": "2026-10-07T02:57:53.861916+00:00",
+  "keys": {
+    "49": {
+      "n_features": 49,
+      "rows": 27520260,
+      "distinct_vectors": 14729992,
+      "duplicate_rows": 12790268,
+      "native": {
+        "rows": 27520260,
+        "conflicting_vectors": 129075,
+        "conflict_rows": 968570,
+        "minority_rows": 194557,
+        "top_label_sets": {
+          "Benign / scanning": 105428,
+          "Benign / password": 14868,
+          "ddos / injection": 3761,
+          "Benign / ddos": 2156,
+          "ddos / xss": 1698,
+          "ddos / password": 313,
+          "Benign / ddos / injection": 274,
+          "ddos / injection / xss": 142,
+          "Benign / ddos / xss": 90,
+          "Benign / xss": 70
+        },
+        "per_class": {
+          "Benign": {
+            "rows": 16792214,
+            "intra_dup_rows": 8857999,
+            "conflict_rows": 345930
+          },
+          "scanning": {
+            "rows": 1358977,
+            "intra_dup_rows": 521485,
+            "conflict_rows": 227786
+          },
+          "dos": {
+            "rows": 203456,
+            "intra_dup_rows": 2572,
+            "conflict_rows": 0
+          },
+          "injection": {
+            "rows": 381777,
+            "intra_dup_rows": 841,
+            "conflict_rows": 4574
+          },
+          "ddos": {
+            "rows": 4141256,
+            "intra_dup_rows": 3053237,
+            "conflict_rows": 340412
+          },
+          "password": {
+            "rows": 1594777,
+            "intra_dup_rows": 108234,
+            "conflict_rows": 46757
+          },
+          "xss": {
+            "rows": 2834435,
+            "intra_dup_rows": 9313,
+            "conflict_rows": 3039
+          },
+          "ransomware": {
+            "rows": 3971,
+            "intra_dup_rows": 441,
+            "conflict_rows": 70
+          },
+          "Backdoor": {
+            "rows": 203384,
+            "intra_dup_rows": 105487,
+            "conflict_rows": 0
+          },
+          "mitm": {
+            "rows": 6013,
+            "intra_dup_rows": 958,
+            "conflict_rows": 2
+          }
+        }
+      },
+      "canonical": {
+        "rows": 24675841,
+        "conflicting_vectors": 127208,
+        "conflict_rows": 936858,
+        "minority_rows": 191966,
+        "top_label_sets": {
+          "Benign / Reconnaissance": 105432,
+          "Benign / CredentialAttack": 14869,
+          "DDoS / Injection": 3903,
+          "Benign / DDoS": 2246,
+          "CredentialAttack / DDoS": 361,
+          "Benign / DDoS / Injection": 288,
+          "CredentialAttack / Injection": 42,
+          "Benign / Injection": 25,
+          "CredentialAttack / DDoS / Injection": 22,
+          "DDoS / Reconnaissance": 10
+        },
+        "per_class": {
+          "Benign": {
+            "rows": 16792214,
+            "intra_dup_rows": 8857999,
+            "conflict_rows": 345792
+          },
+          "Reconnaissance": {
+            "rows": 1358977,
+            "intra_dup_rows": 521485,
+            "conflict_rows": 227781
+          },
+          "DoS": {
+            "rows": 203456,
+            "intra_dup_rows": 2572,
+            "conflict_rows": 0
+          },
+          "Injection": {
+            "rows": 381777,
+            "intra_dup_rows": 841,
+            "conflict_rows": 4508
+          },
+          "DDoS": {
+            "rows": 4141256,
+            "intra_dup_rows": 3053237,
+            "conflict_rows": 312056
+          },
+          "CredentialAttack": {
+            "rows": 1594777,
+            "intra_dup_rows": 108234,
+            "conflict_rows": 46721
+          },
+          "Bot_or_Backdoor": {
+            "rows": 203384,
+            "intra_dup_rows": 105487,
+            "conflict_rows": 0
+          }
+        }
+      }
+    },
+    "41": {
+      "n_features": 41,
+      "rows": 27520260,
+      "distinct_vectors": 14641842,
+      "duplicate_rows": 12878418,
+      "native": {
+        "rows": 27520260,
+        "conflicting_vectors": 133347,
+        "conflict_rows": 978664,
+        "minority_rows": 198933,
+        "top_label_sets": {
+          "Benign / scanning": 105433,
+          "Benign / password": 19129,
+          "ddos / injection": 3761,
+          "Benign / ddos": 2158,
+          "ddos / xss": 1698,
+          "ddos / password": 313,
+          "Benign / ddos / injection": 274,
+          "ddos / injection / xss": 142,
+          "Benign / ddos / xss": 90,
+          "Benign / xss": 71
+        },
+        "per_class": {
+          "Benign": {
+            "rows": 16792214,
+            "intra_dup_rows": 8865808,
+            "conflict_rows": 350651
+          },
+          "scanning": {
+            "rows": 1358977,
+            "intra_dup_rows": 521494,
+            "conflict_rows": 227791
+          },
+          "dos": {
+            "rows": 203456,
+            "intra_dup_rows": 4055,
+            "conflict_rows": 2
+          },
+          "injection": {
+            "rows": 381777,
+            "intra_dup_rows": 862,
+            "conflict_rows": 4575
+          },
+          "ddos": {
+            "rows": 4141256,
+            "intra_dup_rows": 3054372,
+            "conflict_rows": 340414
+          },
+          "password": {
+            "rows": 1594777,
+            "intra_dup_rows": 176661,
+            "conflict_rows": 52117
+          },
+          "xss": {
+            "rows": 2834435,
+            "intra_dup_rows": 9350,
+            "conflict_rows": 3042
+          },
+          "ransomware": {
+            "rows": 3971,
+            "intra_dup_rows": 441,
+            "conflict_rows": 70
+          },
+          "Backdoor": {
+            "rows": 203384,
+            "intra_dup_rows": 110442,
+            "conflict_rows": 0
+          },
+          "mitm": {
+            "rows": 6013,
+            "intra_dup_rows": 959,
+            "conflict_rows": 2
+          }
+        }
+      },
+      "canonical": {
+        "rows": 24675841,
+        "conflicting_vectors": 131478,
+        "conflict_rows": 946948,
+        "minority_rows": 196339,
+        "top_label_sets": {
+          "Benign / Reconnaissance": 105437,
+          "Benign / CredentialAttack": 19130,
+          "DDoS / Injection": 3903,
+          "Benign / DDoS": 2248,
+          "CredentialAttack / DDoS": 361,
+          "Benign / DDoS / Injection": 288,
+          "CredentialAttack / Injection": 42,
+          "Benign / Injection": 25,
+          "CredentialAttack / DDoS / Injection": 22,
+          "DDoS / Reconnaissance": 10
+        },
+        "per_class": {
+          "Benign": {
+            "rows": 16792214,
+            "intra_dup_rows": 8865808,
+            "conflict_rows": 350513
+          },
+          "Reconnaissance": {
+            "rows": 1358977,
+            "intra_dup_rows": 521494,
+            "conflict_rows": 227786
+          },
+          "DoS": {
+            "rows": 203456,
+            "intra_dup_rows": 4055,
+            "conflict_rows": 2
+          },
+          "Injection": {
+            "rows": 381777,
+            "intra_dup_rows": 862,
+            "conflict_rows": 4508
+          },
+          "DDoS": {
+            "rows": 4141256,
+            "intra_dup_rows": 3054372,
+            "conflict_rows": 312058
+          },
+          "CredentialAttack": {
+            "rows": 1594777,
+            "intra_dup_rows": 176661,
+            "conflict_rows": 52081
+          },
+          "Bot_or_Backdoor": {
+            "rows": 203384,
+            "intra_dup_rows": 110442,
+            "conflict_rows": 0
+          }
+        }
+      }
+    },
+    "48": {
+      "n_features": 48,
+      "rows": 27520260,
+      "distinct_vectors": 7299522,
+      "duplicate_rows": 20220738,
+      "native": {
+        "rows": 27520260,
+        "conflicting_vectors": 212089,
+        "conflict_rows": 11792735,
+        "minority_rows": 1084683,
+        "top_label_sets": {
+          "Benign / scanning": 151716,
+          "Benign / ddos": 35294,
+          "Benign / xss": 12471,
+          "Benign / password": 6716,
+          "injection / xss": 2163,
+          "Benign / dos": 844,
+          "ddos / xss": 730,
+          "Benign / injection": 440,
+          "ddos / injection": 221,
+          "Benign / injection / xss": 143
+        },
+        "per_class": {
+          "Benign": {
+            "rows": 16792214,
+            "intra_dup_rows": 13900135,
+            "conflict_rows": 6718448
+          },
+          "scanning": {
+            "rows": 1358977,
+            "intra_dup_rows": 1132194,
+            "conflict_rows": 1279535
+          },
+          "dos": {
+            "rows": 203456,
+            "intra_dup_rows": 4917,
+            "conflict_rows": 5163
+          },
+          "injection": {
+            "rows": 381777,
+            "intra_dup_rows": 31703,
+            "conflict_rows": 28127
+          },
+          "ddos": {
+            "rows": 4141256,
+            "intra_dup_rows": 3602906,
+            "conflict_rows": 3160771
+          },
+          "password": {
+            "rows": 1594777,
+            "intra_dup_rows": 897358,
+            "conflict_rows": 532226
+          },
+          "xss": {
+            "rows": 2834435,
+            "intra_dup_rows": 252907,
+            "conflict_rows": 65359
+          },
+          "ransomware": {
+            "rows": 3971,
+            "intra_dup_rows": 1141,
+            "conflict_rows": 357
+          },
+          "Backdoor": {
+            "rows": 203384,
+            "intra_dup_rows": 182734,
+            "conflict_rows": 2506
+          },
+          "mitm": {
+            "rows": 6013,
+            "intra_dup_rows": 1005,
+            "conflict_rows": 243
+          }
+        }
+      },
+      "canonical": {
+        "rows": 24675841,
+        "conflicting_vectors": 196456,
+        "conflict_rows": 11699461,
+        "minority_rows": 1056262,
+        "top_label_sets": {
+          "Benign / Reconnaissance": 151729,
+          "Benign / DDoS": 35388,
+          "Benign / CredentialAttack": 6726,
+          "Benign / DoS": 926,
+          "Benign / Injection": 585,
+          "DDoS / Injection": 315,
+          "Benign / DDoS / Injection": 143,
+          "CredentialAttack / Injection": 100,
+          "DoS / Injection": 95,
+          "Benign / DoS / Injection": 75
+        },
+        "per_class": {
+          "Benign": {
+            "rows": 16792214,
+            "intra_dup_rows": 13900135,
+            "conflict_rows": 6702946
+          },
+          "Reconnaissance": {
+            "rows": 1358977,
+            "intra_dup_rows": 1132194,
+            "conflict_rows": 1279529
+          },
+          "DoS": {
+            "rows": 203456,
+            "intra_dup_rows": 4917,
+            "conflict_rows": 5119
+          },
+          "Injection": {
+            "rows": 381777,
+            "intra_dup_rows": 31703,
+            "conflict_rows": 18617
+          },
+          "DDoS": {
+            "rows": 4141256,
+            "intra_dup_rows": 3602906,
+            "conflict_rows": 3158798
+          },
+          "CredentialAttack": {
+            "rows": 1594777,
+            "intra_dup_rows": 897358,
+            "conflict_rows": 531946
+          },
+          "Bot_or_Backdoor": {
+            "rows": 203384,
+            "intra_dup_rows": 182734,
+            "conflict_rows": 2506
+          }
+        }
+      }
+    },
+    "40": {
+      "n_features": 40,
+      "rows": 27520260,
+      "distinct_vectors": 6253195,
+      "duplicate_rows": 21267065,
+      "native": {
+        "rows": 27520260,
+        "conflicting_vectors": 226146,
+        "conflict_rows": 12063130,
+        "minority_rows": 1134822,
+        "top_label_sets": {
+          "Benign / scanning": 154245,
+          "Benign / ddos": 35268,
+          "Benign / xss": 22671,
+          "Benign / password": 7360,
+          "injection / xss": 2367,
+          "Benign / dos": 837,
+          "ddos / xss": 816,
+          "Benign / injection": 511,
+          "ddos / injection": 248,
+          "Benign / ransomware": 212
+        },
+        "per_class": {
+          "Benign": {
+            "rows": 16792214,
+            "intra_dup_rows": 13986500,
+            "conflict_rows": 6786390
+          },
+          "scanning": {
+            "rows": 1358977,
+            "intra_dup_rows": 1140814,
+            "conflict_rows": 1289849
+          },
+          "dos": {
+            "rows": 203456,
+            "intra_dup_rows": 6441,
+            "conflict_rows": 5194
+          },
+          "injection": {
+            "rows": 381777,
+            "intra_dup_rows": 77896,
+            "conflict_rows": 29090
+          },
+          "ddos": {
+            "rows": 4141256,
+            "intra_dup_rows": 3786159,
+            "conflict_rows": 3165495
+          },
+          "password": {
+            "rows": 1594777,
+            "intra_dup_rows": 1452625,
+            "conflict_rows": 684642
+          },
+          "xss": {
+            "rows": 2834435,
+            "intra_dup_rows": 389625,
+            "conflict_rows": 98710
+          },
+          "ransomware": {
+            "rows": 3971,
+            "intra_dup_rows": 1993,
+            "conflict_rows": 999
+          },
+          "Backdoor": {
+            "rows": 203384,
+            "intra_dup_rows": 196080,
+            "conflict_rows": 2516
+          },
+          "mitm": {
+            "rows": 6013,
+            "intra_dup_rows": 1006,
+            "conflict_rows": 245
+          }
+        }
+      },
+      "canonical": {
+        "rows": 24675841,
+        "conflicting_vectors": 199922,
+        "conflict_rows": 11922901,
+        "minority_rows": 1094326,
+        "top_label_sets": {
+          "Benign / Reconnaissance": 154259,
+          "Benign / DDoS": 35370,
+          "Benign / CredentialAttack": 7372,
+          "Benign / DoS": 918,
+          "Benign / Injection": 669,
+          "DDoS / Injection": 400,
+          "CredentialAttack / Injection": 215,
+          "Benign / DDoS / Injection": 148,
+          "DoS / Injection": 95,
+          "Benign / DoS / Injection": 77
+        },
+        "per_class": {
+          "Benign": {
+            "rows": 16792214,
+            "intra_dup_rows": 13986500,
+            "conflict_rows": 6758875
+          },
+          "Reconnaissance": {
+            "rows": 1358977,
+            "intra_dup_rows": 1140814,
+            "conflict_rows": 1289843
+          },
+          "DoS": {
+            "rows": 203456,
+            "intra_dup_rows": 6441,
+            "conflict_rows": 5149
+          },
+          "Injection": {
+            "rows": 381777,
+            "intra_dup_rows": 77896,
+            "conflict_rows": 19240
+          },
+          "DDoS": {
+            "rows": 4141256,
+            "intra_dup_rows": 3786159,
+            "conflict_rows": 3163325
+          },
+          "CredentialAttack": {
+            "rows": 1594777,
+            "intra_dup_rows": 1452625,
+            "conflict_rows": 683953
+          },
+          "Bot_or_Backdoor": {
+            "rows": 203384,
+            "intra_dup_rows": 196080,
+            "conflict_rows": 2516
+          }
+        }
+      }
+    }
+  },
+  "elapsed_s": 120.7
+}

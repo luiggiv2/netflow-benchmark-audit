@@ -1,0 +1,33 @@
+=== ton3_benign_scanning: NF-ToN-IoT-v3, labels ['Benign', 'scanning']
+vectors carrying >= 2 of these labels (41-feature key): 105,437; rows: 542,093
+
+[Benign] rows 314,327; distinct vectors 105,437
+  src IP : 192.168.1.31 (45.0 %), 192.168.1.32 (32.7 %), 192.168.1.30 (16.0 %), 192.168.1.194 (2.9 %), 192.168.1.193 (2.8 %) [+9 more]
+  dst IP : 192.168.1.180 (18.7 %), 192.168.1.195 (17.9 %), 192.168.1.49 (7.4 %), 192.168.1.193 (6.7 %), 192.168.1.194 (6.4 %) [+230 more]
+  dst port: 80 (17.5 %), 443 (8.4 %), 256 (0.3 %), 1723 (0.2 %), 111 (0.2 %) [+1858 more]
+  protocol: 6 (99.9 %), 17 (0.1 %); L7_PROTO: 0.0 (67.8 %), 7.0 (17.5 %), 91.0 (8.4 %) [+58 more]
+  time   : 2019-04-23 14:09 to 2019-04-29 14:25 UTC
+[scanning] rows 227,766; distinct vectors 105,437
+  src IP : 192.168.1.31 (42.3 %), 192.168.1.32 (28.6 %), 192.168.1.30 (22.5 %), 192.168.1.190 (3.1 %), 192.168.1.152 (1.7 %) [+7 more]
+  dst IP : 192.168.1.194 (17.7 %), 192.168.1.193 (17.6 %), 192.168.1.79 (8.4 %), 192.168.1.31 (3.6 %), 192.168.1.32 (2.7 %) [+227 more]
+  dst port: 443 (27.3 %), 80 (18.1 %), 445 (0.3 %), 8080 (0.2 %), 22 (0.2 %) [+1858 more]
+  protocol: 6 (99.8 %), 17 (0.2 %); L7_PROTO: 0.0 (46.7 %), 91.0 (27.3 %), 7.0 (18.1 %) [+58 more]
+  time   : 2019-04-23 14:09 to 2019-04-24 06:58 UTC
+
+Most frequent conflicting vectors (rows per label; non-zero features):
+  - Benign 6, scanning 369
+      L4_SRC_PORT=60524, L4_DST_PORT=80, PROTOCOL=6, L7_PROTO=7, IN_BYTES=40, IN_PKTS=1, TCP_FLAGS=16, CLIENT_TCP_FLAGS=16, FLOW_DURATION_MILLISECONDS=1, LONGEST_FLOW_PKT=40, SHORTEST_FLOW_PKT=40, MAX_IP_PKT_LEN=40, SRC_TO_DST_AVG_THROUGHPUT=320000, NUM_PKTS_UP_TO_128_BYTES=1, TCP_WIN_MAX_IN=1024
+  - Benign 163, scanning 190
+      L4_SRC_PORT=34411, L4_DST_PORT=80, PROTOCOL=6, L7_PROTO=7, IN_BYTES=40, IN_PKTS=1, TCP_FLAGS=16, CLIENT_TCP_FLAGS=16, FLOW_DURATION_MILLISECONDS=1, LONGEST_FLOW_PKT=40, SHORTEST_FLOW_PKT=40, MAX_IP_PKT_LEN=40, SRC_TO_DST_AVG_THROUGHPUT=320000, NUM_PKTS_UP_TO_128_BYTES=1, TCP_WIN_MAX_IN=1024
+  - Benign 249, scanning 99
+      L4_SRC_PORT=50028, L4_DST_PORT=80, PROTOCOL=6, L7_PROTO=7, IN_BYTES=40, IN_PKTS=1, TCP_FLAGS=16, CLIENT_TCP_FLAGS=16, FLOW_DURATION_MILLISECONDS=1, LONGEST_FLOW_PKT=40, SHORTEST_FLOW_PKT=40, MAX_IP_PKT_LEN=40, SRC_TO_DST_AVG_THROUGHPUT=320000, NUM_PKTS_UP_TO_128_BYTES=1, TCP_WIN_MAX_IN=1024
+  - Benign 68, scanning 276
+      L4_SRC_PORT=53751, L4_DST_PORT=443, PROTOCOL=6, L7_PROTO=91, IN_BYTES=44, IN_PKTS=1, TCP_FLAGS=2, CLIENT_TCP_FLAGS=2, FLOW_DURATION_MILLISECONDS=1, LONGEST_FLOW_PKT=44, SHORTEST_FLOW_PKT=44, MAX_IP_PKT_LEN=44, SRC_TO_DST_AVG_THROUGHPUT=352000, NUM_PKTS_UP_TO_128_BYTES=1, TCP_WIN_MAX_IN=1024
+  - Benign 164, scanning 179
+      L4_SRC_PORT=40137, L4_DST_PORT=443, PROTOCOL=6, L7_PROTO=91, IN_BYTES=44, IN_PKTS=1, TCP_FLAGS=2, CLIENT_TCP_FLAGS=2, FLOW_DURATION_MILLISECONDS=1, LONGEST_FLOW_PKT=44, SHORTEST_FLOW_PKT=44, MAX_IP_PKT_LEN=44, SRC_TO_DST_AVG_THROUGHPUT=352000, NUM_PKTS_UP_TO_128_BYTES=1, TCP_WIN_MAX_IN=1024
+  share of conflicting rows in the top 1 / 10 / 100 vectors: 0.1 % / 0.6 % / 5.0 %
+
+Full records (features + IPs + timestamps) carrying >1 label: 0 records, 0 rows (0.00 % of group rows)
+Full-record duplicates within the same label (identical record repeated): 22 rows (0.00 % of group rows)
+Exact re-check (no hashing) on 500 sampled vectors: 500 distinct exact vectors with >1 label, 0 with a single label
+

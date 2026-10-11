@@ -1,0 +1,113 @@
+{
+  "dataset": "NF-ToN-IoT-v3",
+  "generated_utc": "2026-09-30T23:05:25.681587+00:00",
+  "script": "scripts/01_load_nfv3.py",
+  "environment": {
+    "pandas": "3.0.3",
+    "numpy": "2.4.6"
+  },
+  "input": {
+    "path": "02934b58528a226b_NFV3DATA-A11964_A11964/data/NF-ToN-IoT-v3.csv",
+    "sha1": "24854ca3072ab7c2ade9ebfb202345a666a94cfe"
+  },
+  "config": {
+    "split_method": "grouped by pandas.util.hash_pandas_object of the normalised 49-feature vector, mixed with the seed constant through splitmix64, modulo 100",
+    "split_seed": 42,
+    "split_seed_const": "0xf119a835ed784c12",
+    "train_high": 70,
+    "val_high": 85,
+    "class_mapping_path": "data/schemas/class_mapping.csv",
+    "class_mapping_sha1": "395924d802f2490af7a7f045f82bab7cc72ed03e"
+  },
+  "typo_correction": {
+    "from": "Infilteration",
+    "to": "Infiltration",
+    "rows_affected": 0
+  },
+  "outputs": {
+    "parquet": {
+      "path": "data/processed/NF-ToN-IoT-v3/data.parquet",
+      "sha1": "506f057847180a4762d68da9fb500b45092b55bb",
+      "size_bytes": 648562690,
+      "rows": 27520260,
+      "columns": 58
+    },
+    "qc_report": "data/processed/NF-ToN-IoT-v3/qc_report.txt",
+    "log": "data/processed/NF-ToN-IoT-v3/load.log"
+  },
+  "qc_summary": {
+    "class_counts": {
+      "Benign": {
+        "train": 11847411,
+        "val": 2452626,
+        "test": 2492177,
+        "total": 16792214
+      },
+      "DDoS": {
+        "train": 2903207,
+        "val": 625983,
+        "test": 612066,
+        "total": 4141256
+      },
+      "": {
+        "train": 1989174,
+        "val": 427168,
+        "test": 428077,
+        "total": 2844419
+      },
+      "CredentialAttack": {
+        "train": 1116479,
+        "val": 239610,
+        "test": 238688,
+        "total": 1594777
+      },
+      "Reconnaissance": {
+        "train": 947847,
+        "val": 210969,
+        "test": 200161,
+        "total": 1358977
+      },
+      "Injection": {
+        "train": 267427,
+        "val": 57291,
+        "test": 57059,
+        "total": 381777
+      },
+      "DoS": {
+        "train": 142666,
+        "val": 30351,
+        "test": 30439,
+        "total": 203456
+      },
+      "Bot_or_Backdoor": {
+        "train": 142638,
+        "val": 30580,
+        "test": 30166,
+        "total": 203384
+      }
+    },
+    "duplicates_and_conflicts": {
+      "rows": 27520260,
+      "unique_feature_vectors": 14729992,
+      "duplicate_rows": 12790268,
+      "canonical_rows": 24675841,
+      "conflicting_vectors": 127208,
+      "conflicting_rows": 936858,
+      "conflict_label_sets": {
+        "Benign / Reconnaissance": 105432,
+        "Benign / CredentialAttack": 14869,
+        "DDoS / Injection": 3903,
+        "Benign / DDoS": 2246,
+        "CredentialAttack / DDoS": 361,
+        "Benign / DDoS / Injection": 288,
+        "CredentialAttack / Injection": 42,
+        "Benign / Injection": 25,
+        "CredentialAttack / DDoS / Injection": 22,
+        "DDoS / Reconnaissance": 10,
+        "Benign / CredentialAttack / DDoS": 9,
+        "Injection / Reconnaissance": 1
+      }
+    },
+    "warnings": []
+  }
+}

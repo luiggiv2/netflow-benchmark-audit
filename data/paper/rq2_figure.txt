@@ -1,0 +1,11 @@
+RQ2 figure (P5.6). Commit 071b59df4723c6fc217f38f1f962d1295252685a
+Classes with macro-F1 >= 0.95; median
+  v2 1 rule all features              12/27  median 0.940
+  v2 1 rule no identity               11/27  median 0.934
+  v2 3 levels all features            23/27  median 0.992
+  v2 3 levels no identity             22/27  median 0.992
+  v3 1 rule all features              10/24  median 0.939
+  v3 1 rule no identity               7/24  median 0.924
+  v3 3 levels all features            18/24  median 0.981
+  v3 3 levels no identity             17/24  median 0.969
+  v3 3 levels start time              18/24  median 0.991

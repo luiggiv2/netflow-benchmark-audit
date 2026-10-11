@@ -1,0 +1,48 @@
+QC report for NF-ToN-IoT-v3
+Generated: 2026-09-30T23:05:01.857770+00:00
+Total rows: 27,520,260
+Columns:    58
+Split: grouped by seeded hash of the normalised 49-feature vector, seed 42, 70/15/15
+
+Rows per canonical class per split:
+  class                     train          val         test        total     tr%    va%    te%  status
+  Benign               11,847,411    2,452,626    2,492,177   16,792,214   70.6%  14.6%  14.8%  OK
+  DDoS                  2,903,207      625,983      612,066    4,141,256   70.1%  15.1%  14.8%  OK
+  (excluded)            1,989,174      427,168      428,077    2,844,419   69.9%  15.0%  15.0%  OK
+  CredentialAttack      1,116,479      239,610      238,688    1,594,777   70.0%  15.0%  15.0%  OK
+  Reconnaissance          947,847      210,969      200,161    1,358,977   69.7%  15.5%  14.7%  OK
+  Injection               267,427       57,291       57,059      381,777   70.0%  15.0%  14.9%  OK
+  DoS                     142,666       30,351       30,439      203,456   70.1%  14.9%  15.0%  OK
+  Bot_or_Backdoor         142,638       30,580       30,166      203,384   70.1%  15.0%  14.8%  OK
+
+No canonical class triggers a warning.
+
+Exact duplicates on the normalised 49-feature vector:
+  unique feature vectors: 14,729,992 of 27,520,260 rows
+  duplicate rows:         12,790,268 (46.48%)
+  Duplicates stay within one split by construction of the key.
+
+Conflicting labels (identical vector, more than one canonical label; kept in the data, irreducible error floor):
+  vectors: 127,208   rows: 936,858 (3.80% of canonical rows)
+    Benign / Reconnaissance                     105,432 vectors
+    Benign / CredentialAttack                    14,869 vectors
+    DDoS / Injection                              3,903 vectors
+    Benign / DDoS                                 2,246 vectors
+    CredentialAttack / DDoS                         361 vectors
+    Benign / DDoS / Injection                       288 vectors
+    CredentialAttack / Injection                     42 vectors
+    Benign / Injection                               25 vectors
+    CredentialAttack / DDoS / Injection              22 vectors
+    DDoS / Reconnaissance                            10 vectors
+
+Implementation sanity check (holds by construction; the audit verifies it independently on tabular.parquet):
+  feature hashes assigned to more than one split: 0
+
+Source-IP overlap across splits (informative; expected given the testbed structure):
+  unique src IPs in train: 10,927
+  unique src IPs in val  : 2,574
+  unique src IPs in test : 2,536
+  shared train/test: 364
+
+NaN and Inf per column (stored as-is; the serializer converts Inf to NaN for the tabular representation):
+  none

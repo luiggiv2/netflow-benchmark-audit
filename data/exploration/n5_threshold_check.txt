@@ -1,0 +1,57 @@
+N5 threshold check: attack probability of the CORE G0 models on NF-BoT-IoT core rows
+Generated: 2026-10-08T18:00:54.566969+00:00
+Balanced target sample (50,000 rows per class, seed 7), as in m8_reply_check.py part b.
+p = 1 - P(Benign). Columns: median and 99th percentile of p; share of rows with p >= 0.5, 0.25, 0.1, 0.01. Median [min, max] over seeds.
+
+== NF-ToN-IoT-v2 -> NF-BoT-IoT-v2
+  xgb DoS/DDoS median p 0.002 [0.001, 0.003] | p99 0.348 [0.096, 0.401] | >= 0.5 0.000 [0.000, 0.001] | >= 0.25 0.012 [0.003, 0.018] | >= 0.1 0.020 [0.008, 0.039] | >= 0.01 0.091 [0.054, 0.155]
+  xgb Benign   median p 0.000 [0.000, 0.002] | p99 0.706 [0.541, 0.927] | >= 0.5 0.015 [0.011, 0.016] | >= 0.25 0.017 [0.016, 0.018] | >= 0.1 0.020 [0.018, 0.021] | >= 0.01 0.046 [0.032, 0.067]
+  xgb ROC AUC DoS/DDoS vs Benign 0.909 [0.510, 0.928]  per seed 0.928 0.862 0.510 0.919 0.909
+  xgb threshold at Benign p95: detected 0.145 [0.055, 0.148] | false alarms 0.050 [0.042, 0.050] | threshold 0.0081 [0.0046, 0.016]
+  xgb threshold at Benign p90: detected 0.748 [0.127, 0.986] | false alarms 0.097 [0.082, 0.100] | threshold 0.0013 [0.00065, 0.005]
+  rf  DoS/DDoS median p 0.100 [0.070, 0.130] | p99 0.310 [0.220, 0.360] | >= 0.5 0.000 [0.000, 0.000] | >= 0.25 0.316 [0.002, 0.466] | >= 0.1 0.500 [0.500, 0.543] | >= 0.01 1.000 [0.991, 1.000]
+  rf  Benign   median p 0.050 [0.030, 0.070] | p99 0.640 [0.570, 0.710] | >= 0.5 0.013 [0.012, 0.015] | >= 0.25 0.028 [0.027, 0.037] | >= 0.1 0.145 [0.091, 0.372] | >= 0.01 0.622 [0.565, 0.749]
+  rf  ROC AUC DoS/DDoS vs Benign 0.766 [0.699, 0.902]  per seed 0.721 0.766 0.699 0.902 0.894
+  rf  threshold at Benign p95: detected 0.484 [0.143, 0.500] | false alarms 0.049 [0.048, 0.050] | threshold 0.16 [0.14, 0.2]
+  rf  threshold at Benign p90: detected 0.500 [0.197, 0.504] | false alarms 0.091 [0.064, 0.096] | threshold 0.12 [0.1, 0.14]
+
+== NF-CSE-CIC-IDS2018-v2 -> NF-BoT-IoT-v2
+  xgb DoS/DDoS median p 0.068 [0.009, 0.194] | p99 0.113 [0.052, 0.642] | >= 0.5 0.000 [0.000, 0.491] | >= 0.25 0.005 [0.000, 0.496] | >= 0.1 0.082 [0.000, 0.958] | >= 0.01 0.958 [0.468, 0.975]
+  xgb Benign   median p 0.000 [0.000, 0.000] | p99 1.000 [0.991, 1.000] | >= 0.5 0.087 [0.053, 0.147] | >= 0.25 0.087 [0.053, 0.148] | >= 0.1 0.097 [0.096, 0.152] | >= 0.01 0.109 [0.101, 0.157]
+  xgb ROC AUC DoS/DDoS vs Benign 0.897 [0.839, 0.941]  per seed 0.897 0.839 0.904 0.941 0.871
+  xgb threshold at Benign p95: detected 0.000 [0.000, 0.000] | false alarms 0.048 [0.045, 0.050] | threshold 0.7 [0.59, 0.98]
+  xgb threshold at Benign p90: detected 0.575 [0.000, 0.958] | false alarms 0.098 [0.097, 0.100] | threshold 0.08 [0.036, 0.83]
+  rf  DoS/DDoS median p 0.140 [0.110, 0.210] | p99 0.220 [0.200, 0.250] | >= 0.5 0.000 [0.000, 0.000] | >= 0.25 0.002 [0.000, 0.014] | >= 0.1 0.964 [0.503, 0.973] | >= 0.01 1.000 [1.000, 1.000]
+  rf  Benign   median p 0.090 [0.070, 0.120] | p99 0.420 [0.400, 0.500] | >= 0.5 0.010 [0.004, 0.011] | >= 0.25 0.075 [0.053, 0.082] | >= 0.1 0.495 [0.174, 0.544] | >= 0.01 0.768 [0.591, 0.858]
+  rf  ROC AUC DoS/DDoS vs Benign 0.768 [0.570, 0.898]  per seed 0.712 0.768 0.898 0.814 0.570
+  rf  threshold at Benign p95: detected 0.000 [0.000, 0.000] | false alarms 0.046 [0.024, 0.048] | threshold 0.28 [0.26, 0.3]
+  rf  threshold at Benign p90: detected 0.453 [0.002, 0.840] | false alarms 0.091 [0.079, 0.099] | threshold 0.17 [0.13, 0.22]
+
+== NF-ToN-IoT-v3 -> NF-BoT-IoT-v3
+  xgb DoS/DDoS median p 0.031 [0.010, 0.084] | p99 0.576 [0.272, 0.810] | >= 0.5 0.086 [0.001, 0.325] | >= 0.25 0.328 [0.011, 0.422] | >= 0.1 0.350 [0.263, 0.487] | >= 0.01 0.526 [0.500, 0.654]
+  xgb Benign   median p 0.000 [0.000, 0.001] | p99 0.759 [0.724, 0.886] | >= 0.5 0.021 [0.018, 0.054] | >= 0.25 0.044 [0.037, 0.081] | >= 0.1 0.095 [0.066, 0.121] | >= 0.01 0.161 [0.148, 0.182]
+  xgb ROC AUC DoS/DDoS vs Benign 0.863 [0.603, 0.865]  per seed 0.603 0.863 0.865 0.859 0.864
+  xgb threshold at Benign p95: detected 0.332 [0.004, 0.407] | false alarms 0.050 [0.049, 0.050] | threshold 0.24 [0.15, 0.56]
+  xgb threshold at Benign p90: detected 0.415 [0.273, 0.525] | false alarms 0.098 [0.091, 0.100] | threshold 0.078 [0.041, 0.12]
+  rf  DoS/DDoS median p 0.220 [0.210, 0.270] | p99 0.450 [0.380, 0.519] | >= 0.5 0.001 [0.001, 0.015] | >= 0.25 0.464 [0.402, 0.529] | >= 0.1 0.988 [0.578, 0.993] | >= 0.01 1.000 [1.000, 1.000]
+  rf  Benign   median p 0.060 [0.030, 0.070] | p99 0.570 [0.500, 0.670] | >= 0.5 0.017 [0.010, 0.047] | >= 0.25 0.170 [0.158, 0.176] | >= 0.1 0.272 [0.271, 0.310] | >= 0.01 0.906 [0.900, 0.965]
+  rf  ROC AUC DoS/DDoS vs Benign 0.810 [0.705, 0.828]  per seed 0.794 0.828 0.824 0.810 0.705
+  rf  threshold at Benign p95: detected 0.088 [0.004, 0.104] | false alarms 0.047 [0.044, 0.049] | threshold 0.38 [0.36, 0.45]
+  rf  threshold at Benign p90: detected 0.147 [0.094, 0.233] | false alarms 0.097 [0.091, 0.099] | threshold 0.32 [0.31, 0.34]
+
+== NF-CSE-CIC-IDS2018-v3 -> NF-BoT-IoT-v3
+  xgb DoS/DDoS median p 0.000 [0.000, 0.000] | p99 0.025 [0.001, 0.045] | >= 0.5 0.001 [0.000, 0.004] | >= 0.25 0.003 [0.000, 0.006] | >= 0.1 0.004 [0.003, 0.007] | >= 0.01 0.018 [0.006, 0.489]
+  xgb Benign   median p 0.000 [0.000, 0.000] | p99 0.999 [0.996, 1.000] | >= 0.5 0.019 [0.019, 0.092] | >= 0.25 0.019 [0.019, 0.095] | >= 0.1 0.036 [0.019, 0.110] | >= 0.01 0.075 [0.055, 0.129]
+  xgb ROC AUC DoS/DDoS vs Benign 0.836 [0.759, 0.873]  per seed 0.759 0.873 0.836 0.764 0.860
+  xgb threshold at Benign p95: detected 0.004 [0.000, 0.079] | false alarms 0.047 [0.037, 0.049] | threshold 0.049 [0.019, 0.99]
+  xgb threshold at Benign p90: detected 0.018 [0.004, 0.491] | false alarms 0.097 [0.093, 0.100] | threshold 0.0053 [0.00029, 0.19]
+  rf  DoS/DDoS median p 0.060 [0.030, 0.100] | p99 0.170 [0.140, 0.240] | >= 0.5 0.001 [0.000, 0.001] | >= 0.25 0.006 [0.004, 0.006] | >= 0.1 0.257 [0.070, 0.491] | >= 0.01 1.000 [0.876, 1.000]
+  rf  Benign   median p 0.000 [0.000, 0.000] | p99 0.480 [0.430, 0.600] | >= 0.5 0.001 [0.000, 0.018] | >= 0.25 0.087 [0.082, 0.120] | >= 0.1 0.160 [0.143, 0.166] | >= 0.01 0.351 [0.293, 0.385]
+  rf  ROC AUC DoS/DDoS vs Benign 0.789 [0.718, 0.805]  per seed 0.805 0.802 0.718 0.789 0.779
+  rf  threshold at Benign p95: detected 0.002 [0.000, 0.004] | false alarms 0.047 [0.039, 0.049] | threshold 0.33 [0.29, 0.42]
+  rf  threshold at Benign p90: detected 0.004 [0.003, 0.006] | false alarms 0.092 [0.086, 0.098] | threshold 0.22 [0.2, 0.29]
+
+Summary over the eight source and model pairs (per-pair medians over seeds):
+  ROC AUC: 0.766 to 0.909
+  false alarms 5%: floods detected 0.000 to 0.484, median 0.046, pairs <= 0.004: 3; threshold 0.0081 to 0.7
+  false alarms 10%: floods detected 0.004 to 0.748, median 0.434, pairs <= 0.004: 1; threshold 0.0013 to 0.32

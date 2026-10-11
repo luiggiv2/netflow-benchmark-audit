@@ -1,0 +1,14 @@
+Non-finite values in the model matrix (base feature set)
+Generated: 2026-10-08T23:40:35.097218+00:00
+
+  NF-ToN-IoT-v2            rows with a non-finite base feature: 0 of 16,940,496 (0.00 %)
+  NF-BoT-IoT-v2            rows with a non-finite base feature: 0 of 37,763,497 (0.00 %)
+  NF-CSE-CIC-IDS2018-v2    rows with a non-finite base feature: 0 of 18,893,708 (0.00 %)
+  NF-ToN-IoT-v3            rows with a non-finite base feature: 0 of 27,520,260 (0.00 %)
+  NF-BoT-IoT-v3            rows with a non-finite base feature: 1,052,105 of 16,933,808 (6.21 %); features: SRC_TO_DST_SECOND_BYTES 1,052,105, DST_TO_SRC_SECOND_BYTES 1,052,105
+      Benign                    64.94 % of 51,989 rows
+      DDoS                       1.28 % of 7,150,882 rows
+      DoS                        2.83 % of 8,034,190 rows
+      Reconnaissance            41.19 % of 1,695,132 rows
+      Theft                     70.34 % of 1,615 rows
+  NF-CSE-CIC-IDS2018-v3    rows with a non-finite base feature: 0 of 20,115,529 (0.00 %)

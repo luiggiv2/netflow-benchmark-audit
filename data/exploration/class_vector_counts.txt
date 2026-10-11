@@ -1,0 +1,33 @@
+Distinct feature vectors per native class (classes with <= 50 distinct vectors under some key are listed)
+Generated: 2026-10-02T21:49:15.244367+00:00
+Keys: base (all features but L4_SRC_PORT), noport, noid; A40 = 41 common features without
+L4_SRC_PORT (set A of the re-keyed probes). Rows per split for seeds 42 and 1 (train/val/test).
+
+== NF-ToN-IoT-v3
+
+== NF-BoT-IoT-v3
+
+== NF-CSE-CIC-IDS2018-v3
+  base   DoS_attacks-SlowHTTPTest     rows   105,550  distinct vectors    1  seed 42 105550/0/0  seed 1 105550/0/0
+  base   FTP-BruteForce               rows   386,720  distinct vectors    1  seed 42 386720/0/0  seed 1 386720/0/0
+  noport DoS_attacks-SlowHTTPTest     rows   105,550  distinct vectors    1  seed 42 0/0/105550  seed 1 105550/0/0
+  noport FTP-BruteForce               rows   386,720  distinct vectors    1  seed 42 0/0/386720  seed 1 386720/0/0
+  noid   DoS_attacks-SlowHTTPTest     rows   105,550  distinct vectors    1  seed 42 105550/0/0  seed 1 105550/0/0
+  noid   FTP-BruteForce               rows   386,720  distinct vectors    1  seed 42 386720/0/0  seed 1 386720/0/0
+  A40    DoS_attacks-SlowHTTPTest     rows   105,550  distinct vectors    1  seed 42 0/105550/0  seed 1 105550/0/0
+  A40    FTP-BruteForce               rows   386,720  distinct vectors    1  seed 42 0/386720/0  seed 1 386720/0/0
+
+== NF-ToN-IoT-v2
+
+== NF-BoT-IoT-v2
+
+== NF-CSE-CIC-IDS2018-v2
+  base   DoS attacks-SlowHTTPTest     rows    14,116  distinct vectors   15  seed 42 7876/2227/4013  seed 1 8271/5843/2
+  base   FTP-BruteForce               rows    25,933  distinct vectors   19  seed 42 23619/4/2310  seed 1 19300/6267/366
+  noport DoS attacks-SlowHTTPTest     rows    14,116  distinct vectors   15  seed 42 14056/0/60  seed 1 10741/2526/849
+  noport FTP-BruteForce               rows    25,933  distinct vectors   19  seed 42 23621/364/1948  seed 1 13017/11136/1780
+  noid   DoS attacks-SlowHTTPTest     rows    14,116  distinct vectors   15  seed 42 4864/3364/5888  seed 1 12974/0/1142
+  noid   FTP-BruteForce               rows    25,933  distinct vectors   19  seed 42 18977/6590/366  seed 1 23702/1867/364
+  A40    DoS attacks-SlowHTTPTest     rows    14,116  distinct vectors   15  seed 42 7876/2227/4013  seed 1 8271/5843/2
+  A40    FTP-BruteForce               rows    25,933  distinct vectors   19  seed 42 23619/4/2310  seed 1 19300/6267/366
+

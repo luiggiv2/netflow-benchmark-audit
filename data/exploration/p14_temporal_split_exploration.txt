@@ -1,0 +1,140 @@
+
+================================================================================
+DATASET: NF-ToN-IoT-v3
+================================================================================
+  rows=27,520,260  load_time=217.8s
+  full range: 2019-04-23 14:09:50.618000+00:00 to 2019-04-29 14:45:55.177000+00:00  span=144.60h
+
+Temporal footprint per CANONICAL class:
+  class                             flows                       first                        last      span_h    span%
+  (excluded)                    3,047,803  2019-04-27 04:54:22.396000  2019-04-29 14:43:05.358000       57.81    40.0%
+  Benign                       16,792,214  2019-04-23 14:09:50.618000  2019-04-29 14:45:55.177000      144.60   100.0%
+  CredentialAttack              1,594,777  2019-04-26 13:45:49.635000  2019-04-27 03:47:44.675000       14.03     9.7%
+  DDoS                          4,141,256  2019-04-25 14:48:47.370000  2019-04-26 05:01:10.995000       14.21     9.8%
+  DoS                             203,456  2019-04-24 18:13:42.297000  2019-04-25 02:50:20.576000        8.61     6.0%
+  Injection                       381,777  2019-04-25 05:49:22.186000  2019-04-25 10:14:18.788000        4.42     3.1%
+  Reconnaissance                1,358,977  2019-04-23 14:09:50.618000  2019-04-24 07:06:37.647000       16.95    11.7%
+
+Chronological 70/15/15 split simulation (by row count on sorted timestamp):
+  train cutoff: 2019-04-26 03:17:49.558000+00:00
+  val   cutoff: 2019-04-27 08:29:15.988000+00:00
+
+  class                             train              val             test            total  status
+  Benign                       13,645,227          874,741        2,272,246       16,792,214  OK
+  DDoS                          3,674,745          466,511                0        4,141,256  test<1000
+  (excluded)                            0        1,192,010        1,855,793        3,047,803  OK
+  CredentialAttack                      0        1,594,777                0        1,594,777  train<1000 test<1000
+  Reconnaissance                1,358,977                0                0        1,358,977  val<1000 test<1000
+  Injection                       381,777                0                0          381,777  val<1000 test<1000
+  DoS                             203,456                0                0          203,456  val<1000 test<1000
+
+  AT-RISK canonical classes under chronological split:
+    DDoS: train=3,674,745 val=466,511 test=0
+    CredentialAttack: train=0 val=1,594,777 test=0
+    Reconnaissance: train=1,358,977 val=0 test=0
+    Injection: train=381,777 val=0 test=0
+    DoS: train=203,456 val=0 test=0
+
+  Diversity check (distinct hours per canonical class):
+    Benign                  distinct_hours=   108
+    CredentialAttack        distinct_hours=    15
+    DDoS                    distinct_hours=    16
+    DoS                     distinct_hours=     9
+    Injection               distinct_hours=     6
+    Reconnaissance          distinct_hours=    18
+
+  Total time for NF-ToN-IoT-v3: 232.5s
+
+================================================================================
+DATASET: NF-BoT-IoT-v3
+================================================================================
+  rows=16,933,808  load_time=36.3s
+  full range: 2018-05-15 00:27:11.665000+00:00 to 2018-06-19 04:17:13.932000+00:00  span=843.83h
+
+Temporal footprint per CANONICAL class:
+  class                             flows                       first                        last      span_h    span%
+  (excluded)                        1,615  2018-06-18 01:05:07.851000  2018-06-19 04:17:13.932000       27.20     3.2%
+  Benign                           51,989  2018-05-15 00:27:11.665000  2018-06-19 04:15:36.953000      843.81   100.0%
+  DDoS                          7,150,882  2018-06-04 07:02:05.370000  2018-06-04 09:22:59.512000        2.35     0.3%
+  DoS                           8,034,190  2018-06-04 03:02:02.116000  2018-06-04 05:23:01.913000        2.35     0.3%
+  Reconnaissance                1,695,132  2018-05-15 00:32:12.972000  2018-05-22 10:03:36.729000      177.52    21.0%
+
+Chronological 70/15/15 split simulation (by row count on sorted timestamp):
+  train cutoff: 2018-06-04 07:17:49.439000+00:00
+  val   cutoff: 2018-06-04 08:06:45.895000+00:00
+
+  class                             train              val             test            total  status
+  DoS                           8,034,190                0                0        8,034,190  val<1000 test<1000
+  DDoS                          2,074,019        2,539,606        2,537,257        7,150,882  OK
+  Reconnaissance                1,695,132                0                0        1,695,132  val<1000 test<1000
+  Benign                           50,324              465            1,200           51,989  val<1000
+  (excluded)                            0                0            1,615            1,615  OK
+
+  AT-RISK canonical classes under chronological split:
+    DoS: train=8,034,190 val=0 test=0
+    Reconnaissance: train=1,695,132 val=0 test=0
+    Benign: train=50,324 val=465 test=1,200
+
+  Diversity check (distinct hours per canonical class):
+    Benign                  distinct_hours=    31
+    DDoS                    distinct_hours=     3
+    DoS                     distinct_hours=     3
+    Reconnaissance          distinct_hours=    22
+
+  Total time for NF-BoT-IoT-v3: 44.7s
+
+================================================================================
+DATASET: NF-CSE-CIC-IDS2018-v3
+================================================================================
+  rows=20,115,529  load_time=98.1s
+  full range: 2018-02-14 12:28:07.705000+00:00 to 2018-03-02 20:04:25.524000+00:00  span=391.60h
+
+Temporal footprint per CANONICAL class:
+  class                             flows                       first                        last      span_h    span%
+  (excluded)                      190,250  2018-02-22 12:24:59.675000  2018-03-01 21:40:18.782000      177.26    45.3%
+  Benign                       17,514,626  2018-02-14 12:28:07.705000  2018-03-02 20:04:25.524000      391.60   100.0%
+  Bot_or_Backdoor                 207,703  2018-03-02 14:17:07.380000  2018-03-02 19:54:50.318000        5.63     1.4%
+  CredentialAttack                575,194  2018-02-14 14:33:26.718000  2018-02-14 19:32:30.288000        4.98     1.3%
+  DDoS                          1,324,350  2018-02-20 14:13:54.662000  2018-02-21 19:05:54.052000       28.87     7.4%
+  DoS                             302,966  2018-02-15 13:27:42.466000  2018-02-16 17:58:22.098000       28.51     7.3%
+  Injection                           440  2018-02-22 15:09:40.675000  2018-02-22 20:27:51.010000        5.30     1.4%
+
+Chronological 70/15/15 split simulation (by row count on sorted timestamp):
+  train cutoff: 2018-02-23 21:22:56.236000+00:00
+  val   cutoff: 2018-03-01 15:57:49.110000+00:00
+
+  class                             train              val             test            total  status
+  Benign                       11,875,822        2,882,373        2,756,431       17,514,626  OK
+  DDoS                          1,324,350                0                0        1,324,350  val<1000 test<1000
+  CredentialAttack                575,194                0                0          575,194  val<1000 test<1000
+  DoS                             302,966                0                0          302,966  val<1000 test<1000
+  Bot_or_Backdoor                       0                0          207,703          207,703  train<1000 val<1000
+  (excluded)                        2,098          134,956           53,196          190,250  OK
+  Injection                           440                0                0              440  train<1000 val<1000 test<1000
+
+  AT-RISK canonical classes under chronological split:
+    DDoS: train=1,324,350 val=0 test=0
+    CredentialAttack: train=575,194 val=0 test=0
+    DoS: train=302,966 val=0 test=0
+    Bot_or_Backdoor: train=0 val=0 test=207,703
+    Injection: train=440 val=0 test=0
+
+  Diversity check (distinct hours per canonical class):
+    Benign                  distinct_hours=   141
+    Bot_or_Backdoor         distinct_hours=     6
+    CredentialAttack        distinct_hours=     5
+    DDoS                    distinct_hours=     6
+    DoS                     distinct_hours=     6
+    Injection               distinct_hours=     6
+
+  Total time for NF-CSE-CIC-IDS2018-v3: 108.4s
+
+
+================================================================================
+CONSOLIDATED SUMMARY — temporal 70/15/15
+================================================================================
+  NF-ToN-IoT-v3                     AT-RISK: ['DDoS', 'CredentialAttack', 'Reconnaissance', 'Injection', 'DoS']
+  NF-BoT-IoT-v3                     AT-RISK: ['DoS', 'Reconnaissance', 'Benign']
+  NF-CSE-CIC-IDS2018-v3             AT-RISK: ['DDoS', 'CredentialAttack', 'DoS', 'Bot_or_Backdoor', 'Injection']
+
+[exited with code 0]

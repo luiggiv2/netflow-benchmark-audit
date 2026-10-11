@@ -1,0 +1,214 @@
+Major issue 7 (third reviewer report): RQ2 probes over six grouped splits
+Generated: 2026-10-10T21:57:06.196178+00:00
+Probe sample and balanced rows as in 34_shortcut_probes.py --common; split of set A (40 features) drawn with
+seeds [42, 1, 2, 3, 4, 5] (42 = stored split; 1-5 = the split seeds of Phase 4). A = 40 features; C = A
+without ports, TTL, TCP window and DNS fields (32); D = C without L7_PROTO, ICMP_TYPE, ICMP_IPV4_TYPE (29).
+Scores: macro-F1 of the class against Benign on the balanced test rows. 'no copy C/D': test rows whose
+set-C/set-D vector has no copy in the training sample.
+Seed 42 reproduces the stored common-split values (A and C, depth 1 and 3) in 54 of 54 classes
+
+Part 1. Per split seed (classes with depth-3 macro-F1 >= 0.95 / classes probed)
+  NF-v2
+    seed 42: probed 27; A d1 12, A d3 23, C d1 11, C d3 22, D d3 23; A-C loss median 0.000, max 0.028, >=0.05 in 0; C-D loss median 0.000, >=0.05 in 0
+             set-C copy share median 37.3%; no copy C (27 scorable): A >= 0.95 in 17, A-C loss median 0.000, max 0.135, >= 0.05 in 3; depth-1 rule A: TCP_WIN_MAX_IN 9, L4_DST_PORT 4
+    seed  1: probed 26; A d1 14, A d3 23, C d1 10, C d3 21, D d3 20; A-C loss median 0.001, max 0.038, >=0.05 in 0; C-D loss median 0.000, >=0.05 in 0
+             set-C copy share median 39.6%; no copy C (26 scorable): A >= 0.95 in 19, A-C loss median 0.001, max 0.143, >= 0.05 in 5; depth-1 rule A: TCP_WIN_MAX_IN 9, L4_DST_PORT 4
+    seed  2: probed 27; A d1 12, A d3 22, C d1 10, C d3 22, D d3 17; A-C loss median 0.000, max 0.027, >=0.05 in 0; C-D loss median 0.000, >=0.05 in 3
+             set-C copy share median 38.7%; no copy C (27 scorable): A >= 0.95 in 17, A-C loss median 0.000, max 0.128, >= 0.05 in 2; depth-1 rule A: TCP_WIN_MAX_IN 9, L4_DST_PORT 4
+    seed  3: probed 26; A d1 11, A d3 22, C d1 9, C d3 23, D d3 21; A-C loss median 0.000, max 0.029, >=0.05 in 0; C-D loss median 0.000, >=0.05 in 0
+             set-C copy share median 40.3%; no copy C (25 scorable): A >= 0.95 in 17, A-C loss median 0.000, max 0.113, >= 0.05 in 3; depth-1 rule A: TCP_WIN_MAX_IN 10, L4_DST_PORT 3
+    seed  4: probed 26; A d1 13, A d3 24, C d1 11, C d3 22, D d3 20; A-C loss median 0.000, max 0.048, >=0.05 in 0; C-D loss median 0.000, >=0.05 in 2
+             set-C copy share median 38.5%; no copy C (26 scorable): A >= 0.95 in 19, A-C loss median 0.000, max 0.111, >= 0.05 in 5; depth-1 rule A: TCP_WIN_MAX_IN 8, L4_DST_PORT 4
+    seed  5: probed 26; A d1 9, A d3 21, C d1 8, C d3 20, D d3 17; A-C loss median 0.000, max 0.026, >=0.05 in 0; C-D loss median 0.000, >=0.05 in 1
+             set-C copy share median 40.5%; no copy C (25 scorable): A >= 0.95 in 16, A-C loss median 0.000, max 0.181, >= 0.05 in 3; depth-1 rule A: TCP_WIN_MAX_IN 8, L4_DST_PORT 4
+  NF-v3
+    seed 42: probed 24; A d1 10, A d3 18, C d1 7, C d3 17, D d3 17; A-C loss median 0.002, max 0.075, >=0.05 in 2; C-D loss median 0.000, >=0.05 in 1
+             set-C copy share median 39.0%; no copy C (24 scorable): A >= 0.95 in 14, A-C loss median 0.002, max 0.197, >= 0.05 in 5; depth-1 rule A: TCP_WIN_MAX_IN 7, L4_DST_PORT 5
+    seed  1: probed 25; A d1 13, A d3 18, C d1 10, C d3 20, D d3 19; A-C loss median 0.000, max 0.023, >=0.05 in 0; C-D loss median 0.000, >=0.05 in 2
+             set-C copy share median 38.9%; no copy C (25 scorable): A >= 0.95 in 14, A-C loss median 0.001, max 0.065, >= 0.05 in 3; depth-1 rule A: TCP_WIN_MAX_IN 8, L4_DST_PORT 3
+    seed  2: probed 25; A d1 13, A d3 20, C d1 9, C d3 20, D d3 17; A-C loss median 0.001, max 0.062, >=0.05 in 1; C-D loss median 0.000, >=0.05 in 0
+             set-C copy share median 36.4%; no copy C (25 scorable): A >= 0.95 in 14, A-C loss median 0.001, max 0.417, >= 0.05 in 3; depth-1 rule A: TCP_WIN_MAX_IN 8, L4_DST_PORT 4
+    seed  3: probed 25; A d1 11, A d3 19, C d1 8, C d3 18, D d3 15; A-C loss median 0.002, max 0.024, >=0.05 in 0; C-D loss median 0.000, >=0.05 in 0
+             set-C copy share median 36.8%; no copy C (24 scorable): A >= 0.95 in 15, A-C loss median 0.007, max 0.103, >= 0.05 in 5; depth-1 rule A: TCP_WIN_MAX_IN 8, L4_DST_PORT 4
+    seed  4: probed 25; A d1 13, A d3 19, C d1 9, C d3 18, D d3 18; A-C loss median 0.002, max 0.040, >=0.05 in 0; C-D loss median 0.000, >=0.05 in 1
+             set-C copy share median 36.2%; no copy C (25 scorable): A >= 0.95 in 17, A-C loss median 0.003, max 0.142, >= 0.05 in 4; depth-1 rule A: TCP_WIN_MAX_IN 7, L4_DST_PORT 5
+    seed  5: probed 25; A d1 12, A d3 19, C d1 9, C d3 19, D d3 18; A-C loss median 0.001, max 0.046, >=0.05 in 0; C-D loss median 0.000, >=0.05 in 2
+             set-C copy share median 38.3%; no copy C (25 scorable): A >= 0.95 in 14, A-C loss median 0.001, max 0.060, >= 0.05 in 1; depth-1 rule A: TCP_WIN_MAX_IN 7, L4_DST_PORT 3
+
+Part 2. Range over the six split seeds (and over the five Phase-4 seeds 1-5)
+  NF-v2 classes probed              : all six 26-27 | seeds 1-5 26-27 | seed 42 27
+  NF-v2 A depth 1 >= 0.95           : all six 9-14 | seeds 1-5 9-14 | seed 42 12
+  NF-v2 A depth 3 >= 0.95           : all six 21-24 | seeds 1-5 21-24 | seed 42 23
+  NF-v2 C depth 1 >= 0.95           : all six 8-11 | seeds 1-5 8-11 | seed 42 11
+  NF-v2 C depth 3 >= 0.95           : all six 20-23 | seeds 1-5 20-23 | seed 42 22
+  NF-v2 D depth 3 >= 0.95           : all six 17-23 | seeds 1-5 17-21 | seed 42 23
+  NF-v2 A-C loss median             : all six 0.000-0.001 | seeds 1-5 0.000-0.001 | seed 42 0.000
+  NF-v2 A-C loss max                : all six 0.026-0.048 | seeds 1-5 0.026-0.048 | seed 42 0.028
+  NF-v2 A-C loss >= 0.05            : all six 0-0 | seeds 1-5 0-0 | seed 42 0
+  NF-v2 A-C loss max, no copy C     : all six 0.111-0.181 | seeds 1-5 0.111-0.181 | seed 42 0.135
+  NF-v2 A-C loss >= 0.05, no copy C : all six 2-5 | seeds 1-5 2-5 | seed 42 3
+  NF-v2 A >= 0.95, no copy C        : all six 16-19 | seeds 1-5 16-19 | seed 42 17
+  NF-v2 set-C copy share median     : all six 37.3%-40.5% | seeds 1-5 38.5%-40.5% | seed 42 37.3%
+  NF-v2 depth-1 TCP_WIN_MAX_IN      : all six 8-10 | seeds 1-5 8-10 | seed 42 9
+  NF-v2 depth-1 L4_DST_PORT         : all six 3-4 | seeds 1-5 3-4 | seed 42 4
+  NF-v3 classes probed              : all six 24-25 | seeds 1-5 25-25 | seed 42 24
+  NF-v3 A depth 1 >= 0.95           : all six 10-13 | seeds 1-5 11-13 | seed 42 10
+  NF-v3 A depth 3 >= 0.95           : all six 18-20 | seeds 1-5 18-20 | seed 42 18
+  NF-v3 C depth 1 >= 0.95           : all six 7-10 | seeds 1-5 8-10 | seed 42 7
+  NF-v3 C depth 3 >= 0.95           : all six 17-20 | seeds 1-5 18-20 | seed 42 17
+  NF-v3 D depth 3 >= 0.95           : all six 15-19 | seeds 1-5 15-19 | seed 42 17
+  NF-v3 A-C loss median             : all six 0.000-0.002 | seeds 1-5 0.000-0.002 | seed 42 0.002
+  NF-v3 A-C loss max                : all six 0.023-0.075 | seeds 1-5 0.023-0.062 | seed 42 0.075
+  NF-v3 A-C loss >= 0.05            : all six 0-2 | seeds 1-5 0-1 | seed 42 2
+  NF-v3 A-C loss max, no copy C     : all six 0.060-0.417 | seeds 1-5 0.060-0.417 | seed 42 0.197
+  NF-v3 A-C loss >= 0.05, no copy C : all six 1-5 | seeds 1-5 1-5 | seed 42 5
+  NF-v3 A >= 0.95, no copy C        : all six 14-17 | seeds 1-5 14-17 | seed 42 14
+  NF-v3 set-C copy share median     : all six 36.2%-39.0% | seeds 1-5 36.2%-38.9% | seed 42 39.0%
+  NF-v3 depth-1 TCP_WIN_MAX_IN      : all six 7-8 | seeds 1-5 7-8 | seed 42 7
+  NF-v3 depth-1 L4_DST_PORT         : all six 3-5 | seeds 1-5 3-5 | seed 42 5
+
+Part 3. Classes named in the text: depth-3 macro-F1 per split seed (42, 1, 2, 3, 4, 5)
+  NF-CSE-CIC-IDS2018-v2 Infiltration
+    A all test rows :  0.67  0.64  0.69  0.67  0.66  0.70
+    C all test rows :  0.65  0.64  0.68  0.66  0.65  0.68
+    D all test rows :  0.65  0.64  0.68  0.66  0.65  0.68
+    A no copy C     :  0.74  0.57  0.58  0.66  0.61  0.73
+    C no copy C     :  0.60  0.55  0.58  0.55  0.62  0.54
+    D no copy D     :  0.60  0.46  0.53  0.50  0.60  0.49
+    depth-1 rule A  : TCP_WIN_MAX_IN <= 1241 | TCP_WIN_MAX_IN <= 1223 | TCP_WIN_MAX_IN <= 1211.5 | TCP_WIN_MAX_IN <= 1300 | TCP_WIN_MAX_IN <= 1208.5 | TCP_WIN_MAX_IN <= 1297
+  NF-CSE-CIC-IDS2018-v3 Infiltration
+    A all test rows :  0.67  0.69  0.68  0.66  0.66  0.66
+    C all test rows :  0.67  0.68  0.68  0.66  0.66  0.66
+    D all test rows :  0.66  0.68  0.68  0.66  0.66  0.66
+    A no copy C     :  0.63  0.68  0.68  0.62  0.64  0.64
+    C no copy C     :  0.63  0.62  0.68  0.63  0.64  0.64
+    D no copy D     :  0.63  0.60  0.67  0.64  0.65  0.65
+    depth-1 rule A  : DST_TO_SRC_AVG_THROUGHPUT > 8746.5 | CLIENT_TCP_FLAGS <= 16.5 | DST_TO_SRC_AVG_THROUGHPUT > 8741.5 | DST_TO_SRC_AVG_THROUGHPUT > 8738 | DST_TO_SRC_AVG_THROUGHPUT > 8741.5 | DST_TO_SRC_AVG_THROUGHPUT > 8751
+  NF-ToN-IoT-v3 scanning
+    A all test rows :  0.79  0.83  0.77  0.77  0.88  0.79
+    C all test rows :  0.79  0.83  0.77  0.77  0.88  0.79
+    D all test rows :  0.74  0.77  0.73  0.76  0.50  0.69
+    A no copy C     :  0.62  0.83  0.68  0.70  0.85  0.78
+    C no copy C     :  0.63  0.83  0.68  0.70  0.84  0.78
+    D no copy D     :  0.75  0.79  0.87  0.86  0.82  0.87
+    depth-1 rule A  : IN_BYTES <= 48.5 | MAX_IP_PKT_LEN <= 48.5 | MAX_IP_PKT_LEN <= 49.5 | MAX_IP_PKT_LEN <= 48.5 | MAX_IP_PKT_LEN <= 49 | IN_BYTES <= 49.5
+  NF-ToN-IoT-v2 scanning
+    A all test rows :  0.95  0.93  0.93  0.95  0.93  0.72
+    C all test rows :  0.95  0.91  0.95  0.96  0.92  0.72
+    D all test rows :  0.96  0.93  0.94  0.97  0.92  0.72
+    A no copy C     :  0.49  0.43  0.58  0.61  0.56  0.15
+    C no copy C     :  0.48  0.56  0.83  0.62  0.71  0.15
+    D no copy D     :  0.57  0.57  0.54  0.53  0.47  0.52
+    depth-1 rule A  : TCP_WIN_MAX_IN > 4009.5 | TCP_WIN_MAX_IN > 3794.5 | TCP_WIN_MAX_IN > 4029 | TCP_WIN_MAX_IN > 3976.5 | TCP_WIN_MAX_IN > 4011.5 | TCP_WIN_MAX_IN > 4029
+  NF-CSE-CIC-IDS2018-v2 DDoS attacks-LOIC-HTTP
+    A all test rows :  0.75  0.97  0.97  0.97  0.99  1.00
+    C all test rows :  0.75  0.97  0.99  0.99  0.99  0.99
+    D all test rows :  1.00  1.00  0.85  1.00  0.99  0.97
+    A no copy C     :  0.60  0.99  0.99  0.99  0.98  0.99
+    C no copy C     :  0.60  0.99  0.97  0.97  0.98  0.99
+    D no copy D     :  1.00  1.00  1.00  1.00  1.00  1.00
+    depth-1 rule A  : DURATION_IN > 14 | DURATION_IN > 13 | DURATION_IN > 13 | DURATION_IN > 13 | DURATION_IN > 13 | L7_PROTO > 6.37
+  NF-ToN-IoT-v3 Backdoor
+    A all test rows :  1.00  1.00  1.00  1.00  1.00  1.00
+    C all test rows :  0.92  1.00  0.98  0.99  1.00  0.99
+    D all test rows :  0.92  0.99  0.98  0.99  0.99  0.99
+    A no copy C     :  0.99  1.00  1.00  1.00  1.00  1.00
+    C no copy C     :  0.80  0.98  0.98  0.98  0.99  0.98
+    D no copy D     :  0.99  0.98  0.98  0.97  0.97  0.97
+    depth-1 rule A  : ICMP_TYPE > 12160 | TCP_WIN_MAX_IN > 8068 | TCP_WIN_MAX_IN > 8089 | TCP_WIN_MAX_IN > 8103 | TCP_WIN_MAX_IN > 8103 | TCP_WIN_MAX_IN > 8068
+  NF-ToN-IoT-v2 password
+    A all test rows :  0.98  0.99  0.95  0.98  0.99  0.98
+    C all test rows :  0.97  0.97  0.96  0.96  0.97  0.97
+    D all test rows :  0.93  0.95  0.90  0.91  0.96  0.95
+    A no copy C     :  0.92  0.99  0.85  0.92  0.97  0.92
+    C no copy C     :  0.92  0.93  0.92  0.91  0.92  0.94
+    D no copy D     :  0.68  0.70  0.70  0.67  0.74  0.73
+    depth-1 rule A  : L4_DST_PORT <= 80.5 | L4_DST_PORT <= 80.5 | L4_DST_PORT <= 80.5 | L4_DST_PORT <= 80.5 | L4_DST_PORT <= 80.5 | L4_DST_PORT <= 80.5
+  NF-CSE-CIC-IDS2018-v2 SSH-Bruteforce
+    A all test rows :  1.00  1.00  1.00  1.00  1.00  1.00
+    C all test rows :  1.00  1.00  1.00  1.00  1.00  1.00
+    D all test rows :  1.00  1.00  1.00  1.00  1.00  1.00
+    A no copy C     :  1.00  1.00  1.00  1.00  1.00  1.00
+    C no copy C     :  1.00  1.00  1.00  1.00  1.00  1.00
+    D no copy D     :  1.00  1.00  1.00  1.00  1.00  1.00
+    depth-1 rule A  : L4_DST_PORT <= 22.5 | L4_DST_PORT <= 22.5 | L4_DST_PORT <= 22.5 | L4_DST_PORT <= 22.5 | L4_DST_PORT <= 22.5 | L4_DST_PORT <= 22.5
+  NF-CSE-CIC-IDS2018-v3 SSH-Bruteforce
+    A all test rows :  1.00  1.00  1.00  1.00  1.00  1.00
+    C all test rows :  1.00  1.00  1.00  1.00  1.00  1.00
+    D all test rows :  1.00  1.00  1.00  1.00  1.00  1.00
+    A no copy C     :  1.00  1.00  1.00  1.00  1.00  1.00
+    C no copy C     :  1.00  1.00  1.00  1.00  1.00  1.00
+    D no copy D     :  1.00  1.00  1.00  1.00  1.00  1.00
+    depth-1 rule A  : L4_DST_PORT <= 22.5 | L4_DST_PORT <= 22.5 | L4_DST_PORT <= 22.5 | L4_DST_PORT <= 22.5 | L4_DST_PORT <= 22.5 | L4_DST_PORT <= 22.5
+  NF-CSE-CIC-IDS2018-v2 FTP-BruteForce
+    A all test rows :  1.00  1.00  1.00   n/a   n/a  1.00
+    C all test rows :  1.00  1.00  1.00   n/a   n/a  1.00
+    D all test rows :  1.00  1.00  1.00   n/a   n/a  1.00
+    A no copy C     :  1.00  1.00  1.00   n/a   n/a  1.00
+    C no copy C     :  1.00  1.00  1.00   n/a   n/a  1.00
+    D no copy D     :  1.00  1.00  1.00   n/a   n/a  1.00
+    depth-1 rule A  : SRC_TO_DST_AVG_THROUGHPUT <= 40000 | SRC_TO_DST_AVG_THROUGHPUT <= 40000 | DURATION_OUT > 164 | n/a | n/a | SRC_TO_DST_AVG_THROUGHPUT <= 36000
+  NF-CSE-CIC-IDS2018-v3 FTP-BruteForce
+    A all test rows :   n/a   n/a   n/a   n/a   n/a   n/a
+    C all test rows :   n/a   n/a   n/a   n/a   n/a   n/a
+    D all test rows :   n/a   n/a   n/a   n/a   n/a   n/a
+    A no copy C     :   n/a   n/a   n/a   n/a   n/a   n/a
+    C no copy C     :   n/a   n/a   n/a   n/a   n/a   n/a
+    D no copy D     :   n/a   n/a   n/a   n/a   n/a   n/a
+    depth-1 rule A  : n/a | n/a | n/a | n/a | n/a | n/a
+
+Part 4. Per class: depth-3 macro-F1 of set A, range over the six split seeds (classes probed in all six)
+  NF-ToN-IoT-v2          backdoor                     A 0.51-1.00 | C 0.51-1.00 | seed 42 A 1.00 C 1.00
+  NF-ToN-IoT-v2          ddos                         A 0.95-0.98 | C 0.93-0.95 | seed 42 A 0.96 C 0.93
+  NF-ToN-IoT-v2          dos                          A 0.97-0.98 | C 0.96-0.98 | seed 42 A 0.97 C 0.98
+  NF-ToN-IoT-v2          injection                    A 0.95-0.97 | C 0.96-0.97 | seed 42 A 0.96 C 0.97
+  NF-ToN-IoT-v2          mitm                         A 0.96-0.97 | C 0.94-0.96 | seed 42 A 0.96 C 0.96
+  NF-ToN-IoT-v2          password                     A 0.95-0.99 | C 0.96-0.97 | seed 42 A 0.98 C 0.97
+  NF-ToN-IoT-v2          ransomware                   A 0.94-0.99 | C 0.93-0.99 | seed 42 A 0.98 C 0.97
+  NF-ToN-IoT-v2          scanning                     A 0.72-0.95 | C 0.72-0.96 | seed 42 A 0.95 C 0.95
+  NF-ToN-IoT-v2          xss                          A 0.98-0.98 | C 0.95-0.96 | seed 42 A 0.98 C 0.96
+  NF-BoT-IoT-v2          DDoS                         A 1.00-1.00 | C 1.00-1.00 | seed 42 A 1.00 C 1.00
+  NF-BoT-IoT-v2          DoS                          A 0.96-1.00 | C 1.00-1.00 | seed 42 A 0.96 C 1.00
+  NF-BoT-IoT-v2          Reconnaissance               A 0.99-0.99 | C 0.99-0.99 | seed 42 A 0.99 C 0.99
+  NF-BoT-IoT-v2          Theft                        A 0.46-0.98 | C 0.46-0.98 | seed 42 A 0.98 C 0.98
+  NF-CSE-CIC-IDS2018-v2  Bot                          A 1.00-1.00 | C 1.00-1.00 | seed 42 A 1.00 C 1.00
+  NF-CSE-CIC-IDS2018-v2  Brute Force -Web             A 0.90-1.00 | C 0.90-1.00 | seed 42 A 0.99 C 0.97
+  NF-CSE-CIC-IDS2018-v2  Brute Force -XSS             A 0.99-1.00 | C 0.98-1.00 | seed 42 A 0.99 C 0.99
+  NF-CSE-CIC-IDS2018-v2  DDOS attack-HOIC             A 1.00-1.00 | C 1.00-1.00 | seed 42 A 1.00 C 1.00
+  NF-CSE-CIC-IDS2018-v2  DDOS attack-LOIC-UDP         A 1.00-1.00 | C 1.00-1.00 | seed 42 A 1.00 C 1.00
+  NF-CSE-CIC-IDS2018-v2  DDoS attacks-LOIC-HTTP       A 0.75-1.00 | C 0.75-0.99 | seed 42 A 0.75 C 0.75
+  NF-CSE-CIC-IDS2018-v2  DoS attacks-GoldenEye        A 1.00-1.00 | C 1.00-1.00 | seed 42 A 1.00 C 1.00
+  NF-CSE-CIC-IDS2018-v2  DoS attacks-Hulk             A 1.00-1.00 | C 1.00-1.00 | seed 42 A 1.00 C 1.00
+  NF-CSE-CIC-IDS2018-v2  DoS attacks-SlowHTTPTest     probed in 4 of 6 seeds
+  NF-CSE-CIC-IDS2018-v2  DoS attacks-Slowloris        A 1.00-1.00 | C 0.99-1.00 | seed 42 A 1.00 C 1.00
+  NF-CSE-CIC-IDS2018-v2  FTP-BruteForce               probed in 4 of 6 seeds
+  NF-CSE-CIC-IDS2018-v2  Infiltration                 A 0.64-0.70 | C 0.64-0.68 | seed 42 A 0.67 C 0.65
+  NF-CSE-CIC-IDS2018-v2  SQL Injection                A 0.93-0.99 | C 0.92-0.98 | seed 42 A 0.95 C 0.94
+  NF-CSE-CIC-IDS2018-v2  SSH-Bruteforce               A 1.00-1.00 | C 1.00-1.00 | seed 42 A 1.00 C 1.00
+  NF-ToN-IoT-v3          Backdoor                     A 1.00-1.00 | C 0.92-1.00 | seed 42 A 1.00 C 0.92
+  NF-ToN-IoT-v3          ddos                         A 0.92-0.98 | C 0.88-0.98 | seed 42 A 0.94 C 0.88
+  NF-ToN-IoT-v3          dos                          A 0.96-0.97 | C 0.97-0.97 | seed 42 A 0.96 C 0.97
+  NF-ToN-IoT-v3          injection                    A 0.96-0.98 | C 0.96-0.97 | seed 42 A 0.97 C 0.96
+  NF-ToN-IoT-v3          mitm                         A 0.96-0.98 | C 0.95-0.97 | seed 42 A 0.96 C 0.97
+  NF-ToN-IoT-v3          password                     A 0.99-0.99 | C 0.98-0.99 | seed 42 A 0.99 C 0.99
+  NF-ToN-IoT-v3          ransomware                   A 0.78-0.99 | C 0.78-0.99 | seed 42 A 0.98 C 0.98
+  NF-ToN-IoT-v3          scanning                     A 0.77-0.88 | C 0.77-0.88 | seed 42 A 0.79 C 0.79
+  NF-ToN-IoT-v3          xss                          A 0.97-0.98 | C 0.95-0.97 | seed 42 A 0.98 C 0.97
+  NF-BoT-IoT-v3          DDoS                         A 0.96-1.00 | C 0.96-1.00 | seed 42 A 1.00 C 0.99
+  NF-BoT-IoT-v3          DoS                          A 0.93-0.99 | C 0.93-0.99 | seed 42 A 0.99 C 0.99
+  NF-BoT-IoT-v3          Reconnaissance               A 0.92-0.94 | C 0.87-0.93 | seed 42 A 0.93 C 0.92
+  NF-BoT-IoT-v3          Theft                        A 0.93-1.00 | C 0.97-1.00 | seed 42 A 1.00 C 0.98
+  NF-CSE-CIC-IDS2018-v3  Bot                          A 1.00-1.00 | C 0.99-1.00 | seed 42 A 1.00 C 0.99
+  NF-CSE-CIC-IDS2018-v3  Brute_Force_-Web             A 0.91-0.97 | C 0.91-0.97 | seed 42 A 0.91 C 0.91
+  NF-CSE-CIC-IDS2018-v3  Brute_Force_-XSS             probed in 5 of 6 seeds
+  NF-CSE-CIC-IDS2018-v3  DDOS_attack-HOIC             A 1.00-1.00 | C 1.00-1.00 | seed 42 A 1.00 C 1.00
+  NF-CSE-CIC-IDS2018-v3  DDOS_attack-LOIC-UDP         A 1.00-1.00 | C 1.00-1.00 | seed 42 A 1.00 C 1.00
+  NF-CSE-CIC-IDS2018-v3  DDoS_attacks-LOIC-HTTP       A 0.92-1.00 | C 0.92-1.00 | seed 42 A 0.98 C 0.97
+  NF-CSE-CIC-IDS2018-v3  DoS_attacks-GoldenEye        A 0.83-1.00 | C 0.83-0.98 | seed 42 A 1.00 C 0.98
+  NF-CSE-CIC-IDS2018-v3  DoS_attacks-Hulk             A 1.00-1.00 | C 1.00-1.00 | seed 42 A 1.00 C 1.00
+  NF-CSE-CIC-IDS2018-v3  DoS_attacks-SlowHTTPTest     probed in 0 of 6 seeds
+  NF-CSE-CIC-IDS2018-v3  DoS_attacks-Slowloris        A 0.96-0.99 | C 0.96-0.99 | seed 42 A 0.96 C 0.97
+  NF-CSE-CIC-IDS2018-v3  FTP-BruteForce               probed in 0 of 6 seeds
+  NF-CSE-CIC-IDS2018-v3  Infiltration                 A 0.66-0.69 | C 0.66-0.68 | seed 42 A 0.67 C 0.67
+  NF-CSE-CIC-IDS2018-v3  SQL_Injection                A 0.79-1.00 | C 0.79-1.00 | seed 42 A 0.89 C 0.89
+  NF-CSE-CIC-IDS2018-v3  SSH-Bruteforce               A 1.00-1.00 | C 1.00-1.00 | seed 42 A 1.00 C 1.00

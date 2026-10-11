@@ -1,0 +1,15 @@
+F2d (v2): label sets of the records carrying more than one label (all columns except the labels)
+Generated: 2026-10-08T18:49:18.133989+00:00
+Source address 18.218.115.60 (main source of the web-attack rows of NF-CSE-CIC-IDS2018-v2); same records as script 36.
+
+records with more than one label: 2,887 (rows 5,828)
+records with a web-attack label and DDOS attack-HOIC: 2,876 (rows 5,806)
+
+all label sets (records):
+  Brute Force -Web / DDOS attack-HOIC: 1,746
+  Brute Force -XSS / DDOS attack-HOIC: 738
+  DDOS attack-HOIC / SQL Injection: 338
+  Brute Force -Web / DDOS attack-HOIC / SQL Injection: 34
+  Brute Force -Web / Brute Force -XSS / DDOS attack-HOIC: 20
+  Brute Force -Web / SQL Injection: 6
+  Brute Force -Web / Brute Force -XSS: 5

@@ -1,0 +1,88 @@
+RQ2 shallow-tree probes: Phase 3 version vs re-keyed version (Phase 4 block A)
+Generated: 2026-10-05T15:32:08.815489+00:00
+phase3: set A = 41 common features, stored split keyed on all features (L4_SRC_PORT included).
+rekeyed: set A = 40 features (no L4_SRC_PORT), each set split on its own features. Set C is the same
+feature set in both (no ports, TTL, TCP window, DNS); only its split differs.
+common (added 2026-10-05): sets as in rekeyed, one split for all sets keyed on the 40 features of A.
+
+== NF-v2
+  phase3   probed 27: >=0.95 A d1 13/27, A d3 25/27, C d1 11/27, C d3 24/27; loss A-C at d3 median 0.000, max 0.032
+           depth-1 features (A): TCP_WIN_MAX_IN 10, L4_DST_PORT 4, DURATION_IN 3, L7_PROTO 2, SRC_TO_DST_AVG_THROUGHPUT 2, L4_SRC_PORT 1, SRC_TO_DST_SECOND_BYTES 1, IN_PKTS 1, OUT_PKTS 1, DNS_QUERY_ID 1, TCP_FLAGS 1
+  rekeyed  probed 27: >=0.95 A d1 12/27, A d3 23/27, C d1 11/27, C d3 17/27; loss A-C at d3 median 0.003, max 0.377
+           depth-1 features (A): TCP_WIN_MAX_IN 9, L4_DST_PORT 4, DURATION_IN 3, SRC_TO_DST_AVG_THROUGHPUT 3, L7_PROTO 2, SERVER_TCP_FLAGS 1, SRC_TO_DST_SECOND_BYTES 1, IN_PKTS 1, OUT_PKTS 1, DNS_QUERY_ID 1, TCP_FLAGS 1
+  common   probed 27: >=0.95 A d1 12/27, A d3 23/27, C d1 11/27, C d3 22/27; loss A-C at d3 median 0.000, max 0.028
+           depth-1 features (A): TCP_WIN_MAX_IN 9, L4_DST_PORT 4, DURATION_IN 3, SRC_TO_DST_AVG_THROUGHPUT 3, L7_PROTO 2, SERVER_TCP_FLAGS 1, SRC_TO_DST_SECOND_BYTES 1, IN_PKTS 1, OUT_PKTS 1, DNS_QUERY_ID 1, TCP_FLAGS 1
+
+== NF-v3
+  phase3   probed 26: >=0.95 A d1 13/26, A d3 21/26, C d1 10/26, C d3 20/26; loss A-C at d3 median 0.002, max 0.028
+           depth-1 features (A): TCP_WIN_MAX_IN 8, L4_DST_PORT 7, SRC_TO_DST_AVG_THROUGHPUT 2, OUT_BYTES 1, NUM_PKTS_512_TO_1024_BYTES 1, IN_PKTS 1, TCP_FLAGS 1, L4_SRC_PORT 1, DST_TO_SRC_AVG_THROUGHPUT 1, DST_TO_SRC_SECOND_BYTES 1, NUM_PKTS_128_TO_256_BYTES 1, MAX_IP_PKT_LEN 1
+           not probed (too few rows): NF-CSE-CIC-IDS2018-v3 SQL_Injection
+  rekeyed  probed 24: >=0.95 A d1 10/24, A d3 18/24, C d1 8/24, C d3 18/24; loss A-C at d3 median 0.001, max 0.303
+           depth-1 features (A): TCP_WIN_MAX_IN 7, L4_DST_PORT 5, DST_TO_SRC_SECOND_BYTES 2, OUT_BYTES 2, SRC_TO_DST_AVG_THROUGHPUT 1, IN_PKTS 1, TCP_FLAGS 1, DST_TO_SRC_AVG_THROUGHPUT 1, NUM_PKTS_512_TO_1024_BYTES 1, ICMP_TYPE 1, NUM_PKTS_128_TO_256_BYTES 1, IN_BYTES 1
+           not probed (too few rows): NF-CSE-CIC-IDS2018-v3 Brute_Force_-XSS, NF-CSE-CIC-IDS2018-v3 DoS_attacks-SlowHTTPTest, NF-CSE-CIC-IDS2018-v3 FTP-BruteForce
+  common   probed 24: >=0.95 A d1 10/24, A d3 18/24, C d1 7/24, C d3 17/24; loss A-C at d3 median 0.002, max 0.075
+           depth-1 features (A): TCP_WIN_MAX_IN 7, L4_DST_PORT 5, DST_TO_SRC_SECOND_BYTES 2, OUT_BYTES 2, SRC_TO_DST_AVG_THROUGHPUT 1, IN_PKTS 1, TCP_FLAGS 1, DST_TO_SRC_AVG_THROUGHPUT 1, NUM_PKTS_512_TO_1024_BYTES 1, ICMP_TYPE 1, NUM_PKTS_128_TO_256_BYTES 1, IN_BYTES 1
+           not probed (too few rows): NF-CSE-CIC-IDS2018-v3 Brute_Force_-XSS, NF-CSE-CIC-IDS2018-v3 DoS_attacks-SlowHTTPTest, NF-CSE-CIC-IDS2018-v3 FTP-BruteForce
+
+Per-class depth-3 macro F1 of sets A and C, and A - C, per version (phase3 / rekeyed / common);
+* = the common-split value of A or C differs from phase3 by >= 0.03
+  NF-BoT-IoT-v2
+    DDoS                         1.00 1.00 +0.00 | 1.00 1.00 -0.00 | 1.00 1.00 +0.00
+   *DoS                          1.00 1.00 +0.00 | 0.96 1.00 -0.04 | 0.96 1.00 -0.04
+    Reconnaissance               0.99 0.99 +0.00 | 0.99 0.99 +0.00 | 0.99 0.99 +0.00
+    Theft                        0.97 0.97 +0.00 | 0.98 0.96 +0.02 | 0.98 0.98 +0.00
+  NF-BoT-IoT-v3
+    DDoS                         1.00 1.00 +0.00 | 1.00 1.00 +0.00 | 1.00 0.99 +0.00
+    DoS                          0.98 0.98 +0.00 | 0.99 0.69 +0.30 | 0.99 0.99 +0.00
+    Reconnaissance               0.92 0.93 -0.00 | 0.93 0.89 +0.04 | 0.93 0.92 +0.01
+    Theft                        0.97 0.98 -0.01 | 1.00 0.99 +0.01 | 1.00 0.98 +0.02
+  NF-CSE-CIC-IDS2018-v2
+    Bot                          1.00 1.00 +0.00 | 1.00 1.00 +0.00 | 1.00 1.00 +0.00
+    Brute Force -Web             0.98 0.98 +0.00 | 0.99 0.99 +0.00 | 0.99 0.97 +0.03
+    Brute Force -XSS             1.00 1.00 +0.00 | 0.99 0.98 +0.01 | 0.99 0.99 +0.00
+    DDOS attack-HOIC             1.00 1.00 +0.00 | 1.00 1.00 +0.00 | 1.00 1.00 +0.00
+    DDOS attack-LOIC-UDP         1.00 1.00 +0.00 | 1.00 1.00 -0.00 | 1.00 1.00 +0.00
+   *DDoS attacks-LOIC-HTTP       0.97 0.97 +0.00 | 0.75 0.98 -0.23 | 0.75 0.75 +0.00
+    DoS attacks-GoldenEye        1.00 1.00 +0.00 | 1.00 1.00 +0.00 | 1.00 1.00 +0.00
+    DoS attacks-Hulk             1.00 1.00 +0.00 | 1.00 1.00 -0.00 | 1.00 1.00 +0.00
+    DoS attacks-SlowHTTPTest     1.00 1.00 +0.00 | 1.00 1.00 +0.00 | 1.00 1.00 +0.00
+    DoS attacks-Slowloris        1.00 1.00 +0.00 | 1.00 0.62 +0.38 | 1.00 1.00 +0.00
+    FTP-BruteForce               1.00 1.00 +0.00 | 1.00 1.00 +0.00 | 1.00 1.00 +0.00
+    Infiltration                 0.66 0.66 +0.00 | 0.67 0.63 +0.04 | 0.67 0.65 +0.02
+   *SQL Injection                0.96 0.98 -0.03 | 0.95 0.97 -0.02 | 0.95 0.94 +0.01
+    SSH-Bruteforce               1.00 1.00 +0.00 | 1.00 1.00 -0.00 | 1.00 1.00 +0.00
+  NF-CSE-CIC-IDS2018-v3
+    Bot                          1.00 0.99 +0.01 | 1.00 0.99 +0.01 | 1.00 0.99 +0.01
+   *Brute_Force_-Web             0.94 0.94 +0.00 | 0.91 0.95 -0.04 | 0.91 0.91 +0.00
+    Brute_Force_-XSS             0.42 0.42 +0.00 |    n/a            |    n/a           
+    DDOS_attack-HOIC             1.00 1.00 +0.00 | 1.00 1.00 +0.00 | 1.00 1.00 +0.00
+    DDOS_attack-LOIC-UDP         1.00 1.00 +0.00 | 1.00 1.00 -0.00 | 1.00 1.00 +0.00
+    DDoS_attacks-LOIC-HTTP       0.98 0.97 +0.01 | 0.98 1.00 -0.02 | 0.98 0.97 +0.01
+    DoS_attacks-GoldenEye        1.00 0.98 +0.01 | 1.00 1.00 +0.00 | 1.00 0.98 +0.01
+    DoS_attacks-Hulk             1.00 1.00 +0.00 | 1.00 1.00 -0.00 | 1.00 1.00 +0.00
+    DoS_attacks-SlowHTTPTest     1.00 1.00 +0.00 |    n/a            |    n/a           
+    DoS_attacks-Slowloris        0.98 0.98 -0.00 | 0.96 0.98 -0.02 | 0.96 0.97 -0.01
+    FTP-BruteForce               1.00 1.00 +0.00 |    n/a            |    n/a           
+    Infiltration                 0.67 0.67 +0.00 | 0.67 0.60 +0.06 | 0.67 0.67 +0.00
+    SQL_Injection                   n/a            | 0.89 0.99 -0.10 | 0.89 0.89 +0.00
+    SSH-Bruteforce               1.00 1.00 +0.00 | 1.00 1.00 +0.00 | 1.00 1.00 +0.00
+  NF-ToN-IoT-v2
+    backdoor                     1.00 1.00 +0.00 | 1.00 0.73 +0.27 | 1.00 1.00 +0.00
+    ddos                         0.98 0.94 +0.03 | 0.96 0.87 +0.09 | 0.96 0.93 +0.03
+    dos                          0.98 0.98 +0.01 | 0.97 0.96 +0.01 | 0.97 0.98 -0.01
+    injection                    0.97 0.96 +0.00 | 0.96 0.78 +0.17 | 0.96 0.97 -0.01
+    mitm                         0.96 0.95 +0.01 | 0.96 0.77 +0.20 | 0.96 0.96 +0.01
+    password                     0.99 0.97 +0.03 | 0.98 0.93 +0.05 | 0.98 0.97 +0.02
+    ransomware                   0.98 0.99 -0.00 | 0.98 0.90 +0.07 | 0.98 0.97 +0.01
+    scanning                     0.94 0.95 -0.00 | 0.95 0.84 +0.11 | 0.95 0.95 +0.00
+    xss                          0.98 0.96 +0.03 | 0.98 0.74 +0.24 | 0.98 0.96 +0.03
+  NF-ToN-IoT-v3
+   *Backdoor                     1.00 0.98 +0.02 | 1.00 0.99 +0.00 | 1.00 0.92 +0.07
+   *ddos                         0.98 0.95 +0.03 | 0.94 0.95 -0.01 | 0.94 0.88 +0.06
+    dos                          0.96 0.97 -0.00 | 0.96 0.93 +0.03 | 0.96 0.97 -0.00
+    injection                    0.97 0.96 +0.00 | 0.97 0.97 -0.00 | 0.97 0.96 +0.00
+    mitm                         0.97 0.96 +0.01 | 0.96 0.95 +0.01 | 0.96 0.97 -0.00
+    password                     0.99 0.99 +0.01 | 0.99 0.98 +0.01 | 0.99 0.99 +0.01
+    ransomware                   0.98 0.95 +0.03 | 0.98 0.98 +0.00 | 0.98 0.98 +0.00
+   *scanning                     0.84 0.84 +0.00 | 0.79 0.85 -0.06 | 0.79 0.79 -0.00
+    xss                          0.97 0.97 +0.01 | 0.98 0.98 +0.00 | 0.98 0.97 +0.01

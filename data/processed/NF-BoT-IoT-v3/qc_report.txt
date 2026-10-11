@@ -1,0 +1,38 @@
+QC report for NF-BoT-IoT-v3
+Generated: 2026-09-30T22:44:16.878056+00:00
+Total rows: 16,933,808
+Columns:    58
+Split: grouped by seeded hash of the normalised 49-feature vector, seed 42, 70/15/15
+
+Rows per canonical class per split:
+  class                     train          val         test        total     tr%    va%    te%  status
+  DoS                   5,623,481    1,203,601    1,207,108    8,034,190   70.0%  15.0%  15.0%  OK
+  DDoS                  5,004,674    1,073,045    1,073,163    7,150,882   70.0%  15.0%  15.0%  OK
+  Reconnaissance        1,185,707      254,840      254,585    1,695,132   69.9%  15.0%  15.0%  OK
+  Benign                   36,431        7,783        7,775       51,989   70.1%  15.0%  15.0%  OK
+  (excluded)                1,149          217          249        1,615   71.1%  13.4%  15.4%  OK
+
+No canonical class triggers a warning.
+
+Exact duplicates on the normalised 49-feature vector:
+  unique feature vectors: 16,687,490 of 16,933,808 rows
+  duplicate rows:         246,318 (1.45%)
+  Duplicates stay within one split by construction of the key.
+
+Conflicting labels (identical vector, more than one canonical label; kept in the data, irreducible error floor):
+  vectors: 44,894   rows: 164,051 (0.97% of canonical rows)
+    DDoS / DoS                                   43,626 vectors
+    Benign / Reconnaissance                       1,268 vectors
+
+Implementation sanity check (holds by construction; the audit verifies it independently on tabular.parquet):
+  feature hashes assigned to more than one split: 0
+
+Source-IP overlap across splits (informative; expected given the testbed structure):
+  unique src IPs in train: 20
+  unique src IPs in val  : 15
+  unique src IPs in test : 15
+  shared train/test: 15
+
+NaN and Inf per column (stored as-is; the serializer converts Inf to NaN for the tabular representation):
+  DST_TO_SRC_SECOND_BYTES          NaN=           0 Inf=   1,052,105
+  SRC_TO_DST_SECOND_BYTES          NaN=     387,350 Inf=     664,755

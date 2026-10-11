@@ -1,0 +1,83 @@
+Major issue 1 (third reviewer report): SHAP rankings with L7_PROTO and the ICMP fields grouped with the port
+Generated: 2026-10-10T17:21:13.514506+00:00
+XGBoost, mean |SHAP| on the source test rows (data/eval/shap/*.jsonl); five seeds per cell.
+Service fields: L7_PROTO, ICMP_TYPE, ICMP_IPV4_TYPE.
+
+== Part 1: Figure 9 (top-5, mean over seeds); old grouping | new grouping (ports+service = L4_DST_PORT,
+   L7_PROTO, ICMP_TYPE, ICMP_IPV4_TYPE)
+  NF-ToN-IoT-v2          G0   BIN: ports 0.20, identity 0.12, timestamps 0.00, other 0.68 | ports+service 0.40, identity 0.12, timestamps 0.00, other 0.48
+  NF-ToN-IoT-v2          G0   CAN: ports 0.20, identity 0.36, timestamps 0.00, other 0.44 | ports+service 0.32, identity 0.36, timestamps 0.00, other 0.32
+  NF-BoT-IoT-v2          G0   BIN: ports 0.20, identity 0.00, timestamps 0.00, other 0.80 | ports+service 0.40, identity 0.00, timestamps 0.00, other 0.60
+  NF-BoT-IoT-v2          G0   CAN: ports 0.20, identity 0.00, timestamps 0.00, other 0.80 | ports+service 0.32, identity 0.00, timestamps 0.00, other 0.68
+  NF-CSE-CIC-IDS2018-v2  G0   BIN: ports 0.08, identity 0.36, timestamps 0.00, other 0.56 | ports+service 0.28, identity 0.36, timestamps 0.00, other 0.36
+  NF-CSE-CIC-IDS2018-v2  G0   CAN: ports 0.20, identity 0.52, timestamps 0.00, other 0.28 | ports+service 0.40, identity 0.52, timestamps 0.00, other 0.08
+  NF-ToN-IoT-v3          G0   BIN: ports 0.20, identity 0.20, timestamps 0.00, other 0.60 | ports+service 0.36, identity 0.20, timestamps 0.00, other 0.44
+  NF-ToN-IoT-v3          G0   CAN: ports 0.20, identity 0.20, timestamps 0.00, other 0.60 | ports+service 0.20, identity 0.20, timestamps 0.00, other 0.60
+  NF-BoT-IoT-v3          G0   BIN: ports 0.20, identity 0.00, timestamps 0.00, other 0.80 | ports+service 0.20, identity 0.00, timestamps 0.00, other 0.80
+  NF-BoT-IoT-v3          G0   CAN: ports 0.20, identity 0.00, timestamps 0.00, other 0.80 | ports+service 0.20, identity 0.00, timestamps 0.00, other 0.80
+  NF-CSE-CIC-IDS2018-v3  G0   BIN: ports 0.20, identity 0.44, timestamps 0.00, other 0.36 | ports+service 0.32, identity 0.44, timestamps 0.00, other 0.24
+  NF-CSE-CIC-IDS2018-v3  G0   CAN: ports 0.20, identity 0.60, timestamps 0.00, other 0.20 | ports+service 0.24, identity 0.60, timestamps 0.00, other 0.16
+  NF-ToN-IoT-v3          G-TS BIN: ports 0.20, identity 0.04, timestamps 0.40, other 0.36 | ports+service 0.40, identity 0.04, timestamps 0.40, other 0.16
+  NF-ToN-IoT-v3          G-TS CAN: ports 0.20, identity 0.00, timestamps 0.40, other 0.40 | ports+service 0.20, identity 0.00, timestamps 0.40, other 0.40
+  NF-BoT-IoT-v3          G-TS BIN: ports 0.20, identity 0.20, timestamps 0.36, other 0.24 | ports+service 0.20, identity 0.20, timestamps 0.36, other 0.24
+  NF-BoT-IoT-v3          G-TS CAN: ports 0.20, identity 0.20, timestamps 0.40, other 0.20 | ports+service 0.20, identity 0.20, timestamps 0.40, other 0.20
+  NF-CSE-CIC-IDS2018-v3  G-TS BIN: ports 0.20, identity 0.32, timestamps 0.36, other 0.12 | ports+service 0.24, identity 0.32, timestamps 0.36, other 0.08
+  NF-CSE-CIC-IDS2018-v3  G-TS CAN: ports 0.20, identity 0.20, timestamps 0.40, other 0.20 | ports+service 0.20, identity 0.20, timestamps 0.40, other 0.20
+  New-grouping values equal to data/paper/rq4_figures.json: 18 of 18 cells
+  G0, 12 cells, top-5: ports + identity median 0.40 (range 0.20-0.80) -> ports + service + identity median 0.54 (range 0.20-0.92); ports alone median 0.20 -> ports + service median 0.32
+  G0, 12 cells, top-10: ports + identity median 0.31 (range 0.12-0.48) -> ports + service + identity median 0.45 (range 0.18-0.58); ports alone median 0.10 -> ports + service median 0.20
+  G0 NF-ToN-IoT (4 cells, top-5): ports + identity 0.32-0.56 -> ports + service + identity 0.40-0.68
+  G0 NF-BoT-IoT (4 cells, top-5): ports + identity 0.20-0.20 -> ports + service + identity 0.20-0.40
+  G0 NF-CSE-CIC-IDS2018 (4 cells, top-5): ports + identity 0.44-0.80 -> ports + service + identity 0.64-0.92
+
+== Part 2: L7_PROTO and ICMP fields per condition (XGBoost; median over seeds [min, max])
+  cell                              svc top5  svc top10           svc mass      rank L7_PROTO     rank ICMP_TYPE
+  NF-ToN-IoT-v2          BIN G0        0.20       0.10  0.09 [0.08, 0.11]           3 [2, 4]        37 [35, 38]
+  NF-ToN-IoT-v2          BIN G-NP      0.20       0.10  0.09 [0.06, 0.10]           3 [2, 6]        36 [33, 36]
+  NF-ToN-IoT-v2          BIN G-NI      0.20       0.10  0.12 [0.09, 0.14]           2 [1, 3]        29 [27, 30]
+  NF-ToN-IoT-v2          CAN G0        0.20       0.10  0.06 [0.05, 0.06]           5 [4, 6]        36 [35, 36]
+  NF-ToN-IoT-v2          CAN G-NP      0.20       0.10  0.12 [0.09, 0.13]           1 [1, 2]        35 [32, 35]
+  NF-ToN-IoT-v2          CAN G-NI      0.20       0.10  0.15 [0.14, 0.18]           1 [1, 1]        26 [26, 29]
+  NF-BoT-IoT-v2          BIN G0        0.20       0.10  0.09 [0.06, 0.10]           2 [2, 4]        31 [28, 37]
+  NF-BoT-IoT-v2          BIN G-NP      0.20       0.10  0.14 [0.08, 0.15]           2 [1, 5]        31 [30, 34]
+  NF-BoT-IoT-v2          BIN G-NI      0.20       0.10  0.11 [0.08, 0.14]           3 [2, 5]        25 [25, 27]
+  NF-BoT-IoT-v2          CAN G0        0.20       0.10  0.11 [0.06, 0.12]           3 [2, 8]        25 [25, 27]
+  NF-BoT-IoT-v2          CAN G-NP      0.20       0.10  0.13 [0.07, 0.17]           2 [1, 6]        23 [22, 24]
+  NF-BoT-IoT-v2          CAN G-NI      0.20       0.10  0.11 [0.05, 0.19]           2 [1, 9]        22 [21, 23]
+  NF-CSE-CIC-IDS2018-v2  BIN G0        0.20       0.10  0.09 [0.08, 0.09]           3 [2, 4]        31 [30, 33]
+  NF-CSE-CIC-IDS2018-v2  BIN G-NP      0.20       0.10  0.10 [0.07, 0.12]           3 [1, 5]        31 [30, 34]
+  NF-CSE-CIC-IDS2018-v2  BIN G-NI      0.20       0.10  0.14 [0.11, 0.16]           2 [2, 3]        26 [25, 28]
+  NF-CSE-CIC-IDS2018-v2  CAN G0        0.20       0.10  0.16 [0.15, 0.16]           2 [1, 2]        30 [29, 31]
+  NF-CSE-CIC-IDS2018-v2  CAN G-NP      0.20       0.10  0.21 [0.19, 0.22]           1 [1, 1]        30 [29, 33]
+  NF-CSE-CIC-IDS2018-v2  CAN G-NI      0.20       0.10  0.22 [0.21, 0.23]           1 [1, 1]        24 [23, 25]
+  NF-ToN-IoT-v3          BIN G0        0.20       0.10  0.06 [0.05, 0.07]           4 [4, 7]        34 [33, 41]
+  NF-ToN-IoT-v3          BIN G-NP      0.20       0.10  0.07 [0.04, 0.08]           5 [4, 7]        37 [26, 41]
+  NF-ToN-IoT-v3          BIN G-NI      0.00       0.10  0.08 [0.07, 0.11]           6 [3, 6]        31 [28, 32]
+  NF-ToN-IoT-v3          CAN G0        0.00       0.20  0.07 [0.07, 0.08]           6 [6, 7]          9 [7, 10]
+  NF-ToN-IoT-v3          CAN G-NP      0.20       0.10  0.13 [0.12, 0.13]           3 [2, 3]         11 [9, 12]
+  NF-ToN-IoT-v3          CAN G-NI      0.20       0.20  0.15 [0.14, 0.16]           2 [1, 3]           8 [7, 9]
+  NF-BoT-IoT-v3          BIN G0        0.00       0.00  0.01 [0.01, 0.01]        22 [21, 24]        39 [38, 40]
+  NF-BoT-IoT-v3          BIN G-NP      0.00       0.00  0.02 [0.02, 0.04]        15 [12, 18]        38 [38, 41]
+  NF-BoT-IoT-v3          BIN G-NI      0.00       0.00  0.03 [0.02, 0.03]        14 [12, 18]        32 [32, 33]
+  NF-BoT-IoT-v3          CAN G0        0.00       0.00  0.01 [0.01, 0.02]        21 [17, 25]        40 [38, 40]
+  NF-BoT-IoT-v3          CAN G-NP      0.00       0.00  0.03 [0.02, 0.03]        14 [13, 19]        38 [35, 38]
+  NF-BoT-IoT-v3          CAN G-NI      0.00       0.00  0.03 [0.02, 0.03]        12 [11, 18]        31 [30, 32]
+  NF-CSE-CIC-IDS2018-v3  BIN G0        0.20       0.10  0.07 [0.06, 0.08]           5 [4, 6]        41 [33, 42]
+  NF-CSE-CIC-IDS2018-v3  BIN G-NP      0.20       0.10  0.07 [0.06, 0.09]           4 [3, 4]        40 [36, 41]
+  NF-CSE-CIC-IDS2018-v3  BIN G-NI      0.20       0.10  0.12 [0.06, 0.13]           2 [2, 5]        33 [33, 34]
+  NF-CSE-CIC-IDS2018-v3  CAN G0        0.00       0.10  0.05 [0.02, 0.08]          6 [3, 15]        36 [34, 37]
+  NF-CSE-CIC-IDS2018-v3  CAN G-NP      0.20       0.10  0.11 [0.07, 0.14]           3 [1, 5]        33 [33, 37]
+  NF-CSE-CIC-IDS2018-v3  CAN G-NI      0.20       0.10  0.12 [0.07, 0.14]           2 [2, 4]        33 [31, 34]
+  Over the 12 cells (medians of the per-cell medians):
+    G0  : service share of top-5 0.20 (max 0.20); service share of SHAP mass 0.071 (max 0.159); rank of L7_PROTO 4.5
+    G-NP: service share of top-5 0.20 (max 0.20); service share of SHAP mass 0.107 (max 0.206); rank of L7_PROTO 3.0
+    G-NI: service share of top-5 0.20 (max 0.20); service share of SHAP mass 0.116 (max 0.218); rank of L7_PROTO 2.0
+
+== Part 3: top-1 feature identical in every seed
+  G0: 18 cells; same top-1 in every seed in 14: L4_DST_PORT 10, TCP_WIN_MAX_IN 2, DURATION_IN 1, MIN_TTL 1
+    NF-ToN-IoT-v2 BIN L4_DST_PORT; NF-ToN-IoT-v2 CAN L4_DST_PORT; NF-ToN-IoT-v2 CORE TCP_WIN_MAX_IN; NF-BoT-IoT-v2 BIN L4_DST_PORT; NF-BoT-IoT-v2 CORE L4_DST_PORT; NF-CSE-CIC-IDS2018-v2 BIN DURATION_IN; NF-CSE-CIC-IDS2018-v2 CORE MIN_TTL; NF-ToN-IoT-v3 BIN L4_DST_PORT; NF-ToN-IoT-v3 CAN L4_DST_PORT; NF-ToN-IoT-v3 CORE L4_DST_PORT; NF-BoT-IoT-v3 BIN L4_DST_PORT; NF-BoT-IoT-v3 CAN L4_DST_PORT; NF-CSE-CIC-IDS2018-v3 BIN TCP_WIN_MAX_IN; NF-CSE-CIC-IDS2018-v3 CAN L4_DST_PORT
+  G-NP: 12 cells; same top-1 in every seed in 3: TCP_WIN_MAX_IN 2, L7_PROTO 1
+    NF-CSE-CIC-IDS2018-v2 CAN L7_PROTO; NF-ToN-IoT-v3 BIN TCP_WIN_MAX_IN; NF-CSE-CIC-IDS2018-v3 BIN TCP_WIN_MAX_IN
+  G-NI: 12 cells; same top-1 in every seed in 2: L7_PROTO 2
+    NF-ToN-IoT-v2 CAN L7_PROTO; NF-CSE-CIC-IDS2018-v2 CAN L7_PROTO
+

@@ -1,0 +1,971 @@
+{
+  "dataset": "NF-ToN-IoT-v2",
+  "mode": "full",
+  "params": {
+    "cap": 500000,
+    "hdf_total": 500000,
+    "hdf_min_class": 20000,
+    "wl_ref": 500,
+    "wl_seeds": 5,
+    "wl_queries": 500000,
+    "wl_ref_big": 20000,
+    "wl_queries_big": 200000,
+    "pdd_rows": 100000,
+    "pdd_pairs": 500,
+    "pdd_seeds": 3
+  },
+  "rows": 16940496,
+  "rows_after_record_dedup": 16940496,
+  "class_rows_after_dedup": {
+    "ransomware": 3425,
+    "Benign": 6099469,
+    "xss": 2455020,
+    "scanning": 3781419,
+    "password": 1153323,
+    "dos": 712609,
+    "ddos": 2026234,
+    "injection": 684465,
+    "mitm": 7723,
+    "backdoor": 16809
+  },
+  "classes": {
+    "backdoor": {
+      "rows_dedup": 16809,
+      "ugt": 0.007912427866024153,
+      "wl_500": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "seeds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "reference": 500,
+        "queries": 16809
+      },
+      "wl_big": {
+        "mean": 0.02623594502944851,
+        "min": 0.02623594502944851,
+        "max": 0.02623594502944851,
+        "seeds": [
+          0.02623594502944851
+        ],
+        "reference": 20000,
+        "queries": 16809
+      },
+      "wl_balanced": {
+        "mean": 0.0031330557208011102,
+        "min": 0.0028554431885782273,
+        "max": 0.0033313503866745984,
+        "seeds": [
+          0.0033313503866745984,
+          0.0028554431885782273,
+          0.0032123735871505054
+        ],
+        "reference_per_side": 8404,
+        "queries": 8405
+      },
+      "hdf": {
+        "hdf": 0.9970835309791131,
+        "feature": "OUT_BYTES",
+        "hdf_no_ports": 0.9970835309791131,
+        "feature_no_ports": "OUT_BYTES",
+        "rows": {
+          "benign": 483191,
+          "class": 16809
+        },
+        "per_feature": {
+          "L4_SRC_PORT": 0.551893043885922,
+          "L4_DST_PORT": 0.9476045045644852,
+          "PROTOCOL": 0.4914357785101103,
+          "L7_PROTO": 0.8613249998554379,
+          "IN_BYTES": 0.9962214371076263,
+          "IN_PKTS": 0.9951432452742106,
+          "OUT_BYTES": 0.9970835309791131,
+          "OUT_PKTS": 0.9962926827948126,
+          "TCP_FLAGS": 0.4914357785101103,
+          "CLIENT_TCP_FLAGS": 0.4914357785101103,
+          "SERVER_TCP_FLAGS": 0.4914357785101103,
+          "FLOW_DURATION_MILLISECONDS": 0.4914357785101103,
+          "DURATION_IN": 0.4914357785101103,
+          "DURATION_OUT": 0.4914357785101103,
+          "MIN_TTL": 0.887354463410112,
+          "MAX_TTL": 0.8872569658099454,
+          "LONGEST_FLOW_PKT": 0.9575370021972095,
+          "SHORTEST_FLOW_PKT": 0.4914357785101103,
+          "MIN_IP_PKT_LEN": 0.4914357785101103,
+          "MAX_IP_PKT_LEN": 0.9575370021972095,
+          "SRC_TO_DST_SECOND_BYTES": 0.9961229629485732,
+          "DST_TO_SRC_SECOND_BYTES": 0.9964976043374101,
+          "RETRANSMITTED_IN_BYTES": 0.4914357785101103,
+          "RETRANSMITTED_IN_PKTS": 0.4914357785101103,
+          "RETRANSMITTED_OUT_BYTES": 0.4914357785101103,
+          "RETRANSMITTED_OUT_PKTS": 0.4914357785101103,
+          "SRC_TO_DST_AVG_THROUGHPUT": 0.9929297563186672,
+          "DST_TO_SRC_AVG_THROUGHPUT": 0.9960863518110454,
+          "NUM_PKTS_UP_TO_128_BYTES": 0.9962149014892849,
+          "NUM_PKTS_128_TO_256_BYTES": 0.4923246695161723,
+          "NUM_PKTS_256_TO_512_BYTES": 0.4914357785101103,
+          "NUM_PKTS_512_TO_1024_BYTES": 0.49173510177273966,
+          "NUM_PKTS_1024_TO_1514_BYTES": 0.4929094598116452,
+          "TCP_WIN_MAX_IN": 0.9550013012028802,
+          "TCP_WIN_MAX_OUT": 0.49352414732244265,
+          "ICMP_TYPE": 0.4914357785101103,
+          "ICMP_IPV4_TYPE": 0.4914357785101103,
+          "DNS_QUERY_ID": 0.4914202597825313,
+          "DNS_QUERY_TYPE": 0.4914357785101103,
+          "DNS_TTL_ANSWER": 0.49173242730513606,
+          "FTP_COMMAND_RET_CODE": 0.4914357785101103
+        }
+      },
+      "pdd_tc": {
+        "pdd": 0.9825619333284639,
+        "tc": 0.9666666666666667,
+        "clusters": [
+          2,
+          2,
+          2
+        ],
+        "rows": 16809
+      },
+      "elapsed_s": 10.1
+    },
+    "ddos": {
+      "rows_dedup": 2026234,
+      "ugt": 0.018874424178056435,
+      "wl_500": {
+        "mean": 0.0510672,
+        "min": 0.04314,
+        "max": 0.057896,
+        "seeds": [
+          0.050676,
+          0.05303,
+          0.04314,
+          0.057896,
+          0.050594
+        ],
+        "reference": 500,
+        "queries": 500000
+      },
+      "wl_big": {
+        "mean": 0.02998,
+        "min": 0.02998,
+        "max": 0.02998,
+        "seeds": [
+          0.02998
+        ],
+        "reference": 20000,
+        "queries": 200000
+      },
+      "wl_balanced": {
+        "mean": 0.016921666666666665,
+        "min": 0.01644,
+        "max": 0.01764,
+        "seeds": [
+          0.01764,
+          0.01644,
+          0.016685
+        ],
+        "reference_per_side": 10000,
+        "queries": 200000
+      },
+      "hdf": {
+        "hdf": 0.9793695053786053,
+        "feature": "L4_DST_PORT",
+        "hdf_no_ports": 0.9706864770025934,
+        "feature_no_ports": "TCP_WIN_MAX_OUT",
+        "rows": {
+          "benign": 375319,
+          "class": 124681
+        },
+        "per_feature": {
+          "L4_SRC_PORT": 0.8560464274505308,
+          "L4_DST_PORT": 0.9793695053786053,
+          "PROTOCOL": 0.428140082805316,
+          "L7_PROTO": 0.8552346553471615,
+          "IN_BYTES": 0.9334470202079674,
+          "IN_PKTS": 0.8724927719460904,
+          "OUT_BYTES": 0.968372204760896,
+          "OUT_PKTS": 0.8573986777153009,
+          "TCP_FLAGS": 0.9158710199185025,
+          "CLIENT_TCP_FLAGS": 0.9448820986208166,
+          "SERVER_TCP_FLAGS": 0.9073566717402334,
+          "FLOW_DURATION_MILLISECONDS": 0.8348901041518246,
+          "DURATION_IN": 0.8105990429535106,
+          "DURATION_OUT": 0.8373993962533607,
+          "MIN_TTL": 0.8782619899692645,
+          "MAX_TTL": 0.8780447321091556,
+          "LONGEST_FLOW_PKT": 0.934321425412467,
+          "SHORTEST_FLOW_PKT": 0.9028661668629925,
+          "MIN_IP_PKT_LEN": 0.9061882622371823,
+          "MAX_IP_PKT_LEN": 0.934321425412467,
+          "SRC_TO_DST_SECOND_BYTES": 0.9390361640224111,
+          "DST_TO_SRC_SECOND_BYTES": 0.9679711177038876,
+          "RETRANSMITTED_IN_BYTES": 0.4399405893876082,
+          "RETRANSMITTED_IN_PKTS": 0.4392176885923496,
+          "RETRANSMITTED_OUT_BYTES": 0.5455352042856529,
+          "RETRANSMITTED_OUT_PKTS": 0.5451501900621891,
+          "SRC_TO_DST_AVG_THROUGHPUT": 0.9256799312451842,
+          "DST_TO_SRC_AVG_THROUGHPUT": 0.8989028727762439,
+          "NUM_PKTS_UP_TO_128_BYTES": 0.8749216671776565,
+          "NUM_PKTS_128_TO_256_BYTES": 0.5942589940174408,
+          "NUM_PKTS_256_TO_512_BYTES": 0.5188397651496641,
+          "NUM_PKTS_512_TO_1024_BYTES": 0.428140082805316,
+          "NUM_PKTS_1024_TO_1514_BYTES": 0.5302390512057792,
+          "TCP_WIN_MAX_IN": 0.9643222644930345,
+          "TCP_WIN_MAX_OUT": 0.9706864770025934,
+          "ICMP_TYPE": 0.4383793091222542,
+          "ICMP_IPV4_TYPE": 0.4383452518893866,
+          "DNS_QUERY_ID": 0.42879310966287776,
+          "DNS_QUERY_TYPE": 0.428140082805316,
+          "DNS_TTL_ANSWER": 0.42816851682206275,
+          "FTP_COMMAND_RET_CODE": 0.428140082805316
+        }
+      },
+      "pdd_tc": {
+        "pdd": 0.918453836916303,
+        "tc": 0.7479999999999999,
+        "clusters": [
+          3,
+          3,
+          3
+        ],
+        "rows": 100000
+      },
+      "elapsed_s": 22.7
+    },
+    "dos": {
+      "rows_dedup": 712609,
+      "ugt": 0.8555084204662023,
+      "wl_500": {
+        "mean": 0.125012,
+        "min": 0.050052,
+        "max": 0.16562,
+        "seeds": [
+          0.12953,
+          0.16562,
+          0.050052,
+          0.11502,
+          0.164838
+        ],
+        "reference": 500,
+        "queries": 500000
+      },
+      "wl_big": {
+        "mean": 0.060085,
+        "min": 0.060085,
+        "max": 0.060085,
+        "seeds": [
+          0.060085
+        ],
+        "reference": 20000,
+        "queries": 200000
+      },
+      "wl_balanced": {
+        "mean": 0.00915,
+        "min": 0.008045,
+        "max": 0.011035,
+        "seeds": [
+          0.008045,
+          0.011035,
+          0.00837
+        ],
+        "reference_per_side": 10000,
+        "queries": 200000
+      },
+      "hdf": {
+        "hdf": 0.9616151032508983,
+        "feature": "SRC_TO_DST_SECOND_BYTES",
+        "hdf_no_ports": 0.9616151032508983,
+        "feature_no_ports": "SRC_TO_DST_SECOND_BYTES",
+        "rows": {
+          "benign": 447695,
+          "class": 52305
+        },
+        "per_feature": {
+          "L4_SRC_PORT": 0.715684770268482,
+          "L4_DST_PORT": 0.8476130642350721,
+          "PROTOCOL": 0.8026096610580871,
+          "L7_PROTO": 0.4810629122080383,
+          "IN_BYTES": 0.9613078749715189,
+          "IN_PKTS": 0.5987870494168156,
+          "OUT_BYTES": 0.9545670986269572,
+          "OUT_PKTS": 0.515654844269072,
+          "TCP_FLAGS": 0.798460882861655,
+          "CLIENT_TCP_FLAGS": 0.7984460732846748,
+          "SERVER_TCP_FLAGS": 0.4720336208990212,
+          "FLOW_DURATION_MILLISECONDS": 0.4720336208990212,
+          "DURATION_IN": 0.4720336208990212,
+          "DURATION_OUT": 0.4720336208990212,
+          "MIN_TTL": 0.6004294914177735,
+          "MAX_TTL": 0.6005043523278698,
+          "LONGEST_FLOW_PKT": 0.9496905283522061,
+          "SHORTEST_FLOW_PKT": 0.910984110778799,
+          "MIN_IP_PKT_LEN": 0.9248335052777306,
+          "MAX_IP_PKT_LEN": 0.9496905283522061,
+          "SRC_TO_DST_SECOND_BYTES": 0.9616151032508983,
+          "DST_TO_SRC_SECOND_BYTES": 0.9545343036842426,
+          "RETRANSMITTED_IN_BYTES": 0.4720336208990212,
+          "RETRANSMITTED_IN_PKTS": 0.4720336208990212,
+          "RETRANSMITTED_OUT_BYTES": 0.4720336208990212,
+          "RETRANSMITTED_OUT_PKTS": 0.4720336208990212,
+          "SRC_TO_DST_AVG_THROUGHPUT": 0.9605483407028261,
+          "DST_TO_SRC_AVG_THROUGHPUT": 0.9542736840726833,
+          "NUM_PKTS_UP_TO_128_BYTES": 0.597997225523914,
+          "NUM_PKTS_128_TO_256_BYTES": 0.4720336208990212,
+          "NUM_PKTS_256_TO_512_BYTES": 0.4720336208990212,
+          "NUM_PKTS_512_TO_1024_BYTES": 0.4720336208990212,
+          "NUM_PKTS_1024_TO_1514_BYTES": 0.4720308333993295,
+          "TCP_WIN_MAX_IN": 0.8351423279560151,
+          "TCP_WIN_MAX_OUT": 0.47212490438915267,
+          "ICMP_TYPE": 0.4720336208990212,
+          "ICMP_IPV4_TYPE": 0.4720336208990212,
+          "DNS_QUERY_ID": 0.7602481724165684,
+          "DNS_QUERY_TYPE": 0.8392524085175441,
+          "DNS_TTL_ANSWER": 0.551446436028919,
+          "FTP_COMMAND_RET_CODE": 0.4720336208990212
+        }
+      },
+      "pdd_tc": {
+        "pdd": 0.8995753972426428,
+        "tc": 0.6026666666666666,
+        "clusters": [
+          2,
+          2,
+          2
+        ],
+        "rows": 100000
+      },
+      "elapsed_s": 22.1
+    },
+    "injection": {
+      "rows_dedup": 684465,
+      "ugt": 0.05135105520369924,
+      "wl_500": {
+        "mean": 0.155084,
+        "min": 0.110932,
+        "max": 0.20314,
+        "seeds": [
+          0.20314,
+          0.189366,
+          0.142748,
+          0.129234,
+          0.110932
+        ],
+        "reference": 500,
+        "queries": 500000
+      },
+      "wl_big": {
+        "mean": 0.08137,
+        "min": 0.08137,
+        "max": 0.08137,
+        "seeds": [
+          0.08137
+        ],
+        "reference": 20000,
+        "queries": 200000
+      },
+      "wl_balanced": {
+        "mean": 0.012415,
+        "min": 0.01169,
+        "max": 0.013825,
+        "seeds": [
+          0.01173,
+          0.013825,
+          0.01169
+        ],
+        "reference_per_side": 10000,
+        "queries": 200000
+      },
+      "hdf": {
+        "hdf": 0.9590996646000116,
+        "feature": "L4_DST_PORT",
+        "hdf_no_ports": 0.948621253535206,
+        "feature_no_ports": "OUT_BYTES",
+        "rows": {
+          "benign": 449553,
+          "class": 50447
+        },
+        "per_feature": {
+          "L4_SRC_PORT": 0.7466116357977542,
+          "L4_DST_PORT": 0.9590996646000116,
+          "PROTOCOL": 0.4730796387434003,
+          "L7_PROTO": 0.8486099579034442,
+          "IN_BYTES": 0.8682173570414722,
+          "IN_PKTS": 0.7873869351861285,
+          "OUT_BYTES": 0.948621253535206,
+          "OUT_PKTS": 0.7530201866895714,
+          "TCP_FLAGS": 0.8023118092114423,
+          "CLIENT_TCP_FLAGS": 0.8553107415988432,
+          "SERVER_TCP_FLAGS": 0.8612610950797719,
+          "FLOW_DURATION_MILLISECONDS": 0.6127930414985994,
+          "DURATION_IN": 0.6389629601808985,
+          "DURATION_OUT": 0.6460889832980159,
+          "MIN_TTL": 0.4730796387434003,
+          "MAX_TTL": 0.4730796387434003,
+          "LONGEST_FLOW_PKT": 0.8515804373622087,
+          "SHORTEST_FLOW_PKT": 0.49921409345883455,
+          "MIN_IP_PKT_LEN": 0.4992083394738983,
+          "MAX_IP_PKT_LEN": 0.8515804373622087,
+          "SRC_TO_DST_SECOND_BYTES": 0.8769597185892992,
+          "DST_TO_SRC_SECOND_BYTES": 0.9472197019840116,
+          "RETRANSMITTED_IN_BYTES": 0.4891265202038116,
+          "RETRANSMITTED_IN_PKTS": 0.4878879211984797,
+          "RETRANSMITTED_OUT_BYTES": 0.48827414677222586,
+          "RETRANSMITTED_OUT_PKTS": 0.4877623153795713,
+          "SRC_TO_DST_AVG_THROUGHPUT": 0.8754013195187484,
+          "DST_TO_SRC_AVG_THROUGHPUT": 0.8924955936047796,
+          "NUM_PKTS_UP_TO_128_BYTES": 0.78681470133726,
+          "NUM_PKTS_128_TO_256_BYTES": 0.4730796387434003,
+          "NUM_PKTS_256_TO_512_BYTES": 0.777809966977101,
+          "NUM_PKTS_512_TO_1024_BYTES": 0.8043724879303181,
+          "NUM_PKTS_1024_TO_1514_BYTES": 0.7843626007066137,
+          "TCP_WIN_MAX_IN": 0.9254802064970498,
+          "TCP_WIN_MAX_OUT": 0.9303659377651978,
+          "ICMP_TYPE": 0.48318222968577873,
+          "ICMP_IPV4_TYPE": 0.4831859726894409,
+          "DNS_QUERY_ID": 0.47603347440833343,
+          "DNS_QUERY_TYPE": 0.4730796387434003,
+          "DNS_TTL_ANSWER": 0.48349437765167275,
+          "FTP_COMMAND_RET_CODE": 0.4730796387434003
+        }
+      },
+      "pdd_tc": {
+        "pdd": 0.9386972124689207,
+        "tc": 0.6866666666666666,
+        "clusters": [
+          4,
+          4,
+          3
+        ],
+        "rows": 100000
+      },
+      "elapsed_s": 21.6
+    },
+    "mitm": {
+      "rows_dedup": 7723,
+      "ugt": 0.9434157710734171,
+      "wl_500": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "seeds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "reference": 500,
+        "queries": 7723
+      },
+      "wl_big": {
+        "mean": 0.9791531788165221,
+        "min": 0.9791531788165221,
+        "max": 0.9791531788165221,
+        "seeds": [
+          0.9791531788165221
+        ],
+        "reference": 20000,
+        "queries": 7723
+      },
+      "wl_balanced": {
+        "mean": 0.021405144139478683,
+        "min": 0.01631279129984464,
+        "max": 0.026929052304505437,
+        "seeds": [
+          0.01631279129984464,
+          0.020973588814085967,
+          0.026929052304505437
+        ],
+        "reference_per_side": 3861,
+        "queries": 3862
+      },
+      "hdf": {
+        "hdf": 0.9164271171693501,
+        "feature": "L4_SRC_PORT",
+        "hdf_no_ports": 0.8928736881460835,
+        "feature_no_ports": "OUT_BYTES",
+        "rows": {
+          "benign": 492277,
+          "class": 7723
+        },
+        "per_feature": {
+          "L4_SRC_PORT": 0.9164271171693501,
+          "L4_DST_PORT": 0.4959524985634646,
+          "PROTOCOL": 0.4959524985634646,
+          "L7_PROTO": 0.5277505592687884,
+          "IN_BYTES": 0.8438744992674676,
+          "IN_PKTS": 0.4959499579118215,
+          "OUT_BYTES": 0.8928736881460835,
+          "OUT_PKTS": 0.4971946529813446,
+          "TCP_FLAGS": 0.4959524985634646,
+          "CLIENT_TCP_FLAGS": 0.4959524985634646,
+          "SERVER_TCP_FLAGS": 0.4959524985634646,
+          "FLOW_DURATION_MILLISECONDS": 0.4971979657137194,
+          "DURATION_IN": 0.4984428873145502,
+          "DURATION_OUT": 0.4971979657137194,
+          "MIN_TTL": 0.4959524985634646,
+          "MAX_TTL": 0.4959524985634646,
+          "LONGEST_FLOW_PKT": 0.868498129833887,
+          "SHORTEST_FLOW_PKT": 0.8068039782199867,
+          "MIN_IP_PKT_LEN": 0.838722875083793,
+          "MAX_IP_PKT_LEN": 0.868498129833887,
+          "SRC_TO_DST_SECOND_BYTES": 0.8475918060438555,
+          "DST_TO_SRC_SECOND_BYTES": 0.8909734018833972,
+          "RETRANSMITTED_IN_BYTES": 0.4990641943794027,
+          "RETRANSMITTED_IN_PKTS": 0.4959524985634646,
+          "RETRANSMITTED_OUT_BYTES": 0.5039996581298208,
+          "RETRANSMITTED_OUT_PKTS": 0.4959524985634646,
+          "SRC_TO_DST_AVG_THROUGHPUT": 0.7558645559091763,
+          "DST_TO_SRC_AVG_THROUGHPUT": 0.8381175913227967,
+          "NUM_PKTS_UP_TO_128_BYTES": 0.6351427326479722,
+          "NUM_PKTS_128_TO_256_BYTES": 0.596371778657888,
+          "NUM_PKTS_256_TO_512_BYTES": 0.5702587625961868,
+          "NUM_PKTS_512_TO_1024_BYTES": 0.4959524985634646,
+          "NUM_PKTS_1024_TO_1514_BYTES": 0.4971979657137194,
+          "TCP_WIN_MAX_IN": 0.5033777141274758,
+          "TCP_WIN_MAX_OUT": 0.5208256196520313,
+          "ICMP_TYPE": 0.499059730739574,
+          "ICMP_IPV4_TYPE": 0.499059730739574,
+          "DNS_QUERY_ID": 0.6873001095916168,
+          "DNS_QUERY_TYPE": 0.4959524985634646,
+          "DNS_TTL_ANSWER": 0.7408460384125768,
+          "FTP_COMMAND_RET_CODE": 0.4959524985634646
+        }
+      },
+      "pdd_tc": {
+        "pdd": 0.9019217631640409,
+        "tc": 0.508,
+        "clusters": [
+          3,
+          3,
+          3
+        ],
+        "rows": 7723
+      },
+      "elapsed_s": 13.8
+    },
+    "password": {
+      "rows_dedup": 1153323,
+      "ugt": 0.002487594542032024,
+      "wl_500": {
+        "mean": 0.095872,
+        "min": 0.073958,
+        "max": 0.117028,
+        "seeds": [
+          0.106262,
+          0.073958,
+          0.091864,
+          0.090248,
+          0.117028
+        ],
+        "reference": 500,
+        "queries": 500000
+      },
+      "wl_big": {
+        "mean": 0.01688,
+        "min": 0.01688,
+        "max": 0.01688,
+        "seeds": [
+          0.01688
+        ],
+        "reference": 20000,
+        "queries": 200000
+      },
+      "wl_balanced": {
+        "mean": 0.0069299999999999995,
+        "min": 0.00633,
+        "max": 0.00755,
+        "seeds": [
+          0.00691,
+          0.00755,
+          0.00633
+        ],
+        "reference_per_side": 10000,
+        "queries": 200000
+      },
+      "hdf": {
+        "hdf": 0.9873111386865299,
+        "feature": "L4_DST_PORT",
+        "hdf_no_ports": 0.9541578611486211,
+        "feature_no_ports": "DST_TO_SRC_SECOND_BYTES",
+        "rows": {
+          "benign": 420491,
+          "class": 79509
+        },
+        "per_feature": {
+          "L4_SRC_PORT": 0.8177780401850179,
+          "L4_DST_PORT": 0.9873111386865299,
+          "PROTOCOL": 0.4563592378156514,
+          "L7_PROTO": 0.9257619500466354,
+          "IN_BYTES": 0.9353780610800307,
+          "IN_PKTS": 0.8672533112791031,
+          "OUT_BYTES": 0.9503586009264515,
+          "OUT_PKTS": 0.8518244092175169,
+          "TCP_FLAGS": 0.8999876192093399,
+          "CLIENT_TCP_FLAGS": 0.8980499769870411,
+          "SERVER_TCP_FLAGS": 0.8985208894982893,
+          "FLOW_DURATION_MILLISECONDS": 0.6772218365475201,
+          "DURATION_IN": 0.6813007384460756,
+          "DURATION_OUT": 0.6918780613509861,
+          "MIN_TTL": 0.8283410504610085,
+          "MAX_TTL": 0.8282133855420184,
+          "LONGEST_FLOW_PKT": 0.9202714785220667,
+          "SHORTEST_FLOW_PKT": 0.4813395835556074,
+          "MIN_IP_PKT_LEN": 0.45853832933837696,
+          "MAX_IP_PKT_LEN": 0.9202714785220667,
+          "SRC_TO_DST_SECOND_BYTES": 0.9391087484221512,
+          "DST_TO_SRC_SECOND_BYTES": 0.9541578611486211,
+          "RETRANSMITTED_IN_BYTES": 0.569028819261555,
+          "RETRANSMITTED_IN_PKTS": 0.5693435352761851,
+          "RETRANSMITTED_OUT_BYTES": 0.46814447802765113,
+          "RETRANSMITTED_OUT_PKTS": 0.4674752783141047,
+          "SRC_TO_DST_AVG_THROUGHPUT": 0.9152918009266151,
+          "DST_TO_SRC_AVG_THROUGHPUT": 0.9196268517644102,
+          "NUM_PKTS_UP_TO_128_BYTES": 0.8732578065743433,
+          "NUM_PKTS_128_TO_256_BYTES": 0.68477963980054,
+          "NUM_PKTS_256_TO_512_BYTES": 0.681597013480466,
+          "NUM_PKTS_512_TO_1024_BYTES": 0.7781154497300173,
+          "NUM_PKTS_1024_TO_1514_BYTES": 0.7876882910801102,
+          "TCP_WIN_MAX_IN": 0.9404461734265063,
+          "TCP_WIN_MAX_OUT": 0.9399823061544005,
+          "ICMP_TYPE": 0.5651393587100307,
+          "ICMP_IPV4_TYPE": 0.5651393587100307,
+          "DNS_QUERY_ID": 0.4562794288759121,
+          "DNS_QUERY_TYPE": 0.4563592378156514,
+          "DNS_TTL_ANSWER": 0.4563444601500489,
+          "FTP_COMMAND_RET_CODE": 0.5043567830567849
+        }
+      },
+      "pdd_tc": {
+        "pdd": 0.8984943574705516,
+        "tc": 0.7826666666666666,
+        "clusters": [
+          3,
+          3,
+          3
+        ],
+        "rows": 100000
+      },
+      "elapsed_s": 23.2
+    },
+    "ransomware": {
+      "rows_dedup": 3425,
+      "ugt": 0.004379562043795621,
+      "wl_500": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "seeds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "reference": 500,
+        "queries": 3425
+      },
+      "wl_big": {
+        "mean": 0.3956204379562044,
+        "min": 0.3956204379562044,
+        "max": 0.3956204379562044,
+        "seeds": [
+          0.3956204379562044
+        ],
+        "reference": 20000,
+        "queries": 3425
+      },
+      "wl_balanced": {
+        "mean": 0.00953492897450866,
+        "min": 0.00642148277875073,
+        "max": 0.011675423234092236,
+        "seeds": [
+          0.011675423234092236,
+          0.010507880910683012,
+          0.00642148277875073
+        ],
+        "reference_per_side": 1712,
+        "queries": 1713
+      },
+      "hdf": {
+        "hdf": 0.9638251706810352,
+        "feature": "L4_DST_PORT",
+        "hdf_no_ports": 0.955275213540657,
+        "feature_no_ports": "IN_BYTES",
+        "rows": {
+          "benign": 496575,
+          "class": 3425
+        },
+        "per_feature": {
+          "L4_SRC_PORT": 0.6494297615512412,
+          "L4_DST_PORT": 0.9638251706810352,
+          "PROTOCOL": 0.4982010507669997,
+          "L7_PROTO": 0.9260269292481895,
+          "IN_BYTES": 0.955275213540657,
+          "IN_PKTS": 0.5339029295898184,
+          "OUT_BYTES": 0.8790239658291803,
+          "OUT_PKTS": 0.5197187300197595,
+          "TCP_FLAGS": 0.4982010507669997,
+          "CLIENT_TCP_FLAGS": 0.4982010507669997,
+          "SERVER_TCP_FLAGS": 0.8585558766099755,
+          "FLOW_DURATION_MILLISECONDS": 0.4982010507669997,
+          "DURATION_IN": 0.4982010507669997,
+          "DURATION_OUT": 0.4982010507669997,
+          "MIN_TTL": 0.4982010507669997,
+          "MAX_TTL": 0.4982010507669997,
+          "LONGEST_FLOW_PKT": 0.6292543300278463,
+          "SHORTEST_FLOW_PKT": 0.5173592177972473,
+          "MIN_IP_PKT_LEN": 0.4982010507669997,
+          "MAX_IP_PKT_LEN": 0.6292543300278463,
+          "SRC_TO_DST_SECOND_BYTES": 0.9522916570035185,
+          "DST_TO_SRC_SECOND_BYTES": 0.8824295293691975,
+          "RETRANSMITTED_IN_BYTES": 0.5663468645547708,
+          "RETRANSMITTED_IN_PKTS": 0.4981985327325097,
+          "RETRANSMITTED_OUT_BYTES": 0.5037283585363547,
+          "RETRANSMITTED_OUT_PKTS": 0.4981985327325097,
+          "SRC_TO_DST_AVG_THROUGHPUT": 0.9384417234611387,
+          "DST_TO_SRC_AVG_THROUGHPUT": 0.8770651235965309,
+          "NUM_PKTS_UP_TO_128_BYTES": 0.4982010507669997,
+          "NUM_PKTS_128_TO_256_BYTES": 0.5206426999906668,
+          "NUM_PKTS_256_TO_512_BYTES": 0.5009685796751202,
+          "NUM_PKTS_512_TO_1024_BYTES": 0.5090629167510351,
+          "NUM_PKTS_1024_TO_1514_BYTES": 0.8211679869483994,
+          "TCP_WIN_MAX_IN": 0.5317181695050022,
+          "TCP_WIN_MAX_OUT": 0.937199065349221,
+          "ICMP_TYPE": 0.5624807147588251,
+          "ICMP_IPV4_TYPE": 0.5624807147588251,
+          "DNS_QUERY_ID": 0.4982010507669997,
+          "DNS_QUERY_TYPE": 0.4982010507669997,
+          "DNS_TTL_ANSWER": 0.4982010507669997,
+          "FTP_COMMAND_RET_CODE": 0.4982010507669997
+        }
+      },
+      "pdd_tc": {
+        "pdd": 0.9349496195004786,
+        "tc": 0.75,
+        "clusters": [
+          3,
+          2,
+          2
+        ],
+        "rows": 3425
+      },
+      "elapsed_s": 10.6
+    },
+    "scanning": {
+      "rows_dedup": 3781419,
+      "ugt": 0.0040527114292280226,
+      "wl_500": {
+        "mean": 0.0669044,
+        "min": 0.059552,
+        "max": 0.071908,
+        "seeds": [
+          0.059552,
+          0.069002,
+          0.067594,
+          0.066466,
+          0.071908
+        ],
+        "reference": 500,
+        "queries": 500000
+      },
+      "wl_big": {
+        "mean": 0.01998,
+        "min": 0.01998,
+        "max": 0.01998,
+        "seeds": [
+          0.01998
+        ],
+        "reference": 20000,
+        "queries": 200000
+      },
+      "wl_balanced": {
+        "mean": 0.015685,
+        "min": 0.01498,
+        "max": 0.01641,
+        "seeds": [
+          0.01498,
+          0.015665,
+          0.01641
+        ],
+        "reference_per_side": 10000,
+        "queries": 200000
+      },
+      "hdf": {
+        "hdf": 0.9051741318731412,
+        "feature": "SRC_TO_DST_AVG_THROUGHPUT",
+        "hdf_no_ports": 0.9051741318731412,
+        "feature_no_ports": "SRC_TO_DST_AVG_THROUGHPUT",
+        "rows": {
+          "benign": 308650,
+          "class": 191350
+        },
+        "per_feature": {
+          "L4_SRC_PORT": 0.845277216928518,
+          "L4_DST_PORT": 0.8760550466070766,
+          "PROTOCOL": 0.38128383604021654,
+          "L7_PROTO": 0.5393433195009744,
+          "IN_BYTES": 0.9045818887529944,
+          "IN_PKTS": 0.38128383604021654,
+          "OUT_BYTES": 0.40050489652527343,
+          "OUT_PKTS": 0.38128383604021654,
+          "TCP_FLAGS": 0.4986603052770418,
+          "CLIENT_TCP_FLAGS": 0.504950816434126,
+          "SERVER_TCP_FLAGS": 0.38128383604021654,
+          "FLOW_DURATION_MILLISECONDS": 0.4300027643629657,
+          "DURATION_IN": 0.3813007665043475,
+          "DURATION_OUT": 0.38130459540770956,
+          "MIN_TTL": 0.38127235153630074,
+          "MAX_TTL": 0.38126086660603026,
+          "LONGEST_FLOW_PKT": 0.8994974273538352,
+          "SHORTEST_FLOW_PKT": 0.7472548316846662,
+          "MIN_IP_PKT_LEN": 0.38203668748720687,
+          "MAX_IP_PKT_LEN": 0.8994974273538352,
+          "SRC_TO_DST_SECOND_BYTES": 0.9049562188953546,
+          "DST_TO_SRC_SECOND_BYTES": 0.400674448767834,
+          "RETRANSMITTED_IN_BYTES": 0.38127235153630074,
+          "RETRANSMITTED_IN_PKTS": 0.38128383604021654,
+          "RETRANSMITTED_OUT_BYTES": 0.3813291801438007,
+          "RETRANSMITTED_OUT_PKTS": 0.38128383604021654,
+          "SRC_TO_DST_AVG_THROUGHPUT": 0.9051741318731412,
+          "DST_TO_SRC_AVG_THROUGHPUT": 0.39943844254137045,
+          "NUM_PKTS_UP_TO_128_BYTES": 0.38128383604021654,
+          "NUM_PKTS_128_TO_256_BYTES": 0.38128383604021654,
+          "NUM_PKTS_256_TO_512_BYTES": 0.38128383604021654,
+          "NUM_PKTS_512_TO_1024_BYTES": 0.38128383604021654,
+          "NUM_PKTS_1024_TO_1514_BYTES": 0.38128383604021654,
+          "TCP_WIN_MAX_IN": 0.8502351312622558,
+          "TCP_WIN_MAX_OUT": 0.38799097768502766,
+          "ICMP_TYPE": 0.38128383604021654,
+          "ICMP_IPV4_TYPE": 0.38128383604021654,
+          "DNS_QUERY_ID": 0.3811820470162117,
+          "DNS_QUERY_TYPE": 0.38128383604021654,
+          "DNS_TTL_ANSWER": 0.38127235153630074,
+          "FTP_COMMAND_RET_CODE": 0.38128383604021654
+        }
+      },
+      "pdd_tc": {
+        "pdd": 0.7713615756371882,
+        "tc": 0.5026666666666667,
+        "clusters": [
+          2,
+          2,
+          2
+        ],
+        "rows": 100000
+      },
+      "elapsed_s": 23.2
+    },
+    "xss": {
+      "rows_dedup": 2455020,
+      "ugt": 0.5097339329211167,
+      "wl_500": {
+        "mean": 0.0560536,
+        "min": 0.041242,
+        "max": 0.06846,
+        "seeds": [
+          0.060952,
+          0.053398,
+          0.06846,
+          0.041242,
+          0.056216
+        ],
+        "reference": 500,
+        "queries": 500000
+      },
+      "wl_big": {
+        "mean": 0.021315,
+        "min": 0.021315,
+        "max": 0.021315,
+        "seeds": [
+          0.021315
+        ],
+        "reference": 20000,
+        "queries": 200000
+      },
+      "wl_balanced": {
+        "mean": 0.012003333333333333,
+        "min": 0.01091,
+        "max": 0.01309,
+        "seeds": [
+          0.01091,
+          0.01309,
+          0.01201
+        ],
+        "reference_per_side": 10000,
+        "queries": 200000
+      },
+      "hdf": {
+        "hdf": 0.9784338355759599,
+        "feature": "OUT_BYTES",
+        "hdf_no_ports": 0.9784338355759599,
+        "feature_no_ports": "OUT_BYTES",
+        "rows": {
+          "benign": 356507,
+          "class": 143493
+        },
+        "per_feature": {
+          "L4_SRC_PORT": 0.8399357466708925,
+          "L4_DST_PORT": 0.9370411385462731,
+          "PROTOCOL": 0.7269819140366331,
+          "L7_PROTO": 0.7424192135278371,
+          "IN_BYTES": 0.9690820443339907,
+          "IN_PKTS": 0.7341595327384005,
+          "OUT_BYTES": 0.9784338355759599,
+          "OUT_PKTS": 0.7176002421838887,
+          "TCP_FLAGS": 0.8980690219823211,
+          "CLIENT_TCP_FLAGS": 0.8959746186199944,
+          "SERVER_TCP_FLAGS": 0.7482327290541317,
+          "FLOW_DURATION_MILLISECONDS": 0.49360663644158886,
+          "DURATION_IN": 0.49149653001157456,
+          "DURATION_OUT": 0.4848520653429379,
+          "MIN_TTL": 0.6921324424533891,
+          "MAX_TTL": 0.6920408040779333,
+          "LONGEST_FLOW_PKT": 0.9644359603969741,
+          "SHORTEST_FLOW_PKT": 0.890975330052737,
+          "MIN_IP_PKT_LEN": 0.8957033312923857,
+          "MAX_IP_PKT_LEN": 0.9644359603969741,
+          "SRC_TO_DST_SECOND_BYTES": 0.9702290182627711,
+          "DST_TO_SRC_SECOND_BYTES": 0.9784314051882972,
+          "RETRANSMITTED_IN_BYTES": 0.42373122332716656,
+          "RETRANSMITTED_IN_PKTS": 0.42479069554426746,
+          "RETRANSMITTED_OUT_BYTES": 0.42374279370759527,
+          "RETRANSMITTED_OUT_PKTS": 0.42418494770799153,
+          "SRC_TO_DST_AVG_THROUGHPUT": 0.9635133258717938,
+          "DST_TO_SRC_AVG_THROUGHPUT": 0.9703795508630768,
+          "NUM_PKTS_UP_TO_128_BYTES": 0.729399790073161,
+          "NUM_PKTS_128_TO_256_BYTES": 0.41569672322722384,
+          "NUM_PKTS_256_TO_512_BYTES": 0.6698729471332239,
+          "NUM_PKTS_512_TO_1024_BYTES": 0.6301028640612444,
+          "NUM_PKTS_1024_TO_1514_BYTES": 0.6058230406908159,
+          "TCP_WIN_MAX_IN": 0.9022749962817871,
+          "TCP_WIN_MAX_OUT": 0.760660515567295,
+          "ICMP_TYPE": 0.4217437251591441,
+          "ICMP_IPV4_TYPE": 0.4216340083460548,
+          "DNS_QUERY_ID": 0.6910710229842083,
+          "DNS_QUERY_TYPE": 0.7452649725853393,
+          "DNS_TTL_ANSWER": 0.6155447996634547,
+          "FTP_COMMAND_RET_CODE": 0.41569672322722384
+        }
+      },
+      "pdd_tc": {
+        "pdd": 0.904243191809503,
+        "tc": 0.4013333333333334,
+        "clusters": [
+          2,
+          2,
+          2
+        ],
+        "rows": 100000
+      },
+      "elapsed_s": 25.5
+    }
+  },
+  "generated_utc": "2026-10-02T16:44:27.356527+00:00",
+  "elapsed_s": 183.7
+}

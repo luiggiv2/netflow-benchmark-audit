@@ -1,0 +1,7 @@
+RF TreeSHAP cost: NF-ToN-IoT-v3 G0 BIN seed 1 (model as in 47_shap.py)
+Generated: 2026-10-07T04:21:54.439040+00:00  shap 0.52.0
+
+training rows 2,055,474, features 48, trees 100, fit 66 s
+nodes per tree: median 100,103 (min 99,079, max 101,153)
+depth per tree: median 126 (min 95, max 197)
+exact TreeSHAP on 20 test rows: 1.60 s per row (5,000 rows: 134 min; the XGBoost runs explain 20,000 rows per dataset)

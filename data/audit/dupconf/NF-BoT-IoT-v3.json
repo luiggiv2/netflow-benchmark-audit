@@ -1,0 +1,311 @@
+{
+  "dataset": "NF-BoT-IoT-v3",
+  "generated_utc": "2026-10-07T03:01:05.835549+00:00",
+  "keys": {
+    "49": {
+      "n_features": 49,
+      "rows": 16933808,
+      "distinct_vectors": 16687490,
+      "duplicate_rows": 246318,
+      "native": {
+        "rows": 16933808,
+        "conflicting_vectors": 44894,
+        "conflict_rows": 164051,
+        "minority_rows": 60551,
+        "top_label_sets": {
+          "DDoS / DoS": 43626,
+          "Benign / Reconnaissance": 1268
+        },
+        "per_class": {
+          "Benign": {
+            "rows": 51989,
+            "intra_dup_rows": 5527,
+            "conflict_rows": 1273
+          },
+          "DDoS": {
+            "rows": 7150882,
+            "intra_dup_rows": 35912,
+            "conflict_rows": 69053
+          },
+          "DoS": {
+            "rows": 8034190,
+            "intra_dup_rows": 116823,
+            "conflict_rows": 90346
+          },
+          "Reconnaissance": {
+            "rows": 1695132,
+            "intra_dup_rows": 43162,
+            "conflict_rows": 3379
+          },
+          "Theft": {
+            "rows": 1615,
+            "intra_dup_rows": 0,
+            "conflict_rows": 0
+          }
+        }
+      },
+      "canonical": {
+        "rows": 16932193,
+        "conflicting_vectors": 44894,
+        "conflict_rows": 164051,
+        "minority_rows": 60551,
+        "top_label_sets": {
+          "DDoS / DoS": 43626,
+          "Benign / Reconnaissance": 1268
+        },
+        "per_class": {
+          "Benign": {
+            "rows": 51989,
+            "intra_dup_rows": 5527,
+            "conflict_rows": 1273
+          },
+          "DDoS": {
+            "rows": 7150882,
+            "intra_dup_rows": 35912,
+            "conflict_rows": 69053
+          },
+          "DoS": {
+            "rows": 8034190,
+            "intra_dup_rows": 116823,
+            "conflict_rows": 90346
+          },
+          "Reconnaissance": {
+            "rows": 1695132,
+            "intra_dup_rows": 43162,
+            "conflict_rows": 3379
+          }
+        }
+      }
+    },
+    "41": {
+      "n_features": 41,
+      "rows": 16933808,
+      "distinct_vectors": 16682781,
+      "duplicate_rows": 251027,
+      "native": {
+        "rows": 16933808,
+        "conflicting_vectors": 45530,
+        "conflict_rows": 165323,
+        "minority_rows": 61187,
+        "top_label_sets": {
+          "DDoS / DoS": 44261,
+          "Benign / Reconnaissance": 1269
+        },
+        "per_class": {
+          "Benign": {
+            "rows": 51989,
+            "intra_dup_rows": 6271,
+            "conflict_rows": 1274
+          },
+          "DDoS": {
+            "rows": 7150882,
+            "intra_dup_rows": 38128,
+            "conflict_rows": 69688
+          },
+          "DoS": {
+            "rows": 8034190,
+            "intra_dup_rows": 117874,
+            "conflict_rows": 90981
+          },
+          "Reconnaissance": {
+            "rows": 1695132,
+            "intra_dup_rows": 43224,
+            "conflict_rows": 3380
+          },
+          "Theft": {
+            "rows": 1615,
+            "intra_dup_rows": 0,
+            "conflict_rows": 0
+          }
+        }
+      },
+      "canonical": {
+        "rows": 16932193,
+        "conflicting_vectors": 45530,
+        "conflict_rows": 165323,
+        "minority_rows": 61187,
+        "top_label_sets": {
+          "DDoS / DoS": 44261,
+          "Benign / Reconnaissance": 1269
+        },
+        "per_class": {
+          "Benign": {
+            "rows": 51989,
+            "intra_dup_rows": 6271,
+            "conflict_rows": 1274
+          },
+          "DDoS": {
+            "rows": 7150882,
+            "intra_dup_rows": 38128,
+            "conflict_rows": 69688
+          },
+          "DoS": {
+            "rows": 8034190,
+            "intra_dup_rows": 117874,
+            "conflict_rows": 90981
+          },
+          "Reconnaissance": {
+            "rows": 1695132,
+            "intra_dup_rows": 43224,
+            "conflict_rows": 3380
+          }
+        }
+      }
+    },
+    "48": {
+      "n_features": 48,
+      "rows": 16933808,
+      "distinct_vectors": 1561202,
+      "duplicate_rows": 15372606,
+      "native": {
+        "rows": 16933808,
+        "conflicting_vectors": 7009,
+        "conflict_rows": 681097,
+        "minority_rows": 131323,
+        "top_label_sets": {
+          "Benign / Reconnaissance": 6757,
+          "DDoS / DoS": 251,
+          "DDoS / DoS / Reconnaissance": 1
+        },
+        "per_class": {
+          "Benign": {
+            "rows": 51989,
+            "intra_dup_rows": 25457,
+            "conflict_rows": 29928
+          },
+          "DDoS": {
+            "rows": 7150882,
+            "intra_dup_rows": 6863429,
+            "conflict_rows": 114050
+          },
+          "DoS": {
+            "rows": 8034190,
+            "intra_dup_rows": 7679456,
+            "conflict_rows": 158927
+          },
+          "Reconnaissance": {
+            "rows": 1695132,
+            "intra_dup_rows": 796087,
+            "conflict_rows": 378192
+          },
+          "Theft": {
+            "rows": 1615,
+            "intra_dup_rows": 1167,
+            "conflict_rows": 0
+          }
+        }
+      },
+      "canonical": {
+        "rows": 16932193,
+        "conflicting_vectors": 7009,
+        "conflict_rows": 681097,
+        "minority_rows": 131323,
+        "top_label_sets": {
+          "Benign / Reconnaissance": 6757,
+          "DDoS / DoS": 251,
+          "DDoS / DoS / Reconnaissance": 1
+        },
+        "per_class": {
+          "Benign": {
+            "rows": 51989,
+            "intra_dup_rows": 25457,
+            "conflict_rows": 29928
+          },
+          "DDoS": {
+            "rows": 7150882,
+            "intra_dup_rows": 6863429,
+            "conflict_rows": 114050
+          },
+          "DoS": {
+            "rows": 8034190,
+            "intra_dup_rows": 7679456,
+            "conflict_rows": 158927
+          },
+          "Reconnaissance": {
+            "rows": 1695132,
+            "intra_dup_rows": 796087,
+            "conflict_rows": 378192
+          }
+        }
+      }
+    },
+    "40": {
+      "n_features": 40,
+      "rows": 16933808,
+      "distinct_vectors": 1236409,
+      "duplicate_rows": 15697399,
+      "native": {
+        "rows": 16933808,
+        "conflicting_vectors": 9128,
+        "conflict_rows": 1128238,
+        "minority_rows": 252423,
+        "top_label_sets": {
+          "Benign / Reconnaissance": 6714,
+          "DDoS / DoS": 2413,
+          "DDoS / DoS / Reconnaissance": 1
+        },
+        "per_class": {
+          "Benign": {
+            "rows": 51989,
+            "intra_dup_rows": 26371,
+            "conflict_rows": 30042
+          },
+          "DDoS": {
+            "rows": 7150882,
+            "intra_dup_rows": 7021378,
+            "conflict_rows": 316008
+          },
+          "DoS": {
+            "rows": 8034190,
+            "intra_dup_rows": 7836409,
+            "conflict_rows": 403370
+          },
+          "Reconnaissance": {
+            "rows": 1695132,
+            "intra_dup_rows": 802901,
+            "conflict_rows": 378818
+          },
+          "Theft": {
+            "rows": 1615,
+            "intra_dup_rows": 1211,
+            "conflict_rows": 0
+          }
+        }
+      },
+      "canonical": {
+        "rows": 16932193,
+        "conflicting_vectors": 9128,
+        "conflict_rows": 1128238,
+        "minority_rows": 252423,
+        "top_label_sets": {
+          "Benign / Reconnaissance": 6714,
+          "DDoS / DoS": 2413,
+          "DDoS / DoS / Reconnaissance": 1
+        },
+        "per_class": {
+          "Benign": {
+            "rows": 51989,
+            "intra_dup_rows": 26371,
+            "conflict_rows": 30042
+          },
+          "DDoS": {
+            "rows": 7150882,
+            "intra_dup_rows": 7021378,
+            "conflict_rows": 316008
+          },
+          "DoS": {
+            "rows": 8034190,
+            "intra_dup_rows": 7836409,
+            "conflict_rows": 403370
+          },
+          "Reconnaissance": {
+            "rows": 1695132,
+            "intra_dup_rows": 802901,
+            "conflict_rows": 378818
+          }
+        }
+      }
+    }
+  },
+  "elapsed_s": 77.3
+}

@@ -1,0 +1,83 @@
+RQ2: shallow decision trees, attack class vs benign (grouped split, balanced samples)
+Generated: 2026-10-05T15:31:52.594149+00:00
+Macro F1 on the grouped test split. Sets: A = 40 features (41 common without L4_SRC_PORT); one grouped split for all sets,
+keyed on the 40 features of A (seed 42); B = A without ports;
+C = B without TTL, TCP window and DNS fields. Rule = depth-1 split predicting the class.
+
+== NF-BoT-IoT-v2
+  class                         d1 A  d1 B  d1 C  d3 A  d3 C  depth-1 rule A | depth-1 rule C
+  DDoS                          0.96  0.96  0.96  1.00  1.00  L7_PROTO > 185 | L7_PROTO > 185
+  DoS                           0.91  0.94  0.94  0.96  1.00  L4_DST_PORT <= 80.5 | IN_BYTES > 137.5
+  Reconnaissance                0.84  0.84  0.84  0.99  0.99  SERVER_TCP_FLAGS > 17.5 | SERVER_TCP_FLAGS > 17.5
+  Theft                         0.90  0.90  0.90  0.98  0.98  SRC_TO_DST_SECOND_BYTES > 58 | SRC_TO_DST_SECOND_BYTES > 58
+
+== NF-BoT-IoT-v3
+  class                         d1 A  d1 B  d1 C  d3 A  d3 C  depth-1 rule A | depth-1 rule C
+  DDoS                          0.96  0.96  0.96  1.00  0.99  SRC_TO_DST_AVG_THROUGHPUT <= 598.5 | SRC_TO_DST_AVG_THROUGHPUT <= 598.5
+  DoS                           0.98  0.98  0.98  0.99  0.99  DST_TO_SRC_SECOND_BYTES <= 0.0284089 | DST_TO_SRC_SECOND_BYTES <= 0.0284089
+  Reconnaissance                0.88  0.88  0.74  0.93  0.92  TCP_WIN_MAX_IN > 866.5 | MAX_IP_PKT_LEN > 41
+  Theft                         0.98  0.98  0.64  1.00  0.98  TCP_WIN_MAX_IN > 1238 | SRC_TO_DST_AVG_THROUGHPUT > 358400
+
+== NF-CSE-CIC-IDS2018-v2
+  class                         d1 A  d1 B  d1 C  d3 A  d3 C  depth-1 rule A | depth-1 rule C
+  Bot                           1.00  1.00  1.00  1.00  1.00  L7_PROTO > 129 | L7_PROTO > 129
+  Brute Force -Web              0.94  0.94  0.94  0.99  0.97  TCP_WIN_MAX_IN > 65463.5 | DURATION_IN > 1
+  Brute Force -XSS              0.90  0.90  0.90  0.99  0.99  DURATION_IN > 0.5 | DURATION_IN > 0.5
+  DDOS attack-HOIC              1.00  1.00  0.98  1.00  1.00  TCP_WIN_MAX_IN > 65534.5 | DURATION_IN > 0.5
+  DDOS attack-LOIC-UDP          1.00  1.00  1.00  1.00  1.00  IN_PKTS > 524.5 | IN_PKTS > 524.5
+  DDoS attacks-LOIC-HTTP        0.73  0.73  0.73  0.75  0.75  DURATION_IN > 14 | DURATION_IN > 14
+  DoS attacks-GoldenEye         0.98  0.98  0.97  1.00  1.00  TCP_WIN_MAX_IN > 26865 | DURATION_IN > 8
+  DoS attacks-Hulk              0.97  0.97  0.97  1.00  1.00  DURATION_IN > 43 | DURATION_IN > 43
+  DoS attacks-SlowHTTPTest      1.00  1.00  1.00  1.00  1.00  SRC_TO_DST_AVG_THROUGHPUT <= 48000 | SRC_TO_DST_AVG_THROUGHPUT <= 48000
+  DoS attacks-Slowloris         0.97  0.97  0.89  1.00  1.00  TCP_WIN_MAX_IN > 26739 | L7_PROTO > 6.35
+  FTP-BruteForce                1.00  1.00  1.00  1.00  1.00  SRC_TO_DST_AVG_THROUGHPUT <= 40000 | SRC_TO_DST_AVG_THROUGHPUT <= 40000
+  Infiltration                  0.63  0.63  0.62  0.67  0.65  TCP_WIN_MAX_IN <= 1241 | CLIENT_TCP_FLAGS <= 16.5
+  SQL Injection                 0.93  0.93  0.91  0.95  0.94  TCP_WIN_MAX_IN > 65437.5 | DURATION_OUT > 0.5
+  SSH-Bruteforce                1.00  1.00  1.00  1.00  1.00  L4_DST_PORT <= 22.5 | L7_PROTO > 91.85
+
+== NF-CSE-CIC-IDS2018-v3
+  class                         d1 A  d1 B  d1 C  d3 A  d3 C  depth-1 rule A | depth-1 rule C
+  Bot                           0.97  0.90  0.90  1.00  0.99  L4_DST_PORT > 8079.5 | DST_TO_SRC_SECOND_BYTES > 21.5
+  Brute_Force_-Web              0.79  0.79  0.79  0.91  0.91  OUT_BYTES <= 80.5 | OUT_BYTES <= 80.5
+  Brute_Force_-XSS             too few class rows in train or test
+  DDOS_attack-HOIC              1.00  1.00  0.91  1.00  1.00  TCP_WIN_MAX_IN > 65534.5 | CLIENT_TCP_FLAGS > 218.5
+  DDOS_attack-LOIC-UDP          1.00  1.00  1.00  1.00  1.00  IN_PKTS > 468.5 | IN_PKTS > 468.5
+  DDoS_attacks-LOIC-HTTP        0.97  0.97  0.97  0.98  0.97  TCP_FLAGS > 222.5 | TCP_FLAGS > 222.5
+  DoS_attacks-GoldenEye         0.88  0.88  0.77  1.00  0.98  TCP_WIN_MAX_IN > 26857 | NUM_PKTS_128_TO_256_BYTES <= 0.5
+  DoS_attacks-Hulk              0.98  0.98  0.96  1.00  1.00  TCP_WIN_MAX_IN > 26875.5 | NUM_PKTS_512_TO_1024_BYTES > 1.5
+  DoS_attacks-SlowHTTPTest     too few class rows in train or test
+  DoS_attacks-Slowloris         0.79  0.79  0.79  0.96  0.97  OUT_BYTES <= 120.5 | OUT_BYTES <= 120.5
+  FTP-BruteForce               too few class rows in train or test
+  Infiltration                  0.64  0.64  0.64  0.67  0.67  DST_TO_SRC_AVG_THROUGHPUT > 8746.5 | DST_TO_SRC_AVG_THROUGHPUT > 8746.5
+  SQL_Injection                 0.85  0.85  0.85  0.89  0.89  NUM_PKTS_512_TO_1024_BYTES > 5 | NUM_PKTS_512_TO_1024_BYTES > 5
+  SSH-Bruteforce                1.00  1.00  1.00  1.00  1.00  L4_DST_PORT <= 22.5 | NUM_PKTS_128_TO_256_BYTES > 6.5
+
+== NF-ToN-IoT-v2
+  class                         d1 A  d1 B  d1 C  d3 A  d3 C  depth-1 rule A | depth-1 rule C
+  backdoor                      1.00  1.00  1.00  1.00  1.00  OUT_PKTS > 27 | OUT_PKTS > 27
+  ddos                          0.94  0.94  0.90  0.96  0.93  TCP_WIN_MAX_IN > 29187 | CLIENT_TCP_FLAGS > 17.5
+  dos                           0.91  0.91  0.91  0.97  0.98  SRC_TO_DST_AVG_THROUGHPUT > 388000 | SRC_TO_DST_AVG_THROUGHPUT > 388000
+  injection                     0.94  0.94  0.92  0.96  0.97  TCP_WIN_MAX_IN > 29187 | CLIENT_TCP_FLAGS > 17.5
+  mitm                          0.94  0.94  0.93  0.96  0.96  DNS_QUERY_ID > 16.5 | PROTOCOL > 11.5
+  password                      0.94  0.95  0.91  0.98  0.97  L4_DST_PORT <= 80.5 | L7_PROTO > 0.5
+  ransomware                    0.96  0.96  0.96  0.98  0.97  TCP_FLAGS > 23 | TCP_FLAGS > 23
+  scanning                      0.69  0.69  0.66  0.95  0.95  TCP_WIN_MAX_IN > 4009.5 | SRC_TO_DST_AVG_THROUGHPUT > 380000
+  xss                           0.94  0.93  0.93  0.98  0.96  L4_DST_PORT <= 80.5 | MAX_IP_PKT_LEN > 64.5
+
+== NF-ToN-IoT-v3
+  class                         d1 A  d1 B  d1 C  d3 A  d3 C  depth-1 rule A | depth-1 rule C
+  Backdoor                      0.92  0.92  0.92  1.00  0.92  ICMP_TYPE > 12160 | ICMP_IPV4_TYPE > 47.5
+  ddos                          0.92  0.92  0.86  0.94  0.88  TCP_WIN_MAX_IN > 29113.5 | NUM_PKTS_UP_TO_128_BYTES > 2.5
+  dos                           0.93  0.93  0.93  0.96  0.97  DST_TO_SRC_SECOND_BYTES > 4.5 | DST_TO_SRC_SECOND_BYTES > 4.5
+  injection                     0.93  0.94  0.94  0.97  0.96  L4_DST_PORT <= 443.5 | NUM_PKTS_UP_TO_128_BYTES > 2.5
+  mitm                          0.93  0.94  0.94  0.96  0.97  L4_DST_PORT <= 450.5 | OUT_BYTES > 73
+  password                      0.96  0.96  0.97  0.99  0.99  TCP_WIN_MAX_IN > 29181 | NUM_PKTS_UP_TO_128_BYTES > 5.5
+  ransomware                    0.95  0.95  0.95  0.98  0.98  NUM_PKTS_128_TO_256_BYTES > 0.5 | NUM_PKTS_128_TO_256_BYTES > 0.5
+  scanning                      0.72  0.72  0.72  0.79  0.79  IN_BYTES <= 48.5 | IN_BYTES <= 48.5
+  xss                           0.95  0.95  0.95  0.98  0.97  L4_DST_PORT <= 80.5 | OUT_BYTES > 59.5
+
+Summary (classes with macro F1 >= 0.95 / classes probed):
+  NF-v2: A depth 1: 12/27; A depth 3: 23/27; C depth 1: 11/27; C depth 3: 22/27
+  NF-v2 depth-1 features (set A): TCP_WIN_MAX_IN 9, L4_DST_PORT 4, DURATION_IN 3, SRC_TO_DST_AVG_THROUGHPUT 3, L7_PROTO 2, SERVER_TCP_FLAGS 1, SRC_TO_DST_SECOND_BYTES 1, IN_PKTS 1, OUT_PKTS 1, DNS_QUERY_ID 1, TCP_FLAGS 1
+  NF-v3: A depth 1: 10/24; A depth 3: 18/24; C depth 1: 7/24; C depth 3: 17/24
+  NF-v3 depth-1 features (set A): TCP_WIN_MAX_IN 7, L4_DST_PORT 5, DST_TO_SRC_SECOND_BYTES 2, OUT_BYTES 2, SRC_TO_DST_AVG_THROUGHPUT 1, IN_PKTS 1, TCP_FLAGS 1, DST_TO_SRC_AVG_THROUGHPUT 1, NUM_PKTS_512_TO_1024_BYTES 1, ICMP_TYPE 1, NUM_PKTS_128_TO_256_BYTES 1, IN_BYTES 1

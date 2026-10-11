@@ -1,0 +1,126 @@
+RQ1: exact duplicates and conflicting labels, NF-v2 vs NF-v3
+Generated: 2026-10-08T16:44:58.683791+00:00
+Key: 64-bit hash of the normalised feature vector. 41 = features common to
+v2 and v3; 49 = full NF-v3 set; 40 and 48 = the same without L4_SRC_PORT (the
+features the models see; 40 is the primary key for v2 vs v3). Conflict rows = all rows of vectors that carry
+more than one label. Percentages are of the rows in scope: 'dup %' and
+'nat conf %' over all rows; 'can conf %' over the rows that have a canonical
+class (classes without one, such as ToN xss, mitm and ransomware, are left out).
+'min %' = minority rows: label differs from the majority label of the vector.
+
+Consistency check against the loader QC (NF-v3, key 49; NF-v2, key 41):
+  NF-BoT-IoT-v2            OK (duplicates 7,343,411; canonical conflicts 0 vectors)
+  NF-BoT-IoT-v3            OK (duplicates 246,318; canonical conflicts 44,894 vectors)
+  NF-CSE-CIC-IDS2018-v2    OK (duplicates 1,766,981; canonical conflicts 372 vectors)
+  NF-CSE-CIC-IDS2018-v3    OK (duplicates 2,661,011; canonical conflicts 14,178 vectors)
+  NF-ToN-IoT-v2            OK (duplicates 3,804,615; canonical conflicts 0 vectors)
+  NF-ToN-IoT-v3            OK (duplicates 12,790,268; canonical conflicts 127,208 vectors)
+
+Dataset level, key 40 (v3 key 48 in brackets):
+  dataset                          rows   dup %  nat conf vec nat conf %  can conf vec can conf % nat min % can min %
+  NF-BoT-IoT-v2              37,763,497   99.05             0       0.00             0       0.00      0.00      0.00
+  NF-BoT-IoT-v3              16,933,808   92.70         9,128       6.66         9,128       6.66      1.49      1.49   [48: dup 90.78 %, nat conf 7,009 vec, 4.02 %, nat min 0.78 %, can min 0.78 %]
+  NF-CSE-CIC-IDS2018-v2      18,893,708   52.18         1,991       2.36           290       0.54      0.02      0.00
+  NF-CSE-CIC-IDS2018-v3      20,115,529   35.38        10,425       5.01            12       2.53      0.66      0.53   [48: dup 27.18 %, nat conf 9,788 vec, 4.37 %, nat min 0.64 %, can min 0.53 %]
+  NF-ToN-IoT-v2              16,940,496   80.65             0       0.00             0       0.00      0.00      0.00
+  NF-ToN-IoT-v3              27,520,260   77.28       226,146      43.83       199,922      48.32      4.12      4.43   [48: dup 73.48 %, nat conf 212,089 vec, 42.85 %, nat min 3.94 %, can min 4.28 %]
+
+ToN: per native class, key 40 (intra-class duplicates and conflict rows, % of class rows)
+  class                          v2 rows  v2 dup%  v2 conf% |     v3 rows  v3 dup%  v3 conf%
+  benign                       6,099,469    82.23      0.00 |  16,792,214    83.29     40.41
+  ddos                         2,026,234    86.74      0.00 |   4,141,256    91.43     76.44
+  xss                          2,455,020    61.15      0.00 |   2,834,435    13.75      3.48
+  password                     1,153,323    84.16      0.00 |   1,594,777    91.09     42.93
+  scanning                     3,781,419    92.17      0.00 |   1,358,977    83.95     94.91
+  injection                      684,465    76.20      0.00 |     381,777    20.40      7.62
+  dos                            712,609    54.92      0.00 |     203,456     3.17      2.55
+  backdoor                        16,809    99.18      0.00 |     203,384    96.41      1.24
+  mitm                             7,723     0.98      0.00 |       6,013    16.73      4.07
+  ransomware                       3,425    83.68      0.00 |       3,971    50.19     25.16
+  top native label sets in v2 (vectors): none
+  top native label sets in v3 (vectors): Benign / scanning 154,245; Benign / ddos 35,268; Benign / xss 22,671; Benign / password 7,360; injection / xss 2,367; Benign / dos 837; ddos / xss 816; Benign / injection 511; ddos / injection 248; Benign / ransomware 212
+
+BoT: per native class, key 40 (intra-class duplicates and conflict rows, % of class rows)
+  class                          v2 rows  v2 dup%  v2 conf% |     v3 rows  v3 dup%  v3 conf%
+  dos                         16,673,183    99.76      0.00 |   8,034,190    97.54      5.02
+  ddos                        18,331,847    99.90      0.00 |   7,150,882    98.19      4.42
+  reconnaissance               2,620,999    92.70      0.00 |   1,695,132    47.37     22.35
+  benign                         135,037    20.16      0.00 |      51,989    50.72     57.79
+  theft                            2,431    66.64      0.00 |       1,615    74.98      0.00
+  top native label sets in v2 (vectors): none
+  top native label sets in v3 (vectors): Benign / Reconnaissance 6,714; DDoS / DoS 2,413; DDoS / DoS / Reconnaissance 1
+
+CIC: per native class, key 40 (intra-class duplicates and conflict rows, % of class rows)
+  class                          v2 rows  v2 dup%  v2 conf% |     v3 rows  v3 dup%  v3 conf%
+  benign                      16,635,567    48.97      0.00 |  17,514,626    28.65      2.49
+  ddos attack-hoic             1,080,858    91.14     41.00 |   1,032,311    96.72      0.00
+  ftp-bruteforce                  25,933    99.93      0.00 |     386,720   100.00    100.00
+  ddos attacks-loic-http         307,300    94.54      0.00 |     288,589    12.34      2.88
+  bot                            143,097    99.67      0.00 |     207,703    99.34      0.00
+  ssh-bruteforce                  94,979    84.52      0.00 |     188,474    94.64      0.03
+  infiltration                   116,361    33.19      0.00 |     188,152    57.25     36.05
+  dos attacks-slowhttptest        14,116    99.89      0.00 |     105,550   100.00    100.00
+  dos attacks-hulk               432,648    27.99      0.00 |     100,076     0.02      0.00
+  dos attacks-goldeneye           27,723     2.54      0.00 |      61,300    55.34      0.00
+  dos attacks-slowloris            9,512    98.02      0.00 |      36,040    92.80      0.00
+  ddos attack-loic-udp             2,112     0.24      0.00 |       3,450    50.12      0.00
+  brute force -web                 2,143    30.19     90.11 |       1,618    33.87     43.70
+  brute force -xss                   927    14.46     87.59 |         480    88.96    100.00
+  sql injection                      432    21.30     88.66 |         440    77.73     91.14
+  top native label sets in v2 (vectors): Brute Force -Web / DDOS attack-HOIC 1,055; Brute Force -XSS / DDOS attack-HOIC 401; Brute Force -Web / Brute Force -XSS / DDOS attack-HOIC 194; DDOS attack-HOIC / SQL Injection 154; Brute Force -Web / DDOS attack-HOIC / SQL Injection 83; Brute Force -Web / Brute Force -XSS 47; Brute Force -Web / Brute Force -XSS / DDOS attack-HOIC / SQL Injection 41; Brute Force -XSS / DDOS attack-HOIC / SQL Injection 12; Brute Force -Web / SQL Injection 3; Brute Force -Web / Brute Force -XSS / SQL Injection 1
+  top native label sets in v3 (vectors): Benign / Infiltration 10,186; Benign / Brute_Force_-Web 154; Brute_Force_-XSS / SQL_Injection 41; Benign / Brute_Force_-Web / Infiltration 16; Brute_Force_-Web / SQL_Injection 9; Benign / Brute_Force_-Web / Brute_Force_-XSS / SQL_Injection 6; Benign / SQL_Injection 2; Brute_Force_-Web / Infiltration 2; Brute_Force_-Web / Brute_Force_-XSS 2; Benign / Brute_Force_-Web / Brute_Force_-XSS 2
+
+Dataset level, key 41 (v3 key 49 in brackets):
+  dataset                          rows   dup %  nat conf vec nat conf %  can conf vec can conf % nat min % can min %
+  NF-BoT-IoT-v2              37,763,497   19.45             0       0.00             0       0.00      0.00      0.00
+  NF-BoT-IoT-v3              16,933,808    1.48        45,530       0.98        45,530       0.98      0.36      0.36   [49: dup 1.45 %, nat conf 44,894 vec, 0.97 %, nat min 0.36 %, can min 0.36 %]
+  NF-CSE-CIC-IDS2018-v2      18,893,708    9.35         2,934       0.03           372       0.00      0.02      0.00
+  NF-CSE-CIC-IDS2018-v3      20,115,529   14.13        14,973       2.77        14,167       2.49      0.55      0.53   [49: dup 13.23 %, nat conf 14,856 vec, 2.76 %, nat min 0.54 %, can min 0.53 %]
+  NF-ToN-IoT-v2              16,940,496   22.46             0       0.00             0       0.00      0.00      0.00
+  NF-ToN-IoT-v3              27,520,260   46.80       133,347       3.56       131,478       3.84      0.72      0.80   [49: dup 46.48 %, nat conf 129,075 vec, 3.52 %, nat min 0.71 %, can min 0.78 %]
+
+ToN: per native class, key 41 (intra-class duplicates and conflict rows, % of class rows)
+  class                          v2 rows  v2 dup%  v2 conf% |     v3 rows  v3 dup%  v3 conf%
+  benign                       6,099,469    40.96      0.00 |  16,792,214    52.80      2.09
+  ddos                         2,026,234    13.80      0.00 |   4,141,256    73.75      8.22
+  xss                          2,455,020     0.21      0.00 |   2,834,435     0.33      0.11
+  password                     1,153,323    13.84      0.00 |   1,594,777    11.08      3.27
+  scanning                     3,781,419    20.61      0.00 |   1,358,977    38.37     16.76
+  injection                      684,465     3.51      0.00 |     381,777     0.23      1.20
+  dos                            712,609     8.17      0.00 |     203,456     1.99      0.00
+  backdoor                        16,809     3.27      0.00 |     203,384    54.30      0.00
+  mitm                             7,723     0.00      0.00 |       6,013    15.95      0.03
+  ransomware                       3,425     1.99      0.00 |       3,971    11.11      1.76
+  top native label sets in v2 (vectors): none
+  top native label sets in v3 (vectors): Benign / scanning 105,433; Benign / password 19,129; ddos / injection 3,761; Benign / ddos 2,158; ddos / xss 1,698; ddos / password 313; Benign / ddos / injection 274; ddos / injection / xss 142; Benign / ddos / xss 90; Benign / xss 71
+
+BoT: per native class, key 41 (intra-class duplicates and conflict rows, % of class rows)
+  class                          v2 rows  v2 dup%  v2 conf% |     v3 rows  v3 dup%  v3 conf%
+  dos                         16,673,183    18.16      0.00 |   8,034,190     1.47      1.13
+  ddos                        18,331,847    22.10      0.00 |   7,150,882     0.53      0.97
+  reconnaissance               2,620,999     9.84      0.00 |   1,695,132     2.55      0.20
+  benign                         135,037     4.15      0.00 |      51,989    12.06      2.45
+  theft                            2,431     4.73      0.00 |       1,615     0.00      0.00
+  top native label sets in v2 (vectors): none
+  top native label sets in v3 (vectors): DDoS / DoS 44,261; Benign / Reconnaissance 1,269
+
+CIC: per native class, key 41 (intra-class duplicates and conflict rows, % of class rows)
+  class                          v2 rows  v2 dup%  v2 conf% |     v3 rows  v3 dup%  v3 conf%
+  benign                      16,635,567     9.22      0.00 |  17,514,626    11.25      0.35
+  ddos attack-hoic             1,080,858     1.29      0.27 |   1,032,311     2.70      0.00
+  ftp-bruteforce                  25,933     0.00      0.00 |     386,720    96.35    100.00
+  ddos attacks-loic-http         307,300    32.61      0.00 |     288,589     1.18      0.03
+  bot                            143,097    80.41      0.00 |     207,703    60.49      0.00
+  ssh-bruteforce                  94,979     0.00      0.00 |     188,474    50.10      0.03
+  infiltration                   116,361     0.73      0.00 |     188,152    44.26      1.68
+  dos attacks-slowhttptest        14,116     0.00      0.00 |     105,550    86.63    100.00
+  dos attacks-hulk               432,648     0.00      0.00 |     100,076     0.00      0.00
+  dos attacks-goldeneye           27,723     0.00      0.00 |      61,300    50.10      0.00
+  dos attacks-slowloris            9,512     0.00      0.00 |      36,040    65.72      0.00
+  ddos attack-loic-udp             2,112     0.00      0.00 |       3,450    50.00      0.00
+  brute force -web                 2,143     0.00     86.70 |       1,618    20.70     26.64
+  brute force -xss                   927     0.00     87.38 |         480    88.33    100.00
+  sql injection                      432     0.00     87.50 |         440    75.23     88.18
+  top native label sets in v2 (vectors): Brute Force -Web / DDOS attack-HOIC 1,746; Brute Force -XSS / DDOS attack-HOIC 738; DDOS attack-HOIC / SQL Injection 338; Brute Force -Web / Brute Force -XSS 52; Brute Force -Web / DDOS attack-HOIC / SQL Injection 34; Brute Force -Web / Brute Force -XSS / DDOS attack-HOIC 20; Brute Force -Web / SQL Injection 6
+  top native label sets in v3 (vectors): DoS_attacks-SlowHTTPTest / FTP-BruteForce 14,086; Benign / Infiltration 661; Benign / Brute_Force_-Web 95; Brute_Force_-XSS / SQL_Injection 41; Benign / DDoS_attacks-LOIC-HTTP 35; DoS_attacks-SlowHTTPTest / FTP-BruteForce / SSH-Bruteforce 30; Benign / Brute_Force_-Web / Brute_Force_-XSS / SQL_Injection 8; Benign / Brute_Force_-Web / Infiltration 4; Benign / Brute_Force_-Web / SQL_Injection 4; Brute_Force_-Web / Brute_Force_-XSS 2
+

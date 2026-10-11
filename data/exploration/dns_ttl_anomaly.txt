@@ -1,0 +1,8 @@
+NF-BoT-IoT-v3: rows above int32 max = 320; max of remaining rows = 172,800
+  value range: 4,294,915,078 .. 4,294,915,672
+  by canonical class and split:
+    Reconnaissance     test      41
+    Reconnaissance     train    225
+    Reconnaissance     val       54
+NF-CSE-CIC-IDS2018-v3: rows above int32 max = 0; max of remaining rows = 3,600,000
+NF-ToN-IoT-v3: rows above int32 max = 0; max of remaining rows = 6,048,000

@@ -1,0 +1,75 @@
+Phase 4 block A: grouped splits recomputed on the model feature sets
+Generated: 2026-10-02T21:38:14.190398+00:00
+Keys: base = all features but L4_SRC_PORT; noport = base without L4_DST_PORT;
+noid = base without ports, TTL, TCP window, DNS; ts = base + both timestamps (NF-v3).
+R1: Phase 1 key, seed 42, against the stored split. V1: hashes in two splits, seeds [1, 2, 3].
+V2: exact match of sampled distinct test vectors against every train row (seed 1).
+Classes with fewer than 100 test rows (seed 1) are listed.
+
+== NF-BoT-IoT-v2: 37,763,497 rows; R1 mismatches 0; 104.4 s
+  key     feat  distinct vectors V1 max  V2 found/sampled  shares seed 1 (train/val/test)
+  base      40           357,532      0       0/2,556      0.689/0.154/0.157
+          test share off 0.15 by > 0.05: (excluded) 0.095
+  noport    39           101,369      0       0/1,883      0.690/0.146/0.164
+          test share off 0.15 by > 0.05: Benign 0.237, Reconnaissance 0.551
+  noid      32            93,263      0       0/2,007      0.699/0.161/0.140
+          test share off 0.15 by > 0.05: (excluded) 0.066, Benign 0.245, Reconnaissance 0.080
+
+== NF-BoT-IoT-v3: 16,933,808 rows; R1 mismatches 0; 61.3 s
+  key     feat  distinct vectors V1 max  V2 found/sampled  shares seed 1 (train/val/test)
+  base      48         1,561,202      0       0/16,191     0.705/0.149/0.146
+          test share off 0.15 by > 0.05: (excluded) 0.723
+  noport    47           674,403      0       0/14,861     0.703/0.154/0.143
+          few test rows: (excluded) (68 test rows)
+          test share off 0.15 by > 0.05: (excluded) 0.042, Benign 0.060
+  noid      40           667,804      0       0/15,024     0.708/0.150/0.142
+          test share off 0.15 by > 0.05: (excluded) 0.067, Benign 0.051, Reconnaissance 0.099
+  ts        50         2,463,703      0       0/16,989     0.699/0.150/0.151
+
+== NF-CSE-CIC-IDS2018-v2: 18,893,708 rows; R1 mismatches 0; 82.7 s
+  key     feat  distinct vectors V1 max  V2 found/sampled  shares seed 1 (train/val/test)
+  base      40         9,035,510      0       0/14,194     0.708/0.149/0.143
+          few test rows: Injection (60 test rows)
+          test share off 0.15 by > 0.05: Bot_or_Backdoor 0.006
+  noport    39         8,981,074      0       0/13,382     0.711/0.144/0.146
+          few test rows: Injection (70 test rows)
+          test share off 0.15 by > 0.05: (excluded) 0.291, Bot_or_Backdoor 0.017
+  noid      32         1,598,854      0       0/4,730      0.736/0.122/0.141
+          few test rows: Injection (73 test rows)
+          test share off 0.15 by > 0.05: Bot_or_Backdoor 0.004
+
+== NF-CSE-CIC-IDS2018-v3: 20,115,529 rows; R1 mismatches 0; 167.1 s
+  key     feat  distinct vectors V1 max  V2 found/sampled  shares seed 1 (train/val/test)
+  base      48        14,647,955      0       0/18,113     0.707/0.146/0.147
+          few test rows: Injection (17 test rows)
+          test share off 0.15 by > 0.05: CredentialAttack 0.049, DoS 0.094, Injection 0.039
+  noport    47        14,508,426      0       0/17,542     0.717/0.141/0.141
+          few test rows: Injection (22 test rows)
+          test share off 0.15 by > 0.05: Bot_or_Backdoor 0.344, CredentialAttack 0.049, DoS 0.090, Injection 0.050
+  noid      40         7,942,823      0       0/10,386     0.690/0.146/0.164
+          test share off 0.15 by > 0.05: CredentialAttack 0.050, Injection 0.664
+  ts        50        19,175,993      0       0/20,050     0.700/0.150/0.150
+          few test rows: Injection (76 test rows)
+
+== NF-ToN-IoT-v2: 16,940,496 rows; R1 mismatches 0; 50.6 s
+  key     feat  distinct vectors V1 max  V2 found/sampled  shares seed 1 (train/val/test)
+  base      40         3,277,362      0       0/10,351     0.704/0.152/0.144
+          test share off 0.15 by > 0.05: Bot_or_Backdoor 0.006
+  noport    39         2,477,944      0       0/4,920      0.506/0.299/0.195
+          few test rows: Bot_or_Backdoor (19 test rows)
+          test share off 0.15 by > 0.05: Benign 0.277, Bot_or_Backdoor 0.001, CredentialAttack 0.214
+  noid      32           946,628      0       0/2,964      0.722/0.096/0.183
+          few test rows: Bot_or_Backdoor (18 test rows)
+          test share off 0.15 by > 0.05: (excluded) 0.315, Benign 0.045, Bot_or_Backdoor 0.001, DoS 0.059, Reconnaissance 0.377
+
+== NF-ToN-IoT-v3: 27,520,260 rows; R1 mismatches 0; 159.2 s
+  key     feat  distinct vectors V1 max  V2 found/sampled  shares seed 1 (train/val/test)
+  base      48         7,299,522      0       0/13,170     0.744/0.128/0.128
+          test share off 0.15 by > 0.05: DDoS 0.035
+  noport    47         5,886,034      0       0/12,216     0.779/0.154/0.067
+          test share off 0.15 by > 0.05: Benign 0.054, DDoS 0.034, Reconnaissance 0.024
+  noid      40         3,884,350      0       0/5,573      0.754/0.142/0.103
+          test share off 0.15 by > 0.05: Bot_or_Backdoor 0.203, DDoS 0.034, DoS 0.096, Reconnaissance 0.019
+  ts        50        23,846,557      0       0/19,747     0.700/0.150/0.150
+
+ALL CHECKS PASS: True

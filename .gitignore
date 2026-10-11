@@ -1,0 +1,11 @@
+# NF dataset downloads (BagIt folders placed at the repository root; not redistributable)
+*_NFV3DATA-A11964_A11964/
+*_MOHANAD_A4706/
+# row-level derivatives of the licensed data and run-time caches
+data/processed/*/*.parquet
+results/
+# environments and caches
+.venv/
+__pycache__/
+*.pyc
+.DS_Store

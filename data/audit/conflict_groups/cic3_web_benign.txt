@@ -1,0 +1,45 @@
+=== cic3_web_benign: NF-CSE-CIC-IDS2018-v3, labels ['Benign', 'Brute_Force_-Web', 'Brute_Force_-XSS', 'SQL_Injection']
+vectors carrying >= 2 of these labels (41-feature key): 161; rows: 11,542
+
+[Benign] rows 10,243; distinct vectors 118
+  src IP : 13.58.42.57 (10.0 %), 52.14.77.172 (10.0 %), 13.58.82.37 (9.9 %), 5.188.11.188 (3.6 %), 185.94.111.1 (3.5 %) [+332 more]
+  dst IP : 172.31.69.28 (30.3 %), 172.31.69.1 (4.4 %), 172.31.65.66 (3.5 %), 172.31.69.22 (3.0 %), 172.31.69.7 (2.9 %) [+412 more]
+  dst port: 500 (29.9 %), 0 (25.4 %), 161 (10.2 %), 137 (8.8 %), 5060 (7.1 %) [+38 more]
+  protocol: 17 (71.0 %), 1 (25.4 %), 6 (3.5 %); L7_PROTO: 79.0 (29.9 %), 81.0 (25.4 %), 14.0 (10.2 %) [+18 more]
+  time   : 2018-02-14 12:31 to 2018-03-02 20:05 UTC
+[Brute_Force_-Web] rows 431; distinct vectors 115
+  src IP : 52.14.77.172 (19.5 %), 13.58.42.57 (19.0 %), 13.58.82.37 (18.8 %), 5.188.11.188 (8.1 %), 181.214.87.14 (3.5 %) [+72 more]
+  dst IP : 172.31.69.28 (100.0 %)
+  dst port: 500 (57.3 %), 0 (18.8 %), 5060 (7.7 %), 23 (2.3 %), 1900 (1.2 %) [+38 more]
+  protocol: 17 (69.4 %), 1 (18.8 %), 6 (11.8 %); L7_PROTO: 79.0 (57.3 %), 81.0 (18.8 %), 100.0 (8.8 %) [+18 more]
+  time   : 2018-02-22 12:24 to 2018-02-22 21:29 UTC
+[Brute_Force_-XSS] rows 480; distinct vectors 56
+  src IP : 52.14.77.172 (41.5 %), 13.58.42.57 (41.2 %), 18.218.115.60 (9.0 %), 172.31.69.28 (8.3 %)
+  dst IP : 172.31.69.28 (91.7 %), 172.31.69.1 (8.3 %)
+  dst port: 500 (82.7 %), 80 (9.0 %), 67 (8.3 %)
+  protocol: 17 (91.0 %), 6 (9.0 %); L7_PROTO: 79.0 (82.7 %), 7.0 (9.0 %), 18.0 (8.3 %)
+  time   : 2018-02-22 12:25 to 2018-02-22 21:29 UTC
+[SQL_Injection] rows 388; distinct vectors 57
+  src IP : 13.58.82.37 (29.9 %), 13.58.42.57 (29.9 %), 52.14.77.172 (29.6 %), 18.218.115.60 (10.6 %)
+  dst IP : 172.31.69.28 (100.0 %)
+  dst port: 500 (89.4 %), 80 (10.6 %)
+  protocol: 17 (89.4 %), 6 (10.6 %); L7_PROTO: 79.0 (89.4 %), 7.0 (10.6 %)
+  time   : 2018-02-22 15:10 to 2018-02-22 20:28 UTC
+
+Most frequent conflicting vectors (rows per label; non-zero features):
+  - Benign 1,438, Brute_Force_-Web 1
+      PROTOCOL=1, L7_PROTO=81, IN_BYTES=32, IN_PKTS=1, OUT_BYTES=32, OUT_PKTS=1, FLOW_DURATION_MILLISECONDS=1, LONGEST_FLOW_PKT=32, SHORTEST_FLOW_PKT=32, MIN_IP_PKT_LEN=32, MAX_IP_PKT_LEN=32, SRC_TO_DST_AVG_THROUGHPUT=256000, DST_TO_SRC_AVG_THROUGHPUT=256000, NUM_PKTS_UP_TO_128_BYTES=2, ICMP_TYPE=2048, ICMP_IPV4_TYPE=8
+  - Benign 833, Brute_Force_-Web 66, Brute_Force_-XSS 161, SQL_Injection 95
+      L4_SRC_PORT=1024, L4_DST_PORT=500, PROTOCOL=17, L7_PROTO=79, IN_BYTES=3168, IN_PKTS=6, FLOW_DURATION_MILLISECONDS=89479, DURATION_IN=89479, MIN_TTL=62, MAX_TTL=62, LONGEST_FLOW_PKT=528, SHORTEST_FLOW_PKT=528, MAX_IP_PKT_LEN=528, SRC_TO_DST_AVG_THROUGHPUT=283, NUM_PKTS_512_TO_1024_BYTES=6
+  - Benign 1,016, Brute_Force_-Web 79
+      PROTOCOL=1, L7_PROTO=81, IN_BYTES=68, IN_PKTS=1, FLOW_DURATION_MILLISECONDS=1, LONGEST_FLOW_PKT=68, SHORTEST_FLOW_PKT=68, MAX_IP_PKT_LEN=68, SRC_TO_DST_AVG_THROUGHPUT=544000, NUM_PKTS_UP_TO_128_BYTES=1, ICMP_TYPE=778, ICMP_IPV4_TYPE=3
+  - Benign 1,045, Brute_Force_-Web 1
+      L4_SRC_PORT=6712, L4_DST_PORT=161, PROTOCOL=17, L7_PROTO=14, IN_BYTES=71, IN_PKTS=1, FLOW_DURATION_MILLISECONDS=1, LONGEST_FLOW_PKT=71, SHORTEST_FLOW_PKT=71, MAX_IP_PKT_LEN=71, SRC_TO_DST_AVG_THROUGHPUT=568000, NUM_PKTS_UP_TO_128_BYTES=1
+  - Benign 616, Brute_Force_-Web 70, Brute_Force_-XSS 176, SQL_Injection 106
+      L4_SRC_PORT=1028, L4_DST_PORT=500, PROTOCOL=17, L7_PROTO=79, IN_BYTES=3168, IN_PKTS=6, FLOW_DURATION_MILLISECONDS=89479, DURATION_IN=89479, MIN_TTL=62, MAX_TTL=62, LONGEST_FLOW_PKT=528, SHORTEST_FLOW_PKT=528, MAX_IP_PKT_LEN=528, SRC_TO_DST_AVG_THROUGHPUT=283, NUM_PKTS_512_TO_1024_BYTES=6
+  share of conflicting rows in the top 1 / 10 / 100 vectors: 12.5 % / 74.4 % / 98.9 %
+
+Full records (features + IPs + timestamps) carrying >1 label: 440 records, 880 rows (7.62 % of group rows)
+Full-record duplicates within the same label (identical record repeated): 1,313 rows (11.38 % of group rows)
+Exact re-check (no hashing) on 161 sampled vectors: 161 distinct exact vectors with >1 label, 0 with a single label
+

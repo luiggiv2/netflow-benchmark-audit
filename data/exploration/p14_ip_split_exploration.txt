@@ -1,0 +1,181 @@
+
+============================================================================
+DATASET: NF-ToN-IoT-v3
+============================================================================
+Loading NF-ToN-IoT-v3.csv (usecols=['IPV4_SRC_ADDR', 'IPV4_DST_ADDR', 'Attack', 'FLOW_START_MILLISECONDS'])...
+  rows=27,520,260  time=363.8s
+  unique IPV4_SRC_ADDR: 15,270
+  unique IPV4_DST_ADDR: 8,777
+  temporal coverage:    from 2019-04-23 14:09:50.618000+00:00 to 2019-04-29 14:45:55.177000+00:00 (~6.03 days)
+
+Unique source IPs per NATIVE attack class:
+  Benign                            IPs=  15,268  flows=     16,792,214
+  ddos                              IPs=       6  flows=      4,141,256
+  xss                               IPs=       5  flows=      2,834,435
+  password                          IPs=       7  flows=      1,594,777
+  scanning                          IPs=      17  flows=      1,358,977
+  injection                         IPs=       8  flows=        381,777
+  dos                               IPs=       7  flows=        203,456
+  Backdoor                          IPs=       4  flows=        203,384
+  mitm                              IPs=       2  flows=          6,013 ⚠
+  ransomware                        IPs=       3  flows=          3,971
+
+Unique source IPs per CANONICAL class (empty string = excluded):
+  Benign                            IPs=  15,268  flows=     16,792,214
+  DDoS                              IPs=       6  flows=      4,141,256
+  (excluded)                        IPs=      11  flows=      3,047,803
+  CredentialAttack                  IPs=       7  flows=      1,594,777
+  Reconnaissance                    IPs=      17  flows=      1,358,977
+  Injection                         IPs=       8  flows=        381,777
+  DoS                               IPs=       7  flows=        203,456
+
+Concentration: source IPs holding 90% of flows per canonical class
+  Benign                            total_flows=     16,792,214  unique_IPs=  15,268  IPs_holding_90pct=     7
+  DDoS                              total_flows=      4,141,256  unique_IPs=       6  IPs_holding_90pct=     3
+  CredentialAttack                  total_flows=      1,594,777  unique_IPs=       7  IPs_holding_90pct=     4
+  Reconnaissance                    total_flows=      1,358,977  unique_IPs=      17  IPs_holding_90pct=     3
+  Injection                         total_flows=        381,777  unique_IPs=       8  IPs_holding_90pct=     5
+  DoS                               total_flows=        203,456  unique_IPs=       7  IPs_holding_90pct=     3
+
+Split simulation (hash of src IP, seed=42, 70/15/15):
+
+  IP-level distribution:
+    train  IPs=  10,668  (69.86%)
+    val    IPs=   2,265  (14.83%)
+    test   IPs=   2,337  (15.30%)
+
+  Flow-level distribution per canonical class:
+    class                                       train              val             test
+    Benign                                 15,772,379          941,840           77,995
+    DDoS                                    4,053,973                3           87,280
+    (excluded)                                525,577        1,265,395        1,256,831
+    CredentialAttack                        1,504,726           90,051                0 ⚠ <1000 in test
+    Reconnaissance                          1,345,263           13,714                0 ⚠ <1000 in test
+    Injection                                 200,997           31,204          149,576
+    DoS                                       152,813                3           50,640
+
+  AT-RISK canonical classes (test < 1000 flows): ['CredentialAttack', 'Reconnaissance']
+
+  Total time for NF-ToN-IoT-v3: 379.8s
+
+============================================================================
+DATASET: NF-BoT-IoT-v3
+============================================================================
+Loading NF-BoT-IoT-v3.csv (usecols=['IPV4_SRC_ADDR', 'IPV4_DST_ADDR', 'Attack', 'FLOW_START_MILLISECONDS'])...
+  rows=16,933,808  time=34.7s
+  unique IPV4_SRC_ADDR: 20
+  unique IPV4_DST_ADDR: 291
+  temporal coverage:    from 2018-05-15 00:27:11.665000+00:00 to 2018-06-19 04:17:13.932000+00:00 (~35.16 days)
+
+Unique source IPs per NATIVE attack class:
+  DoS                               IPs=       8  flows=      8,034,190
+  DDoS                              IPs=       8  flows=      7,150,882
+  Reconnaissance                    IPs=       8  flows=      1,695,132
+  Benign                            IPs=      20  flows=         51,989
+  Theft                             IPs=       4  flows=          1,615
+
+Unique source IPs per CANONICAL class (empty string = excluded):
+  DoS                               IPs=       8  flows=      8,034,190
+  DDoS                              IPs=       8  flows=      7,150,882
+  Reconnaissance                    IPs=       8  flows=      1,695,132
+  Benign                            IPs=      20  flows=         51,989
+  (excluded)                        IPs=       4  flows=          1,615
+
+Concentration: source IPs holding 90% of flows per canonical class
+  DoS                               total_flows=      8,034,190  unique_IPs=       8  IPs_holding_90pct=     4
+  DDoS                              total_flows=      7,150,882  unique_IPs=       8  IPs_holding_90pct=     4
+  Reconnaissance                    total_flows=      1,695,132  unique_IPs=       8  IPs_holding_90pct=     4
+  Benign                            total_flows=         51,989  unique_IPs=      20  IPs_holding_90pct=     7
+
+Split simulation (hash of src IP, seed=42, 70/15/15):
+
+  IP-level distribution:
+    train  IPs=      18  (90.00%)
+    val    IPs=       1  ( 5.00%)
+    test   IPs=       1  ( 5.00%)
+
+  Flow-level distribution per canonical class:
+    class                                       train              val             test
+    DoS                                     6,011,269        2,022,921                0 ⚠ <1000 in test
+    DDoS                                    5,326,515        1,824,367                0 ⚠ <1000 in test
+    Reconnaissance                          1,264,010          431,122                0 ⚠ <1000 in test
+    Benign                                     41,612           10,293               84 ⚠ <1000 in test
+    (excluded)                                  1,343              272                0
+
+  AT-RISK canonical classes (test < 1000 flows): ['DoS', 'DDoS', 'Reconnaissance', 'Benign']
+
+  Total time for NF-BoT-IoT-v3: 44.0s
+
+============================================================================
+DATASET: NF-CSE-CIC-IDS2018-v3
+============================================================================
+Loading NF-CICIDS2018-v3.csv (usecols=['IPV4_SRC_ADDR', 'IPV4_DST_ADDR', 'Attack', 'FLOW_START_MILLISECONDS'])...
+  rows=20,115,529  time=58.7s
+  unique IPV4_SRC_ADDR: 181,876
+  unique IPV4_DST_ADDR: 29,036
+  temporal coverage:    from 2018-02-14 12:28:07.705000+00:00 to 2018-03-02 20:04:25.524000+00:00 (~16.32 days)
+
+Unique source IPs per NATIVE attack class:
+  Benign                            IPs= 181,681  flows=     17,514,626
+  DDOS_attack-HOIC                  IPs=      10  flows=      1,032,311
+  FTP-BruteForce                    IPs=       1  flows=        386,720 ⚠
+  DDoS_attacks-LOIC-HTTP            IPs=      10  flows=        288,589
+  Bot                               IPs=       8  flows=        207,703
+  SSH-Bruteforce                    IPs=       1  flows=        188,474 ⚠
+  Infilteration                     IPs=     609  flows=        188,152
+  DoS_attacks-SlowHTTPTest          IPs=       1  flows=        105,550 ⚠
+  DoS_attacks-Hulk                  IPs=       1  flows=        100,076 ⚠
+  DoS_attacks-GoldenEye             IPs=       1  flows=         61,300 ⚠
+  DoS_attacks-Slowloris             IPs=       1  flows=         36,040 ⚠
+  DDOS_attack-LOIC-UDP              IPs=      10  flows=          3,450
+  Brute_Force_-Web                  IPs=     561  flows=          1,618
+  Brute_Force_-XSS                  IPs=       4  flows=            480
+  SQL_Injection                     IPs=       4  flows=            440
+
+Unique source IPs per CANONICAL class (empty string = excluded):
+  Benign                            IPs= 181,681  flows=     17,514,626
+  DDoS                              IPs=      10  flows=      1,324,350
+  CredentialAttack                  IPs=       2  flows=        575,194 ⚠
+  DoS                               IPs=       4  flows=        302,966
+  Bot_or_Backdoor                   IPs=       8  flows=        207,703
+  (excluded)                        IPs=   1,140  flows=        190,250
+  Injection                         IPs=       4  flows=            440
+
+Concentration: source IPs holding 90% of flows per canonical class
+  Benign                            total_flows=     17,514,626  unique_IPs= 181,681  IPs_holding_90pct=   824
+  DDoS                              total_flows=      1,324,350  unique_IPs=      10  IPs_holding_90pct=     9
+  CredentialAttack                  total_flows=        575,194  unique_IPs=       2  IPs_holding_90pct=     2
+  DoS                               total_flows=        302,966  unique_IPs=       4  IPs_holding_90pct=     4
+  Bot_or_Backdoor                   total_flows=        207,703  unique_IPs=       8  IPs_holding_90pct=     7
+  Injection                         total_flows=            440  unique_IPs=       4  IPs_holding_90pct=     4
+
+Split simulation (hash of src IP, seed=42, 70/15/15):
+
+  IP-level distribution:
+    train  IPs= 127,247  (69.96%)
+    val    IPs=  27,204  (14.96%)
+    test   IPs=  27,425  (15.08%)
+
+  Flow-level distribution per canonical class:
+    class                                       train              val             test
+    Benign                                 12,362,458        2,827,526        2,324,642
+    DDoS                                      928,367          263,686          132,297
+    CredentialAttack                          386,720                0          188,474
+    DoS                                       141,590           61,300          100,076
+    Bot_or_Backdoor                           147,493           29,736           30,474
+    (excluded)                                125,703           46,909           17,638
+    Injection                                     232               93              115 ⚠ <1000 in test
+
+  AT-RISK canonical classes (test < 1000 flows): ['Injection']
+
+  Total time for NF-CSE-CIC-IDS2018-v3: 70.6s
+
+
+============================================================================
+CONSOLIDATED SUMMARY
+============================================================================
+  NF-ToN-IoT-v3                     src_IPs=  15,270  dst_IPs=   8,777  rows=  27,520,260  at_risk=['CredentialAttack', 'Reconnaissance']
+  NF-BoT-IoT-v3                     src_IPs=      20  dst_IPs=     291  rows=  16,933,808  at_risk=['DoS', 'DDoS', 'Reconnaissance', 'Benign']
+  NF-CSE-CIC-IDS2018-v3             src_IPs= 181,876  dst_IPs=  29,036  rows=  20,115,529  at_risk=['Injection']
+
+[exited with code 0]

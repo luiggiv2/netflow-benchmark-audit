@@ -1,0 +1,13 @@
+Tabular QC report for NF-BoT-IoT-v2
+Generated: 2026-10-02T02:39:00.161817+00:00
+Input:  data/processed/NF-BoT-IoT-v2/data.parquet  SHA-1 12692d7b1fa2a3a7cfc5dae82a25b8dd7329727d
+Rows processed: 37,763,497
+Features: 41 (identifiers, absolute timestamps and labels excluded)
+
+Inf converted to NaN per column:
+  none
+
+NaN per column in tabular.parquet (source NaN + converted Inf):
+  none
+
+tabular.parquet  4c5c050ffd3ae8b2a169d8f9037d0f45ff2699f9  (616.0 MB)

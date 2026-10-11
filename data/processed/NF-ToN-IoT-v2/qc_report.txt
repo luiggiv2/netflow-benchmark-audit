@@ -1,0 +1,38 @@
+QC report for NF-ToN-IoT-v2
+Generated: 2026-10-02T02:41:56.950722+00:00
+Total rows: 16,940,496
+Columns:    48
+Split: grouped by seeded hash of the normalised 41-feature vector, seed 42, 70/15/15
+
+Rows per canonical class per split:
+  class                     train          val         test        total     tr%    va%    te%  status
+  Benign                4,267,507      916,776      915,186    6,099,469   70.0%  15.0%  15.0%  OK
+  Reconnaissance        2,649,694      569,931      561,794    3,781,419   70.1%  15.1%  14.9%  OK
+  (excluded)            1,726,007      369,885      370,276    2,466,168   70.0%  15.0%  15.0%  OK
+  DDoS                  1,417,717      304,649      303,868    2,026,234   70.0%  15.0%  15.0%  OK
+  CredentialAttack        808,622      172,752      171,949    1,153,323   70.1%  15.0%  14.9%  OK
+  DoS                     498,853      106,695      107,061      712,609   70.0%  15.0%  15.0%  OK
+  Injection               479,097      102,956      102,412      684,465   70.0%  15.0%  15.0%  OK
+  Bot_or_Backdoor          11,822        2,535        2,452       16,809   70.3%  15.1%  14.6%  OK
+
+No canonical class triggers a warning.
+
+Exact duplicates on the normalised 41-feature vector:
+  unique feature vectors: 13,135,881 of 16,940,496 rows
+  duplicate rows:         3,804,615 (22.46%)
+  Duplicates stay within one split by construction of the key.
+
+Conflicting labels (identical vector, more than one canonical label; kept in the data, irreducible error floor):
+  vectors: 0   rows: 0 (0.00% of canonical rows)
+
+Implementation sanity check (holds by construction; the audit verifies it independently on tabular.parquet):
+  feature hashes assigned to more than one split: 0
+
+Source-IP overlap across splits (informative; expected given the testbed structure):
+  unique src IPs in train: 16,292
+  unique src IPs in val  : 3,631
+  unique src IPs in test : 3,589
+  shared train/test: 228
+
+NaN and Inf per column (stored as-is; the serializer converts Inf to NaN for the tabular representation):
+  none

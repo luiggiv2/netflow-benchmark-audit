@@ -1,0 +1,98 @@
+{
+  "dataset": "NF-CSE-CIC-IDS2018-v2",
+  "generated_utc": "2026-10-02T02:43:22.910836+00:00",
+  "script": "scripts/01_load_nfv3.py",
+  "environment": {
+    "pandas": "3.0.3",
+    "numpy": "2.4.6"
+  },
+  "input": {
+    "path": "b3427ed8ad063a09_MOHANAD_A4706/data/NF-CSE-CIC-IDS2018-v2.csv",
+    "sha1": "80ff7fd07e2bc31164197f07fe9d9606ee565f9a"
+  },
+  "config": {
+    "split_method": "grouped by pandas.util.hash_pandas_object of the normalised 41-feature vector, mixed with the seed constant through splitmix64, modulo 100",
+    "split_seed": 42,
+    "split_seed_const": "0xf119a835ed784c12",
+    "train_high": 70,
+    "val_high": 85,
+    "class_mapping_path": "data/schemas/class_mapping_v2.csv",
+    "class_mapping_sha1": "97d99d2afc8f0c8541de6d732631fc9cd6b3b952"
+  },
+  "typo_correction": {
+    "from": "Infilteration",
+    "to": "Infiltration",
+    "rows_affected": 116361
+  },
+  "outputs": {
+    "parquet": {
+      "path": "data/processed/NF-CSE-CIC-IDS2018-v2/data.parquet",
+      "sha1": "59fbe713c6c09abb1d0c68ef9d42665d6cc072ae",
+      "size_bytes": 799149893,
+      "rows": 18893708,
+      "columns": 48
+    },
+    "qc_report": "data/processed/NF-CSE-CIC-IDS2018-v2/qc_report.txt",
+    "log": "data/processed/NF-CSE-CIC-IDS2018-v2/load.log"
+  },
+  "qc_summary": {
+    "class_counts": {
+      "Benign": {
+        "train": 11648029,
+        "val": 2490957,
+        "test": 2496581,
+        "total": 16635567
+      },
+      "DDoS": {
+        "train": 972436,
+        "val": 208774,
+        "test": 209060,
+        "total": 1390270
+      },
+      "DoS": {
+        "train": 339428,
+        "val": 72750,
+        "test": 71821,
+        "total": 483999
+      },
+      "Bot_or_Backdoor": {
+        "train": 100278,
+        "val": 21929,
+        "test": 20890,
+        "total": 143097
+      },
+      "CredentialAttack": {
+        "train": 84618,
+        "val": 18213,
+        "test": 18081,
+        "total": 120912
+      },
+      "": {
+        "train": 83690,
+        "val": 17930,
+        "test": 17811,
+        "total": 119431
+      },
+      "Injection": {
+        "train": 311,
+        "val": 64,
+        "test": 57,
+        "total": 432
+      }
+    },
+    "duplicates_and_conflicts": {
+      "rows": 18893708,
+      "unique_feature_vectors": 17126727,
+      "duplicate_rows": 1766981,
+      "canonical_rows": 18774277,
+      "conflicting_vectors": 372,
+      "conflicting_rows": 753,
+      "conflict_label_sets": {
+        "DDoS / Injection": 372
+      }
+    },
+    "warnings": [
+      "Injection: val<1000, test<1000 (val=64, test=57, test share=13.2%)"
+    ]
+  }
+}

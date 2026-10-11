@@ -1,0 +1,33 @@
+=== bot3_ddos_dos: NF-BoT-IoT-v3, labels ['DDoS', 'DoS']
+vectors carrying >= 2 of these labels (41-feature key): 44,261; rows: 160,669
+
+[DDoS] rows 69,688; distinct vectors 44,261
+  src IP : 192.168.100.150 (38.7 %), 192.168.100.147 (24.0 %), 192.168.100.149 (20.5 %), 192.168.100.148 (16.9 %), 192.168.100.7 (0.0 %)
+  dst IP : 192.168.100.6 (57.5 %), 192.168.100.5 (31.1 %), 192.168.100.7 (8.1 %), 192.168.100.3 (3.3 %), 192.168.100.150 (0.0 %)
+  dst port: 80 (100.0 %), 0 (0.0 %)
+  protocol: 6 (99.4 %), 17 (0.6 %), 1 (0.0 %); L7_PROTO: 7.0 (99.4 %), 0.0 (0.6 %), 81.0 (0.0 %)
+  time   : 2018-06-04 07:03 to 2018-06-04 09:22 UTC
+[DoS] rows 90,981; distinct vectors 44,261
+  src IP : 192.168.100.148 (29.6 %), 192.168.100.150 (28.3 %), 192.168.100.147 (22.3 %), 192.168.100.149 (19.8 %), 192.168.100.5 (0.0 %)
+  dst IP : 192.168.100.7 (36.3 %), 192.168.100.6 (33.4 %), 192.168.100.5 (30.1 %), 192.168.100.3 (0.2 %), 192.168.100.150 (0.0 %)
+  dst port: 80 (100.0 %), 0 (0.0 %)
+  protocol: 6 (99.6 %), 17 (0.4 %), 1 (0.0 %); L7_PROTO: 7.0 (99.6 %), 0.0 (0.4 %), 81.0 (0.0 %)
+  time   : 2018-06-04 03:03 to 2018-06-04 05:11 UTC
+
+Most frequent conflicting vectors (rows per label; non-zero features):
+  - DDoS 5, DoS 4
+      L4_SRC_PORT=1104, L4_DST_PORT=80, PROTOCOL=6, L7_PROTO=7, IN_BYTES=140, IN_PKTS=1, TCP_FLAGS=2, CLIENT_TCP_FLAGS=2, LONGEST_FLOW_PKT=140, SHORTEST_FLOW_PKT=140, MAX_IP_PKT_LEN=140, DST_TO_SRC_SECOND_BYTES=inf, SRC_TO_DST_AVG_THROUGHPUT=1120000, NUM_PKTS_128_TO_256_BYTES=1, TCP_WIN_MAX_IN=512
+  - DDoS 5, DoS 4
+      L4_SRC_PORT=1124, L4_DST_PORT=80, PROTOCOL=6, L7_PROTO=7, IN_BYTES=140, IN_PKTS=1, TCP_FLAGS=2, CLIENT_TCP_FLAGS=2, LONGEST_FLOW_PKT=140, SHORTEST_FLOW_PKT=140, MAX_IP_PKT_LEN=140, DST_TO_SRC_SECOND_BYTES=inf, SRC_TO_DST_AVG_THROUGHPUT=1120000, NUM_PKTS_128_TO_256_BYTES=1, TCP_WIN_MAX_IN=512
+  - DDoS 5, DoS 4
+      L4_SRC_PORT=1117, L4_DST_PORT=80, PROTOCOL=6, L7_PROTO=7, IN_BYTES=140, IN_PKTS=1, TCP_FLAGS=2, CLIENT_TCP_FLAGS=2, LONGEST_FLOW_PKT=140, SHORTEST_FLOW_PKT=140, MAX_IP_PKT_LEN=140, DST_TO_SRC_SECOND_BYTES=inf, SRC_TO_DST_AVG_THROUGHPUT=1120000, NUM_PKTS_128_TO_256_BYTES=1, TCP_WIN_MAX_IN=512
+  - DDoS 5, DoS 4
+      L4_SRC_PORT=1103, L4_DST_PORT=80, PROTOCOL=6, L7_PROTO=7, IN_BYTES=140, IN_PKTS=1, TCP_FLAGS=2, CLIENT_TCP_FLAGS=2, LONGEST_FLOW_PKT=140, SHORTEST_FLOW_PKT=140, MAX_IP_PKT_LEN=140, DST_TO_SRC_SECOND_BYTES=inf, SRC_TO_DST_AVG_THROUGHPUT=1120000, NUM_PKTS_128_TO_256_BYTES=1, TCP_WIN_MAX_IN=512
+  - DDoS 5, DoS 4
+      L4_SRC_PORT=1114, L4_DST_PORT=80, PROTOCOL=6, L7_PROTO=7, IN_BYTES=140, IN_PKTS=1, TCP_FLAGS=2, CLIENT_TCP_FLAGS=2, LONGEST_FLOW_PKT=140, SHORTEST_FLOW_PKT=140, MAX_IP_PKT_LEN=140, DST_TO_SRC_SECOND_BYTES=inf, SRC_TO_DST_AVG_THROUGHPUT=1120000, NUM_PKTS_128_TO_256_BYTES=1, TCP_WIN_MAX_IN=512
+  share of conflicting rows in the top 1 / 10 / 100 vectors: 0.0 % / 0.1 % / 0.5 %
+
+Full records (features + IPs + timestamps) carrying >1 label: 0 records, 0 rows (0.00 % of group rows)
+Full-record duplicates within the same label (identical record repeated): 0 rows (0.00 % of group rows)
+Exact re-check (no hashing) on 500 sampled vectors: 500 distinct exact vectors with >1 label, 0 with a single label
+

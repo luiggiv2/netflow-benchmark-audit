@@ -1,0 +1,55 @@
+{
+  "dataset": "NF-BoT-IoT-v3",
+  "generated_utc": "2026-10-02T17:09:16.917094+00:00",
+  "rows": 16933808,
+  "class_rows": {
+    "Benign": 51989,
+    "DDoS": 7150882,
+    "DoS": 8034190,
+    "Reconnaissance": 1695132,
+    "Theft": 1615
+  },
+  "checks": {
+    "rate_nonfinite": {
+      "rows": 1052105,
+      "per_class": {
+        "Benign": 33764,
+        "DDoS": 91393,
+        "DoS": 227599,
+        "Reconnaissance": 698213,
+        "Theft": 1136
+      }
+    },
+    "dir_duration_gt": {
+      "rows": 7154,
+      "per_class": {
+        "DDoS": 2787,
+        "DoS": 4353,
+        "Benign": 12,
+        "Reconnaissance": 2
+      }
+    },
+    "bytes_below_ip_hdr": {
+      "rows": 80,
+      "per_class": {
+        "Reconnaissance": 80
+      }
+    },
+    "size_bins_gt_pkts": {
+      "rows": 281,
+      "per_class": {
+        "Reconnaissance": 281
+      }
+    },
+    "dns_ttl_over_2p31": {
+      "rows": 320,
+      "per_class": {
+        "Reconnaissance": 320
+      }
+    }
+  },
+  "constant_features": [],
+  "constant_values": {},
+  "duration_near_2p32_values": {},
+  "service_ports": {}
+}

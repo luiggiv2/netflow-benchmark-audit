@@ -1,0 +1,47 @@
+{
+  "dataset": "NF-ToN-IoT-v3",
+  "generated_utc": "2026-10-02T17:09:03.819470+00:00",
+  "rows": 27520260,
+  "class_rows": {
+    "Benign": 16792214,
+    "scanning": 1358977,
+    "dos": 203456,
+    "injection": 381777,
+    "ddos": 4141256,
+    "password": 1594777,
+    "xss": 2834435,
+    "ransomware": 3971,
+    "Backdoor": 203384,
+    "mitm": 6013
+  },
+  "checks": {
+    "size_bins_gt_pkts": {
+      "rows": 148116,
+      "per_class": {
+        "Benign": 78474,
+        "scanning": 171,
+        "password": 66022,
+        "mitm": 3449
+      }
+    },
+    "bytes_below_ip_hdr": {
+      "rows": 53263,
+      "per_class": {
+        "Benign": 19226,
+        "scanning": 38,
+        "password": 33999
+      }
+    },
+    "dir_duration_gt": {
+      "rows": 17,
+      "per_class": {
+        "password": 8,
+        "Benign": 9
+      }
+    }
+  },
+  "constant_features": [],
+  "constant_values": {},
+  "duration_near_2p32_values": {},
+  "service_ports": {}
+}

@@ -1,0 +1,31 @@
+dataset,native_label,canonical_label,notes
+NF-ToN-IoT-v3,Benign,Benign,
+NF-ToN-IoT-v3,dos,DoS,
+NF-ToN-IoT-v3,ddos,DDoS,
+NF-ToN-IoT-v3,scanning,Reconnaissance,pair with NF-BoT-IoT-v3.Reconnaissance
+NF-ToN-IoT-v3,password,CredentialAttack,pair with NF-CSE-CIC-IDS2018-v3 FTP-BruteForce+SSH-Bruteforce; ToN.password also includes password sniffing (documented caveat)
+NF-ToN-IoT-v3,Backdoor,Bot_or_Backdoor,extended pair with NF-CSE-CIC-IDS2018-v3.Bot; different mechanisms (remote-access backdoor vs botnet C2); reported in extended panel with caveat
+NF-ToN-IoT-v3,injection,Injection,extended pair with NF-CSE-CIC-IDS2018-v3.SQL_Injection; ToN.injection is broad (SQL + code + variants) while CIC side is SQL-only with 440 flows; documented caveat
+NF-ToN-IoT-v3,xss,,ToN-only; excluded from cross-dataset canonical to avoid coverage-gap artefacts; retained for intra-ToN reporting and qualitative discussion
+NF-ToN-IoT-v3,mitm,,ToN-only + only 6013 flows; excluded from cross-dataset canonical
+NF-ToN-IoT-v3,ransomware,,ToN-only + only 3971 flows; excluded from cross-dataset canonical
+NF-BoT-IoT-v3,Benign,Benign,
+NF-BoT-IoT-v3,DoS,DoS,
+NF-BoT-IoT-v3,DDoS,DDoS,
+NF-BoT-IoT-v3,Reconnaissance,Reconnaissance,
+NF-BoT-IoT-v3,Theft,,BoT-only + only 1615 flows; excluded from cross-dataset canonical
+NF-CSE-CIC-IDS2018-v3,Benign,Benign,
+NF-CSE-CIC-IDS2018-v3,DoS_attacks-Slowloris,DoS,CIC DoS subtype (aggregated to canonical DoS)
+NF-CSE-CIC-IDS2018-v3,DoS_attacks-Hulk,DoS,CIC DoS subtype
+NF-CSE-CIC-IDS2018-v3,DoS_attacks-GoldenEye,DoS,CIC DoS subtype
+NF-CSE-CIC-IDS2018-v3,DoS_attacks-SlowHTTPTest,DoS,CIC DoS subtype
+NF-CSE-CIC-IDS2018-v3,DDOS_attack-HOIC,DDoS,CIC DDoS subtype (aggregated to canonical DDoS); note DDOS in caps
+NF-CSE-CIC-IDS2018-v3,DDoS_attacks-LOIC-HTTP,DDoS,CIC DDoS subtype; note DDoS mixed case in the same file
+NF-CSE-CIC-IDS2018-v3,DDOS_attack-LOIC-UDP,DDoS,CIC DDoS subtype
+NF-CSE-CIC-IDS2018-v3,FTP-BruteForce,CredentialAttack,pair with NF-ToN-IoT-v3.password
+NF-CSE-CIC-IDS2018-v3,SSH-Bruteforce,CredentialAttack,pair with NF-ToN-IoT-v3.password
+NF-CSE-CIC-IDS2018-v3,Bot,Bot_or_Backdoor,extended pair with NF-ToN-IoT-v3.backdoor; different mechanisms; extended panel with caveat
+NF-CSE-CIC-IDS2018-v3,SQL_Injection,Injection,extended pair with NF-ToN-IoT-v3.injection; narrow scope (SQL only) and small size (440 flows); wide CIs expected
+NF-CSE-CIC-IDS2018-v3,Infiltration,,CIC-only; normalised in the loader from source typo 'Infilteration' (extra 'e' after the first 't') before joining; excluded from cross-dataset canonical
+NF-CSE-CIC-IDS2018-v3,Brute_Force_-Web,,CIC-only web attack; excluded (Web Attacks superclass has no equivalent in ToN or BoT)
+NF-CSE-CIC-IDS2018-v3,Brute_Force_-XSS,,CIC-only web attack; excluded

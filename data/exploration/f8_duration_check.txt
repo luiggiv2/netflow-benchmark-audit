@@ -1,0 +1,88 @@
+F8 check: FLOW_DURATION_MILLISECONDS near 2^32 / 1000 ms
+Generated: 2026-10-02T18:21:01.023384+00:00
+Old threshold (script 35): >= 4,294,000 ms; 2^32 // 1000 = 4,294,967 ms
+
+== NF-ToN-IoT-v3: 27,520,260 rows; max 120,999 ms; zero 0.0000
+  rows by duration bin (ms): [120,000, 600,000) 1,459; [600,000, 1,800,000) 0; [1,800,000, 4,000,000) 0; [4,000,000, 4,294,000) 0; [4,294,000, 8,589,934,592) 0
+  DURATION_IN: max 120,999 ms
+  DURATION_OUT: max 120,989 ms
+
+== NF-BoT-IoT-v3: 16,933,808 rows; max 120,998 ms; zero 0.0621
+  rows by duration bin (ms): [120,000, 600,000) 4,885; [600,000, 1,800,000) 0; [1,800,000, 4,000,000) 0; [4,000,000, 4,294,000) 0; [4,294,000, 8,589,934,592) 0
+  DURATION_IN: max 120,998 ms
+  DURATION_OUT: max 120,997 ms
+
+== NF-CSE-CIC-IDS2018-v3: 20,115,529 rows; max 120,999 ms; zero 0.0000
+  rows by duration bin (ms): [120,000, 600,000) 155,863; [600,000, 1,800,000) 0; [1,800,000, 4,000,000) 0; [4,000,000, 4,294,000) 0; [4,294,000, 8,589,934,592) 0
+  DURATION_IN: max 120,999 ms
+  DURATION_OUT: max 120,999 ms
+
+== NF-ToN-IoT-v2: 16,940,496 rows; max 4,294,966 ms; zero 0.8154
+  rows by duration bin (ms): [120,000, 600,000) 0; [600,000, 1,800,000) 0; [1,800,000, 4,000,000) 0; [4,000,000, 4,294,000) 20,786; [4,294,000, 8,589,934,592) 3,106,636
+  DURATION_IN: max 119,574 ms
+  DURATION_OUT: max 119,558 ms
+  non-zero FLOW_DURATION_MILLISECONDS: min 4,175,393 ms (= 4,294,967 - 119,574); no value in [1, 4,175,393)
+  share of rows: >= old threshold 0.1834 (3,106,636); >= edge 0.1846 (3,127,422)
+  per native class (rows; share >= edge; share >= old threshold):
+    ddos                           2,026,234  0.7283  0.7283
+    password                       1,153,323  0.4096  0.4090
+    injection                        684,465  0.3497  0.3470
+    mitm                               7,723  0.1123  0.1097
+    ransomware                         3,425  0.0902  0.0902
+    xss                            2,455,020  0.0887  0.0867
+    Benign                         6,099,469  0.0805  0.0784
+    scanning                       3,781,419  0.0591  0.0590
+    backdoor                          16,809  0.0152  0.0152
+    dos                              712,609  0.0085  0.0085
+  non-zero rows where 4,294,967 - FLOW_DURATION == max(DURATION_IN, DURATION_OUT): exact 0.9057, within 1 ms 0.9065
+  zero-duration rows with max(DURATION_IN, DURATION_OUT) > 0: 0.0000
+  non-zero rows where 4,294,967 - FLOW_DURATION >= max(DURATION_IN, DURATION_OUT): 1.0000
+  rows off by more than 1 ms: 292,508; implied duration above the longest directional one 1.0000; both directional durations 0 0.9577; implied duration median 31 ms, p95 281 ms, max 86,775 ms
+    top classes: scanning 208,217; Benign 62,806; ddos 9,418; xss 6,129
+
+== NF-BoT-IoT-v2: 37,763,497 rows; max 4,294,966 ms; zero 0.0687
+  rows by duration bin (ms): [120,000, 600,000) 0; [600,000, 1,800,000) 0; [1,800,000, 4,000,000) 0; [4,000,000, 4,294,000) 21,392,783; [4,294,000, 8,589,934,592) 13,778,185
+  DURATION_IN: max 3,500 ms
+  DURATION_OUT: max 3,500 ms
+  non-zero FLOW_DURATION_MILLISECONDS: min 4,291,467 ms (= 4,294,967 - 3,500); no value in [1, 4,291,467)
+  share of rows: >= old threshold 0.3649 (13,778,185); >= edge 0.9313 (35,170,968)
+  per native class (rows; share >= edge; share >= old threshold):
+    DDoS                          18,331,847  0.9828  0.5136
+    DoS                           16,673,183  0.9566  0.2218
+    Benign                           135,037  0.6289  0.1679
+    Reconnaissance                 2,620,999  0.4269  0.2448
+    Theft                              2,431  0.3620  0.1711
+  non-zero rows where 4,294,967 - FLOW_DURATION == max(DURATION_IN, DURATION_OUT): exact 0.9803, within 1 ms 0.9804
+  zero-duration rows with max(DURATION_IN, DURATION_OUT) > 0: 0.0000
+  non-zero rows where 4,294,967 - FLOW_DURATION >= max(DURATION_IN, DURATION_OUT): 1.0000
+  rows off by more than 1 ms: 690,470; implied duration above the longest directional one 1.0000; both directional durations 0 0.8025; implied duration median 16 ms, p95 2,015 ms, max 2,531 ms
+    top classes: DoS 451,062; Reconnaissance 146,305; Benign 63,980; DDoS 29,123
+
+== NF-CSE-CIC-IDS2018-v2: 18,893,708 rows; max 4,294,967 ms; zero 0.8662
+  rows by duration bin (ms): [120,000, 600,000) 0; [600,000, 1,800,000) 0; [1,800,000, 4,000,000) 0; [4,000,000, 4,294,000) 23,092; [4,294,000, 8,589,934,592) 2,504,904
+  DURATION_IN: max 106,714 ms
+  DURATION_OUT: max 55,477 ms
+  non-zero FLOW_DURATION_MILLISECONDS: min 4,188,252 ms (= 4,294,967 - 106,715); no value in [1, 4,188,252)
+  share of rows: >= old threshold 0.1326 (2,504,904); >= edge 0.1338 (2,527,996)
+  per native class (rows; share >= edge; share >= old threshold):
+    DDOS attack-HOIC               1,080,858  1.0000  0.9949
+    DoS attacks-SlowHTTPTest          14,116  1.0000  1.0000
+    FTP-BruteForce                    25,933  1.0000  1.0000
+    DDOS attack-LOIC-UDP               2,112  0.9991  0.0275
+    DoS attacks-Hulk                 432,648  0.9638  0.9638
+    DoS attacks-GoldenEye             27,723  0.9631  0.9556
+    Brute Force -XSS                     927  0.8749  0.8522
+    Brute Force -Web                   2,143  0.8745  0.8577
+    SQL Injection                        432  0.8681  0.8634
+    DDoS attacks-LOIC-HTTP           307,300  0.8530  0.8530
+    DoS attacks-Slowloris              9,512  0.3763  0.3763
+    SSH-Bruteforce                    94,979  0.1708  0.0222
+    Bot                              143,097  0.0607  0.0607
+    Infiltration                     116,361  0.0554  0.0550
+    Benign                        16,635,567  0.0397  0.0397
+  non-zero rows where 4,294,967 - FLOW_DURATION == max(DURATION_IN, DURATION_OUT): exact 0.6904, within 1 ms 0.9950
+  zero-duration rows with max(DURATION_IN, DURATION_OUT) > 0: 0.0000
+  non-zero rows where 4,294,967 - FLOW_DURATION >= max(DURATION_IN, DURATION_OUT): 1.0000
+  rows off by more than 1 ms: 12,558; implied duration above the longest directional one 1.0000; both directional durations 0 0.9961; implied duration median 16 ms, p95 16 ms, max 1,570 ms
+    top classes: Benign 12,250; Infiltration 305; Brute Force -Web 1; Brute Force -XSS 1
+

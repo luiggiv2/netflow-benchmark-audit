@@ -1,0 +1,467 @@
+# MANIFEST — SHA-1 checksums for every artefact of Paper B (Phases 1-4)
+#
+# Regenerated: 2026-10-11T03:12:23.237979+00:00
+# Producer:    scripts/18_write_master_manifest.py
+#
+# Format: <sha1>  <path-relative-to-workspace-root>
+# Lines starting with '#' are comments.
+#
+# Sections:
+#   1. Raw datasets (BagIt bags from UQ eSpace)
+#   2. Schemas (join keys and feature dictionaries)
+#   3. Loader outputs (data.parquet + QC + manifest per dataset)
+#   4. Tabular-builder outputs (tabular.parquet + QC + manifest)
+#   5. Audit outputs (audit_report.txt, audit_manifest.json)
+#   6. Cross-file metadata SHA-1 (batch-boundary invariant)
+#   7. Public code
+#   8. Result files of Phases 3-4
+#   9. Partition hashes
+
+# ============================================================
+# 1. Raw datasets (UQ eSpace bags; do not modify)
+# ============================================================
+# --- NF-ToN-IoT-v3 ---
+24854ca3072ab7c2ade9ebfb202345a666a94cfe  02934b58528a226b_NFV3DATA-A11964_A11964/data/NF-ToN-IoT-v3.csv
+d028597391217f78df3db31c1dbd96805203196f  02934b58528a226b_NFV3DATA-A11964_A11964/data/NetFlow_v3_Features.csv
+9fda6405393a2e1d9c68dc21b2343dd6b3f1a639  02934b58528a226b_NFV3DATA-A11964_A11964/manifest-sha1.txt
+88e57d6a3322ac6865d0ef93c58f8200cefc3703  02934b58528a226b_NFV3DATA-A11964_A11964/bag-info.txt
+a7b95616bf7307fc398baeb04ce60a88ed370f51  02934b58528a226b_NFV3DATA-A11964_A11964/bagit.txt
+
+# --- NF-BoT-IoT-v3 ---
+357cc7ffe46ef57ba8193a58d7a66eff5cf44db8  d509c9db7490cf92_NFV3DATA-A11964_A11964/data/NF-BoT-IoT-v3.csv
+d028597391217f78df3db31c1dbd96805203196f  d509c9db7490cf92_NFV3DATA-A11964_A11964/data/NetFlow_v3_Features.csv
+894545661eb41aa13e07ddb38e1bb74886484bb0  d509c9db7490cf92_NFV3DATA-A11964_A11964/manifest-sha1.txt
+d60385e285aba1843ff90c2025e64cf9040f7ede  d509c9db7490cf92_NFV3DATA-A11964_A11964/bag-info.txt
+a7b95616bf7307fc398baeb04ce60a88ed370f51  d509c9db7490cf92_NFV3DATA-A11964_A11964/bagit.txt
+
+# --- NF-CSE-CIC-IDS2018-v3 ---
+ddcad6d826b73a128a447a0189137efd6c8f70c9  f78acbaa2afe1595_NFV3DATA-A11964_A11964/data/NF-CICIDS2018-v3.csv
+d028597391217f78df3db31c1dbd96805203196f  f78acbaa2afe1595_NFV3DATA-A11964_A11964/data/NetFlow_v3_Features.csv
+cf87303a7b21c5c1eb29174ab13c9e09650f9b6c  f78acbaa2afe1595_NFV3DATA-A11964_A11964/manifest-sha1.txt
+6acc96e68f353e3eae661a399844c889423b9415  f78acbaa2afe1595_NFV3DATA-A11964_A11964/bag-info.txt
+a7b95616bf7307fc398baeb04ce60a88ed370f51  f78acbaa2afe1595_NFV3DATA-A11964_A11964/bagit.txt
+
+# --- NF-ToN-IoT-v2 ---
+c0e014512c9a825146c52982d3cf12d3fce1ccc9  9bafce9d380588c2_MOHANAD_A4706/data/NF-ToN-IoT-v2.csv
+6cf84d2d76c29321175d9429996d7cda2f3b15d6  9bafce9d380588c2_MOHANAD_A4706/data/NetFlow_v2_Features.csv
+1ccc167f1dd82d07409862e9292ca6699ba1fe0f  9bafce9d380588c2_MOHANAD_A4706/manifest-sha1.txt
+ddb2ad408d6a57f612ff306734674c3e9dfc701f  9bafce9d380588c2_MOHANAD_A4706/bag-info.txt
+a7b95616bf7307fc398baeb04ce60a88ed370f51  9bafce9d380588c2_MOHANAD_A4706/bagit.txt
+
+# --- NF-BoT-IoT-v2 ---
+cddcc616a032f55a6a5ab3e382093636449653d6  befb58edf3428167_MOHANAD_A4706/data/NF-BoT-IoT-v2.csv
+6cf84d2d76c29321175d9429996d7cda2f3b15d6  befb58edf3428167_MOHANAD_A4706/data/NetFlow_v2_Features.csv
+906206fc39d1f19dfacbe270b1da6c6d1774b967  befb58edf3428167_MOHANAD_A4706/manifest-sha1.txt
+33840f3ca437c37233c693e50ae4d2dc51d91401  befb58edf3428167_MOHANAD_A4706/bag-info.txt
+a7b95616bf7307fc398baeb04ce60a88ed370f51  befb58edf3428167_MOHANAD_A4706/bagit.txt
+
+# --- NF-CSE-CIC-IDS2018-v2 ---
+80ff7fd07e2bc31164197f07fe9d9606ee565f9a  b3427ed8ad063a09_MOHANAD_A4706/data/NF-CSE-CIC-IDS2018-v2.csv
+6cf84d2d76c29321175d9429996d7cda2f3b15d6  b3427ed8ad063a09_MOHANAD_A4706/data/NetFlow_v2_Features.csv
+ad6793bca01b655fa76b017924287dce103ee5a0  b3427ed8ad063a09_MOHANAD_A4706/manifest-sha1.txt
+23d1fc2bed44845c61a515165155a5a4524c804b  b3427ed8ad063a09_MOHANAD_A4706/bag-info.txt
+a7b95616bf7307fc398baeb04ce60a88ed370f51  b3427ed8ad063a09_MOHANAD_A4706/bagit.txt
+
+# ============================================================
+# 2. Schemas (join keys and feature dictionaries)
+# ============================================================
+395924d802f2490af7a7f045f82bab7cc72ed03e  data/schemas/class_mapping.csv
+97d99d2afc8f0c8541de6d732631fc9cd6b3b952  data/schemas/class_mapping_v2.csv
+f8a256ad853c0fe5997ae399fdd294799195fff3  scripts/nfv3_config.py
+c5ead36ae537bbab174d03c485dc60001bd715ed  requirements-lock.txt
+d028597391217f78df3db31c1dbd96805203196f  02934b58528a226b_NFV3DATA-A11964_A11964/data/NetFlow_v3_Features.csv  (same file in every bag of this version)
+6cf84d2d76c29321175d9429996d7cda2f3b15d6  9bafce9d380588c2_MOHANAD_A4706/data/NetFlow_v2_Features.csv  (same file in every bag of this version)
+
+# ============================================================
+# 3-6. Processed artefacts per dataset
+#      loader (P1.5) + tabular builder (P1.6) + audit (P1.7)
+#      including cross-file metadata SHA-1
+# ============================================================
+# --- NF-ToN-IoT-v3 ---
+506f057847180a4762d68da9fb500b45092b55bb  data/processed/NF-ToN-IoT-v3/data.parquet
+40c0f1235a9bacd55815366e4d9b642d76c8066e  data/processed/NF-ToN-IoT-v3/tabular.parquet
+0dcd02eb439119d88dca1534ca2a5a4cb75d9bc1  data/processed/NF-ToN-IoT-v3/qc_report.txt
+6e55951e47e68878874e94afb7203cd1807d39c1  data/processed/NF-ToN-IoT-v3/tabular_qc.txt
+e5a5a7c6cdc711c386d90f9cf8cbfb8963f6b467  data/processed/NF-ToN-IoT-v3/audit_report.txt
+e5c2dc53b0ea26c28ccd528011a11775a5678701  data/processed/NF-ToN-IoT-v3/manifest.json
+96f0955e9c2545e11021fedc38ea293505f39160  data/processed/NF-ToN-IoT-v3/tabular_manifest.json
+5fc90c3b05c8b0ff0d4fa52ceb8e28a4ecae19cd  data/processed/NF-ToN-IoT-v3/audit_manifest.json
+6d81822ddfddee6d45a829d92b5473ea24203bc6  NF-ToN-IoT-v3 / cross-file metadata SHA-1
+
+# --- NF-BoT-IoT-v3 ---
+879295b7fb3299f9100345d72df03f98447abf04  data/processed/NF-BoT-IoT-v3/data.parquet
+c8c1572b0bb3b3092ca029ab2d9bd9836eeeeeec  data/processed/NF-BoT-IoT-v3/tabular.parquet
+66eadcedf468f68f673df62febd324c87590bd81  data/processed/NF-BoT-IoT-v3/qc_report.txt
+15cd32d3591b1558606d32b1560f93cd07d2bc8e  data/processed/NF-BoT-IoT-v3/tabular_qc.txt
+e1979e6ec2017615b66e7b8b40884dc4b026829a  data/processed/NF-BoT-IoT-v3/audit_report.txt
+04eabbacda949ad8577506a4d1d52c710cadf43b  data/processed/NF-BoT-IoT-v3/manifest.json
+f1f9e54d86c283124dafe389b3e1ee52e18549da  data/processed/NF-BoT-IoT-v3/tabular_manifest.json
+a7613d821c85acca8ca16049445fcf512792cb59  data/processed/NF-BoT-IoT-v3/audit_manifest.json
+728fa0e634c900b4365e0bf78e8ec250016b00e7  NF-BoT-IoT-v3 / cross-file metadata SHA-1
+
+# --- NF-CSE-CIC-IDS2018-v3 ---
+404207c1fda9fe9f3843b2dd8f1ada1337a148b3  data/processed/NF-CSE-CIC-IDS2018-v3/data.parquet
+dca6a339235b2a9b8102cf254bd42cd8b59384c4  data/processed/NF-CSE-CIC-IDS2018-v3/tabular.parquet
+707abf800afd4586ab7360cb4a0acce8206b3ca0  data/processed/NF-CSE-CIC-IDS2018-v3/qc_report.txt
+ae5181aa25b703e12a218a8441c0454f0a9177a8  data/processed/NF-CSE-CIC-IDS2018-v3/tabular_qc.txt
+de8b815c77f22910ddcd05b95b39f7b2884987f6  data/processed/NF-CSE-CIC-IDS2018-v3/audit_report.txt
+3ec8fe4d06b0b08bee1be5c7aecb30ed40618a7c  data/processed/NF-CSE-CIC-IDS2018-v3/manifest.json
+f611f67a2a56f9a04e4aacdcf83d4ebcc88aad48  data/processed/NF-CSE-CIC-IDS2018-v3/tabular_manifest.json
+bbdde2d4b6b8ead3a49d8edc28ceef486b707c07  data/processed/NF-CSE-CIC-IDS2018-v3/audit_manifest.json
+3266b65f0630ce5fd056608d3402cc90508a6ba0  NF-CSE-CIC-IDS2018-v3 / cross-file metadata SHA-1
+
+# --- NF-ToN-IoT-v2 ---
+d65614dbed3ba677f8ab1900cdf4650c11ff42ce  data/processed/NF-ToN-IoT-v2/data.parquet
+c0f6552fbe2eedd11124be78d13d3c78b2585c23  data/processed/NF-ToN-IoT-v2/tabular.parquet
+df799dc1bfab911b219be3d44b60de380a09c57d  data/processed/NF-ToN-IoT-v2/qc_report.txt
+59e46652870b3d8318043d2ab53a4f7b0c6e4368  data/processed/NF-ToN-IoT-v2/tabular_qc.txt
+29a10f590c195e2463aac40d0548b5c0b0663005  data/processed/NF-ToN-IoT-v2/audit_report.txt
+4e83f73b49d4f1c9a673ab5c2d3272de7a904beb  data/processed/NF-ToN-IoT-v2/manifest.json
+01d44d3515d699a14adac8284e94b4f474144e78  data/processed/NF-ToN-IoT-v2/tabular_manifest.json
+378dc71375b5e62567940b7e7fe30b9cb0504c02  data/processed/NF-ToN-IoT-v2/audit_manifest.json
+4385d877b946bef6c7bd8168368901f2ad34cbae  NF-ToN-IoT-v2 / cross-file metadata SHA-1
+
+# --- NF-BoT-IoT-v2 ---
+12692d7b1fa2a3a7cfc5dae82a25b8dd7329727d  data/processed/NF-BoT-IoT-v2/data.parquet
+4c5c050ffd3ae8b2a169d8f9037d0f45ff2699f9  data/processed/NF-BoT-IoT-v2/tabular.parquet
+93463879a114288dd40dc29985913717681d5898  data/processed/NF-BoT-IoT-v2/qc_report.txt
+32cb25099990086b05a63b51b83a6607fa46f93f  data/processed/NF-BoT-IoT-v2/tabular_qc.txt
+400ce71f621436728686a2f7ff0109feb8bfecbe  data/processed/NF-BoT-IoT-v2/audit_report.txt
+1122fdd232229a2ee49f03a809b78aa42e1a1e6f  data/processed/NF-BoT-IoT-v2/manifest.json
+1dcb8b5051dd58b199e29a7ba432bf573c743662  data/processed/NF-BoT-IoT-v2/tabular_manifest.json
+6f2401210dd2ad7e474c6342f998eb049c1331d5  data/processed/NF-BoT-IoT-v2/audit_manifest.json
+4408cfaf6cba7949ca6c821c88921a5fc6d57039  NF-BoT-IoT-v2 / cross-file metadata SHA-1
+
+# --- NF-CSE-CIC-IDS2018-v2 ---
+59fbe713c6c09abb1d0c68ef9d42665d6cc072ae  data/processed/NF-CSE-CIC-IDS2018-v2/data.parquet
+0b136454441bc61285c6bfd981cdd04c3c469bc8  data/processed/NF-CSE-CIC-IDS2018-v2/tabular.parquet
+4ff50a5de879ac68363b5ae886e71d123f60d5fe  data/processed/NF-CSE-CIC-IDS2018-v2/qc_report.txt
+9308e3b734361b8ad156fcaba1ddb1ed6df7b7ee  data/processed/NF-CSE-CIC-IDS2018-v2/tabular_qc.txt
+1638c975b383eb014f112a19d67a18d1a24b4cf6  data/processed/NF-CSE-CIC-IDS2018-v2/audit_report.txt
+e31826e91100e6af2b196b176bbe6b3540704569  data/processed/NF-CSE-CIC-IDS2018-v2/manifest.json
+1f6ab768f8ea1bd551515310b375de8bbb9a2026  data/processed/NF-CSE-CIC-IDS2018-v2/tabular_manifest.json
+048315d594c2e1cfe3f136fb2edc31777ecb9363  data/processed/NF-CSE-CIC-IDS2018-v2/audit_manifest.json
+d297bd2ddda3b852cac4a0fdab49e34637d85cd9  NF-CSE-CIC-IDS2018-v2 / cross-file metadata SHA-1
+
+# ============================================================
+# 7. Public code (groups A data pipeline, B audit, C Phase 4)
+# ============================================================
+# --- group A ---
+f8a256ad853c0fe5997ae399fdd294799195fff3  scripts/nfv3_config.py
+7adfe76617ccf6bcb043d88cb36e9cf5ba6350e3  scripts/01_load_nfv3.py
+59a0bb5207602b3234dc819e0145fddb1efd2d33  scripts/02_build_tabular_nfv3.py
+2a7be89df2ddce922511c9eb14790ed9ae6f1bc5  scripts/17_reproducibility_audit.py
+bca422b97fb51fd67ef40b18f4288c98afcc82bd  scripts/18_write_master_manifest.py
+# --- group B ---
+376e31f878d71aa70b7bc4902cf9d78e437851ef  scripts/30_audit_duplicates_conflicts.py
+8cb08a4b92b39194c2e51e1dc7b6ad4e62694c0c  scripts/31_inspect_conflict_groups.py
+00de14c176b96c19c5e8bd977fd41ab0a2f5fdd2  scripts/32_flood_heuristics.py
+bb68c81d2a7a6b953fe736059761eac436d47fac  scripts/33_flood_comparison.py
+4e3c423d893f58fb2c1b4825e16a465561191c09  scripts/34_shortcut_probes.py
+74d746fc4fef13356ab26ad8942dbdeba8ff27ac  scripts/35_value_anomalies.py
+798ccd178061f6fafec8606b9c456927cfd5d9be  scripts/36_inspect_undetermined_cases.py
+290a10ec159a07779046242eb993c02032d22c56  scripts/exploration/f8_duration_check.py
+cfe956a467e0dc489d7a793857876fd2a99ab68f  scripts/exploration/split_key_sensitivity.py
+f2755bb44fe7afd46ae4e0241f2ffeb16f8d82ef  scripts/exploration/timestamp_probe.py
+3733e981670a4000880ad56664d83c05846284d9  scripts/exploration/rq2_threshold_sensitivity.py
+fa3bb9cc56a054e034538d7d00db09101beee83b  scripts/exploration/class_vector_counts.py
+ac228c6bb43b4153eff9b279b77b56fda18734ea  scripts/exploration/dns_ttl_anomaly.py
+89a5f09be3d95bdefb5a95ae05715fc3b79bee1f  scripts/exploration/nfv2_dtype_ranges.py
+0519453986784257a7701a83e4152864732db4a8  scripts/exploration/src_port_signal.py
+75f8e7dc5f562ff7398ccd5b85afb52880d1d8a8  scripts/exploration/p14_ip_split_exploration.py
+8e8bbb54cdd60e13fc4a109bdeb00415ce0a4b41  scripts/exploration/p14_temporal_split_exploration.py
+148fab565f2cb77e7a84177e79f094ba8194ed01  scripts/exploration/validate_nfv2_bags.py
+6ad7581cb8c76f2b23e1b84bc554fa70de3e38f1  scripts/exploration/review_audit_negative_controls.py
+f49eb0fe11bd868f86595342ea21e14ea9db2a58  scripts/exploration/compare_shortcut_probes.py
+0b5b325a311a8639eff1a3e093749460a7a649b7  scripts/exploration/f2b_window_check.py
+49e72016187c2311ce8835612723164cea6473e8  scripts/exploration/f2d_v2_label_sets.py
+9070d3dc09248b55f66ee06edb34ad015c7ee974  scripts/exploration/f9_nonfinite_check.py
+bbf7e7aca1d82007f452d576cb691330a08a01bf  scripts/exploration/five_tuple_split_check.py
+eee3108892299b79d80fa6474baf4197a84ba7f1  scripts/exploration/n2_setc_leak_check.py
+9d0c64a9c47b0c3953a20cb8afe9bc84a1ec4370  scripts/exploration/n9_minority_composition.py
+d9e449a6baf1047b693521378596c0d9f38c6003  scripts/exploration/r3m1_l7proto_icmp_check.py
+80e251e9445017fc0b29140fe558798600dc0d02  scripts/exploration/r3m1_probes_no_service.py
+4620fbdfcfbafe5af5f45dbe2dc986624ce821ae  scripts/exploration/r3m7_probes_seeds.py
+# --- group C ---
+affef820cf578707623500229817864f024fad5a  scripts/40_split_verification.py
+e0ec1c9e9ca1a55f3c498ba0a707858f46316d0d  scripts/42_in_domain.py
+b44eaf589ef0f3a4ef613ee41ceb37f1177dd089  scripts/43_inspect_in_domain.py
+a107ec522d7eeeaeb3766cf854e572ca384f415a  scripts/44_cross_dataset.py
+113cf25588d7b85afd7c47491fbc97ce6de9ad75  scripts/45_inspect_cross.py
+d4a0931645b0ae112b1ac0e89aef51df99ffdcba  scripts/46_replication.py
+508b8a73411494da7e57448d0f1d74d7cbbaeb37  scripts/47_shap.py
+f68ead392ed09b7e736f7244dc4c8a221aaf4596  scripts/48_split_hashes.py
+fe4c1903ff047937f23021c97361f2e857ab9b23  scripts/exploration/m8_reply_check.py
+344502075357c7a551dbf105702a3ed34567c960  scripts/exploration/n1_reply_proxy_check.py
+1b17a86603e24f0c4f361d5517b2017df04222c3  scripts/exploration/n3_split_control.py
+ef3f0403343baf4036c100d463aff141fb0bf861  scripts/exploration/n5_threshold_check.py
+b986b0ac3b1a403f892c0dc1b024daf91d64d720  scripts/exploration/nn_distance_bot.py
+0c99523f2687752c722b643a5f14fecae3d7c3a8  scripts/exploration/replication_gaps.py
+bd4c32a1cd118f77d2af95cc8c8fef61e67d8e3b  scripts/exploration/rf_shap_cost.py
+8f4333d9fd9bcaee59b9aeceb8eb8605f84d5165  scripts/exploration/rq4_trace_checks.py
+14dff1c781ec74133996d7b61378424d7e39145f  scripts/exploration/timestamp_float32_resolution.py
+2b61e3b332267faed26fd55c91830ef87845767d  scripts/exploration/xgb_collapse_diagnosis.py
+a14f9cdfb51a15c8a20881310fd1377eb1b8545d  scripts/exploration/xgb_default_gap.py
+450a24a33b85dc78b0875c64ee5488eb5ef92915  scripts/exploration/xgb_default_sensitivity.py
+aaeaafe0c8a4f960061054ab66e238ded654e2a7  scripts/exploration/r3m1_shap_service.py
+ddd06a32d65998c514811818c409897b8e4cad13  scripts/exploration/r3m1_nosvc_transfer.py
+2f9823d754306ea27e1af1b8f683d8a3ef26fdba  scripts/exploration/r3m2_reply_tcp_check.py
+d57288d79d8577a3dee9cf60ecbc89cdddec48bf  scripts/exploration/r3m3_nn_distance_sets.py
+e4a67d4207c1ed88a7d67e660369f6498b088811  scripts/exploration/r3n5_gnc_removed.py
+a310b445935693449a26472a5350549ac3cedbce  scripts/exploration/r3n15_ts_unique.py
+fcbe296590777fe50943f7c09f6d53a32bd8e6d1  scripts/59_split_checksums.py
+# --- group P ---
+bafae6b46fe7df25c8eba691d1d26b855418970b  scripts/figstyle.py
+99dd0592c89c7b7fedefb391611b9efc6612e870  scripts/50_dataset_tables.py
+2c0fae00f3f5fc65e49700b5098d1ba2e5e383f8  scripts/51_figure_pipeline.py
+e54b9017fb93cbe7c3cb39134be4b82e6200b807  scripts/52_figures_rq1.py
+a3f8e6e3d808ae2e7707aa8bd3df0c2d52364983  scripts/53_figure_rq2.py
+9766733a382eb95d4cb7697b79e5284c29397327  scripts/54_figures_rq3.py
+d2ec1e8e3dd29a51593feb51cbdb4f07b64a41ab  scripts/55_figures_rq4.py
+684f1e9963d956a715ea87298934c5d29df42819  scripts/56_table_s5.py
+edd1a0d505a688f994b23bff34e3ecee7215e417  scripts/57_table5.py
+42b35733986010cf79731afa680b1c2d7bfbba39  scripts/58_table_s6.py
+# Excluded from the public archive (kept in the private history):
+#   scripts/20_decision_test.py: E: Phase 2 decision test, conclusion withdrawn (audit C1), redone in P4.2
+#   scripts/41_timing_smoke.py: D: run-time measurement for planning only
+#   scripts/exploration/verify_references.py: D: DOI check for the internal audit
+
+# ============================================================
+# 8. Result files of Phases 3-4 (data/audit, data/exploration, data/eval)
+# ============================================================
+# --- data/audit ---
+cdcea49052bccf8f163def0d2772ed497345147a  data/audit/conflict_groups/bot3_ddos_dos.txt
+824528ebefd84e04d2cc3fdd1c475d966754f9a9  data/audit/conflict_groups/cic2_web_hoic.txt
+cbbeae84b65b66a07409244aa260dea49cb4dd01  data/audit/conflict_groups/cic3_ftp_slowhttp.txt
+be0dcad7520b13895008c23447d00ec1d2cb1544  data/audit/conflict_groups/cic3_web_benign.txt
+709521a17d439d718c99c2a77294f27345276cca  data/audit/conflict_groups/ton3_benign_password.txt
+b7f0f36ad1db1eb46eccd4a45d1963d4736982b4  data/audit/conflict_groups/ton3_benign_scanning.txt
+577f78aec76f9740c2f28fd8c99f8ec864b2af29  data/audit/conflict_groups_k40/bot3_benign_recon.txt
+e66e8b683e6e84761a47727bcc5049caec6a0c35  data/audit/conflict_groups_k40/bot3_ddos_dos.txt
+2e486dde68ba8870d8d4827451e3b335b1a1a9b9  data/audit/conflict_groups_k40/cic2_web_hoic.txt
+580a81d2156fdbdbedaac658c2082cdf10b2f21f  data/audit/conflict_groups_k40/cic3_benign_infiltration.txt
+43958d25fe16aa7bb29efd6283ceb7831bb35fb7  data/audit/conflict_groups_k40/cic3_ftp_slowhttp.txt
+283a7871e30ad0219aa5d3833a708581eab8fd85  data/audit/conflict_groups_k40/cic3_web_benign.txt
+f0e04395b9db086100dac6050a6252b5b54ffbd4  data/audit/conflict_groups_k40/ton3_benign_ddos.txt
+9ce17631443efe0d6927630c65aa0018230c7fec  data/audit/conflict_groups_k40/ton3_benign_password.txt
+4144fbeee388fa615b071d1dfe02eaf285e3a8f6  data/audit/conflict_groups_k40/ton3_benign_scanning.txt
+c93694068d1c5626ff572bbaf9f4c26a6a026daa  data/audit/conflict_groups_k40_report.txt
+7194943b32a927ba72b270ea0401d5a8b0f2d251  data/audit/conflict_groups_report.txt
+72dda8b09436e72ddabdda8d16a87639dcab87f9  data/audit/dupconf/NF-BoT-IoT-v2.json
+5373b83b34cd27a78b014e1d7cca143f9c69d5d1  data/audit/dupconf/NF-BoT-IoT-v3.json
+d7b255a87cab0bb2685bacd7bcc0beca384d1a4a  data/audit/dupconf/NF-CSE-CIC-IDS2018-v2.json
+ca0749ca7d66247c853ac2782370eec3882ee8ad  data/audit/dupconf/NF-CSE-CIC-IDS2018-v3.json
+545dcf828a07ad90c9e4c5e77835303bd603f2f7  data/audit/dupconf/NF-ToN-IoT-v2.json
+6fc54d7442d2c90484140d3eed7aa60965622e3b  data/audit/dupconf/NF-ToN-IoT-v3.json
+77e9e682b56e2b0f5d465cf0884cecb10c87e631  data/audit/duplicates_conflicts_report.txt
+417947cf7f8d1033b1d46686a31811b3841e7d41  data/audit/flood_comparison.csv
+3000f38936ea74d024e77bff82ba3c666dafd5dc  data/audit/flood_comparison_report.txt
+17f94a1faea32b146219f921534aa01bd6f828a9  data/audit/flood_heuristics/NF-BoT-IoT-v2.json
+c8717dbadd60db60db2a705ca7dec5318b72b110  data/audit/flood_heuristics/NF-BoT-IoT-v3.json
+9fb0bc73c0d71f6d760877cdb4bdc91a4d85eef7  data/audit/flood_heuristics/NF-CSE-CIC-IDS2018-v2.json
+7033964ffaf30ee24325123c06a107c1f0ffbe88  data/audit/flood_heuristics/NF-CSE-CIC-IDS2018-v3.json
+1f2e9a0b59d2b31ff0208d5c9361edb50505df87  data/audit/flood_heuristics/NF-ToN-IoT-v2.json
+8c9637d0d03fe2d8f02081f6bd4dac17c39d15af  data/audit/flood_heuristics/NF-ToN-IoT-v3.json
+b4f98242f87cdd0ce634fe6c2767347c5a115c7d  data/audit/flood_table8_original.csv
+7e34650fb3b67a3d1fa8f5502b19da88d5305060  data/audit/shortcut_probes/NF-BoT-IoT-v2.json
+2ee8ec0f707d8b01c62bb44b750b8e5d1ea82d79  data/audit/shortcut_probes/NF-BoT-IoT-v3.json
+ed97792c192d886b650f844d6ac12e404c1a93b5  data/audit/shortcut_probes/NF-CSE-CIC-IDS2018-v2.json
+758ab6c36017f7ea213430f836750b81a802cb79  data/audit/shortcut_probes/NF-CSE-CIC-IDS2018-v3.json
+5b7085704aca3eb992771265307c0aec0394c217  data/audit/shortcut_probes/NF-ToN-IoT-v2.json
+e9d66a64e9e5f370e289bc1d081c4996b7e3822d  data/audit/shortcut_probes/NF-ToN-IoT-v3.json
+505495d907038938cec007947f4f76087804dbf4  data/audit/shortcut_probes_common/NF-BoT-IoT-v2.json
+edadaccf774bb3f8ea32ed0f0932c091433d4929  data/audit/shortcut_probes_common/NF-BoT-IoT-v3.json
+843192b7a39cc8168fd264f4c503a3452db39809  data/audit/shortcut_probes_common/NF-CSE-CIC-IDS2018-v2.json
+6e81d4a7e6c48b069a0e32593455c9ddbef0f8c3  data/audit/shortcut_probes_common/NF-CSE-CIC-IDS2018-v3.json
+653b493d8a2b36048232b293c37d792b3fd1785b  data/audit/shortcut_probes_common/NF-ToN-IoT-v2.json
+076c3b4f4c6f98b9d858fcafd184353fb1009683  data/audit/shortcut_probes_common/NF-ToN-IoT-v3.json
+2a874cd4c0d945f3f78708317e1ad57dc4a7be79  data/audit/shortcut_probes_common_report.txt
+523c770f5689b6b18bb8e8f396fc88f0aa38ddb4  data/audit/shortcut_probes_rekeyed/NF-BoT-IoT-v2.json
+ecb7abe505fb9286606242ddb64d9909ca0d3d0e  data/audit/shortcut_probes_rekeyed/NF-BoT-IoT-v3.json
+2a9b729d603a52f003d17b66507801cf6bd9e803  data/audit/shortcut_probes_rekeyed/NF-CSE-CIC-IDS2018-v2.json
+661e041fb304786d78ff5d2e8f928535802970e1  data/audit/shortcut_probes_rekeyed/NF-CSE-CIC-IDS2018-v3.json
+7d182feac273b269722de91ad84c6713ebf1c314  data/audit/shortcut_probes_rekeyed/NF-ToN-IoT-v2.json
+cf604a081486f77ea32703387e92879f34eb0d4f  data/audit/shortcut_probes_rekeyed/NF-ToN-IoT-v3.json
+47e187e466500d6eebfe62ede11d8b6c4b5d61bc  data/audit/shortcut_probes_rekeyed_report.txt
+b33be3ba461433c67fefb0b4325b4bfa60133f80  data/audit/shortcut_probes_report.txt
+a7a2d4e33b7caded5494a1a97aa7411bd43fc21f  data/audit/undetermined_cases_report.txt
+647728a5a9ade370d8b7bbef2575a6c9669103e8  data/audit/value_anomalies/NF-BoT-IoT-v2.json
+1540d99b15122b9f5e01423001be57a1fee98dba  data/audit/value_anomalies/NF-BoT-IoT-v3.json
+ce3a2914e0f5ca7d1a538259372590c9b75fd0bf  data/audit/value_anomalies/NF-CSE-CIC-IDS2018-v2.json
+1417ac0e2f98c7114414ab89bf19b0008a3bf5bc  data/audit/value_anomalies/NF-CSE-CIC-IDS2018-v3.json
+fb82ab49b5ccda9e18d9b46b2bf1991d612c6897  data/audit/value_anomalies/NF-ToN-IoT-v2.json
+b6d98b03226489360175363e68d29aff248d7dae  data/audit/value_anomalies/NF-ToN-IoT-v3.json
+ea0efd0ca475840e1b722f26ea6b06bb3556bd5f  data/audit/value_anomalies_report.txt
+# --- data/exploration ---
+b099ad13b39031931b5216d1c84e8a241a4b40dc  data/exploration/README.md
+ad19d3fb52522bffd352e1f326ed47ad056ece8a  data/exploration/class_vector_counts.txt
+67aaa38b2fb72a9522c596a4ccb82fc8bfa051a9  data/exploration/dns_ttl_anomaly.txt
+521ee9c8893375747a5ba1345297e7e016a28c2d  data/exploration/f2b_window_check.txt
+f596deb35b60fd1c764f6fedb1ef4d955ea66cdb  data/exploration/f2d_v2_label_sets.txt
+e792f182ea01a90a47c5364c5a115ea5bde56a1b  data/exploration/f8_duration_check.txt
+318b079e80c8b0dd1bec13a630aa58394277ed36  data/exploration/f9_nonfinite_check.txt
+89f99f9e5b442aa69e505c71bd4c01a48e36b8d6  data/exploration/five_tuple_split_check.txt
+0df660bcf0bd012346af3c5e8312596c15811fd6  data/exploration/m8_reply_check_a.txt
+e27c8e45e44f335edb38112a62251779c76f91b9  data/exploration/m8_reply_check_b.txt
+7aec2df992b3e4e9116aa78e244c433e1256a0fa  data/exploration/n1_reply_proxy_check.txt
+346c33ff9503da50572503a725d17e11586f0a6d  data/exploration/n2_setc_leak_check.txt
+307da6b617ef5b0608f38a4d5ffffb211b502aca  data/exploration/n3_split_control.txt
+0f1325cc178bfb00602ef83d99372e2cb3b89a5f  data/exploration/n5_threshold_check.txt
+01a89e6d3d2ac5a775aed23901e7d16e3694e85c  data/exploration/n9_minority_composition.txt
+8609981c4cdfe53ce203ee7d4b131353427bf943  data/exploration/nfv2_bag_validation.txt
+de21d8657482897cc6af78afb323f95328ea6c33  data/exploration/nfv2_dtype_ranges.txt
+f8d0f54cb767c50d41901034218237e95cc6e7ea  data/exploration/nn_distance_bot.txt
+a3d9a5f0b951a47c32638bbbf98587714249532b  data/exploration/p14_ip_split_exploration.txt
+b0bfe2f7928e62facaa65d126ca6f5db9a805a82  data/exploration/p14_temporal_split_exploration.txt
+e72919597f7b08541bee9e307cd568a92c90b0f6  data/exploration/r3m1_l7proto_icmp_check.txt
+6b61f7ebc4a2a363fdd5e5fe96a73cfc283ac8a1  data/exploration/r3m1_nosvc_transfer.txt
+91d23e021f1bbcd3784a699a0d840d251aaa8de7  data/exploration/r3m1_probes_no_service.txt
+da78a7ccdf6d6e2b868b169e30a43cede3e369fc  data/exploration/r3m1_shap_service.txt
+f1c213aba6160787d15fb9165ce1b90e2729e95a  data/exploration/r3m2_reply_tcp_check.txt
+a0ff6b1742ccf16327b9b92733459d6b5385aad9  data/exploration/r3m3_nn_distance_sets.txt
+11e3b7ddc64da64da9f8e3f7b451c9e318fdcdb8  data/exploration/r3m7_probes_seeds.json
+effb3cc52cbc85f37ffa8b5560465297d88c8507  data/exploration/r3m7_probes_seeds.txt
+40ccd519a33a7c0425712ce009e337f6709c5875  data/exploration/r3n15_ts_unique.txt
+52ccf235835de4daf3876c64ab0d193258dda689  data/exploration/r3n5_gnc_removed.txt
+df67e88b91405a3415c46b461af26fefdb88b4c1  data/exploration/replication_gaps.txt
+3a5bf036d537d5389f3fdfb22bdce0620500c8eb  data/exploration/review_audit_negative_controls.txt
+180e04ed55d8b70a62f6df5646ae52a68b273363  data/exploration/rf_shap_cost.txt
+d05e724b51f5eaebe41fc3e48a26731dcfd50914  data/exploration/rq2_threshold_sensitivity.txt
+8e33db22dacf68d8a74b401953442379ea950549  data/exploration/rq4_trace_checks.txt
+ab549aac17978f408b5feb71530197e4514b88ed  data/exploration/shortcut_probes_comparison.txt
+6c3d8558630270a07535877bc9bfd716213b075a  data/exploration/split_key_sensitivity.txt
+390266dd6b765a1d7fda57177b93a8f3aae3fb5f  data/exploration/src_port_signal.txt
+7231dea1f4d36441cd111b840059284de5d2fa90  data/exploration/timestamp_float32_resolution.txt
+c10d587c6be019c892f5617e91c4d047cbf26836  data/exploration/timestamp_probe.txt
+62bd050b16845a847933f07e2b4b1e9cc024cfb5  data/exploration/timestamp_probe_common.txt
+cd110bd79d500c4901a6e061742e472dc10592ef  data/exploration/xgb_collapse_diagnosis.txt
+e1d805415da38ad90cc381170da9d11a7fd1e6a3  data/exploration/xgb_collapse_diagnosis_NF-ToN-IoT-v2_BIN_G-NP_1.txt
+b63bf6b964e6c9b201c94bdb4b6b1ff8cc0f1ad0  data/exploration/xgb_default_gap.txt
+699d00c809c332aac46b9a17c4612365e1e81f68  data/exploration/xgb_default_sensitivity.txt
+# --- data/eval ---
+bb0dde6ad8c486b346b260c33980385b06345f1c  data/eval/cross/NF-BoT-IoT-v2.jsonl
+b668c3baf296d75ade51f2021f85307d50f15b41  data/eval/cross/NF-BoT-IoT-v3.jsonl
+2d4b131946b4a7a5a4b8faf68e77e57c9d784157  data/eval/cross/NF-CSE-CIC-IDS2018-v2.jsonl
+90b145886890d97ff9198ece8ae4a7de1f2bc494  data/eval/cross/NF-CSE-CIC-IDS2018-v3.jsonl
+429744fe7c89018eeafcf22cb646beba0a9ccc89  data/eval/cross/NF-ToN-IoT-v2.jsonl
+ce46391b55526df8d746957aa1fb2b4df2d20b19  data/eval/cross/NF-ToN-IoT-v3.jsonl
+04d49b0f4239056a84339f08c0bf974205c3d29a  data/eval/cross_cache_check.txt
+2acb6d276ecada357b77faf4265cd95554f9f170  data/eval/cross_g0split/NF-BoT-IoT-v2.jsonl
+1fb240dc5ce805d6d2d8cad127eb3699eb164d11  data/eval/cross_g0split/NF-BoT-IoT-v3.jsonl
+f0aa3c57d196e91387c6594d1c741a0aba24aa8a  data/eval/cross_g0split/NF-CSE-CIC-IDS2018-v2.jsonl
+a95078ff52d4a2437443acbd32448f7ab7136bf7  data/eval/cross_g0split/NF-CSE-CIC-IDS2018-v3.jsonl
+b15c47892afd925976567eb8d6449e75b858d395  data/eval/cross_g0split/NF-ToN-IoT-v2.jsonl
+5fb9f06657083a7e3e849c01650897627b7f3442  data/eval/cross_g0split/NF-ToN-IoT-v3.jsonl
+0bbbeae319f67f2215544a4c5bba7883e171101e  data/eval/cross_g0split_nosvc/NF-BoT-IoT-v2.jsonl
+e9a8527530092c9f1b38570d63b3e5afe7e0ce80  data/eval/cross_g0split_nosvc/NF-BoT-IoT-v3.jsonl
+a0c66025f4cb8511fc5d21967f3de4f6109f8e90  data/eval/cross_g0split_nosvc/NF-CSE-CIC-IDS2018-v2.jsonl
+ca42d27a5f7077e7d6398b583f32f5a3ee281df8  data/eval/cross_g0split_nosvc/NF-CSE-CIC-IDS2018-v3.jsonl
+3d4a8ba82d4d8812662b1f568d2183b0c8c6ba79  data/eval/cross_g0split_nosvc/NF-ToN-IoT-v2.jsonl
+6715864bcfa705a65a60251467c00bdf2c53aa0a  data/eval/cross_g0split_nosvc/NF-ToN-IoT-v3.jsonl
+0a518146353413f4d58297ea4dc3aad4f8d427c9  data/eval/cross_inspection.json
+2b1b41a5f04b76b3878e698ac57d64314804afca  data/eval/cross_inspection.txt
+cd50ea7c51157847ad5de14b9e7130dffc5eb214  data/eval/cross_report.txt
+b282df846d21f0157583e28264b99dd0dcd6463b  data/eval/cross_robustness.json
+07dffa691896a85cc82fe5f6d8a45343c674d5e9  data/eval/cross_robustness.txt
+540924b2b7c9f8aabd884a846c109a846085d3bd  data/eval/cross_table_check.txt
+f2b2fc2fd447b34a071528881488a5c9d4e1de17  data/eval/cross_xgbdefault/NF-BoT-IoT-v2.jsonl
+ffc15134018d37aeec532de30ff26562bc923aaf  data/eval/cross_xgbdefault/NF-BoT-IoT-v3.jsonl
+28295cd2b544dcebba2678706fc9abd4f11edbaa  data/eval/cross_xgbdefault/NF-CSE-CIC-IDS2018-v2.jsonl
+12e92d0986bd8eed1943582df2690fb4224f53a9  data/eval/cross_xgbdefault/NF-CSE-CIC-IDS2018-v3.jsonl
+42a093279bc885281ed4719b676fb824d1989966  data/eval/cross_xgbdefault/NF-ToN-IoT-v2.jsonl
+bc1993d2af79fa1a68cfde21ce24c056a1213feb  data/eval/cross_xgbdefault/NF-ToN-IoT-v3.jsonl
+56495c17fec96914dfc472457bf4dcb0764958bf  data/eval/cross_xgbdefault_cache_check.txt
+afafcf742c1c51eb7820595bfd31f2f0c67bcaa9  data/eval/cross_xgbdefault_inspection.json
+9b9464f0d89b49f61176750cea640486eff3c4c0  data/eval/cross_xgbdefault_inspection.txt
+943afdbb813adfab4dfb2e5b2ca8d2efe2f262ff  data/eval/cross_xgbdefault_report.txt
+1a6ce67790016fd83f738f569869bb298c556ec7  data/eval/cross_xgbdefault_robustness.json
+77a4263e53d3dd86e6c89ac2de90b963a12df40f  data/eval/cross_xgbdefault_robustness.txt
+48de831ab4fbe0b6cb7a02ec20cbf84274b7a355  data/eval/cross_xgbdefault_table_check.txt
+2a3bf8aee8cbd147592b308e3dbb199bf3d3df54  data/eval/in_domain/NF-BoT-IoT-v2.jsonl
+01541c565d115c15de5b61f5c6237726f98e3460  data/eval/in_domain/NF-BoT-IoT-v3.jsonl
+d03e2e18cfc5d81b192d3d36e58a998123c9c9ee  data/eval/in_domain/NF-CSE-CIC-IDS2018-v2.jsonl
+70159f9d7c3d4b3efc7b5f8fc6093fc35c54020c  data/eval/in_domain/NF-CSE-CIC-IDS2018-v3.jsonl
+2bef86e750e8bd675e4f0fefd9780fbe516dba91  data/eval/in_domain/NF-ToN-IoT-v2.jsonl
+7d5759123cea34a17921f899189505f0c82a5f36  data/eval/in_domain/NF-ToN-IoT-v3.jsonl
+f7d08327777a145807ea47c0b7660d11fb63869b  data/eval/in_domain_inspection.json
+c70115d0c56e02700b3171679ae29eca80ced898  data/eval/in_domain_inspection.txt
+394546ac486a1bc3085fd655e0ef4dd3c436e4c4  data/eval/in_domain_report.txt
+a8b6d51643df8c3072208da3bcfb42702db456bd  data/eval/in_domain_summary.txt
+181a76a684341ad985724794726338c102a72ef2  data/eval/in_domain_xgbdefault/NF-BoT-IoT-v2.jsonl
+3b11b71d19f8826cee0c420a46a47bad3b671b54  data/eval/in_domain_xgbdefault/NF-BoT-IoT-v3.jsonl
+b570161e1b9b83f7379105922b903bde256ba24a  data/eval/in_domain_xgbdefault/NF-CSE-CIC-IDS2018-v2.jsonl
+0b74ea85fe0337cf57b233512d2f1834f954890d  data/eval/in_domain_xgbdefault/NF-CSE-CIC-IDS2018-v3.jsonl
+aec12ffdcee02eb55deff6aac16e84283d3631c7  data/eval/in_domain_xgbdefault/NF-ToN-IoT-v2.jsonl
+6581ccb8bda08581883a11913e6f7b06e4cbb6d2  data/eval/in_domain_xgbdefault/NF-ToN-IoT-v3.jsonl
+acc59e6bf1772e5471981f064aaedf92554ab67b  data/eval/in_domain_xgbdefault_inspection.json
+1272d0bc3743596324d06b1d502a9d5f05dbda45  data/eval/in_domain_xgbdefault_inspection.txt
+03098af303e05b4fc4232479e4f8a020de97cc28  data/eval/in_domain_xgbdefault_report.txt
+694864d46904590bd08b4fb0e447389ed87e65c5  data/eval/in_domain_xgbdefault_summary.txt
+e259687b16923c367e9c18c2b00bb2b50d2b8467  data/eval/replication/NF-BoT-IoT-v2.jsonl
+d05e4c576b284a72580ed4594b824415b8e1133b  data/eval/replication/NF-CSE-CIC-IDS2018-v2.jsonl
+70c8180a885f81aa8e44e3706f79a9d21b7ac90c  data/eval/replication/NF-ToN-IoT-v2.jsonl
+6dab85c3f5770d6b86dc8be913d829465fb24af9  data/eval/replication_report.txt
+ccf348a0ad4d3ba02f08afcb054ef7797a68c207  data/eval/shap/NF-BoT-IoT-v2.jsonl
+85e60a615949772027c2ca6e3378b64a505edf3e  data/eval/shap/NF-BoT-IoT-v3.jsonl
+1f1f202c2f3fa0ff771052e7d2b15ed30b5b35a3  data/eval/shap/NF-CSE-CIC-IDS2018-v2.jsonl
+2737fff53a49c40148300c49d694e395ec62c95f  data/eval/shap/NF-CSE-CIC-IDS2018-v3.jsonl
+69e147a0f7f1d5fc2a293e77649a1dc16e07ae9e  data/eval/shap/NF-ToN-IoT-v2.jsonl
+8784fdc2100581caf5376dfc1accab9cde7e6b0a  data/eval/shap/NF-ToN-IoT-v3.jsonl
+1065478ddd522c30b3bd3c9d876678069b74f6c7  data/eval/shap_report.txt
+51721aff34b7188ad6935627d6bf874b9d97feae  data/eval/shap_xgbdefault/NF-BoT-IoT-v2.jsonl
+90f58b5de904dd90adb49bca0baf99426604ea2f  data/eval/shap_xgbdefault/NF-BoT-IoT-v3.jsonl
+3cda6a5b93d5355b6d5f501b7a835d0bbd6dc200  data/eval/shap_xgbdefault/NF-CSE-CIC-IDS2018-v2.jsonl
+4649098a14a87d0860c0b51cf181abbdd183fee9  data/eval/shap_xgbdefault/NF-CSE-CIC-IDS2018-v3.jsonl
+a883878b1e5c5dc38b98b118bdd9c6e789b419ef  data/eval/shap_xgbdefault/NF-ToN-IoT-v2.jsonl
+b0beea10c603c5b472a94d87d14e446e67df28ff  data/eval/shap_xgbdefault/NF-ToN-IoT-v3.jsonl
+5cfe847bedf13ec26389bdcf18f1d21668916bf5  data/eval/shap_xgbdefault_report.txt
+6acaf781820f7595695ada524fbbe7cced393250  data/eval/split_verification.txt
+1053e4b4110cb4d91be8294dc3555ff53ed4368d  data/eval/split_verification/NF-BoT-IoT-v2.json
+c818a5db6acd6c4ca27f96aae700aba350d5fd8a  data/eval/split_verification/NF-BoT-IoT-v3.json
+ec284500be406b18aef34cf8d928be953c13b3a3  data/eval/split_verification/NF-CSE-CIC-IDS2018-v2.json
+6b10d6ca0b0dbb1c038a57be6cb78927a442aa35  data/eval/split_verification/NF-CSE-CIC-IDS2018-v3.json
+538aa6c4935d5ec6e0c1ce71f14426f217bc4095  data/eval/split_verification/NF-ToN-IoT-v2.json
+2b2b4bea43b8006e08a835576c5ae22f2b673dc4  data/eval/split_verification/NF-ToN-IoT-v3.json
+# --- data/paper ---
+cd809483403d9a29d1d853898cd1a8539ed1056f  data/paper/dataset_tables.json
+02ab589c83a05faaa6b8a55617b3256c76b14cd3  data/paper/dataset_tables.txt
+d05c174b9801edb70180d929afbad03436b03c13  data/paper/rq1_figures.json
+754e99523d98f048dda77a449d91cf8bf8966a0d  data/paper/rq1_figures.txt
+56200ccca5f25960bada4155e0c24342b8020571  data/paper/rq2_figure.json
+8019c9156de678f1b439e3b07aeab7404c669bf8  data/paper/rq2_figure.txt
+27a99c53595688972fb83db29d2d5b10de646dfa  data/paper/rq3_figures.json
+cb1306890953e7612a2cd1c4038020060608efef  data/paper/rq3_figures.txt
+8d17058ba51f0b16db1fc10938bcff16c434e15f  data/paper/rq4_figures.json
+3622b9efee06e926a03cb708467d36ca11805d43  data/paper/rq4_figures.txt
+cb6ac948d1712a4f24eb739ccd630c383e39c265  data/paper/split_checksums.json
+68f4cbd131778c71b99aa2da71aa601f43a077a2  data/paper/split_checksums.txt
+117b69ebdb1d78b8e4fad27706e9c8342facc492  data/paper/table_s5.json
+ad6410e3597452346f7aa81dbda1a18fbf644534  data/paper/table_s5.txt
+5a33397896fc8b31686decac27ac7c4ce9ee1a6c  data/paper/table_s6.json
+e1cc1d2471f418dc070d7e436e7b1bd2e02730c9  data/paper/table_s6.txt
+# Excluded: 13 files (smoke tests; outputs of excluded scripts):
+#   data/exploration/reference_check.txt
+#   data/eval/cross_smoke/NF-BoT-IoT-v3.jsonl
+#   data/eval/cross_smoke_g0split/NF-BoT-IoT-v3.jsonl
+#   data/eval/cross_smoke_nosvc/NF-BoT-IoT-v3.jsonl
+#   data/eval/cross_smoke_report.txt
+#   data/eval/in_domain_smoke/NF-BoT-IoT-v3.jsonl
+#   data/eval/in_domain_smoke_report.txt
+#   data/eval/replication_smoke/NF-ToN-IoT-v2.jsonl
+#   data/eval/replication_smoke_report.txt
+#   data/eval/shap_smoke/NF-ToN-IoT-v3.jsonl
+#   data/eval/shap_smoke_report.txt
+#   data/eval/timing_smoke.json
+#   data/eval/timing_smoke.txt
+
+# ============================================================
+# 9. Partition hashes (scripts/48_split_hashes.py)
+# ============================================================
+10ef1bbf63004e624d951d365af8927ff4e19cc8  data/schemas/split_hashes.csv
+abaaea452ed027dd2e13a4b7f33d1e0d9388a079  data/schemas/split_hashes.txt
+# Training and test rows of every run configuration (scripts/59_split_checksums.py):
+#   data/paper/split_checksums.json and .txt, hashed in section 8
+
+# End of manifest.
+# To verify a single file: shasum -a 1 <path> | awk '{print $1}'  == <sha1>.
+# To rebuild this manifest: python scripts/18_write_master_manifest.py

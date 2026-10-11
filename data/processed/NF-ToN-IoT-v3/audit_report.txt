@@ -1,0 +1,24 @@
+Audit report for NF-ToN-IoT-v3
+Generated: 2026-10-01T20:23:26.639835+00:00
+Elapsed:   97.1s
+Result:    10 passed, 0 failed (out of 10)
+
+Checks:
+  [I1] OK    raw CSV SHA-1 matches loader manifest
+  [I2] OK    data.parquet SHA-1 matches loader manifest
+  [I3] OK    tabular.parquet SHA-1 matches tabular manifest
+  [I5] OK    values of data.parquet equal the raw CSV (all numeric columns)
+  [C1] OK    row counts equal in data and tabular
+  [C2] OK    metadata SHA-1 identical in data and tabular
+  [C3] OK    canonical x split crosstab identical in data and tabular
+  [N1] OK    tabular.parquet holds no Inf
+  [N2] OK    tabular values equal normalised data.parquet values
+  [N5] OK    no feature vector appears in more than one split
+
+Measured values:
+  rows: raw 27,520,260 | data 27,520,260 | tabular 27,520,260
+  metadata SHA-1 (data and tabular): 6d81822ddfddee6d45a829d92b5473ea24203bc6
+  unique feature vectors in tabular: 14,729,992
+  feature vectors in more than one split: 0
+  exact test/train sample: 17,733 distinct test vectors sampled of 4,088,833 test rows; found in train: 0
+  non-finite values per feature in data.parquet: none

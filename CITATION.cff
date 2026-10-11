@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software or these result files, please cite them as below."
+title: "Auditing the NetFlow versions of IoT and enterprise intrusion detection benchmarks: data quality, shortcuts and cross-dataset evaluation"
+abstract: >-
+  Code, result files and partition checksums for a record-level audit of the
+  NF-v2 and NF-v3 releases of NF-ToN-IoT, NF-BoT-IoT and NF-CSE-CIC-IDS2018,
+  and for the in-domain, cross-dataset, replication and SHAP experiments that
+  measure how their problems affect evaluation. The datasets are not included.
+type: software
+authors:
+  - family-names: "Valencia Vélez"
+    given-names: "Luiggi"
+    affiliation: "Escuela Colombiana de Ingeniería Julio Garavito"
+    orcid: "https://orcid.org/0009-0003-7783-9023"
+license: MIT
+repository-code: "https://github.com/luiggiv2/netflow-benchmark-audit"
+keywords:
+  - network intrusion detection
+  - NetFlow
+  - benchmark datasets
+  - data quality
+  - cross-dataset evaluation
+  - shortcut learning
+version: "v1.0.0"
+date-released: "2026-10-11"

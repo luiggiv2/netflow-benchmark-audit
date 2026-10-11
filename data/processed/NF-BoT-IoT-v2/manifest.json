@@ -1,0 +1,82 @@
+{
+  "dataset": "NF-BoT-IoT-v2",
+  "generated_utc": "2026-10-02T02:38:20.895870+00:00",
+  "script": "scripts/01_load_nfv3.py",
+  "environment": {
+    "pandas": "3.0.3",
+    "numpy": "2.4.6"
+  },
+  "input": {
+    "path": "befb58edf3428167_MOHANAD_A4706/data/NF-BoT-IoT-v2.csv",
+    "sha1": "cddcc616a032f55a6a5ab3e382093636449653d6"
+  },
+  "config": {
+    "split_method": "grouped by pandas.util.hash_pandas_object of the normalised 41-feature vector, mixed with the seed constant through splitmix64, modulo 100",
+    "split_seed": 42,
+    "split_seed_const": "0xf119a835ed784c12",
+    "train_high": 70,
+    "val_high": 85,
+    "class_mapping_path": "data/schemas/class_mapping_v2.csv",
+    "class_mapping_sha1": "97d99d2afc8f0c8541de6d732631fc9cd6b3b952"
+  },
+  "typo_correction": {
+    "from": "Infilteration",
+    "to": "Infiltration",
+    "rows_affected": 0
+  },
+  "outputs": {
+    "parquet": {
+      "path": "data/processed/NF-BoT-IoT-v2/data.parquet",
+      "sha1": "12692d7b1fa2a3a7cfc5dae82a25b8dd7329727d",
+      "size_bytes": 704852556,
+      "rows": 37763497,
+      "columns": 48
+    },
+    "qc_report": "data/processed/NF-BoT-IoT-v2/qc_report.txt",
+    "log": "data/processed/NF-BoT-IoT-v2/load.log"
+  },
+  "qc_summary": {
+    "class_counts": {
+      "DDoS": {
+        "train": 12834016,
+        "val": 2748928,
+        "test": 2748903,
+        "total": 18331847
+      },
+      "DoS": {
+        "train": 11671230,
+        "val": 2501432,
+        "test": 2500521,
+        "total": 16673183
+      },
+      "Reconnaissance": {
+        "train": 1833416,
+        "val": 393982,
+        "test": 393601,
+        "total": 2620999
+      },
+      "Benign": {
+        "train": 94679,
+        "val": 20106,
+        "test": 20252,
+        "total": 135037
+      },
+      "": {
+        "train": 1701,
+        "val": 346,
+        "test": 384,
+        "total": 2431
+      }
+    },
+    "duplicates_and_conflicts": {
+      "rows": 37763497,
+      "unique_feature_vectors": 30420086,
+      "duplicate_rows": 7343411,
+      "canonical_rows": 37761066,
+      "conflicting_vectors": 0,
+      "conflicting_rows": 0,
+      "conflict_label_sets": {}
+    },
+    "warnings": []
+  }
+}

@@ -1,0 +1,161 @@
+P4.3b inspection of the cross-dataset results
+Generated: 2026-10-05T00:43:13.941163+00:00
+
+Part 1a. Median target macro-F1 over seeds by condition; in = median in-domain macro-F1 (G0)
+  BIN: direction              model  in G0     G0     R0   G-NC   G-NP   G-NI
+        BoT-v2 -> CIC-v2       xgb    0.989  0.807  0.779  0.807  0.740  0.591
+        BoT-v2 -> CIC-v2       rf     0.546  0.853  0.849  0.853  0.786  0.531
+        BoT-v2 -> ToN-v2       xgb    0.989  0.456  0.469  0.456  0.422  0.404
+        BoT-v2 -> ToN-v2       rf     0.546  0.441  0.445  0.441  0.432  0.422
+        CIC-v2 -> BoT-v2       xgb    0.980  0.376  0.536  0.376  0.311  0.171
+        CIC-v2 -> BoT-v2       rf     0.812  0.311  0.300  0.311  0.295  0.273
+        CIC-v2 -> ToN-v2       xgb    0.980  0.462  0.469  0.462  0.408  0.407
+        CIC-v2 -> ToN-v2       rf     0.812  0.382  0.386  0.382  0.389  0.364
+        ToN-v2 -> BoT-v2       xgb    0.975  0.271  0.318  0.271  0.078  0.346
+        ToN-v2 -> BoT-v2       rf     0.976  0.080  0.083  0.080  0.047  0.058
+        ToN-v2 -> CIC-v2       xgb    0.975  0.471  0.441  0.471  0.417  0.492
+        ToN-v2 -> CIC-v2       rf     0.976  0.519  0.517  0.519  0.433  0.452
+        BoT-v3 -> CIC-v3       xgb    0.825  0.689  0.704  0.583  0.659  0.567
+        BoT-v3 -> CIC-v3       rf     0.861  0.613  0.624  0.597  0.604  0.552
+        BoT-v3 -> ToN-v3       xgb    0.825  0.355  0.331  0.452  0.504  0.502
+        BoT-v3 -> ToN-v3       rf     0.861  0.519  0.527  0.525  0.518  0.527
+        CIC-v3 -> BoT-v3       xgb    0.944  0.199  0.164  0.175  0.167  0.162
+        CIC-v3 -> BoT-v3       rf     0.832  0.087  0.090  0.086  0.085  0.088
+        CIC-v3 -> ToN-v3       xgb    0.944  0.693  0.699  0.691  0.443  0.573
+        CIC-v3 -> ToN-v3       rf     0.832  0.444  0.524  0.491  0.412  0.477
+        ToN-v3 -> BoT-v3       xgb    0.845  0.493  0.497  0.431  0.404  0.173
+        ToN-v3 -> BoT-v3       rf     0.862  0.329  0.325  0.327  0.183  0.171
+        ToN-v3 -> CIC-v3       xgb    0.845  0.421  0.414  0.406  0.375  0.336
+        ToN-v3 -> CIC-v3       rf     0.862  0.430  0.391  0.377  0.410  0.324
+  CORE: direction              model  in G0     G0     R0   G-NC   G-NP   G-NI
+        BoT-v2 -> CIC-v2       xgb    0.682  0.432  0.473  0.432  0.332  0.329
+        BoT-v2 -> CIC-v2       rf     0.670  0.437  0.383  0.437  0.330  0.332
+        BoT-v2 -> ToN-v2       xgb    0.682  0.286  0.287  0.286  0.272  0.272
+        BoT-v2 -> ToN-v2       rf     0.670  0.277  0.274  0.277  0.271  0.271
+        CIC-v2 -> BoT-v2       xgb    1.000  0.003  0.003  0.003  0.003  0.003
+        CIC-v2 -> BoT-v2       rf     1.000  0.003  0.003  0.003  0.002  0.002
+        CIC-v2 -> ToN-v2       xgb    1.000  0.277  0.277  0.277  0.272  0.277
+        CIC-v2 -> ToN-v2       rf     1.000  0.274  0.274  0.274  0.272  0.273
+        ToN-v2 -> BoT-v2       xgb    0.984  0.003  0.003  0.003  0.003  0.003
+        ToN-v2 -> BoT-v2       rf     0.983  0.003  0.003  0.003  0.003  0.003
+        ToN-v2 -> CIC-v2       xgb    0.984  0.283  0.292  0.283  0.283  0.292
+        ToN-v2 -> CIC-v2       rf     0.983  0.292  0.292  0.292  0.296  0.299
+        BoT-v3 -> CIC-v3       xgb    0.995  0.412  0.433  0.411  0.404  0.397
+        BoT-v3 -> CIC-v3       rf     0.996  0.377  0.391  0.383  0.379  0.392
+        BoT-v3 -> ToN-v3       xgb    0.995  0.311  0.301  0.319  0.310  0.299
+        BoT-v3 -> ToN-v3       rf     0.996  0.310  0.290  0.291  0.308  0.289
+        CIC-v3 -> BoT-v3       xgb    1.000  0.003  0.002  0.003  0.002  0.005
+        CIC-v3 -> BoT-v3       rf     0.990  0.003  0.003  0.003  0.003  0.004
+        CIC-v3 -> ToN-v3       xgb    1.000  0.295  0.296  0.296  0.292  0.293
+        CIC-v3 -> ToN-v3       rf     0.990  0.296  0.297  0.297  0.294  0.293
+        ToN-v3 -> BoT-v3       xgb    0.924  0.110  0.007  0.162  0.003  0.003
+        ToN-v3 -> BoT-v3       rf     0.914  0.003  0.002  0.002  0.002  0.003
+        ToN-v3 -> CIC-v3       xgb    0.924  0.296  0.296  0.293  0.297  0.292
+        ToN-v3 -> CIC-v3       rf     0.914  0.298  0.300  0.298  0.299  0.291
+
+Part 1b. Condition vs G0 on the target (median over seeds; similar = |difference| < 0.02)
+  BIN  R0   : better  3, similar 16, worse  5 (of 24 direction x model)
+  BIN  G-NC : better  2, similar 18, worse  4 (of 24 direction x model)
+  BIN  G-NP : better  1, similar  7, worse 16 (of 24 direction x model)
+  BIN  G-NI : better  4, similar  4, worse 16 (of 24 direction x model)
+  CORE R0   : better  2, similar 20, worse  2 (of 24 direction x model)
+  CORE G-NC : better  1, similar 23, worse  0 (of 24 direction x model)
+  CORE G-NP : better  0, similar 21, worse  3 (of 24 direction x model)
+  CORE G-NI : better  0, similar 20, worse  4 (of 24 direction x model)
+
+Part 1c. Degradation (in-domain minus target, points; medians over seeds) against the grouped (G0) and
+the random (R0) source split; R0 - G0 = how much the random baseline adds to the reported degradation
+  BIN: direction              model  delta G0  delta R0   R0-G0
+        BoT-v2 -> CIC-v2       xgb       +18.0     +21.1    +3.1
+        BoT-v2 -> CIC-v2       rf        -25.0     +14.3   +39.3
+        BoT-v2 -> ToN-v2       xgb       +53.1     +52.2    -0.9
+        BoT-v2 -> ToN-v2       rf        +11.1     +54.7   +43.5
+        CIC-v2 -> BoT-v2       xgb       +60.0     +44.9   -15.1
+        CIC-v2 -> BoT-v2       rf        +50.3     +53.3    +3.0
+        CIC-v2 -> ToN-v2       xgb       +51.8     +51.6    -0.2
+        CIC-v2 -> ToN-v2       rf        +43.0     +44.7    +1.7
+        ToN-v2 -> BoT-v2       xgb       +59.7     +67.5    +7.8
+        ToN-v2 -> BoT-v2       rf        +89.4     +91.2    +1.8
+        ToN-v2 -> CIC-v2       xgb       +50.5     +55.3    +4.8
+        ToN-v2 -> CIC-v2       rf        +45.5     +47.9    +2.3
+        BoT-v3 -> CIC-v3       xgb       +16.1     +14.4    -1.8
+        BoT-v3 -> CIC-v3       rf        +23.7     +22.8    -0.9
+        BoT-v3 -> ToN-v3       xgb       +44.9     +51.7    +6.8
+        BoT-v3 -> ToN-v3       rf        +29.0     +32.9    +3.9
+        CIC-v3 -> BoT-v3       xgb       +74.6     +78.5    +3.9
+        CIC-v3 -> BoT-v3       rf        +74.4     +74.4    -0.0
+        CIC-v3 -> ToN-v3       xgb       +25.1     +25.1    +0.0
+        CIC-v3 -> ToN-v3       rf        +37.9     +31.0    -6.9
+        ToN-v3 -> BoT-v3       xgb       +35.7     +37.7    +2.0
+        ToN-v3 -> BoT-v3       rf        +53.2     +56.1    +2.8
+        ToN-v3 -> CIC-v3       xgb       +43.1     +45.9    +2.9
+        ToN-v3 -> CIC-v3       rf        +43.5     +49.5    +6.0
+  CORE: direction              model  delta G0  delta R0   R0-G0
+        BoT-v2 -> CIC-v2       xgb       +32.8     +51.9   +19.0
+        BoT-v2 -> CIC-v2       rf        +31.9     +61.1   +29.2
+        BoT-v2 -> ToN-v2       xgb       +40.0     +70.5   +30.5
+        BoT-v2 -> ToN-v2       rf        +39.2     +72.0   +32.8
+        CIC-v2 -> BoT-v2       xgb       +99.7     +99.7    +0.0
+        CIC-v2 -> BoT-v2       rf        +99.7     +99.7    +0.0
+        CIC-v2 -> ToN-v2       xgb       +72.3     +72.3    +0.0
+        CIC-v2 -> ToN-v2       rf        +72.6     +72.6    +0.0
+        ToN-v2 -> BoT-v2       xgb       +98.1     +98.1    +0.0
+        ToN-v2 -> BoT-v2       rf        +98.0     +98.2    +0.2
+        ToN-v2 -> CIC-v2       xgb       +70.1     +69.2    -0.9
+        ToN-v2 -> CIC-v2       rf        +69.1     +69.2    +0.1
+        BoT-v3 -> CIC-v3       xgb       +58.4     +55.9    -2.5
+        BoT-v3 -> CIC-v3       rf        +62.0     +60.3    -1.7
+        BoT-v3 -> ToN-v3       xgb       +68.5     +69.1    +0.6
+        BoT-v3 -> ToN-v3       rf        +68.5     +70.4    +1.8
+        CIC-v3 -> BoT-v3       xgb       +99.5     +99.7    +0.2
+        CIC-v3 -> BoT-v3       rf        +98.8     +99.7    +1.0
+        CIC-v3 -> ToN-v3       xgb       +70.3     +70.4    +0.1
+        CIC-v3 -> ToN-v3       rf        +69.3     +70.3    +1.0
+        ToN-v3 -> BoT-v3       xgb       +80.9     +93.2   +12.4
+        ToN-v3 -> BoT-v3       rf        +91.1     +93.1    +2.0
+        ToN-v3 -> CIC-v3       xgb       +62.7     +64.3    +1.6
+        ToN-v3 -> CIC-v3       rf        +61.6     +63.4    +1.8
+  R0 - G0 over all 48 cases: median +1.6, min -15.1, max +43.5; positive in 38
+
+Part 2. CORE confusion matrices into NF-BoT-IoT (condition G0, seed 1, refitted); rows = true class, columns = predicted (Benign, DoS, DDoS)
+  ToN-v3 -> BoT-v3 xgb: Benign [50262, 614, 1113] (Benign 96.7%); DoS [8028372, 0, 5818] (Benign 99.9%); DDoS [7144725, 0, 6157] (Benign 99.9%)
+  ToN-v3 -> BoT-v3 rf: Benign [51457, 529, 3] (Benign 99.0%); DoS [8029430, 0, 4760] (Benign 99.9%); DDoS [7145363, 0, 5519] (Benign 99.9%)
+  CIC-v3 -> BoT-v3 xgb: Benign [51025, 2, 962] (Benign 98.2%); DoS [8034188, 2, 0] (Benign 100.0%); DDoS [7150872, 10, 0] (Benign 100.0%)
+  CIC-v3 -> BoT-v3 rf: Benign [51941, 2, 46] (Benign 99.9%); DoS [8034179, 11, 0] (Benign 100.0%); DDoS [7150870, 12, 0] (Benign 100.0%)
+  ToN-v2 -> BoT-v2 xgb: Benign [133825, 1107, 105] (Benign 99.1%); DoS [16662426, 0, 10757] (Benign 99.9%); DDoS [18331826, 0, 21] (Benign 100.0%)
+  ToN-v2 -> BoT-v2 rf: Benign [133324, 1479, 234] (Benign 98.7%); DoS [16666580, 0, 6603] (Benign 100.0%); DDoS [18331847, 0, 0] (Benign 100.0%)
+  CIC-v2 -> BoT-v2 xgb: Benign [127988, 0, 7049] (Benign 94.8%); DoS [16665026, 8107, 50] (Benign 100.0%); DDoS [18331847, 0, 0] (Benign 100.0%)
+  CIC-v2 -> BoT-v2 rf: Benign [133789, 0, 1248] (Benign 99.1%); DoS [16672293, 890, 0] (Benign 100.0%); DDoS [18331847, 0, 0] (Benign 100.0%)
+
+Part 3. DoS and DDoS flows per dataset (canonical classes; Benign for reference)
+  dataset      class          rows  1 pkt no reply    TCP    UDP med pkts med bytes  top destination ports (share)
+  ToN-v3       Benign   16,792,214  58.9%    61.8%  81.0%  17.5%        1        52  53 5%, 51642 5%, 52970 2%
+  ToN-v3       DoS         203,456   0.1%    31.4%  53.6%  46.4%       97      3720  53 46%, 80 2%, 443 1%
+  ToN-v3       DDoS      4,141,256   5.0%     5.8%  97.7%   2.3%        3       112  443 57%, 80 40%, 53 2%
+  BoT-v3       Benign       51,989  12.2%    26.8%  72.3%  27.5%        2        40  53 12%, 80 8%, 1 4%
+  BoT-v3       DoS       8,034,190   2.8%    75.3%  49.6%  50.4%        6       360  80 100%, 0 0%, 11532 0%
+  BoT-v3       DDoS      7,150,882   1.3%    83.6%  56.3%  43.7%        6       420  80 100%, 0 0%, 4223 0%
+  CIC-v3       Benign   17,514,626   9.1%    11.1%  56.3%  43.4%        4       128  53 41%, 3389 17%, 443 16%
+  CIC-v3       DoS         302,966   1.9%     3.3% 100.0%   0.0%        8       635  80 65%, 21 35%
+  CIC-v3       DDoS      1,324,350   0.6%     0.9%  99.7%   0.3%       10       503  80 100%
+  ToN-v2       Benign    6,099,469  53.4%    55.7%  90.7%   8.9%        1        44  53 7%, 9197 1%, 80 1%
+  ToN-v2       DoS         712,609   2.2%    11.1%  14.5%  85.5%        2        70  53 86%, 443 0%, 80 0%
+  ToN-v2       DDoS      2,026,234   1.2%     1.5%  98.1%   1.9%        8       268  443 60%, 80 37%, 53 2%
+  BoT-v2       Benign      135,037   9.9%    16.7%  89.0%  11.0%        2        44  53 5%, 80 4%, 1 1%
+  BoT-v2       DoS      16,673,183   3.1%    88.4%  99.4%   0.6%        2       280  80 100%, 52487 0%, 50 0%
+  BoT-v2       DDoS     18,331,847   1.7%    99.8%   0.6%  99.4%        2        56  80 100%, 6377 0%, 14197 0%
+  CIC-v2       Benign   16,635,567   5.6%     6.9%  53.4%  46.5%        4       128  53 45%, 3389 21%, 443 13%
+  CIC-v2       DoS         483,999   0.0%     0.5% 100.0%   0.0%       43      3010  80 97%, 21 3%
+  CIC-v2       DDoS      1,390,270   0.7%     2.1%  98.6%   1.4%       10       503  80 100%
+
+  Exact-vector overlap (base key): share of NF-BoT-IoT DoS/DDoS rows whose vector also occurs in another
+  dataset of the same version with the given canonical label
+  BoT-v3 DoS   rows with a vector seen in ToN-v3 : as Benign 0.00%, as DoS 0.00%, as DDoS 0.00%
+  BoT-v3 DDoS  rows with a vector seen in ToN-v3 : as Benign 0.00%, as DoS 0.00%, as DDoS 0.00%
+  BoT-v3 DoS   rows with a vector seen in CIC-v3 : as Benign 0.00%, as DoS 0.00%, as DDoS 0.00%
+  BoT-v3 DDoS  rows with a vector seen in CIC-v3 : as Benign 0.00%, as DoS 0.00%, as DDoS 0.00%
+  BoT-v2 DoS   rows with a vector seen in ToN-v2 : as Benign 0.00%, as DoS 0.00%, as DDoS 0.00%
+  BoT-v2 DDoS  rows with a vector seen in ToN-v2 : as Benign 0.00%, as DoS 0.00%, as DDoS 0.00%
+  BoT-v2 DoS   rows with a vector seen in CIC-v2 : as Benign 0.00%, as DoS 0.00%, as DDoS 0.00%
+  BoT-v2 DDoS  rows with a vector seen in CIC-v2 : as Benign 0.00%, as DoS 0.00%, as DDoS 0.00%
+

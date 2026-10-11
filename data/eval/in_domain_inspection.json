@@ -1,0 +1,1389 @@
+{
+  "generated_utc": "2026-10-07T02:14:17.526911+00:00",
+  "concentration": {
+    "NF-ToN-IoT-v3": {
+      "classes": {
+        "Backdoor": {
+          "rows": 203384,
+          "distinct_vectors": 20650,
+          "top1_share": 0.0347,
+          "top10_share": 0.1949,
+          "top100_share": 0.4903,
+          "vectors_for_half": 109,
+          "largest_vector_rows": 7064
+        },
+        "Benign": {
+          "rows": 16792214,
+          "distinct_vectors": 2892079,
+          "top1_share": 0.0526,
+          "top10_share": 0.119,
+          "top100_share": 0.1462,
+          "vectors_for_half": 17188,
+          "largest_vector_rows": 883575
+        },
+        "ddos": {
+          "rows": 4141256,
+          "distinct_vectors": 538350,
+          "top1_share": 0.4037,
+          "top10_share": 0.7671,
+          "top100_share": 0.8134,
+          "vectors_for_half": 2,
+          "largest_vector_rows": 1671924
+        },
+        "dos": {
+          "rows": 203456,
+          "distinct_vectors": 198539,
+          "top1_share": 0.0017,
+          "top10_share": 0.0086,
+          "top100_share": 0.0178,
+          "vectors_for_half": 96811,
+          "largest_vector_rows": 342
+        },
+        "injection": {
+          "rows": 381777,
+          "distinct_vectors": 350074,
+          "top1_share": 0.0061,
+          "top10_share": 0.0176,
+          "top100_share": 0.0482,
+          "vectors_for_half": 159186,
+          "largest_vector_rows": 2344
+        },
+        "mitm": {
+          "rows": 6013,
+          "distinct_vectors": 5008,
+          "top1_share": 0.0042,
+          "top10_share": 0.0195,
+          "top100_share": 0.0632,
+          "vectors_for_half": 2002,
+          "largest_vector_rows": 25
+        },
+        "password": {
+          "rows": 1594777,
+          "distinct_vectors": 697419,
+          "top1_share": 0.034,
+          "top10_share": 0.1031,
+          "top100_share": 0.2437,
+          "vectors_for_half": 10941,
+          "largest_vector_rows": 54266
+        },
+        "ransomware": {
+          "rows": 3971,
+          "distinct_vectors": 2830,
+          "top1_share": 0.0899,
+          "top10_share": 0.2178,
+          "top100_share": 0.2921,
+          "vectors_for_half": 845,
+          "largest_vector_rows": 357
+        },
+        "scanning": {
+          "rows": 1358977,
+          "distinct_vectors": 226783,
+          "top1_share": 0.1955,
+          "top10_share": 0.3565,
+          "top100_share": 0.4183,
+          "vectors_for_half": 813,
+          "largest_vector_rows": 265628
+        },
+        "xss": {
+          "rows": 2834435,
+          "distinct_vectors": 2581528,
+          "top1_share": 0.0023,
+          "top10_share": 0.0063,
+          "top100_share": 0.0097,
+          "vectors_for_half": 1164311,
+          "largest_vector_rows": 6400
+        }
+      },
+      "dataset": {
+        "rows": 27520260,
+        "distinct_vectors": 7299522,
+        "top10_share": 0.1929,
+        "top100_share": 0.2291,
+        "vectors_for_half": 24017
+      }
+    },
+    "NF-BoT-IoT-v3": {
+      "classes": {
+        "Benign": {
+          "rows": 51989,
+          "distinct_vectors": 26532,
+          "top1_share": 0.0295,
+          "top10_share": 0.0586,
+          "top100_share": 0.0906,
+          "vectors_for_half": 3912,
+          "largest_vector_rows": 1536
+        },
+        "DDoS": {
+          "rows": 7150882,
+          "distinct_vectors": 287453,
+          "top1_share": 0.012,
+          "top10_share": 0.0144,
+          "top100_share": 0.0253,
+          "vectors_for_half": 43083,
+          "largest_vector_rows": 86005
+        },
+        "DoS": {
+          "rows": 8034190,
+          "distinct_vectors": 354734,
+          "top1_share": 0.0153,
+          "top10_share": 0.0301,
+          "top100_share": 0.0445,
+          "vectors_for_half": 52232,
+          "largest_vector_rows": 122631
+        },
+        "Reconnaissance": {
+          "rows": 1695132,
+          "distinct_vectors": 899045,
+          "top1_share": 0.013,
+          "top10_share": 0.0447,
+          "top100_share": 0.0629,
+          "vectors_for_half": 98029,
+          "largest_vector_rows": 22084
+        },
+        "Theft": {
+          "rows": 1615,
+          "distinct_vectors": 448,
+          "top1_share": 0.6749,
+          "top10_share": 0.7183,
+          "top100_share": 0.7845,
+          "vectors_for_half": 1,
+          "largest_vector_rows": 1090
+        }
+      },
+      "dataset": {
+        "rows": 16933808,
+        "distinct_vectors": 1561202,
+        "top10_share": 0.0229,
+        "top100_share": 0.0315,
+        "vectors_for_half": 105473
+      }
+    },
+    "NF-CSE-CIC-IDS2018-v3": {
+      "classes": {
+        "Benign": {
+          "rows": 17514626,
+          "distinct_vectors": 13833033,
+          "top1_share": 0.0051,
+          "top10_share": 0.025,
+          "top100_share": 0.0451,
+          "vectors_for_half": 5075720,
+          "largest_vector_rows": 90163
+        },
+        "Bot": {
+          "rows": 207703,
+          "distinct_vectors": 2804,
+          "top1_share": 0.1324,
+          "top10_share": 0.705,
+          "top100_share": 0.9489,
+          "vectors_for_half": 5,
+          "largest_vector_rows": 27491
+        },
+        "Brute_Force_-Web": {
+          "rows": 1618,
+          "distinct_vectors": 1105,
+          "top1_share": 0.115,
+          "top10_share": 0.2676,
+          "top100_share": 0.3789,
+          "vectors_for_half": 296,
+          "largest_vector_rows": 186
+        },
+        "Brute_Force_-XSS": {
+          "rows": 480,
+          "distinct_vectors": 66,
+          "top1_share": 0.6562,
+          "top10_share": 0.8792,
+          "top100_share": 1.0,
+          "vectors_for_half": 1,
+          "largest_vector_rows": 315
+        },
+        "DDOS_attack-HOIC": {
+          "rows": 1032311,
+          "distinct_vectors": 244060,
+          "top1_share": 0.0037,
+          "top10_share": 0.0245,
+          "top100_share": 0.1054,
+          "vectors_for_half": 7193,
+          "largest_vector_rows": 3826
+        },
+        "DDOS_attack-LOIC-UDP": {
+          "rows": 3450,
+          "distinct_vectors": 1723,
+          "top1_share": 0.0012,
+          "top10_share": 0.007,
+          "top100_share": 0.0591,
+          "vectors_for_half": 861,
+          "largest_vector_rows": 4
+        },
+        "DDoS_attacks-LOIC-HTTP": {
+          "rows": 288589,
+          "distinct_vectors": 265827,
+          "top1_share": 0.0288,
+          "top10_share": 0.0297,
+          "top100_share": 0.0331,
+          "vectors_for_half": 121533,
+          "largest_vector_rows": 8325
+        },
+        "DoS_attacks-GoldenEye": {
+          "rows": 61300,
+          "distinct_vectors": 27410,
+          "top1_share": 0.0654,
+          "top10_share": 0.0939,
+          "top100_share": 0.1042,
+          "vectors_for_half": 12085,
+          "largest_vector_rows": 4006
+        },
+        "DoS_attacks-Hulk": {
+          "rows": 100076,
+          "distinct_vectors": 100072,
+          "top1_share": 0.0,
+          "top10_share": 0.0001,
+          "top100_share": 0.001,
+          "vectors_for_half": 50034,
+          "largest_vector_rows": 4
+        },
+        "DoS_attacks-SlowHTTPTest": {
+          "rows": 105550,
+          "distinct_vectors": 1,
+          "top1_share": 1.0,
+          "top10_share": 1.0,
+          "top100_share": 1.0,
+          "vectors_for_half": 1,
+          "largest_vector_rows": 105550
+        },
+        "DoS_attacks-Slowloris": {
+          "rows": 36040,
+          "distinct_vectors": 3510,
+          "top1_share": 0.3299,
+          "top10_share": 0.6239,
+          "top100_share": 0.7346,
+          "vectors_for_half": 2,
+          "largest_vector_rows": 11890
+        },
+        "FTP-BruteForce": {
+          "rows": 386720,
+          "distinct_vectors": 1,
+          "top1_share": 1.0,
+          "top10_share": 1.0,
+          "top100_share": 1.0,
+          "vectors_for_half": 1,
+          "largest_vector_rows": 386720
+        },
+        "Infiltration": {
+          "rows": 188152,
+          "distinct_vectors": 84089,
+          "top1_share": 0.0035,
+          "top10_share": 0.0127,
+          "top100_share": 0.033,
+          "vectors_for_half": 24070,
+          "largest_vector_rows": 658
+        },
+        "SQL_Injection": {
+          "rows": 440,
+          "distinct_vectors": 116,
+          "top1_share": 0.6295,
+          "top10_share": 0.7591,
+          "top100_share": 0.9636,
+          "vectors_for_half": 1,
+          "largest_vector_rows": 277
+        },
+        "SSH-Bruteforce": {
+          "rows": 188474,
+          "distinct_vectors": 93980,
+          "top1_share": 0.0003,
+          "top10_share": 0.0005,
+          "top100_share": 0.0024,
+          "vectors_for_half": 46862,
+          "largest_vector_rows": 60
+        }
+      },
+      "dataset": {
+        "rows": 20115529,
+        "distinct_vectors": 14647955,
+        "top10_share": 0.0458,
+        "top100_share": 0.0724,
+        "vectors_for_half": 4590191
+      }
+    },
+    "NF-ToN-IoT-v2": {
+      "classes": {
+        "Benign": {
+          "rows": 6099469,
+          "distinct_vectors": 1083794,
+          "top1_share": 0.0056,
+          "top10_share": 0.015,
+          "top100_share": 0.0659,
+          "vectors_for_half": 935,
+          "largest_vector_rows": 34417
+        },
+        "backdoor": {
+          "rows": 16809,
+          "distinct_vectors": 137,
+          "top1_share": 0.5867,
+          "top10_share": 0.9908,
+          "top100_share": 0.9978,
+          "vectors_for_half": 1,
+          "largest_vector_rows": 9862
+        },
+        "ddos": {
+          "rows": 2026234,
+          "distinct_vectors": 268694,
+          "top1_share": 0.0417,
+          "top10_share": 0.1814,
+          "top100_share": 0.4345,
+          "vectors_for_half": 177,
+          "largest_vector_rows": 84546
+        },
+        "dos": {
+          "rows": 712609,
+          "distinct_vectors": 321217,
+          "top1_share": 0.0,
+          "top10_share": 0.0002,
+          "top100_share": 0.0019,
+          "vectors_for_half": 61438,
+          "largest_vector_rows": 22
+        },
+        "injection": {
+          "rows": 684465,
+          "distinct_vectors": 162910,
+          "top1_share": 0.0334,
+          "top10_share": 0.1334,
+          "top100_share": 0.2842,
+          "vectors_for_half": 732,
+          "largest_vector_rows": 22884
+        },
+        "mitm": {
+          "rows": 7723,
+          "distinct_vectors": 7647,
+          "top1_share": 0.0023,
+          "top10_share": 0.0062,
+          "top100_share": 0.0228,
+          "vectors_for_half": 3786,
+          "largest_vector_rows": 18
+        },
+        "password": {
+          "rows": 1153323,
+          "distinct_vectors": 182637,
+          "top1_share": 0.0413,
+          "top10_share": 0.1976,
+          "top100_share": 0.4882,
+          "vectors_for_half": 119,
+          "largest_vector_rows": 47654
+        },
+        "ransomware": {
+          "rows": 3425,
+          "distinct_vectors": 559,
+          "top1_share": 0.4079,
+          "top10_share": 0.6199,
+          "top100_share": 0.8613,
+          "vectors_for_half": 4,
+          "largest_vector_rows": 1397
+        },
+        "scanning": {
+          "rows": 3781419,
+          "distinct_vectors": 295952,
+          "top1_share": 0.1043,
+          "top10_share": 0.1973,
+          "top100_share": 0.2333,
+          "vectors_for_half": 26646,
+          "largest_vector_rows": 394339
+        },
+        "xss": {
+          "rows": 2455020,
+          "distinct_vectors": 953815,
+          "top1_share": 0.0007,
+          "top10_share": 0.006,
+          "top100_share": 0.033,
+          "vectors_for_half": 50778,
+          "largest_vector_rows": 1768
+        }
+      },
+      "dataset": {
+        "rows": 16940496,
+        "distinct_vectors": 3277362,
+        "top10_share": 0.0627,
+        "top100_share": 0.1213,
+        "vectors_for_half": 4934
+      }
+    },
+    "NF-BoT-IoT-v2": {
+      "classes": {
+        "Benign": {
+          "rows": 135037,
+          "distinct_vectors": 107809,
+          "top1_share": 0.0116,
+          "top10_share": 0.0347,
+          "top100_share": 0.0446,
+          "vectors_for_half": 40291,
+          "largest_vector_rows": 1561
+        },
+        "DDoS": {
+          "rows": 18331847,
+          "distinct_vectors": 17705,
+          "top1_share": 0.0172,
+          "top10_share": 0.0777,
+          "top100_share": 0.4212,
+          "vectors_for_half": 140,
+          "largest_vector_rows": 315053
+        },
+        "DoS": {
+          "rows": 16673183,
+          "distinct_vectors": 39941,
+          "top1_share": 0.0314,
+          "top10_share": 0.0922,
+          "top100_share": 0.3648,
+          "vectors_for_half": 193,
+          "largest_vector_rows": 524096
+        },
+        "Reconnaissance": {
+          "rows": 2620999,
+          "distinct_vectors": 191266,
+          "top1_share": 0.0177,
+          "top10_share": 0.1332,
+          "top100_share": 0.2307,
+          "vectors_for_half": 2227,
+          "largest_vector_rows": 46375
+        },
+        "Theft": {
+          "rows": 2431,
+          "distinct_vectors": 811,
+          "top1_share": 0.4488,
+          "top10_share": 0.5948,
+          "top100_share": 0.6927,
+          "vectors_for_half": 3,
+          "largest_vector_rows": 1091
+        }
+      },
+      "dataset": {
+        "rows": 37763497,
+        "distinct_vectors": 357532,
+        "top10_share": 0.0534,
+        "top100_share": 0.2409,
+        "vectors_for_half": 383
+      }
+    },
+    "NF-CSE-CIC-IDS2018-v2": {
+      "classes": {
+        "Benign": {
+          "rows": 16635567,
+          "distinct_vectors": 8488924,
+          "top1_share": 0.0078,
+          "top10_share": 0.0322,
+          "top100_share": 0.0925,
+          "vectors_for_half": 450435,
+          "largest_vector_rows": 129152
+        },
+        "Bot": {
+          "rows": 143097,
+          "distinct_vectors": 472,
+          "top1_share": 0.9135,
+          "top10_share": 0.9611,
+          "top100_share": 0.9955,
+          "vectors_for_half": 1,
+          "largest_vector_rows": 130725
+        },
+        "Brute Force -Web": {
+          "rows": 2143,
+          "distinct_vectors": 1496,
+          "top1_share": 0.0299,
+          "top10_share": 0.0905,
+          "top100_share": 0.2534,
+          "vectors_for_half": 425,
+          "largest_vector_rows": 64
+        },
+        "Brute Force -XSS": {
+          "rows": 927,
+          "distinct_vectors": 793,
+          "top1_share": 0.0054,
+          "top10_share": 0.0442,
+          "top100_share": 0.2524,
+          "vectors_for_half": 330,
+          "largest_vector_rows": 5
+        },
+        "DDOS attack-HOIC": {
+          "rows": 1080858,
+          "distinct_vectors": 95740,
+          "top1_share": 0.0047,
+          "top10_share": 0.0318,
+          "top100_share": 0.1551,
+          "vectors_for_half": 1301,
+          "largest_vector_rows": 5072
+        },
+        "DDOS attack-LOIC-UDP": {
+          "rows": 2112,
+          "distinct_vectors": 2107,
+          "top1_share": 0.0024,
+          "top10_share": 0.0071,
+          "top100_share": 0.0497,
+          "vectors_for_half": 1051,
+          "largest_vector_rows": 5
+        },
+        "DDoS attacks-LOIC-HTTP": {
+          "rows": 307300,
+          "distinct_vectors": 16791,
+          "top1_share": 0.1224,
+          "top10_share": 0.6416,
+          "top100_share": 0.922,
+          "vectors_for_half": 6,
+          "largest_vector_rows": 37621
+        },
+        "DoS attacks-GoldenEye": {
+          "rows": 27723,
+          "distinct_vectors": 27018,
+          "top1_share": 0.0003,
+          "top10_share": 0.0016,
+          "top100_share": 0.0117,
+          "vectors_for_half": 13157,
+          "largest_vector_rows": 7
+        },
+        "DoS attacks-Hulk": {
+          "rows": 432648,
+          "distinct_vectors": 311534,
+          "top1_share": 0.0003,
+          "top10_share": 0.0024,
+          "top100_share": 0.0163,
+          "vectors_for_half": 95210,
+          "largest_vector_rows": 113
+        },
+        "DoS attacks-SlowHTTPTest": {
+          "rows": 14116,
+          "distinct_vectors": 15,
+          "top1_share": 0.2563,
+          "top10_share": 0.9996,
+          "top100_share": 1.0,
+          "vectors_for_half": 3,
+          "largest_vector_rows": 3618
+        },
+        "DoS attacks-Slowloris": {
+          "rows": 9512,
+          "distinct_vectors": 188,
+          "top1_share": 0.2518,
+          "top10_share": 0.844,
+          "top100_share": 0.9878,
+          "vectors_for_half": 3,
+          "largest_vector_rows": 2395
+        },
+        "FTP-BruteForce": {
+          "rows": 25933,
+          "distinct_vectors": 19,
+          "top1_share": 0.1791,
+          "top10_share": 0.9995,
+          "top100_share": 1.0,
+          "vectors_for_half": 3,
+          "largest_vector_rows": 4645
+        },
+        "Infiltration": {
+          "rows": 116361,
+          "distinct_vectors": 77735,
+          "top1_share": 0.0131,
+          "top10_share": 0.0523,
+          "top100_share": 0.1017,
+          "vectors_for_half": 19555,
+          "largest_vector_rows": 1519
+        },
+        "SQL Injection": {
+          "rows": 432,
+          "distinct_vectors": 340,
+          "top1_share": 0.0139,
+          "top10_share": 0.1042,
+          "top100_share": 0.4444,
+          "vectors_for_half": 124,
+          "largest_vector_rows": 6
+        },
+        "SSH-Bruteforce": {
+          "rows": 94979,
+          "distinct_vectors": 14701,
+          "top1_share": 0.0966,
+          "top10_share": 0.456,
+          "top100_share": 0.8252,
+          "vectors_for_half": 13,
+          "largest_vector_rows": 9172
+        }
+      },
+      "dataset": {
+        "rows": 18893708,
+        "distinct_vectors": 9035510,
+        "top10_share": 0.0343,
+        "top100_share": 0.0949,
+        "vectors_for_half": 223327
+      }
+    }
+  },
+  "conflicts": {
+    "NF-ToN-IoT-v3": {
+      "canonical_conflict_rows": 11792729,
+      "canonical_sets": [
+        {
+          "labels": "Benign / Reconnaissance",
+          "vectors": 151716,
+          "rows": 7830299
+        },
+        {
+          "labels": "(excluded) / Benign / DDoS / Injection",
+          "vectors": 109,
+          "rows": 1907652
+        },
+        {
+          "labels": "(excluded) / Benign / CredentialAttack / DDoS / Injection",
+          "vectors": 15,
+          "rows": 914930
+        },
+        {
+          "labels": "Benign / CredentialAttack",
+          "vectors": 6716,
+          "rows": 595881
+        },
+        {
+          "labels": "Benign / DDoS / Injection",
+          "vectors": 34,
+          "rows": 187921
+        },
+        {
+          "labels": "Benign / DDoS",
+          "vectors": 35294,
+          "rows": 108146
+        },
+        {
+          "labels": "(excluded) / Benign",
+          "vectors": 12616,
+          "rows": 53997
+        },
+        {
+          "labels": "DDoS / Injection",
+          "vectors": 221,
+          "rows": 49734
+        },
+        {
+          "labels": "(excluded) / Benign / CredentialAttack / DDoS / Injection / Reconnaissance",
+          "vectors": 4,
+          "rows": 25050
+        },
+        {
+          "labels": "(excluded) / Benign / DDoS / Injection / Reconnaissance",
+          "vectors": 6,
+          "rows": 20755
+        },
+        {
+          "labels": "Benign / DDoS / Injection / Reconnaissance",
+          "vectors": 1,
+          "rows": 16437
+        },
+        {
+          "labels": "(excluded) / Injection",
+          "vectors": 2167,
+          "rows": 13098
+        },
+        {
+          "labels": "(excluded) / Benign / DDoS / DoS / Injection / Reconnaissance",
+          "vectors": 38,
+          "rows": 9432
+        },
+        {
+          "labels": "(excluded) / Benign / DDoS / Reconnaissance",
+          "vectors": 6,
+          "rows": 7219
+        },
+        {
+          "labels": "(excluded) / Benign / DDoS",
+          "vectors": 94,
+          "rows": 5626
+        },
+        {
+          "labels": "Benign / Bot_or_Backdoor",
+          "vectors": 34,
+          "rows": 4893
+        },
+        {
+          "labels": "(excluded) / Benign / Injection",
+          "vectors": 145,
+          "rows": 4855
+        },
+        {
+          "labels": "(excluded) / DDoS / Injection",
+          "vectors": 94,
+          "rows": 4071
+        },
+        {
+          "labels": "(excluded) / DDoS",
+          "vectors": 733,
+          "rows": 3841
+        },
+        {
+          "labels": "Benign / Injection",
+          "vectors": 440,
+          "rows": 3578
+        },
+        {
+          "labels": "(excluded) / Benign / DoS / Injection",
+          "vectors": 60,
+          "rows": 2109
+        },
+        {
+          "labels": "(excluded) / Benign / CredentialAttack / Injection / Reconnaissance",
+          "vectors": 5,
+          "rows": 2103
+        },
+        {
+          "labels": "(excluded) / Benign / CredentialAttack / Injection",
+          "vectors": 32,
+          "rows": 1843
+        },
+        {
+          "labels": "Benign / DoS",
+          "vectors": 844,
+          "rows": 1828
+        },
+        {
+          "labels": "CredentialAttack / Injection",
+          "vectors": 91,
+          "rows": 1814
+        },
+        {
+          "labels": "(excluded) / Benign / CredentialAttack",
+          "vectors": 10,
+          "rows": 1761
+        },
+        {
+          "labels": "(excluded) / Benign / DDoS / DoS / Reconnaissance",
+          "vectors": 16,
+          "rows": 1671
+        },
+        {
+          "labels": "(excluded) / Benign / CredentialAttack / Reconnaissance",
+          "vectors": 1,
+          "rows": 1569
+        },
+        {
+          "labels": "(excluded) / Benign / DDoS / DoS / Injection",
+          "vectors": 28,
+          "rows": 1489
+        },
+        {
+          "labels": "(excluded) / Benign / DoS",
+          "vectors": 82,
+          "rows": 1386
+        },
+        {
+          "labels": "(excluded) / Benign / DoS / Injection / Reconnaissance",
+          "vectors": 20,
+          "rows": 1185
+        },
+        {
+          "labels": "Benign / CredentialAttack / Reconnaissance",
+          "vectors": 1,
+          "rows": 706
+        },
+        {
+          "labels": "Benign / DDoS / Reconnaissance",
+          "vectors": 3,
+          "rows": 625
+        },
+        {
+          "labels": "(excluded) / Benign / CredentialAttack / DDoS",
+          "vectors": 9,
+          "rows": 549
+        },
+        {
+          "labels": "(excluded) / Benign / CredentialAttack / DDoS / Reconnaissance",
+          "vectors": 2,
+          "rows": 474
+        },
+        {
+          "labels": "(excluded) / CredentialAttack",
+          "vectors": 69,
+          "rows": 399
+        },
+        {
+          "labels": "(excluded) / Benign / DoS / Reconnaissance",
+          "vectors": 16,
+          "rows": 386
+        },
+        {
+          "labels": "(excluded) / Benign / Bot_or_Backdoor / Reconnaissance",
+          "vectors": 1,
+          "rows": 365
+        },
+        {
+          "labels": "Benign / CredentialAttack / Injection",
+          "vectors": 13,
+          "rows": 364
+        },
+        {
+          "labels": "(excluded) / Benign / DDoS / DoS",
+          "vectors": 23,
+          "rows": 303
+        },
+        {
+          "labels": "(excluded) / CredentialAttack / DDoS",
+          "vectors": 10,
+          "rows": 256
+        },
+        {
+          "labels": "DDoS / DoS",
+          "vectors": 7,
+          "rows": 208
+        },
+        {
+          "labels": "(excluded) / Benign / Reconnaissance",
+          "vectors": 13,
+          "rows": 191
+        },
+        {
+          "labels": "DDoS / Reconnaissance",
+          "vectors": 1,
+          "rows": 186
+        },
+        {
+          "labels": "DoS / Injection",
+          "vectors": 82,
+          "rows": 184
+        },
+        {
+          "labels": "Benign / DoS / Injection",
+          "vectors": 15,
+          "rows": 158
+        },
+        {
+          "labels": "(excluded) / Benign / Bot_or_Backdoor",
+          "vectors": 1,
+          "rows": 153
+        },
+        {
+          "labels": "(excluded) / CredentialAttack / Injection",
+          "vectors": 9,
+          "rows": 127
+        },
+        {
+          "labels": "(excluded) / DoS / Injection",
+          "vectors": 13,
+          "rows": 123
+        },
+        {
+          "labels": "CredentialAttack / DDoS",
+          "vectors": 10,
+          "rows": 103
+        },
+        {
+          "labels": "(excluded) / DoS",
+          "vectors": 40,
+          "rows": 91
+        },
+        {
+          "labels": "Benign / DoS / Reconnaissance",
+          "vectors": 7,
+          "rows": 68
+        },
+        {
+          "labels": "Benign / CredentialAttack / DDoS",
+          "vectors": 1,
+          "rows": 61
+        },
+        {
+          "labels": "(excluded) / DDoS / DoS",
+          "vectors": 6,
+          "rows": 51
+        },
+        {
+          "labels": "(excluded) / DDoS / DoS / Injection",
+          "vectors": 6,
+          "rows": 50
+        },
+        {
+          "labels": "(excluded) / Benign / Injection / Reconnaissance",
+          "vectors": 2,
+          "rows": 50
+        },
+        {
+          "labels": "Benign / DDoS / DoS / Injection / Reconnaissance",
+          "vectors": 2,
+          "rows": 43
+        },
+        {
+          "labels": "Benign / DDoS / DoS / Injection",
+          "vectors": 6,
+          "rows": 40
+        },
+        {
+          "labels": "DoS / Reconnaissance",
+          "vectors": 16,
+          "rows": 39
+        },
+        {
+          "labels": "DDoS / DoS / Injection",
+          "vectors": 4,
+          "rows": 30
+        },
+        {
+          "labels": "(excluded) / CredentialAttack / DDoS / Injection",
+          "vectors": 1,
+          "rows": 27
+        },
+        {
+          "labels": "Benign / DDoS / DoS",
+          "vectors": 3,
+          "rows": 24
+        },
+        {
+          "labels": "CredentialAttack / DDoS / Injection",
+          "vectors": 1,
+          "rows": 20
+        },
+        {
+          "labels": "(excluded) / Benign / CredentialAttack / DDoS / DoS / Injection",
+          "vectors": 1,
+          "rows": 15
+        },
+        {
+          "labels": "(excluded) / Reconnaissance",
+          "vectors": 5,
+          "rows": 14
+        },
+        {
+          "labels": "Injection / Reconnaissance",
+          "vectors": 7,
+          "rows": 14
+        },
+        {
+          "labels": "(excluded) / DDoS / DoS / Injection / Reconnaissance",
+          "vectors": 1,
+          "rows": 13
+        },
+        {
+          "labels": "Benign / DoS / Injection / Reconnaissance",
+          "vectors": 1,
+          "rows": 13
+        },
+        {
+          "labels": "(excluded) / DDoS / DoS / Reconnaissance",
+          "vectors": 1,
+          "rows": 11
+        },
+        {
+          "labels": "DoS / Injection / Reconnaissance",
+          "vectors": 2,
+          "rows": 9
+        },
+        {
+          "labels": "(excluded) / CredentialAttack / DDoS / Reconnaissance",
+          "vectors": 1,
+          "rows": 8
+        },
+        {
+          "labels": "(excluded) / Injection / Reconnaissance",
+          "vectors": 1,
+          "rows": 3
+        },
+        {
+          "labels": "CredentialAttack / Reconnaissance",
+          "vectors": 1,
+          "rows": 2
+        }
+      ],
+      "binary_conflict_rows": 11718203,
+      "binary_conflict_vectors": 208486
+    },
+    "NF-BoT-IoT-v3": {
+      "canonical_conflict_rows": 681097,
+      "canonical_sets": [
+        {
+          "labels": "Benign / Reconnaissance",
+          "vectors": 6757,
+          "rows": 408113
+        },
+        {
+          "labels": "DDoS / DoS",
+          "vectors": 251,
+          "rows": 272961
+        },
+        {
+          "labels": "DDoS / DoS / Reconnaissance",
+          "vectors": 1,
+          "rows": 23
+        }
+      ],
+      "binary_conflict_rows": 408113,
+      "binary_conflict_vectors": 6757
+    },
+    "NF-CSE-CIC-IDS2018-v3": {
+      "canonical_conflict_rows": 879375,
+      "canonical_sets": [
+        {
+          "labels": "CredentialAttack / DoS",
+          "vectors": 1,
+          "rows": 492330
+        },
+        {
+          "labels": "(excluded) / Benign",
+          "vectors": 9714,
+          "rows": 374522
+        },
+        {
+          "labels": "Benign / DDoS",
+          "vectors": 1,
+          "rows": 8519
+        },
+        {
+          "labels": "(excluded) / Benign / Injection",
+          "vectors": 19,
+          "rows": 3846
+        },
+        {
+          "labels": "(excluded) / Injection",
+          "vectors": 46,
+          "rows": 93
+        },
+        {
+          "labels": "Benign / Injection",
+          "vectors": 2,
+          "rows": 63
+        },
+        {
+          "labels": "Benign / DoS",
+          "vectors": 1,
+          "rows": 2
+        }
+      ],
+      "binary_conflict_rows": 386952,
+      "binary_conflict_vectors": 9737
+    },
+    "NF-ToN-IoT-v2": {
+      "canonical_conflict_rows": 0,
+      "canonical_sets": [],
+      "binary_conflict_rows": 0,
+      "binary_conflict_vectors": 0
+    },
+    "NF-BoT-IoT-v2": {
+      "canonical_conflict_rows": 0,
+      "canonical_sets": [],
+      "binary_conflict_rows": 0,
+      "binary_conflict_vectors": 0
+    },
+    "NF-CSE-CIC-IDS2018-v2": {
+      "canonical_conflict_rows": 446185,
+      "canonical_sets": [
+        {
+          "labels": "(excluded) / DDoS",
+          "vectors": 1650,
+          "rows": 343762
+        },
+        {
+          "labels": "(excluded) / DDoS / Injection",
+          "vectors": 136,
+          "rows": 83706
+        },
+        {
+          "labels": "DDoS / Injection",
+          "vectors": 154,
+          "rows": 18639
+        },
+        {
+          "labels": "(excluded) / Injection",
+          "vectors": 4,
+          "rows": 78
+        }
+      ],
+      "binary_conflict_rows": 0,
+      "binary_conflict_vectors": 0
+    }
+  },
+  "bot_v2_rf": {
+    "dataset": "NF-BoT-IoT-v2",
+    "seed_refit": 2,
+    "largest_ddos_vectors": [
+      {
+        "hash": 7698351508390237590,
+        "ddos_rows": 315053,
+        "split_by_seed": {
+          "1": "train",
+          "2": "test",
+          "3": "train",
+          "4": "test",
+          "5": "test"
+        },
+        "pred_seed2": {
+          "xgb": 1,
+          "rf": 0
+        },
+        "rf_benign_vote_share": 0.91,
+        "features": {
+          "L4_DST_PORT": 80.0,
+          "PROTOCOL": 17.0,
+          "L7_PROTO": 188.0,
+          "IN_BYTES": 28.0,
+          "IN_PKTS": 1.0,
+          "OUT_BYTES": 0.0,
+          "OUT_PKTS": 0.0,
+          "TCP_FLAGS": 0.0,
+          "CLIENT_TCP_FLAGS": 0.0,
+          "SERVER_TCP_FLAGS": 0.0,
+          "FLOW_DURATION_MILLISECONDS": 0.0,
+          "DURATION_IN": 0.0,
+          "DURATION_OUT": 0.0,
+          "MIN_TTL": 0.0,
+          "MAX_TTL": 0.0,
+          "LONGEST_FLOW_PKT": 28.0,
+          "SHORTEST_FLOW_PKT": 28.0,
+          "MIN_IP_PKT_LEN": 0.0,
+          "MAX_IP_PKT_LEN": 28.0,
+          "SRC_TO_DST_SECOND_BYTES": 28.0,
+          "DST_TO_SRC_SECOND_BYTES": 0.0,
+          "RETRANSMITTED_IN_BYTES": 0.0,
+          "RETRANSMITTED_IN_PKTS": 0.0,
+          "RETRANSMITTED_OUT_BYTES": 0.0,
+          "RETRANSMITTED_OUT_PKTS": 0.0,
+          "SRC_TO_DST_AVG_THROUGHPUT": 224000.0,
+          "DST_TO_SRC_AVG_THROUGHPUT": 0.0,
+          "NUM_PKTS_UP_TO_128_BYTES": 1.0,
+          "NUM_PKTS_128_TO_256_BYTES": 0.0,
+          "NUM_PKTS_256_TO_512_BYTES": 0.0,
+          "NUM_PKTS_512_TO_1024_BYTES": 0.0,
+          "NUM_PKTS_1024_TO_1514_BYTES": 0.0,
+          "TCP_WIN_MAX_IN": 0.0,
+          "TCP_WIN_MAX_OUT": 0.0,
+          "ICMP_TYPE": 0.0,
+          "ICMP_IPV4_TYPE": 0.0,
+          "DNS_QUERY_ID": 0.0,
+          "DNS_QUERY_TYPE": 0.0,
+          "DNS_TTL_ANSWER": 0.0,
+          "FTP_COMMAND_RET_CODE": 0.0
+        },
+        "benign_rows_with_this_vector": 0
+      },
+      {
+        "hash": 13641020559467448165,
+        "ddos_rows": 137317,
+        "split_by_seed": {
+          "1": "val",
+          "2": "train",
+          "3": "train",
+          "4": "train",
+          "5": "val"
+        },
+        "pred_seed2": {
+          "xgb": 1,
+          "rf": 1
+        },
+        "rf_benign_vote_share": 0.0,
+        "features": {
+          "L4_DST_PORT": 80.0,
+          "PROTOCOL": 17.0,
+          "L7_PROTO": 188.0,
+          "IN_BYTES": 56.0,
+          "IN_PKTS": 2.0,
+          "OUT_BYTES": 0.0,
+          "OUT_PKTS": 0.0,
+          "TCP_FLAGS": 0.0,
+          "CLIENT_TCP_FLAGS": 0.0,
+          "SERVER_TCP_FLAGS": 0.0,
+          "FLOW_DURATION_MILLISECONDS": 4293967.0,
+          "DURATION_IN": 1000.0,
+          "DURATION_OUT": 0.0,
+          "MIN_TTL": 64.0,
+          "MAX_TTL": 64.0,
+          "LONGEST_FLOW_PKT": 28.0,
+          "SHORTEST_FLOW_PKT": 28.0,
+          "MIN_IP_PKT_LEN": 0.0,
+          "MAX_IP_PKT_LEN": 28.0,
+          "SRC_TO_DST_SECOND_BYTES": 2828.0,
+          "DST_TO_SRC_SECOND_BYTES": 0.0,
+          "RETRANSMITTED_IN_BYTES": 0.0,
+          "RETRANSMITTED_IN_PKTS": 0.0,
+          "RETRANSMITTED_OUT_BYTES": 0.0,
+          "RETRANSMITTED_OUT_PKTS": 0.0,
+          "SRC_TO_DST_AVG_THROUGHPUT": 224000.0,
+          "DST_TO_SRC_AVG_THROUGHPUT": 0.0,
+          "NUM_PKTS_UP_TO_128_BYTES": 2.0,
+          "NUM_PKTS_128_TO_256_BYTES": 0.0,
+          "NUM_PKTS_256_TO_512_BYTES": 0.0,
+          "NUM_PKTS_512_TO_1024_BYTES": 0.0,
+          "NUM_PKTS_1024_TO_1514_BYTES": 0.0,
+          "TCP_WIN_MAX_IN": 0.0,
+          "TCP_WIN_MAX_OUT": 0.0,
+          "ICMP_TYPE": 0.0,
+          "ICMP_IPV4_TYPE": 0.0,
+          "DNS_QUERY_ID": 0.0,
+          "DNS_QUERY_TYPE": 0.0,
+          "DNS_TTL_ANSWER": 0.0,
+          "FTP_COMMAND_RET_CODE": 0.0
+        },
+        "benign_rows_with_this_vector": 0
+      },
+      {
+        "hash": 108404921046500449,
+        "ddos_rows": 126954,
+        "split_by_seed": {
+          "1": "val",
+          "2": "train",
+          "3": "train",
+          "4": "val",
+          "5": "val"
+        },
+        "pred_seed2": {
+          "xgb": 1,
+          "rf": 1
+        },
+        "rf_benign_vote_share": 0.0,
+        "features": {
+          "L4_DST_PORT": 80.0,
+          "PROTOCOL": 17.0,
+          "L7_PROTO": 188.0,
+          "IN_BYTES": 56.0,
+          "IN_PKTS": 2.0,
+          "OUT_BYTES": 0.0,
+          "OUT_PKTS": 0.0,
+          "TCP_FLAGS": 0.0,
+          "CLIENT_TCP_FLAGS": 0.0,
+          "SERVER_TCP_FLAGS": 0.0,
+          "FLOW_DURATION_MILLISECONDS": 4294092.0,
+          "DURATION_IN": 875.0,
+          "DURATION_OUT": 0.0,
+          "MIN_TTL": 64.0,
+          "MAX_TTL": 64.0,
+          "LONGEST_FLOW_PKT": 28.0,
+          "SHORTEST_FLOW_PKT": 28.0,
+          "MIN_IP_PKT_LEN": 0.0,
+          "MAX_IP_PKT_LEN": 28.0,
+          "SRC_TO_DST_SECOND_BYTES": 2828.0,
+          "DST_TO_SRC_SECOND_BYTES": 0.0,
+          "RETRANSMITTED_IN_BYTES": 0.0,
+          "RETRANSMITTED_IN_PKTS": 0.0,
+          "RETRANSMITTED_OUT_BYTES": 0.0,
+          "RETRANSMITTED_OUT_PKTS": 0.0,
+          "SRC_TO_DST_AVG_THROUGHPUT": 224000.0,
+          "DST_TO_SRC_AVG_THROUGHPUT": 0.0,
+          "NUM_PKTS_UP_TO_128_BYTES": 2.0,
+          "NUM_PKTS_128_TO_256_BYTES": 0.0,
+          "NUM_PKTS_256_TO_512_BYTES": 0.0,
+          "NUM_PKTS_512_TO_1024_BYTES": 0.0,
+          "NUM_PKTS_1024_TO_1514_BYTES": 0.0,
+          "TCP_WIN_MAX_IN": 0.0,
+          "TCP_WIN_MAX_OUT": 0.0,
+          "ICMP_TYPE": 0.0,
+          "ICMP_IPV4_TYPE": 0.0,
+          "DNS_QUERY_ID": 0.0,
+          "DNS_QUERY_TYPE": 0.0,
+          "DNS_TTL_ANSWER": 0.0,
+          "FTP_COMMAND_RET_CODE": 0.0
+        },
+        "benign_rows_with_this_vector": 0
+      },
+      {
+        "hash": 10082063259326543631,
+        "ddos_rows": 126050,
+        "split_by_seed": {
+          "1": "train",
+          "2": "train",
+          "3": "train",
+          "4": "train",
+          "5": "train"
+        },
+        "pred_seed2": {
+          "xgb": 1,
+          "rf": 1
+        },
+        "rf_benign_vote_share": 0.0,
+        "features": {
+          "L4_DST_PORT": 80.0,
+          "PROTOCOL": 17.0,
+          "L7_PROTO": 188.0,
+          "IN_BYTES": 56.0,
+          "IN_PKTS": 2.0,
+          "OUT_BYTES": 0.0,
+          "OUT_PKTS": 0.0,
+          "TCP_FLAGS": 0.0,
+          "CLIENT_TCP_FLAGS": 0.0,
+          "SERVER_TCP_FLAGS": 0.0,
+          "FLOW_DURATION_MILLISECONDS": 4293842.0,
+          "DURATION_IN": 1125.0,
+          "DURATION_OUT": 0.0,
+          "MIN_TTL": 64.0,
+          "MAX_TTL": 64.0,
+          "LONGEST_FLOW_PKT": 28.0,
+          "SHORTEST_FLOW_PKT": 28.0,
+          "MIN_IP_PKT_LEN": 0.0,
+          "MAX_IP_PKT_LEN": 28.0,
+          "SRC_TO_DST_SECOND_BYTES": 2828.0,
+          "DST_TO_SRC_SECOND_BYTES": 0.0,
+          "RETRANSMITTED_IN_BYTES": 0.0,
+          "RETRANSMITTED_IN_PKTS": 0.0,
+          "RETRANSMITTED_OUT_BYTES": 0.0,
+          "RETRANSMITTED_OUT_PKTS": 0.0,
+          "SRC_TO_DST_AVG_THROUGHPUT": 224000.0,
+          "DST_TO_SRC_AVG_THROUGHPUT": 0.0,
+          "NUM_PKTS_UP_TO_128_BYTES": 2.0,
+          "NUM_PKTS_128_TO_256_BYTES": 0.0,
+          "NUM_PKTS_256_TO_512_BYTES": 0.0,
+          "NUM_PKTS_512_TO_1024_BYTES": 0.0,
+          "NUM_PKTS_1024_TO_1514_BYTES": 0.0,
+          "TCP_WIN_MAX_IN": 0.0,
+          "TCP_WIN_MAX_OUT": 0.0,
+          "ICMP_TYPE": 0.0,
+          "ICMP_IPV4_TYPE": 0.0,
+          "DNS_QUERY_ID": 0.0,
+          "DNS_QUERY_TYPE": 0.0,
+          "DNS_TTL_ANSWER": 0.0,
+          "FTP_COMMAND_RET_CODE": 0.0
+        },
+        "benign_rows_with_this_vector": 0
+      },
+      {
+        "hash": 17780562423997735831,
+        "ddos_rows": 125907,
+        "split_by_seed": {
+          "1": "train",
+          "2": "val",
+          "3": "train",
+          "4": "train",
+          "5": "train"
+        },
+        "pred_seed2": {
+          "xgb": 1,
+          "rf": 1
+        },
+        "rf_benign_vote_share": 0.0,
+        "features": {
+          "L4_DST_PORT": 80.0,
+          "PROTOCOL": 17.0,
+          "L7_PROTO": 188.0,
+          "IN_BYTES": 56.0,
+          "IN_PKTS": 2.0,
+          "OUT_BYTES": 0.0,
+          "OUT_PKTS": 0.0,
+          "TCP_FLAGS": 0.0,
+          "CLIENT_TCP_FLAGS": 0.0,
+          "SERVER_TCP_FLAGS": 0.0,
+          "FLOW_DURATION_MILLISECONDS": 4294014.0,
+          "DURATION_IN": 953.0,
+          "DURATION_OUT": 0.0,
+          "MIN_TTL": 64.0,
+          "MAX_TTL": 64.0,
+          "LONGEST_FLOW_PKT": 28.0,
+          "SHORTEST_FLOW_PKT": 28.0,
+          "MIN_IP_PKT_LEN": 0.0,
+          "MAX_IP_PKT_LEN": 28.0,
+          "SRC_TO_DST_SECOND_BYTES": 2828.0,
+          "DST_TO_SRC_SECOND_BYTES": 0.0,
+          "RETRANSMITTED_IN_BYTES": 0.0,
+          "RETRANSMITTED_IN_PKTS": 0.0,
+          "RETRANSMITTED_OUT_BYTES": 0.0,
+          "RETRANSMITTED_OUT_PKTS": 0.0,
+          "SRC_TO_DST_AVG_THROUGHPUT": 224000.0,
+          "DST_TO_SRC_AVG_THROUGHPUT": 0.0,
+          "NUM_PKTS_UP_TO_128_BYTES": 2.0,
+          "NUM_PKTS_128_TO_256_BYTES": 0.0,
+          "NUM_PKTS_256_TO_512_BYTES": 0.0,
+          "NUM_PKTS_512_TO_1024_BYTES": 0.0,
+          "NUM_PKTS_1024_TO_1514_BYTES": 0.0,
+          "TCP_WIN_MAX_IN": 0.0,
+          "TCP_WIN_MAX_OUT": 0.0,
+          "ICMP_TYPE": 0.0,
+          "ICMP_IPV4_TYPE": 0.0,
+          "DNS_QUERY_ID": 0.0,
+          "DNS_QUERY_TYPE": 0.0,
+          "DNS_TTL_ANSWER": 0.0,
+          "FTP_COMMAND_RET_CODE": 0.0
+        },
+        "benign_rows_with_this_vector": 0
+      }
+    ]
+  }
+}

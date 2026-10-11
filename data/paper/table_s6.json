@@ -1,0 +1,88 @@
+{
+  "provenance": {
+    "commit": "6224fa641fbc9a3b6fc7bacd97238e8c9967cba8",
+    "dirty": false,
+    "script_sha1": "42b35733986010cf79731afa680b1c2d7bfbba39",
+    "generated_utc": "2026-10-10T22:10:08.318500+00:00"
+  },
+  "values": {
+    "default": {
+      "g0_unstable": [
+        5,
+        12
+      ],
+      "r0_above_g0": [
+        11,
+        12
+      ],
+      "gts_cic_can": -16.7,
+      "gts_other": [
+        -8.0,
+        9.3
+      ],
+      "bin_G-NP": [
+        22,
+        2,
+        24
+      ],
+      "bin_G-NI": [
+        18,
+        6,
+        24
+      ],
+      "collapse_bot": [
+        34,
+        40
+      ],
+      "ports_service_identity_top5": 46,
+      "q4": [
+        18,
+        2,
+        0
+      ],
+      "rho_src_tgt": [
+        0.89,
+        0.95
+      ]
+    },
+    "mds1": {
+      "g0_unstable": [
+        4,
+        12
+      ],
+      "r0_above_g0": [
+        11,
+        12
+      ],
+      "gts_cic_can": 17.8,
+      "gts_other": [
+        -8.2,
+        9.3
+      ],
+      "bin_G-NP": [
+        21,
+        3,
+        24
+      ],
+      "bin_G-NI": [
+        18,
+        6,
+        24
+      ],
+      "collapse_bot": [
+        34,
+        40
+      ],
+      "ports_service_identity_top5": 54,
+      "q4": [
+        19,
+        1,
+        0
+      ],
+      "rho_src_tgt": [
+        0.91,
+        0.97
+      ]
+    }
+  }
+}

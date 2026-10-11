@@ -1,0 +1,1685 @@
+{
+  "generated_utc": "2026-10-07T01:19:56.446744+00:00",
+  "part1": {
+    "tables": [
+      {
+        "task": "BIN",
+        "source": "NF-BoT-IoT-v2",
+        "target": "NF-CSE-CIC-IDS2018-v2",
+        "model": "xgb",
+        "in_domain_G0": 0.98891,
+        "target_median": {
+          "G0": 0.81329,
+          "R0": 0.79716,
+          "G-NC": 0.81329,
+          "G-NP": 0.79595,
+          "G-NI": 0.57086
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-BoT-IoT-v2",
+        "target": "NF-CSE-CIC-IDS2018-v2",
+        "model": "rf",
+        "in_domain_G0": 0.54551,
+        "target_median": {
+          "G0": 0.85324,
+          "R0": 0.84868,
+          "G-NC": 0.85324,
+          "G-NP": 0.78607,
+          "G-NI": 0.5312
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-BoT-IoT-v2",
+        "target": "NF-ToN-IoT-v2",
+        "model": "xgb",
+        "in_domain_G0": 0.98891,
+        "target_median": {
+          "G0": 0.46335,
+          "R0": 0.46305,
+          "G-NC": 0.46335,
+          "G-NP": 0.43623,
+          "G-NI": 0.41506
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-BoT-IoT-v2",
+        "target": "NF-ToN-IoT-v2",
+        "model": "rf",
+        "in_domain_G0": 0.54551,
+        "target_median": {
+          "G0": 0.44142,
+          "R0": 0.44497,
+          "G-NC": 0.44142,
+          "G-NP": 0.43173,
+          "G-NI": 0.42186
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-CSE-CIC-IDS2018-v2",
+        "target": "NF-BoT-IoT-v2",
+        "model": "xgb",
+        "in_domain_G0": 0.98101,
+        "target_median": {
+          "G0": 0.51483,
+          "R0": 0.53519,
+          "G-NC": 0.51483,
+          "G-NP": 0.31651,
+          "G-NI": 0.17801
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-CSE-CIC-IDS2018-v2",
+        "target": "NF-BoT-IoT-v2",
+        "model": "rf",
+        "in_domain_G0": 0.81247,
+        "target_median": {
+          "G0": 0.31084,
+          "R0": 0.29979,
+          "G-NC": 0.31084,
+          "G-NP": 0.29474,
+          "G-NI": 0.27263
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-CSE-CIC-IDS2018-v2",
+        "target": "NF-ToN-IoT-v2",
+        "model": "xgb",
+        "in_domain_G0": 0.98101,
+        "target_median": {
+          "G0": 0.49986,
+          "R0": 0.52291,
+          "G-NC": 0.49986,
+          "G-NP": 0.41661,
+          "G-NI": 0.44512
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-CSE-CIC-IDS2018-v2",
+        "target": "NF-ToN-IoT-v2",
+        "model": "rf",
+        "in_domain_G0": 0.81247,
+        "target_median": {
+          "G0": 0.38245,
+          "R0": 0.38576,
+          "G-NC": 0.38245,
+          "G-NP": 0.38883,
+          "G-NI": 0.36417
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-ToN-IoT-v2",
+        "target": "NF-BoT-IoT-v2",
+        "model": "xgb",
+        "in_domain_G0": 0.9773,
+        "target_median": {
+          "G0": 0.33079,
+          "R0": 0.27348,
+          "G-NC": 0.33079,
+          "G-NP": 0.24415,
+          "G-NI": 0.18296
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-ToN-IoT-v2",
+        "target": "NF-BoT-IoT-v2",
+        "model": "rf",
+        "in_domain_G0": 0.97584,
+        "target_median": {
+          "G0": 0.08023,
+          "R0": 0.08317,
+          "G-NC": 0.08023,
+          "G-NP": 0.04679,
+          "G-NI": 0.05782
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-ToN-IoT-v2",
+        "target": "NF-CSE-CIC-IDS2018-v2",
+        "model": "xgb",
+        "in_domain_G0": 0.9773,
+        "target_median": {
+          "G0": 0.45075,
+          "R0": 0.43821,
+          "G-NC": 0.45075,
+          "G-NP": 0.40799,
+          "G-NI": 0.46476
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-ToN-IoT-v2",
+        "target": "NF-CSE-CIC-IDS2018-v2",
+        "model": "rf",
+        "in_domain_G0": 0.97584,
+        "target_median": {
+          "G0": 0.51853,
+          "R0": 0.5168,
+          "G-NC": 0.51853,
+          "G-NP": 0.43312,
+          "G-NI": 0.45202
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-BoT-IoT-v3",
+        "target": "NF-CSE-CIC-IDS2018-v3",
+        "model": "xgb",
+        "in_domain_G0": 0.82671,
+        "target_median": {
+          "G0": 0.68683,
+          "R0": 0.67495,
+          "G-NC": 0.60738,
+          "G-NP": 0.67305,
+          "G-NI": 0.5358
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-BoT-IoT-v3",
+        "target": "NF-CSE-CIC-IDS2018-v3",
+        "model": "rf",
+        "in_domain_G0": 0.86111,
+        "target_median": {
+          "G0": 0.61267,
+          "R0": 0.62357,
+          "G-NC": 0.5973,
+          "G-NP": 0.60355,
+          "G-NI": 0.55173
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-BoT-IoT-v3",
+        "target": "NF-ToN-IoT-v3",
+        "model": "xgb",
+        "in_domain_G0": 0.82671,
+        "target_median": {
+          "G0": 0.39732,
+          "R0": 0.39818,
+          "G-NC": 0.42322,
+          "G-NP": 0.47172,
+          "G-NI": 0.48232
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-BoT-IoT-v3",
+        "target": "NF-ToN-IoT-v3",
+        "model": "rf",
+        "in_domain_G0": 0.86111,
+        "target_median": {
+          "G0": 0.51877,
+          "R0": 0.52652,
+          "G-NC": 0.52539,
+          "G-NP": 0.5176,
+          "G-NI": 0.52715
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-CSE-CIC-IDS2018-v3",
+        "target": "NF-BoT-IoT-v3",
+        "model": "xgb",
+        "in_domain_G0": 0.94482,
+        "target_median": {
+          "G0": 0.1289,
+          "R0": 0.13958,
+          "G-NC": 0.11411,
+          "G-NP": 0.1659,
+          "G-NI": 0.22336
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-CSE-CIC-IDS2018-v3",
+        "target": "NF-BoT-IoT-v3",
+        "model": "rf",
+        "in_domain_G0": 0.83239,
+        "target_median": {
+          "G0": 0.08664,
+          "R0": 0.09002,
+          "G-NC": 0.08566,
+          "G-NP": 0.0845,
+          "G-NI": 0.0877
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-CSE-CIC-IDS2018-v3",
+        "target": "NF-ToN-IoT-v3",
+        "model": "xgb",
+        "in_domain_G0": 0.94482,
+        "target_median": {
+          "G0": 0.6923,
+          "R0": 0.69186,
+          "G-NC": 0.69166,
+          "G-NP": 0.43491,
+          "G-NI": 0.55569
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-CSE-CIC-IDS2018-v3",
+        "target": "NF-ToN-IoT-v3",
+        "model": "rf",
+        "in_domain_G0": 0.83239,
+        "target_median": {
+          "G0": 0.44369,
+          "R0": 0.52366,
+          "G-NC": 0.49122,
+          "G-NP": 0.41237,
+          "G-NI": 0.47716
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-ToN-IoT-v3",
+        "target": "NF-BoT-IoT-v3",
+        "model": "xgb",
+        "in_domain_G0": 0.8426,
+        "target_median": {
+          "G0": 0.49165,
+          "R0": 0.49867,
+          "G-NC": 0.32904,
+          "G-NP": 0.33538,
+          "G-NI": 0.34589
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-ToN-IoT-v3",
+        "target": "NF-BoT-IoT-v3",
+        "model": "rf",
+        "in_domain_G0": 0.86182,
+        "target_median": {
+          "G0": 0.32855,
+          "R0": 0.32522,
+          "G-NC": 0.32722,
+          "G-NP": 0.18288,
+          "G-NI": 0.17069
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-ToN-IoT-v3",
+        "target": "NF-CSE-CIC-IDS2018-v3",
+        "model": "xgb",
+        "in_domain_G0": 0.8426,
+        "target_median": {
+          "G0": 0.42013,
+          "R0": 0.38393,
+          "G-NC": 0.36593,
+          "G-NP": 0.34821,
+          "G-NI": 0.31554
+        }
+      },
+      {
+        "task": "BIN",
+        "source": "NF-ToN-IoT-v3",
+        "target": "NF-CSE-CIC-IDS2018-v3",
+        "model": "rf",
+        "in_domain_G0": 0.86182,
+        "target_median": {
+          "G0": 0.42976,
+          "R0": 0.39097,
+          "G-NC": 0.37736,
+          "G-NP": 0.41044,
+          "G-NI": 0.32448
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-BoT-IoT-v2",
+        "target": "NF-CSE-CIC-IDS2018-v2",
+        "model": "xgb",
+        "in_domain_G0": 0.6823,
+        "target_median": {
+          "G0": 0.4437,
+          "R0": 0.49468,
+          "G-NC": 0.4437,
+          "G-NP": 0.33012,
+          "G-NI": 0.33461
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-BoT-IoT-v2",
+        "target": "NF-CSE-CIC-IDS2018-v2",
+        "model": "rf",
+        "in_domain_G0": 0.66958,
+        "target_median": {
+          "G0": 0.43688,
+          "R0": 0.38343,
+          "G-NC": 0.43688,
+          "G-NP": 0.33004,
+          "G-NI": 0.33235
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-BoT-IoT-v2",
+        "target": "NF-ToN-IoT-v2",
+        "model": "xgb",
+        "in_domain_G0": 0.6823,
+        "target_median": {
+          "G0": 0.28589,
+          "R0": 0.28693,
+          "G-NC": 0.28589,
+          "G-NP": 0.27178,
+          "G-NI": 0.27201
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-BoT-IoT-v2",
+        "target": "NF-ToN-IoT-v2",
+        "model": "rf",
+        "in_domain_G0": 0.66958,
+        "target_median": {
+          "G0": 0.27748,
+          "R0": 0.2744,
+          "G-NC": 0.27748,
+          "G-NP": 0.27147,
+          "G-NI": 0.27149
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-CSE-CIC-IDS2018-v2",
+        "target": "NF-BoT-IoT-v2",
+        "model": "xgb",
+        "in_domain_G0": 0.99981,
+        "target_median": {
+          "G0": 0.00275,
+          "R0": 0.00275,
+          "G-NC": 0.00275,
+          "G-NP": 0.00258,
+          "G-NI": 0.00278
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-CSE-CIC-IDS2018-v2",
+        "target": "NF-BoT-IoT-v2",
+        "model": "rf",
+        "in_domain_G0": 0.99973,
+        "target_median": {
+          "G0": 0.00256,
+          "R0": 0.00254,
+          "G-NC": 0.00256,
+          "G-NP": 0.00242,
+          "G-NI": 0.00247
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-CSE-CIC-IDS2018-v2",
+        "target": "NF-ToN-IoT-v2",
+        "model": "xgb",
+        "in_domain_G0": 0.99981,
+        "target_median": {
+          "G0": 0.2776,
+          "R0": 0.27775,
+          "G-NC": 0.2776,
+          "G-NP": 0.27278,
+          "G-NI": 0.27631
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-CSE-CIC-IDS2018-v2",
+        "target": "NF-ToN-IoT-v2",
+        "model": "rf",
+        "in_domain_G0": 0.99973,
+        "target_median": {
+          "G0": 0.27379,
+          "R0": 0.27368,
+          "G-NC": 0.27379,
+          "G-NP": 0.27195,
+          "G-NI": 0.27313
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-ToN-IoT-v2",
+        "target": "NF-BoT-IoT-v2",
+        "model": "xgb",
+        "in_domain_G0": 0.98383,
+        "target_median": {
+          "G0": 0.00252,
+          "R0": 0.00253,
+          "G-NC": 0.00252,
+          "G-NP": 0.00252,
+          "G-NI": 0.0025
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-ToN-IoT-v2",
+        "target": "NF-BoT-IoT-v2",
+        "model": "rf",
+        "in_domain_G0": 0.98264,
+        "target_median": {
+          "G0": 0.00252,
+          "R0": 0.00252,
+          "G-NC": 0.00252,
+          "G-NP": 0.00252,
+          "G-NI": 0.0025
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-ToN-IoT-v2",
+        "target": "NF-CSE-CIC-IDS2018-v2",
+        "model": "xgb",
+        "in_domain_G0": 0.98383,
+        "target_median": {
+          "G0": 0.28286,
+          "R0": 0.2978,
+          "G-NC": 0.28286,
+          "G-NP": 0.28392,
+          "G-NI": 0.29305
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-ToN-IoT-v2",
+        "target": "NF-CSE-CIC-IDS2018-v2",
+        "model": "rf",
+        "in_domain_G0": 0.98264,
+        "target_median": {
+          "G0": 0.29153,
+          "R0": 0.29193,
+          "G-NC": 0.29153,
+          "G-NP": 0.29584,
+          "G-NI": 0.29856
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-BoT-IoT-v3",
+        "target": "NF-CSE-CIC-IDS2018-v3",
+        "model": "xgb",
+        "in_domain_G0": 0.99491,
+        "target_median": {
+          "G0": 0.39404,
+          "R0": 0.39701,
+          "G-NC": 0.39413,
+          "G-NP": 0.40346,
+          "G-NI": 0.42955
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-BoT-IoT-v3",
+        "target": "NF-CSE-CIC-IDS2018-v3",
+        "model": "rf",
+        "in_domain_G0": 0.99598,
+        "target_median": {
+          "G0": 0.37711,
+          "R0": 0.39119,
+          "G-NC": 0.38327,
+          "G-NP": 0.379,
+          "G-NI": 0.39248
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-BoT-IoT-v3",
+        "target": "NF-ToN-IoT-v3",
+        "model": "xgb",
+        "in_domain_G0": 0.99491,
+        "target_median": {
+          "G0": 0.30255,
+          "R0": 0.29011,
+          "G-NC": 0.33509,
+          "G-NP": 0.29422,
+          "G-NI": 0.2979
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-BoT-IoT-v3",
+        "target": "NF-ToN-IoT-v3",
+        "model": "rf",
+        "in_domain_G0": 0.99598,
+        "target_median": {
+          "G0": 0.30981,
+          "R0": 0.29029,
+          "G-NC": 0.29062,
+          "G-NP": 0.30805,
+          "G-NI": 0.28865
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-CSE-CIC-IDS2018-v3",
+        "target": "NF-BoT-IoT-v3",
+        "model": "xgb",
+        "in_domain_G0": 0.98981,
+        "target_median": {
+          "G0": 0.00254,
+          "R0": 0.00223,
+          "G-NC": 0.00248,
+          "G-NP": 0.00256,
+          "G-NI": 0.0049
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-CSE-CIC-IDS2018-v3",
+        "target": "NF-BoT-IoT-v3",
+        "model": "rf",
+        "in_domain_G0": 0.98987,
+        "target_median": {
+          "G0": 0.00262,
+          "R0": 0.00262,
+          "G-NC": 0.00264,
+          "G-NP": 0.00261,
+          "G-NI": 0.00414
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-CSE-CIC-IDS2018-v3",
+        "target": "NF-ToN-IoT-v3",
+        "model": "xgb",
+        "in_domain_G0": 0.98981,
+        "target_median": {
+          "G0": 0.29515,
+          "R0": 0.2952,
+          "G-NC": 0.29608,
+          "G-NP": 0.2914,
+          "G-NI": 0.29206
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-CSE-CIC-IDS2018-v3",
+        "target": "NF-ToN-IoT-v3",
+        "model": "rf",
+        "in_domain_G0": 0.98987,
+        "target_median": {
+          "G0": 0.29642,
+          "R0": 0.29672,
+          "G-NC": 0.29681,
+          "G-NP": 0.29388,
+          "G-NI": 0.2929
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-ToN-IoT-v3",
+        "target": "NF-BoT-IoT-v3",
+        "model": "xgb",
+        "in_domain_G0": 0.92587,
+        "target_median": {
+          "G0": 0.01798,
+          "R0": 0.0041,
+          "G-NC": 0.16615,
+          "G-NP": 0.00733,
+          "G-NI": 0.00271
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-ToN-IoT-v3",
+        "target": "NF-BoT-IoT-v3",
+        "model": "rf",
+        "in_domain_G0": 0.91379,
+        "target_median": {
+          "G0": 0.00274,
+          "R0": 0.00245,
+          "G-NC": 0.00231,
+          "G-NP": 0.00234,
+          "G-NI": 0.00266
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-ToN-IoT-v3",
+        "target": "NF-CSE-CIC-IDS2018-v3",
+        "model": "xgb",
+        "in_domain_G0": 0.92587,
+        "target_median": {
+          "G0": 0.29578,
+          "R0": 0.29666,
+          "G-NC": 0.29268,
+          "G-NP": 0.297,
+          "G-NI": 0.29287
+        }
+      },
+      {
+        "task": "CORE",
+        "source": "NF-ToN-IoT-v3",
+        "target": "NF-CSE-CIC-IDS2018-v3",
+        "model": "rf",
+        "in_domain_G0": 0.91379,
+        "target_median": {
+          "G0": 0.2983,
+          "R0": 0.30023,
+          "G-NC": 0.29751,
+          "G-NP": 0.29928,
+          "G-NI": 0.29085
+        }
+      }
+    ],
+    "counts": {
+      "BIN R0": {
+        "better": 3,
+        "similar": 18,
+        "worse": 3
+      },
+      "BIN G-NC": {
+        "better": 2,
+        "similar": 18,
+        "worse": 4
+      },
+      "BIN G-NP": {
+        "better": 2,
+        "similar": 9,
+        "worse": 13
+      },
+      "BIN G-NI": {
+        "better": 3,
+        "similar": 5,
+        "worse": 16
+      },
+      "CORE R0": {
+        "better": 1,
+        "similar": 22,
+        "worse": 1
+      },
+      "CORE G-NC": {
+        "better": 2,
+        "similar": 22,
+        "worse": 0
+      },
+      "CORE G-NP": {
+        "better": 0,
+        "similar": 22,
+        "worse": 2
+      },
+      "CORE G-NI": {
+        "better": 1,
+        "similar": 20,
+        "worse": 3
+      }
+    },
+    "delta": [
+      {
+        "task": "BIN",
+        "source": "NF-BoT-IoT-v2",
+        "target": "NF-CSE-CIC-IDS2018-v2",
+        "model": "xgb",
+        "delta_G0": 17.319,
+        "delta_R0": 19.319
+      },
+      {
+        "task": "BIN",
+        "source": "NF-BoT-IoT-v2",
+        "target": "NF-CSE-CIC-IDS2018-v2",
+        "model": "rf",
+        "delta_G0": -25.008,
+        "delta_R0": 14.292
+      },
+      {
+        "task": "BIN",
+        "source": "NF-BoT-IoT-v2",
+        "target": "NF-ToN-IoT-v2",
+        "model": "xgb",
+        "delta_G0": 52.538,
+        "delta_R0": 52.767
+      },
+      {
+        "task": "BIN",
+        "source": "NF-BoT-IoT-v2",
+        "target": "NF-ToN-IoT-v2",
+        "model": "rf",
+        "delta_G0": 11.136,
+        "delta_R0": 54.663
+      },
+      {
+        "task": "BIN",
+        "source": "NF-CSE-CIC-IDS2018-v2",
+        "target": "NF-BoT-IoT-v2",
+        "model": "xgb",
+        "delta_G0": 46.596,
+        "delta_R0": 45.027
+      },
+      {
+        "task": "BIN",
+        "source": "NF-CSE-CIC-IDS2018-v2",
+        "target": "NF-BoT-IoT-v2",
+        "model": "rf",
+        "delta_G0": 50.258,
+        "delta_R0": 53.271
+      },
+      {
+        "task": "BIN",
+        "source": "NF-CSE-CIC-IDS2018-v2",
+        "target": "NF-ToN-IoT-v2",
+        "model": "xgb",
+        "delta_G0": 48.093,
+        "delta_R0": 46.213
+      },
+      {
+        "task": "BIN",
+        "source": "NF-CSE-CIC-IDS2018-v2",
+        "target": "NF-ToN-IoT-v2",
+        "model": "rf",
+        "delta_G0": 43.002,
+        "delta_R0": 44.735
+      },
+      {
+        "task": "BIN",
+        "source": "NF-ToN-IoT-v2",
+        "target": "NF-BoT-IoT-v2",
+        "model": "xgb",
+        "delta_G0": 63.832,
+        "delta_R0": 71.825
+      },
+      {
+        "task": "BIN",
+        "source": "NF-ToN-IoT-v2",
+        "target": "NF-BoT-IoT-v2",
+        "model": "rf",
+        "delta_G0": 89.361,
+        "delta_R0": 91.206
+      },
+      {
+        "task": "BIN",
+        "source": "NF-ToN-IoT-v2",
+        "target": "NF-CSE-CIC-IDS2018-v2",
+        "model": "xgb",
+        "delta_G0": 53.179,
+        "delta_R0": 55.407
+      },
+      {
+        "task": "BIN",
+        "source": "NF-ToN-IoT-v2",
+        "target": "NF-CSE-CIC-IDS2018-v2",
+        "model": "rf",
+        "delta_G0": 45.531,
+        "delta_R0": 47.858
+      },
+      {
+        "task": "BIN",
+        "source": "NF-BoT-IoT-v3",
+        "target": "NF-CSE-CIC-IDS2018-v3",
+        "model": "xgb",
+        "delta_G0": 16.21,
+        "delta_R0": 17.284
+      },
+      {
+        "task": "BIN",
+        "source": "NF-BoT-IoT-v3",
+        "target": "NF-CSE-CIC-IDS2018-v3",
+        "model": "rf",
+        "delta_G0": 23.727,
+        "delta_R0": 22.81
+      },
+      {
+        "task": "BIN",
+        "source": "NF-BoT-IoT-v3",
+        "target": "NF-ToN-IoT-v3",
+        "model": "xgb",
+        "delta_G0": 45.004,
+        "delta_R0": 45.26
+      },
+      {
+        "task": "BIN",
+        "source": "NF-BoT-IoT-v3",
+        "target": "NF-ToN-IoT-v3",
+        "model": "rf",
+        "delta_G0": 28.989,
+        "delta_R0": 32.871
+      },
+      {
+        "task": "BIN",
+        "source": "NF-CSE-CIC-IDS2018-v3",
+        "target": "NF-BoT-IoT-v3",
+        "model": "xgb",
+        "delta_G0": 81.777,
+        "delta_R0": 80.91
+      },
+      {
+        "task": "BIN",
+        "source": "NF-CSE-CIC-IDS2018-v3",
+        "target": "NF-BoT-IoT-v3",
+        "model": "rf",
+        "delta_G0": 74.406,
+        "delta_R0": 74.403
+      },
+      {
+        "task": "BIN",
+        "source": "NF-CSE-CIC-IDS2018-v3",
+        "target": "NF-ToN-IoT-v3",
+        "model": "xgb",
+        "delta_G0": 25.509,
+        "delta_R0": 25.741
+      },
+      {
+        "task": "BIN",
+        "source": "NF-CSE-CIC-IDS2018-v3",
+        "target": "NF-ToN-IoT-v3",
+        "model": "rf",
+        "delta_G0": 37.911,
+        "delta_R0": 31.042
+      },
+      {
+        "task": "BIN",
+        "source": "NF-ToN-IoT-v3",
+        "target": "NF-BoT-IoT-v3",
+        "model": "xgb",
+        "delta_G0": 35.095,
+        "delta_R0": 37.345
+      },
+      {
+        "task": "BIN",
+        "source": "NF-ToN-IoT-v3",
+        "target": "NF-BoT-IoT-v3",
+        "model": "rf",
+        "delta_G0": 53.229,
+        "delta_R0": 56.053
+      },
+      {
+        "task": "BIN",
+        "source": "NF-ToN-IoT-v3",
+        "target": "NF-CSE-CIC-IDS2018-v3",
+        "model": "xgb",
+        "delta_G0": 42.804,
+        "delta_R0": 48.819
+      },
+      {
+        "task": "BIN",
+        "source": "NF-ToN-IoT-v3",
+        "target": "NF-CSE-CIC-IDS2018-v3",
+        "model": "rf",
+        "delta_G0": 43.48,
+        "delta_R0": 49.484
+      },
+      {
+        "task": "CORE",
+        "source": "NF-BoT-IoT-v2",
+        "target": "NF-CSE-CIC-IDS2018-v2",
+        "model": "xgb",
+        "delta_G0": 34.34,
+        "delta_R0": 49.684
+      },
+      {
+        "task": "CORE",
+        "source": "NF-BoT-IoT-v2",
+        "target": "NF-CSE-CIC-IDS2018-v2",
+        "model": "rf",
+        "delta_G0": 31.928,
+        "delta_R0": 61.105
+      },
+      {
+        "task": "CORE",
+        "source": "NF-BoT-IoT-v2",
+        "target": "NF-ToN-IoT-v2",
+        "model": "xgb",
+        "delta_G0": 39.839,
+        "delta_R0": 70.459
+      },
+      {
+        "task": "CORE",
+        "source": "NF-BoT-IoT-v2",
+        "target": "NF-ToN-IoT-v2",
+        "model": "rf",
+        "delta_G0": 39.151,
+        "delta_R0": 71.97
+      },
+      {
+        "task": "CORE",
+        "source": "NF-CSE-CIC-IDS2018-v2",
+        "target": "NF-BoT-IoT-v2",
+        "model": "xgb",
+        "delta_G0": 99.711,
+        "delta_R0": 99.724
+      },
+      {
+        "task": "CORE",
+        "source": "NF-CSE-CIC-IDS2018-v2",
+        "target": "NF-BoT-IoT-v2",
+        "model": "rf",
+        "delta_G0": 99.717,
+        "delta_R0": 99.745
+      },
+      {
+        "task": "CORE",
+        "source": "NF-CSE-CIC-IDS2018-v2",
+        "target": "NF-ToN-IoT-v2",
+        "model": "xgb",
+        "delta_G0": 72.226,
+        "delta_R0": 72.225
+      },
+      {
+        "task": "CORE",
+        "source": "NF-CSE-CIC-IDS2018-v2",
+        "target": "NF-ToN-IoT-v2",
+        "model": "rf",
+        "delta_G0": 72.61,
+        "delta_R0": 72.63
+      },
+      {
+        "task": "CORE",
+        "source": "NF-ToN-IoT-v2",
+        "target": "NF-BoT-IoT-v2",
+        "model": "xgb",
+        "delta_G0": 98.131,
+        "delta_R0": 98.128
+      },
+      {
+        "task": "CORE",
+        "source": "NF-ToN-IoT-v2",
+        "target": "NF-BoT-IoT-v2",
+        "model": "rf",
+        "delta_G0": 98.013,
+        "delta_R0": 98.168
+      },
+      {
+        "task": "CORE",
+        "source": "NF-ToN-IoT-v2",
+        "target": "NF-CSE-CIC-IDS2018-v2",
+        "model": "xgb",
+        "delta_G0": 70.122,
+        "delta_R0": 68.612
+      },
+      {
+        "task": "CORE",
+        "source": "NF-ToN-IoT-v2",
+        "target": "NF-CSE-CIC-IDS2018-v2",
+        "model": "rf",
+        "delta_G0": 69.109,
+        "delta_R0": 69.221
+      },
+      {
+        "task": "CORE",
+        "source": "NF-BoT-IoT-v3",
+        "target": "NF-CSE-CIC-IDS2018-v3",
+        "model": "xgb",
+        "delta_G0": 60.054,
+        "delta_R0": 59.473
+      },
+      {
+        "task": "CORE",
+        "source": "NF-BoT-IoT-v3",
+        "target": "NF-CSE-CIC-IDS2018-v3",
+        "model": "rf",
+        "delta_G0": 61.962,
+        "delta_R0": 60.312
+      },
+      {
+        "task": "CORE",
+        "source": "NF-BoT-IoT-v3",
+        "target": "NF-ToN-IoT-v3",
+        "model": "xgb",
+        "delta_G0": 69.289,
+        "delta_R0": 70.165
+      },
+      {
+        "task": "CORE",
+        "source": "NF-BoT-IoT-v3",
+        "target": "NF-ToN-IoT-v3",
+        "model": "rf",
+        "delta_G0": 68.55,
+        "delta_R0": 70.398
+      },
+      {
+        "task": "CORE",
+        "source": "NF-CSE-CIC-IDS2018-v3",
+        "target": "NF-BoT-IoT-v3",
+        "model": "xgb",
+        "delta_G0": 98.758,
+        "delta_R0": 99.77
+      },
+      {
+        "task": "CORE",
+        "source": "NF-CSE-CIC-IDS2018-v3",
+        "target": "NF-BoT-IoT-v3",
+        "model": "rf",
+        "delta_G0": 98.76,
+        "delta_R0": 99.731
+      },
+      {
+        "task": "CORE",
+        "source": "NF-CSE-CIC-IDS2018-v3",
+        "target": "NF-ToN-IoT-v3",
+        "model": "xgb",
+        "delta_G0": 69.491,
+        "delta_R0": 70.472
+      },
+      {
+        "task": "CORE",
+        "source": "NF-CSE-CIC-IDS2018-v3",
+        "target": "NF-ToN-IoT-v3",
+        "model": "rf",
+        "delta_G0": 69.345,
+        "delta_R0": 70.32
+      },
+      {
+        "task": "CORE",
+        "source": "NF-ToN-IoT-v3",
+        "target": "NF-BoT-IoT-v3",
+        "model": "xgb",
+        "delta_G0": 90.789,
+        "delta_R0": 93.441
+      },
+      {
+        "task": "CORE",
+        "source": "NF-ToN-IoT-v3",
+        "target": "NF-BoT-IoT-v3",
+        "model": "rf",
+        "delta_G0": 91.108,
+        "delta_R0": 93.069
+      },
+      {
+        "task": "CORE",
+        "source": "NF-ToN-IoT-v3",
+        "target": "NF-CSE-CIC-IDS2018-v3",
+        "model": "xgb",
+        "delta_G0": 62.894,
+        "delta_R0": 64.216
+      },
+      {
+        "task": "CORE",
+        "source": "NF-ToN-IoT-v3",
+        "target": "NF-CSE-CIC-IDS2018-v3",
+        "model": "rf",
+        "delta_G0": 61.583,
+        "delta_R0": 63.39
+      }
+    ]
+  },
+  "part2": [
+    {
+      "source": "NF-ToN-IoT-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "xgb",
+      "classes": [
+        "Benign",
+        "DoS",
+        "DDoS"
+      ],
+      "confusion": [
+        [
+          49188,
+          1059,
+          1742
+        ],
+        [
+          8011754,
+          15509,
+          6927
+        ],
+        [
+          7129526,
+          14035,
+          7321
+        ]
+      ],
+      "share_predicted_benign": [
+        0.9461,
+        0.9972,
+        0.997
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "rf",
+      "classes": [
+        "Benign",
+        "DoS",
+        "DDoS"
+      ],
+      "confusion": [
+        [
+          51457,
+          529,
+          3
+        ],
+        [
+          8029430,
+          0,
+          4760
+        ],
+        [
+          7145363,
+          0,
+          5519
+        ]
+      ],
+      "share_predicted_benign": [
+        0.9898,
+        0.9994,
+        0.9992
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "xgb",
+      "classes": [
+        "Benign",
+        "DoS",
+        "DDoS"
+      ],
+      "confusion": [
+        [
+          51024,
+          2,
+          963
+        ],
+        [
+          8034188,
+          2,
+          0
+        ],
+        [
+          7150872,
+          10,
+          0
+        ]
+      ],
+      "share_predicted_benign": [
+        0.9814,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v3",
+      "target": "NF-BoT-IoT-v3",
+      "model": "rf",
+      "classes": [
+        "Benign",
+        "DoS",
+        "DDoS"
+      ],
+      "confusion": [
+        [
+          51941,
+          2,
+          46
+        ],
+        [
+          8034179,
+          11,
+          0
+        ],
+        [
+          7150870,
+          12,
+          0
+        ]
+      ],
+      "share_predicted_benign": [
+        0.9991,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "xgb",
+      "classes": [
+        "Benign",
+        "DoS",
+        "DDoS"
+      ],
+      "confusion": [
+        [
+          132960,
+          2056,
+          21
+        ],
+        [
+          16662291,
+          2,
+          10890
+        ],
+        [
+          18331815,
+          0,
+          32
+        ]
+      ],
+      "share_predicted_benign": [
+        0.9846,
+        0.9993,
+        1.0
+      ]
+    },
+    {
+      "source": "NF-ToN-IoT-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "rf",
+      "classes": [
+        "Benign",
+        "DoS",
+        "DDoS"
+      ],
+      "confusion": [
+        [
+          133324,
+          1479,
+          234
+        ],
+        [
+          16666580,
+          0,
+          6603
+        ],
+        [
+          18331847,
+          0,
+          0
+        ]
+      ],
+      "share_predicted_benign": [
+        0.9873,
+        0.9996,
+        1.0
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "xgb",
+      "classes": [
+        "Benign",
+        "DoS",
+        "DDoS"
+      ],
+      "confusion": [
+        [
+          128030,
+          0,
+          7007
+        ],
+        [
+          16665028,
+          8102,
+          53
+        ],
+        [
+          18331795,
+          0,
+          52
+        ]
+      ],
+      "share_predicted_benign": [
+        0.9481,
+        0.9995,
+        1.0
+      ]
+    },
+    {
+      "source": "NF-CSE-CIC-IDS2018-v2",
+      "target": "NF-BoT-IoT-v2",
+      "model": "rf",
+      "classes": [
+        "Benign",
+        "DoS",
+        "DDoS"
+      ],
+      "confusion": [
+        [
+          133789,
+          0,
+          1248
+        ],
+        [
+          16672293,
+          890,
+          0
+        ],
+        [
+          18331847,
+          0,
+          0
+        ]
+      ],
+      "share_predicted_benign": [
+        0.9908,
+        0.9999,
+        1.0
+      ]
+    }
+  ],
+  "part3": {
+    "profiles": [
+      {
+        "dataset": "NF-ToN-IoT-v3",
+        "class": "Benign",
+        "rows": 16792214,
+        "sampled": 2000000,
+        "one_packet": 0.5894045,
+        "no_reply": 0.6183385,
+        "tcp": 0.810342,
+        "udp": 0.175292,
+        "median_packets": 1.0,
+        "median_in_bytes": 52.0,
+        "top_dst_ports": "53 5%, 51642 5%, 52970 2%"
+      },
+      {
+        "dataset": "NF-ToN-IoT-v3",
+        "class": "DoS",
+        "rows": 203456,
+        "sampled": 203456,
+        "one_packet": 0.0009436929852154766,
+        "no_reply": 0.3139499449512425,
+        "tcp": 0.5356686458005662,
+        "udp": 0.4643313541994338,
+        "median_packets": 97.0,
+        "median_in_bytes": 3720.0,
+        "top_dst_ports": "53 46%, 80 2%, 443 1%"
+      },
+      {
+        "dataset": "NF-ToN-IoT-v3",
+        "class": "DDoS",
+        "rows": 4141256,
+        "sampled": 2000000,
+        "one_packet": 0.049801,
+        "no_reply": 0.0582055,
+        "tcp": 0.9770845,
+        "udp": 0.0229155,
+        "median_packets": 3.0,
+        "median_in_bytes": 112.0,
+        "top_dst_ports": "443 57%, 80 40%, 53 2%"
+      },
+      {
+        "dataset": "NF-BoT-IoT-v3",
+        "class": "Benign",
+        "rows": 51989,
+        "sampled": 51989,
+        "one_packet": 0.12202581315278233,
+        "no_reply": 0.2680759391409721,
+        "tcp": 0.7233260882109677,
+        "udp": 0.27457731443189903,
+        "median_packets": 2.0,
+        "median_in_bytes": 40.0,
+        "top_dst_ports": "53 12%, 80 8%, 1 4%"
+      },
+      {
+        "dataset": "NF-BoT-IoT-v3",
+        "class": "DoS",
+        "rows": 8034190,
+        "sampled": 2000000,
+        "one_packet": 0.028177,
+        "no_reply": 0.752761,
+        "tcp": 0.495756,
+        "udp": 0.504236,
+        "median_packets": 6.0,
+        "median_in_bytes": 360.0,
+        "top_dst_ports": "80 100%, 0 0%, 11532 0%"
+      },
+      {
+        "dataset": "NF-BoT-IoT-v3",
+        "class": "DDoS",
+        "rows": 7150882,
+        "sampled": 2000000,
+        "one_packet": 0.0127835,
+        "no_reply": 0.8356525,
+        "tcp": 0.56272,
+        "udp": 0.437275,
+        "median_packets": 6.0,
+        "median_in_bytes": 420.0,
+        "top_dst_ports": "80 100%, 0 0%, 4223 0%"
+      },
+      {
+        "dataset": "NF-CSE-CIC-IDS2018-v3",
+        "class": "Benign",
+        "rows": 17514626,
+        "sampled": 2000000,
+        "one_packet": 0.0914585,
+        "no_reply": 0.111308,
+        "tcp": 0.5626785,
+        "udp": 0.433551,
+        "median_packets": 4.0,
+        "median_in_bytes": 128.0,
+        "top_dst_ports": "53 41%, 3389 17%, 443 16%"
+      },
+      {
+        "dataset": "NF-CSE-CIC-IDS2018-v3",
+        "class": "DoS",
+        "rows": 302966,
+        "sampled": 302966,
+        "one_packet": 0.01869186641405306,
+        "no_reply": 0.03342949373857133,
+        "tcp": 1.0,
+        "udp": 0.0,
+        "median_packets": 8.0,
+        "median_in_bytes": 635.0,
+        "top_dst_ports": "80 65%, 21 35%"
+      },
+      {
+        "dataset": "NF-CSE-CIC-IDS2018-v3",
+        "class": "DDoS",
+        "rows": 1324350,
+        "sampled": 1324350,
+        "one_packet": 0.0062861026163778455,
+        "no_reply": 0.009487673198172689,
+        "tcp": 0.9967984294182052,
+        "udp": 0.0032015705817948427,
+        "median_packets": 10.0,
+        "median_in_bytes": 503.0,
+        "top_dst_ports": "80 100%"
+      },
+      {
+        "dataset": "NF-ToN-IoT-v2",
+        "class": "Benign",
+        "rows": 6099469,
+        "sampled": 2000000,
+        "one_packet": 0.533824,
+        "no_reply": 0.557215,
+        "tcp": 0.907337,
+        "udp": 0.0890355,
+        "median_packets": 1.0,
+        "median_in_bytes": 44.0,
+        "top_dst_ports": "53 7%, 9197 1%, 80 1%"
+      },
+      {
+        "dataset": "NF-ToN-IoT-v2",
+        "class": "DoS",
+        "rows": 712609,
+        "sampled": 712609,
+        "one_packet": 0.021748251846384202,
+        "no_reply": 0.11133875659723635,
+        "tcp": 0.14478346470504863,
+        "udp": 0.8552165352949513,
+        "median_packets": 2.0,
+        "median_in_bytes": 70.0,
+        "top_dst_ports": "53 86%, 443 0%, 80 0%"
+      },
+      {
+        "dataset": "NF-ToN-IoT-v2",
+        "class": "DDoS",
+        "rows": 2026234,
+        "sampled": 2000000,
+        "one_packet": 0.0119055,
+        "no_reply": 0.014683,
+        "tcp": 0.981177,
+        "udp": 0.018823,
+        "median_packets": 8.0,
+        "median_in_bytes": 268.0,
+        "top_dst_ports": "443 60%, 80 37%, 53 2%"
+      },
+      {
+        "dataset": "NF-BoT-IoT-v2",
+        "class": "Benign",
+        "rows": 135037,
+        "sampled": 135037,
+        "one_packet": 0.09943941290164918,
+        "no_reply": 0.16654694639247022,
+        "tcp": 0.8900079237542303,
+        "udp": 0.10988099557898946,
+        "median_packets": 2.0,
+        "median_in_bytes": 44.0,
+        "top_dst_ports": "53 5%, 80 4%, 1 1%"
+      },
+      {
+        "dataset": "NF-BoT-IoT-v2",
+        "class": "DoS",
+        "rows": 16673183,
+        "sampled": 2000000,
+        "one_packet": 0.031239,
+        "no_reply": 0.883699,
+        "tcp": 0.9937415,
+        "udp": 0.0062585,
+        "median_packets": 2.0,
+        "median_in_bytes": 280.0,
+        "top_dst_ports": "80 100%, 52487 0%, 50 0%"
+      },
+      {
+        "dataset": "NF-BoT-IoT-v2",
+        "class": "DDoS",
+        "rows": 18331847,
+        "sampled": 2000000,
+        "one_packet": 0.017372,
+        "no_reply": 0.9979385,
+        "tcp": 0.0056545,
+        "udp": 0.9943455,
+        "median_packets": 2.0,
+        "median_in_bytes": 56.0,
+        "top_dst_ports": "80 100%, 6377 0%, 14197 0%"
+      },
+      {
+        "dataset": "NF-CSE-CIC-IDS2018-v2",
+        "class": "Benign",
+        "rows": 16635567,
+        "sampled": 2000000,
+        "one_packet": 0.056165,
+        "no_reply": 0.0690245,
+        "tcp": 0.533851,
+        "udp": 0.4648695,
+        "median_packets": 4.0,
+        "median_in_bytes": 128.0,
+        "top_dst_ports": "53 45%, 3389 21%, 443 13%"
+      },
+      {
+        "dataset": "NF-CSE-CIC-IDS2018-v2",
+        "class": "DoS",
+        "rows": 483999,
+        "sampled": 483999,
+        "one_packet": 0.000332645315382883,
+        "no_reply": 0.005053729449854235,
+        "tcp": 1.0,
+        "udp": 0.0,
+        "median_packets": 43.0,
+        "median_in_bytes": 3010.0,
+        "top_dst_ports": "80 97%, 21 3%"
+      },
+      {
+        "dataset": "NF-CSE-CIC-IDS2018-v2",
+        "class": "DDoS",
+        "rows": 1390270,
+        "sampled": 1390270,
+        "one_packet": 0.006927431362253375,
+        "no_reply": 0.020913203910031864,
+        "tcp": 0.9860171045911945,
+        "udp": 0.013982895408805485,
+        "median_packets": 10.0,
+        "median_in_bytes": 503.0,
+        "top_dst_ports": "80 100%"
+      }
+    ],
+    "overlap": [
+      {
+        "bot": "NF-BoT-IoT-v3",
+        "class": "DoS",
+        "other": "NF-ToN-IoT-v3",
+        "share_in": {
+          "Benign": 0.0,
+          "DoS": 0.0,
+          "DDoS": 0.0
+        }
+      },
+      {
+        "bot": "NF-BoT-IoT-v3",
+        "class": "DDoS",
+        "other": "NF-ToN-IoT-v3",
+        "share_in": {
+          "Benign": 0.0,
+          "DoS": 0.0,
+          "DDoS": 0.0
+        }
+      },
+      {
+        "bot": "NF-BoT-IoT-v3",
+        "class": "DoS",
+        "other": "NF-CSE-CIC-IDS2018-v3",
+        "share_in": {
+          "Benign": 0.0,
+          "DoS": 0.0,
+          "DDoS": 0.0
+        }
+      },
+      {
+        "bot": "NF-BoT-IoT-v3",
+        "class": "DDoS",
+        "other": "NF-CSE-CIC-IDS2018-v3",
+        "share_in": {
+          "Benign": 0.0,
+          "DoS": 0.0,
+          "DDoS": 0.0
+        }
+      },
+      {
+        "bot": "NF-BoT-IoT-v2",
+        "class": "DoS",
+        "other": "NF-ToN-IoT-v2",
+        "share_in": {
+          "Benign": 5.997655036833698e-07,
+          "DoS": 0.0,
+          "DDoS": 5.997655036833698e-07
+        }
+      },
+      {
+        "bot": "NF-BoT-IoT-v2",
+        "class": "DDoS",
+        "other": "NF-ToN-IoT-v2",
+        "share_in": {
+          "Benign": 0.0,
+          "DoS": 0.0,
+          "DDoS": 0.0
+        }
+      },
+      {
+        "bot": "NF-BoT-IoT-v2",
+        "class": "DoS",
+        "other": "NF-CSE-CIC-IDS2018-v2",
+        "share_in": {
+          "Benign": 0.0,
+          "DoS": 0.0,
+          "DDoS": 0.0
+        }
+      },
+      {
+        "bot": "NF-BoT-IoT-v2",
+        "class": "DDoS",
+        "other": "NF-CSE-CIC-IDS2018-v2",
+        "share_in": {
+          "Benign": 0.0,
+          "DoS": 0.0,
+          "DDoS": 0.0
+        }
+      }
+    ]
+  }
+}

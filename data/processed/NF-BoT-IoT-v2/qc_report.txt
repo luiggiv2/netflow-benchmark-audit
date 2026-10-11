@@ -1,0 +1,35 @@
+QC report for NF-BoT-IoT-v2
+Generated: 2026-10-02T02:37:40.742566+00:00
+Total rows: 37,763,497
+Columns:    48
+Split: grouped by seeded hash of the normalised 41-feature vector, seed 42, 70/15/15
+
+Rows per canonical class per split:
+  class                     train          val         test        total     tr%    va%    te%  status
+  DDoS                 12,834,016    2,748,928    2,748,903   18,331,847   70.0%  15.0%  15.0%  OK
+  DoS                  11,671,230    2,501,432    2,500,521   16,673,183   70.0%  15.0%  15.0%  OK
+  Reconnaissance        1,833,416      393,982      393,601    2,620,999   70.0%  15.0%  15.0%  OK
+  Benign                   94,679       20,106       20,252      135,037   70.1%  14.9%  15.0%  OK
+  (excluded)                1,701          346          384        2,431   70.0%  14.2%  15.8%  OK
+
+No canonical class triggers a warning.
+
+Exact duplicates on the normalised 41-feature vector:
+  unique feature vectors: 30,420,086 of 37,763,497 rows
+  duplicate rows:         7,343,411 (19.45%)
+  Duplicates stay within one split by construction of the key.
+
+Conflicting labels (identical vector, more than one canonical label; kept in the data, irreducible error floor):
+  vectors: 0   rows: 0 (0.00% of canonical rows)
+
+Implementation sanity check (holds by construction; the audit verifies it independently on tabular.parquet):
+  feature hashes assigned to more than one split: 0
+
+Source-IP overlap across splits (informative; expected given the testbed structure):
+  unique src IPs in train: 19
+  unique src IPs in val  : 14
+  unique src IPs in test : 15
+  shared train/test: 14
+
+NaN and Inf per column (stored as-is; the serializer converts Inf to NaN for the tabular representation):
+  none

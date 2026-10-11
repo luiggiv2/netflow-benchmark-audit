@@ -1,0 +1,69 @@
+RQ1: value anomalies, rows failing each consistency check (share of all rows)
+Generated: 2026-10-02T18:16:09.750688+00:00
+Definitions in the docstring of scripts/35_value_anomalies.py. ts_* and iat_* exist in NF-v3 only.
+
+  check                            ToN-v2             ToN-v3             BoT-v2             BoT-v3             CIC-v2             CIC-v3
+  bytes_below_ip_hdr       33,871   0.20%     53,263   0.19%         95   0.00%         80   0.00%          0   0.00%          0   0.00%
+  bytes_without_pkts            0   0.00%          0   0.00%          0   0.00%          0   0.00%          0   0.00%          0   0.00%
+  dir_duration_gt               0   0.00%         17   0.00%          0   0.00%      7,154   0.04%          0   0.00%      4,106   0.02%
+  dns_ttl_over_2p31             0   0.00%          0   0.00%        320   0.00%        320   0.00%          0   0.00%          0   0.00%
+  duration_near_2p32    3,127,422  18.46%          0   0.00% 35,170,968  93.13%          0   0.00%  2,527,996  13.38%          0   0.00%
+  iat_order                           n/a          0   0.00%                n/a          0   0.00%                n/a          0   0.00%
+  pkt_len_order                 0   0.00%          0   0.00%          0   0.00%          0   0.00%          0   0.00%          0   0.00%
+  pkt_len_over_65535            0   0.00%          0   0.00%          0   0.00%          0   0.00%          0   0.00%          0   0.00%
+  port_out_of_range             0   0.00%          0   0.00%          0   0.00%          0   0.00%          0   0.00%          0   0.00%
+  rate_nonfinite                0   0.00%          0   0.00%          0   0.00%  1,052,105   6.21%          0   0.00%          0   0.00%
+  rate_over_100gbps         2,030   0.01%          0   0.00%      7,117   0.02%          0   0.00%     13,493   0.07%          0   0.00%
+  retrans_gt_total              0   0.00%          0   0.00%          0   0.00%          0   0.00%          0   0.00%          0   0.00%
+  size_bins_gt_pkts        96,818   0.57%    148,116   0.54%        316   0.00%        281   0.00%  1,121,927   5.94%  1,099,186   5.46%
+  tcp_flags_non_tcp             0   0.00%          0   0.00%          0   0.00%          0   0.00%          0   0.00%          0   0.00%
+  thpt_over_100gbps             0   0.00%          0   0.00%          0   0.00%          0   0.00%          0   0.00%          0   0.00%
+  ts_duration_gap                     n/a          0   0.00%                n/a          0   0.00%                n/a          0   0.00%
+  ts_order                            n/a          0   0.00%                n/a          0   0.00%                n/a          0   0.00%
+  ttl_order                     0   0.00%          0   0.00%          0   0.00%          0   0.00%          0   0.00%          0   0.00%
+
+Classes most affected (top 3 per check and dataset, rows):
+  bytes_below_ip_hdr   ToN-v2       password 33,228 (2.9% of class); Benign 623 (0.0% of class); scanning 20 (0.0% of class)
+  bytes_below_ip_hdr   ToN-v3       password 33,999 (2.1% of class); Benign 19,226 (0.1% of class); scanning 38 (0.0% of class)
+  bytes_below_ip_hdr   BoT-v2       Reconnaissance 95 (0.0% of class)
+  bytes_below_ip_hdr   BoT-v3       Reconnaissance 80 (0.0% of class)
+  dir_duration_gt      ToN-v3       Benign 9 (0.0% of class); password 8 (0.0% of class)
+  dir_duration_gt      BoT-v3       DoS 4,353 (0.1% of class); DDoS 2,787 (0.0% of class); Benign 12 (0.0% of class)
+  dir_duration_gt      CIC-v3       Benign 3,873 (0.0% of class); DDoS_attacks-LOIC-HTTP 105 (0.0% of class); DoS_attacks-Hulk 73 (0.1% of class)
+  dns_ttl_over_2p31    BoT-v2       Reconnaissance 320 (0.0% of class)
+  dns_ttl_over_2p31    BoT-v3       Reconnaissance 320 (0.0% of class)
+  duration_near_2p32   ToN-v2       ddos 1,475,691 (72.8% of class); Benign 491,120 (8.1% of class); password 472,446 (41.0% of class)
+  duration_near_2p32   BoT-v2       DDoS 18,016,736 (98.3% of class); DoS 15,949,609 (95.7% of class); Reconnaissance 1,118,815 (42.7% of class)
+  duration_near_2p32   CIC-v2       DDOS attack-HOIC 1,080,858 (100.0% of class); Benign 661,213 (4.0% of class); DoS attacks-Hulk 416,965 (96.4% of class)
+  rate_nonfinite       BoT-v3       Reconnaissance 698,213 (41.2% of class); DoS 227,599 (2.8% of class); DDoS 91,393 (1.3% of class)
+  rate_over_100gbps    ToN-v2       Benign 1,612 (0.0% of class); mitm 317 (4.1% of class); ddos 73 (0.0% of class)
+  rate_over_100gbps    BoT-v2       Benign 6,813 (5.0% of class); Reconnaissance 249 (0.0% of class); Theft 47 (1.9% of class)
+  rate_over_100gbps    CIC-v2       SSH-Bruteforce 7,983 (8.4% of class); DDoS attacks-LOIC-HTTP 4,386 (1.4% of class); Benign 915 (0.0% of class)
+  size_bins_gt_pkts    ToN-v2       password 64,974 (5.6% of class); Benign 29,185 (0.5% of class); mitm 2,057 (26.6% of class)
+  size_bins_gt_pkts    ToN-v3       Benign 78,474 (0.5% of class); password 66,022 (4.1% of class); mitm 3,449 (57.4% of class)
+  size_bins_gt_pkts    BoT-v2       Reconnaissance 316 (0.0% of class)
+  size_bins_gt_pkts    BoT-v3       Reconnaissance 281 (0.0% of class)
+  size_bins_gt_pkts    CIC-v2       Benign 1,111,253 (6.7% of class); Infiltration 10,674 (9.2% of class)
+  size_bins_gt_pkts    CIC-v3       Benign 1,081,684 (6.2% of class); Infiltration 17,502 (9.3% of class)
+
+Constant features (same value in every row):
+  ToN-v2       none
+  ToN-v3       none
+  BoT-v2       none
+  BoT-v3       none
+  CIC-v2       FTP_COMMAND_RET_CODE=0
+  CIC-v3       FTP_COMMAND_RET_CODE=0
+
+FLOW_DURATION_MILLISECONDS >= 4,000,000 (most frequent values):
+  ToN-v2       {'4294951': 306357, '4294952': 181554, '4294936': 140581, '4294920': 136014, '4294889': 82994}
+  ToN-v3       none
+  BoT-v2       {'4294951': 355147, '4293967': 319315, '4294092': 299888, '4293842': 298503, '4293717': 295202}
+  BoT-v3       none
+  CIC-v2       {'4294951': 398653, '4294952': 243408, '4294964': 111969, '4294963': 110263, '4294936': 95510}
+  CIC-v3       none
+
+Destination ports of service-specific classes:
+  CIC-v2       FTP-BruteForce   rows 25,933; expected port 21: 100.00 %; top ports {'21': 25933}
+  CIC-v2       SSH-Bruteforce   rows 94,979; expected port 22: 99.97 %; top ports {'22': 94949, '21': 30}
+  CIC-v3       FTP-BruteForce   rows 386,720; expected port 21: 100.00 %; top ports {'21': 386720}
+  CIC-v3       SSH-Bruteforce   rows 188,474; expected port 22: 99.97 %; top ports {'22': 188414, '21': 60}

@@ -1,0 +1,288 @@
+{
+  "dataset": "NF-CSE-CIC-IDS2018-v2",
+  "generated_utc": "2026-10-07T03:02:21.327258+00:00",
+  "keys": {
+    "41": {
+      "n_features": 41,
+      "rows": 18893708,
+      "distinct_vectors": 17126727,
+      "duplicate_rows": 1766981,
+      "native": {
+        "rows": 18893708,
+        "conflicting_vectors": 2934,
+        "conflict_rows": 5996,
+        "minority_rows": 2988,
+        "top_label_sets": {
+          "Brute Force -Web / DDOS attack-HOIC": 1746,
+          "Brute Force -XSS / DDOS attack-HOIC": 738,
+          "DDOS attack-HOIC / SQL Injection": 338,
+          "Brute Force -Web / Brute Force -XSS": 52,
+          "Brute Force -Web / DDOS attack-HOIC / SQL Injection": 34,
+          "Brute Force -Web / Brute Force -XSS / DDOS attack-HOIC": 20,
+          "Brute Force -Web / SQL Injection": 6
+        },
+        "per_class": {
+          "SSH-Bruteforce": {
+            "rows": 94979,
+            "intra_dup_rows": 0,
+            "conflict_rows": 0
+          },
+          "Benign": {
+            "rows": 16635567,
+            "intra_dup_rows": 1533882,
+            "conflict_rows": 0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "rows": 307300,
+            "intra_dup_rows": 100222,
+            "conflict_rows": 0
+          },
+          "DDOS attack-HOIC": {
+            "rows": 1080858,
+            "intra_dup_rows": 13977,
+            "conflict_rows": 2950
+          },
+          "DoS attacks-Slowloris": {
+            "rows": 9512,
+            "intra_dup_rows": 0,
+            "conflict_rows": 0
+          },
+          "DoS attacks-Hulk": {
+            "rows": 432648,
+            "intra_dup_rows": 0,
+            "conflict_rows": 0
+          },
+          "FTP-BruteForce": {
+            "rows": 25933,
+            "intra_dup_rows": 0,
+            "conflict_rows": 0
+          },
+          "Infiltration": {
+            "rows": 116361,
+            "intra_dup_rows": 848,
+            "conflict_rows": 0
+          },
+          "Bot": {
+            "rows": 143097,
+            "intra_dup_rows": 115064,
+            "conflict_rows": 0
+          },
+          "DoS attacks-GoldenEye": {
+            "rows": 27723,
+            "intra_dup_rows": 0,
+            "conflict_rows": 0
+          },
+          "Brute Force -Web": {
+            "rows": 2143,
+            "intra_dup_rows": 0,
+            "conflict_rows": 1858
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "rows": 14116,
+            "intra_dup_rows": 0,
+            "conflict_rows": 0
+          },
+          "SQL Injection": {
+            "rows": 432,
+            "intra_dup_rows": 0,
+            "conflict_rows": 378
+          },
+          "DDOS attack-LOIC-UDP": {
+            "rows": 2112,
+            "intra_dup_rows": 0,
+            "conflict_rows": 0
+          },
+          "Brute Force -XSS": {
+            "rows": 927,
+            "intra_dup_rows": 0,
+            "conflict_rows": 810
+          }
+        }
+      },
+      "canonical": {
+        "rows": 18774277,
+        "conflicting_vectors": 372,
+        "conflict_rows": 753,
+        "minority_rows": 372,
+        "top_label_sets": {
+          "DDoS / Injection": 372
+        },
+        "per_class": {
+          "CredentialAttack": {
+            "rows": 120912,
+            "intra_dup_rows": 0,
+            "conflict_rows": 0
+          },
+          "Benign": {
+            "rows": 16635567,
+            "intra_dup_rows": 1533882,
+            "conflict_rows": 0
+          },
+          "DDoS": {
+            "rows": 1390270,
+            "intra_dup_rows": 114199,
+            "conflict_rows": 381
+          },
+          "DoS": {
+            "rows": 483999,
+            "intra_dup_rows": 0,
+            "conflict_rows": 0
+          },
+          "Bot_or_Backdoor": {
+            "rows": 143097,
+            "intra_dup_rows": 115064,
+            "conflict_rows": 0
+          },
+          "Injection": {
+            "rows": 432,
+            "intra_dup_rows": 0,
+            "conflict_rows": 372
+          }
+        }
+      }
+    },
+    "40": {
+      "n_features": 40,
+      "rows": 18893708,
+      "distinct_vectors": 9035510,
+      "duplicate_rows": 9858198,
+      "native": {
+        "rows": 18893708,
+        "conflicting_vectors": 1991,
+        "conflict_rows": 446303,
+        "minority_rows": 2993,
+        "top_label_sets": {
+          "Brute Force -Web / DDOS attack-HOIC": 1055,
+          "Brute Force -XSS / DDOS attack-HOIC": 401,
+          "Brute Force -Web / Brute Force -XSS / DDOS attack-HOIC": 194,
+          "DDOS attack-HOIC / SQL Injection": 154,
+          "Brute Force -Web / DDOS attack-HOIC / SQL Injection": 83,
+          "Brute Force -Web / Brute Force -XSS": 47,
+          "Brute Force -Web / Brute Force -XSS / DDOS attack-HOIC / SQL Injection": 41,
+          "Brute Force -XSS / DDOS attack-HOIC / SQL Injection": 12,
+          "Brute Force -Web / SQL Injection": 3,
+          "Brute Force -Web / Brute Force -XSS / SQL Injection": 1
+        },
+        "per_class": {
+          "SSH-Bruteforce": {
+            "rows": 94979,
+            "intra_dup_rows": 80278,
+            "conflict_rows": 0
+          },
+          "Benign": {
+            "rows": 16635567,
+            "intra_dup_rows": 8146643,
+            "conflict_rows": 0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "rows": 307300,
+            "intra_dup_rows": 290509,
+            "conflict_rows": 0
+          },
+          "DDOS attack-HOIC": {
+            "rows": 1080858,
+            "intra_dup_rows": 985118,
+            "conflict_rows": 443177
+          },
+          "DoS attacks-Slowloris": {
+            "rows": 9512,
+            "intra_dup_rows": 9324,
+            "conflict_rows": 0
+          },
+          "DoS attacks-Hulk": {
+            "rows": 432648,
+            "intra_dup_rows": 121114,
+            "conflict_rows": 0
+          },
+          "FTP-BruteForce": {
+            "rows": 25933,
+            "intra_dup_rows": 25914,
+            "conflict_rows": 0
+          },
+          "Infiltration": {
+            "rows": 116361,
+            "intra_dup_rows": 38626,
+            "conflict_rows": 0
+          },
+          "Bot": {
+            "rows": 143097,
+            "intra_dup_rows": 142625,
+            "conflict_rows": 0
+          },
+          "DoS attacks-GoldenEye": {
+            "rows": 27723,
+            "intra_dup_rows": 705,
+            "conflict_rows": 0
+          },
+          "Brute Force -Web": {
+            "rows": 2143,
+            "intra_dup_rows": 647,
+            "conflict_rows": 1931
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "rows": 14116,
+            "intra_dup_rows": 14101,
+            "conflict_rows": 0
+          },
+          "SQL Injection": {
+            "rows": 432,
+            "intra_dup_rows": 92,
+            "conflict_rows": 383
+          },
+          "DDOS attack-LOIC-UDP": {
+            "rows": 2112,
+            "intra_dup_rows": 5,
+            "conflict_rows": 0
+          },
+          "Brute Force -XSS": {
+            "rows": 927,
+            "intra_dup_rows": 134,
+            "conflict_rows": 812
+          }
+        }
+      },
+      "canonical": {
+        "rows": 18774277,
+        "conflicting_vectors": 290,
+        "conflict_rows": 102059,
+        "minority_rows": 372,
+        "top_label_sets": {
+          "DDoS / Injection": 290
+        },
+        "per_class": {
+          "CredentialAttack": {
+            "rows": 120912,
+            "intra_dup_rows": 106192,
+            "conflict_rows": 0
+          },
+          "Benign": {
+            "rows": 16635567,
+            "intra_dup_rows": 8146643,
+            "conflict_rows": 0
+          },
+          "DDoS": {
+            "rows": 1390270,
+            "intra_dup_rows": 1275632,
+            "conflict_rows": 101687
+          },
+          "DoS": {
+            "rows": 483999,
+            "intra_dup_rows": 145244,
+            "conflict_rows": 0
+          },
+          "Bot_or_Backdoor": {
+            "rows": 143097,
+            "intra_dup_rows": 142625,
+            "conflict_rows": 0
+          },
+          "Injection": {
+            "rows": 432,
+            "intra_dup_rows": 92,
+            "conflict_rows": 372
+          }
+        }
+      }
+    }
+  },
+  "elapsed_s": 59.4
+}

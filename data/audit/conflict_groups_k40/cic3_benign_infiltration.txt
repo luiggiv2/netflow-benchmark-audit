@@ -1,0 +1,33 @@
+=== cic3_benign_infiltration: NF-CSE-CIC-IDS2018-v3, labels ['Benign', 'Infiltration']
+vectors carrying >= 2 of these labels (40-feature key): 10,203; rows: 471,244
+
+[Benign] rows 403,411; distinct vectors 10,203
+  src IP : 5.101.40.43 (7.0 %), 5.101.40.105 (5.7 %), 172.31.69.24 (1.8 %), 172.31.64.16 (1.0 %), 172.31.66.12 (0.9 %) [+3298 more]
+  dst IP : 52.179.17.38 (3.1 %), 52.168.138.145 (2.0 %), 31.13.65.7 (1.9 %), 172.31.0.2 (1.8 %), 69.49.101.57 (1.7 %) [+5750 more]
+  dst port: 443 (67.5 %), 3389 (13.2 %), 123 (7.1 %), 67 (4.6 %), 80 (2.5 %) [+1021 more]
+  protocol: 6 (85.7 %), 17 (13.7 %), 2 (0.5 %), 1 (0.0 %); L7_PROTO: 91.0 (67.5 %), 88.0 (13.2 %), 9.0 (7.1 %) [+63 more]
+  time   : 2018-02-14 12:28 to 2018-03-02 20:06 UTC
+[Infiltration] rows 67,833; distinct vectors 10,203
+  src IP : 172.31.69.13 (49.2 %), 172.31.69.24 (16.0 %), 66.45.81.53 (6.8 %), 172.31.69.16 (3.7 %), 172.31.69.17 (3.6 %) [+241 more]
+  dst IP : 172.31.69.7 (28.1 %), 172.31.0.2 (14.0 %), 172.31.69.15 (10.7 %), 172.31.69.21 (10.5 %), 172.31.69.18 (10.4 %) [+601 more]
+  dst port: 53 (14.1 %), 3389 (12.1 %), 443 (6.3 %), 123 (2.1 %), 445 (1.4 %) [+1021 more]
+  protocol: 6 (82.3 %), 17 (17.6 %), 2 (0.1 %), 1 (0.0 %); L7_PROTO: 0.0 (56.1 %), 5.0 (14.1 %), 88.0 (12.1 %) [+63 more]
+  time   : 2018-02-28 12:22 to 2018-03-01 21:40 UTC
+
+Most frequent conflicting vectors (rows per label; non-zero features):
+  - Benign 16,911, Infiltration 508
+      L4_DST_PORT=67, PROTOCOL=17, L7_PROTO=18, IN_BYTES=343, IN_PKTS=1, OUT_BYTES=330, OUT_PKTS=1, FLOW_DURATION_MILLISECONDS=1, LONGEST_FLOW_PKT=343, SHORTEST_FLOW_PKT=330, MIN_IP_PKT_LEN=330, MAX_IP_PKT_LEN=343, SRC_TO_DST_SECOND_BYTES=3, DST_TO_SRC_SECOND_BYTES=3, SRC_TO_DST_AVG_THROUGHPUT=2744000, DST_TO_SRC_AVG_THROUGHPUT=2640000, NUM_PKTS_256_TO_512_BYTES=2
+  - Benign 17,236, Infiltration 71
+      L4_DST_PORT=443, PROTOCOL=6, L7_PROTO=91, IN_BYTES=40, IN_PKTS=1, TCP_FLAGS=20, CLIENT_TCP_FLAGS=20, FLOW_DURATION_MILLISECONDS=1, LONGEST_FLOW_PKT=40, SHORTEST_FLOW_PKT=40, MAX_IP_PKT_LEN=40, SRC_TO_DST_AVG_THROUGHPUT=320000, NUM_PKTS_UP_TO_128_BYTES=1
+  - Benign 12,032, Infiltration 658
+      L4_DST_PORT=123, PROTOCOL=17, L7_PROTO=9, IN_BYTES=76, IN_PKTS=1, OUT_BYTES=76, OUT_PKTS=1, FLOW_DURATION_MILLISECONDS=18, LONGEST_FLOW_PKT=76, SHORTEST_FLOW_PKT=76, MIN_IP_PKT_LEN=76, MAX_IP_PKT_LEN=76, SRC_TO_DST_SECOND_BYTES=4, DST_TO_SRC_SECOND_BYTES=4, SRC_TO_DST_AVG_THROUGHPUT=32000, DST_TO_SRC_AVG_THROUGHPUT=32000, NUM_PKTS_UP_TO_128_BYTES=2
+  - Benign 7,884, Infiltration 61
+      L4_DST_PORT=443, PROTOCOL=6, L7_PROTO=91, IN_BYTES=237, IN_PKTS=4, OUT_BYTES=80, OUT_PKTS=2, TCP_FLAGS=25, CLIENT_TCP_FLAGS=25, SERVER_TCP_FLAGS=17, FLOW_DURATION_MILLISECONDS=17, DURATION_IN=17, MIN_TTL=128, MAX_TTL=128, LONGEST_FLOW_PKT=86, SHORTEST_FLOW_PKT=40, MIN_IP_PKT_LEN=40, MAX_IP_PKT_LEN=86, SRC_TO_DST_SECOND_BYTES=4, DST_TO_SRC_SECOND_BYTES=13, SRC_TO_DST_AVG_THROUGHPUT=105333, DST_TO_SRC_AVG_THROUGHPUT=35555, NUM_PKTS_UP_TO_128_BYTES=6, TCP_WIN_MAX_IN=254, TCP_WIN_MAX_OUT=31
+  - Benign 6,000, Infiltration 283
+      L4_DST_PORT=123, PROTOCOL=17, L7_PROTO=9, IN_BYTES=76, IN_PKTS=1, OUT_BYTES=76, OUT_PKTS=1, FLOW_DURATION_MILLISECONDS=19, LONGEST_FLOW_PKT=76, SHORTEST_FLOW_PKT=76, MIN_IP_PKT_LEN=76, MAX_IP_PKT_LEN=76, SRC_TO_DST_SECOND_BYTES=4, DST_TO_SRC_SECOND_BYTES=4, SRC_TO_DST_AVG_THROUGHPUT=30400, DST_TO_SRC_AVG_THROUGHPUT=30400, NUM_PKTS_UP_TO_128_BYTES=2
+  share of conflicting rows in the top 1 / 10 / 100 vectors: 3.7 % / 18.0 % / 46.2 %
+
+Full records (features + IPs + timestamps) carrying >1 label: 0 records, 0 rows (0.00 % of group rows)
+Full-record duplicates within the same label (identical record repeated): 27,927 rows (5.93 % of group rows)
+Exact re-check (no hashing) on 500 sampled vectors: 500 distinct exact vectors with >1 label, 0 with a single label
+

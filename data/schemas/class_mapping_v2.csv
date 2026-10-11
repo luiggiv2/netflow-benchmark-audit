@@ -1,0 +1,31 @@
+dataset,native_label,canonical_label,notes
+NF-ToN-IoT-v2,Benign,Benign,same decision as NF-ToN-IoT-v3
+NF-ToN-IoT-v2,dos,DoS,same decision as NF-ToN-IoT-v3
+NF-ToN-IoT-v2,ddos,DDoS,same decision as NF-ToN-IoT-v3
+NF-ToN-IoT-v2,scanning,Reconnaissance,same decision as NF-ToN-IoT-v3
+NF-ToN-IoT-v2,password,CredentialAttack,same decision as NF-ToN-IoT-v3 (includes password sniffing; documented caveat)
+NF-ToN-IoT-v2,backdoor,Bot_or_Backdoor,same decision as NF-ToN-IoT-v3; lower-case 'backdoor' in v2 vs 'Backdoor' in v3
+NF-ToN-IoT-v2,injection,Injection,same decision as NF-ToN-IoT-v3
+NF-ToN-IoT-v2,xss,,ToN-only; excluded from cross-dataset canonical (as in v3)
+NF-ToN-IoT-v2,mitm,,ToN-only; excluded from cross-dataset canonical (as in v3)
+NF-ToN-IoT-v2,ransomware,,ToN-only; excluded from cross-dataset canonical (as in v3)
+NF-CSE-CIC-IDS2018-v2,Benign,Benign,same decision as NF-CSE-CIC-IDS2018-v3
+NF-CSE-CIC-IDS2018-v2,DoS attacks-Slowloris,DoS,CIC DoS subtype; v2 uses spaces where v3 uses underscores
+NF-CSE-CIC-IDS2018-v2,DoS attacks-Hulk,DoS,CIC DoS subtype
+NF-CSE-CIC-IDS2018-v2,DoS attacks-GoldenEye,DoS,CIC DoS subtype
+NF-CSE-CIC-IDS2018-v2,DoS attacks-SlowHTTPTest,DoS,CIC DoS subtype
+NF-CSE-CIC-IDS2018-v2,DDOS attack-HOIC,DDoS,CIC DDoS subtype; DDOS in caps (as in v3)
+NF-CSE-CIC-IDS2018-v2,DDoS attacks-LOIC-HTTP,DDoS,CIC DDoS subtype
+NF-CSE-CIC-IDS2018-v2,DDOS attack-LOIC-UDP,DDoS,CIC DDoS subtype
+NF-CSE-CIC-IDS2018-v2,FTP-BruteForce,CredentialAttack,same decision as NF-CSE-CIC-IDS2018-v3
+NF-CSE-CIC-IDS2018-v2,SSH-Bruteforce,CredentialAttack,same decision as NF-CSE-CIC-IDS2018-v3
+NF-CSE-CIC-IDS2018-v2,Bot,Bot_or_Backdoor,same decision as NF-CSE-CIC-IDS2018-v3; extended panel with caveat
+NF-CSE-CIC-IDS2018-v2,SQL Injection,Injection,same decision as NF-CSE-CIC-IDS2018-v3; 432 flows in v2
+NF-CSE-CIC-IDS2018-v2,Infiltration,,CIC-only; normalised in the loader from the source typo 'Infilteration' (also present in v2); excluded
+NF-CSE-CIC-IDS2018-v2,Brute Force -Web,,CIC-only web attack; excluded
+NF-CSE-CIC-IDS2018-v2,Brute Force -XSS,,CIC-only web attack; excluded
+NF-BoT-IoT-v2,Benign,Benign,same decision as NF-BoT-IoT-v3
+NF-BoT-IoT-v2,DoS,DoS,same decision as NF-BoT-IoT-v3
+NF-BoT-IoT-v2,DDoS,DDoS,same decision as NF-BoT-IoT-v3
+NF-BoT-IoT-v2,Reconnaissance,Reconnaissance,same decision as NF-BoT-IoT-v3
+NF-BoT-IoT-v2,Theft,,BoT-only + only 2431 flows; excluded from cross-dataset canonical (as in v3)

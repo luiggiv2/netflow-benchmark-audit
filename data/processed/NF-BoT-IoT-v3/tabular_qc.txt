@@ -1,0 +1,15 @@
+Tabular QC report for NF-BoT-IoT-v3
+Generated: 2026-10-01T20:19:34.853328+00:00
+Input:  data/processed/NF-BoT-IoT-v3/data.parquet  SHA-1 879295b7fb3299f9100345d72df03f98447abf04
+Rows processed: 16,933,808
+Features: 49 (identifiers, absolute timestamps and labels excluded)
+
+Inf converted to NaN per column:
+  DST_TO_SRC_SECOND_BYTES             1,052,105
+  SRC_TO_DST_SECOND_BYTES               664,755
+
+NaN per column in tabular.parquet (source NaN + converted Inf):
+  DST_TO_SRC_SECOND_BYTES             1,052,105
+  SRC_TO_DST_SECOND_BYTES             1,052,105
+
+tabular.parquet  c8c1572b0bb3b3092ca029ab2d9bd9836eeeeeec  (83.1 MB)

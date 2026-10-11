@@ -1,0 +1,188 @@
+N3 check: feature removal with and without a change of training rows (cross-dataset, BIN and CORE)
+Generated: 2026-10-08T22:07:30.528819+00:00
+
+Check: 240 of 240 G-NP0/G-NI0 runs have the training and test row counts of the G0 run (same source, task, model and seed)
+
+Part 1. Sign test against G0 on the target (case = direction x model, median over seeds)
+  task cond   scope       thr   n better similar worse         p
+  BIN  G-NP   all        0.00  24      3       0    21   0.00028
+  BIN  G-NP   all        0.01  24      2       5    17   0.00073
+  BIN  G-NP   all        0.02  24      2       9    13    0.0074
+  BIN  G-NP   all        0.05  24      1      14     9     0.021
+  BIN  G-NP   off floor  0.00  24      3       0    21   0.00028
+  BIN  G-NP   off floor  0.01  24      2       5    17   0.00073
+  BIN  G-NP   off floor  0.02  24      2       9    13    0.0074
+  BIN  G-NP   off floor  0.05  24      1      14     9     0.021
+  BIN  G-NP0  all        0.00  24      6       0    18     0.023
+  BIN  G-NP0  all        0.01  24      5       2    17     0.017
+  BIN  G-NP0  all        0.02  24      3       7    14     0.013
+  BIN  G-NP0  all        0.05  24      1      15     8     0.039
+  BIN  G-NP0  off floor  0.00  24      6       0    18     0.023
+  BIN  G-NP0  off floor  0.01  24      5       2    17     0.017
+  BIN  G-NP0  off floor  0.02  24      3       7    14     0.013
+  BIN  G-NP0  off floor  0.05  24      1      15     8     0.039
+  BIN  G-NI   all        0.00  24      6       0    18     0.023
+  BIN  G-NI   all        0.01  24      4       2    18    0.0043
+  BIN  G-NI   all        0.02  24      3       5    16    0.0044
+  BIN  G-NI   all        0.05  24      2       9    13    0.0074
+  BIN  G-NI   off floor  0.00  24      6       0    18     0.023
+  BIN  G-NI   off floor  0.01  24      4       2    18    0.0043
+  BIN  G-NI   off floor  0.02  24      3       5    16    0.0044
+  BIN  G-NI   off floor  0.05  24      2       9    13    0.0074
+  BIN  G-NI0  all        0.00  24      6       0    18     0.023
+  BIN  G-NI0  all        0.01  24      5       1    18     0.011
+  BIN  G-NI0  all        0.02  24      4       4    16     0.012
+  BIN  G-NI0  all        0.05  24      3       9    12     0.035
+  BIN  G-NI0  off floor  0.00  24      6       0    18     0.023
+  BIN  G-NI0  off floor  0.01  24      5       1    18     0.011
+  BIN  G-NI0  off floor  0.02  24      4       4    16     0.012
+  BIN  G-NI0  off floor  0.05  24      3       9    12     0.035
+
+  CORE G-NP   all        0.00  24      7       2    15      0.13
+  CORE G-NP   all        0.01  24      0      20     4      0.12
+  CORE G-NP   all        0.02  24      0      22     2       0.5
+  CORE G-NP   all        0.05  24      0      22     2       0.5
+  CORE G-NP   off floor  0.00  16      6       0    10      0.45
+  CORE G-NP   off floor  0.01  16      0      13     3      0.25
+  CORE G-NP   off floor  0.02  16      0      14     2       0.5
+  CORE G-NP   off floor  0.05  16      0      14     2       0.5
+  CORE G-NP0  all        0.00  24      3       1    20   0.00049
+  CORE G-NP0  all        0.01  24      0      16     8    0.0078
+  CORE G-NP0  all        0.02  24      0      22     2       0.5
+  CORE G-NP0  all        0.05  24      0      22     2       0.5
+  CORE G-NP0  off floor  0.00  16      3       0    13     0.021
+  CORE G-NP0  off floor  0.01  16      0       9     7     0.016
+  CORE G-NP0  off floor  0.02  16      0      14     2       0.5
+  CORE G-NP0  off floor  0.05  16      0      14     2       0.5
+  CORE G-NI   all        0.00  24      7       0    17     0.064
+  CORE G-NI   all        0.01  24      3      16     5      0.73
+  CORE G-NI   all        0.02  24      1      20     3      0.62
+  CORE G-NI   all        0.05  24      0      22     2       0.5
+  CORE G-NI   off floor  0.00  16      4       0    12     0.077
+  CORE G-NI   off floor  0.01  16      3       9     4         1
+  CORE G-NI   off floor  0.02  16      1      12     3      0.62
+  CORE G-NI   off floor  0.05  16      0      14     2       0.5
+  CORE G-NI0  all        0.00  24      7       0    17     0.064
+  CORE G-NI0  all        0.01  24      2      17     5      0.45
+  CORE G-NI0  all        0.02  24      2      20     2         1
+  CORE G-NI0  all        0.05  24      0      22     2       0.5
+  CORE G-NI0  off floor  0.00  16      4       0    12     0.077
+  CORE G-NI0  off floor  0.01  16      2      10     4      0.69
+  CORE G-NI0  off floor  0.02  16      2      12     2         1
+  CORE G-NI0  off floor  0.05  16      0      14     2       0.5
+
+Part 2. Paired per-seed differences against G0 (G-NP0, G-NI0: same training and test rows)
+  BIN G-NP0: target macro-F1 minus G0, median over 120 runs -0.025 [-0.307, +0.254]; runs below G0 91, above 29
+      in-domain (same test rows) minus G0: median -0.001 [-0.447, +0.141]
+      NF-ToN-IoT-v2            -> NF-BoT-IoT-v2            xgb G0 0.331  G-NP0 0.167  per seed -0.188 -0.164 +0.254 -0.256 -0.307  (below G0 in 4 of 5)
+      NF-ToN-IoT-v2            -> NF-CSE-CIC-IDS2018-v2    xgb G0 0.451  G-NP0 0.401  per seed -0.058 -0.065 -0.044 -0.023 -0.048  (below G0 in 5 of 5)
+      NF-ToN-IoT-v2            -> NF-BoT-IoT-v2            rf  G0 0.080  G-NP0 0.080  per seed -0.124 -0.014 -0.013 +0.000 -0.066  (below G0 in 4 of 5)
+      NF-ToN-IoT-v2            -> NF-CSE-CIC-IDS2018-v2    rf  G0 0.519  G-NP0 0.433  per seed -0.127 -0.095 -0.079 -0.085 -0.091  (below G0 in 5 of 5)
+      NF-BoT-IoT-v2            -> NF-ToN-IoT-v2            xgb G0 0.463  G-NP0 0.425  per seed -0.042 -0.035 -0.055 -0.033 -0.034  (below G0 in 5 of 5)
+      NF-BoT-IoT-v2            -> NF-CSE-CIC-IDS2018-v2    xgb G0 0.813  G-NP0 0.772  per seed +0.004 -0.027 -0.041 -0.044 -0.068  (below G0 in 4 of 5)
+      NF-BoT-IoT-v2            -> NF-ToN-IoT-v2            rf  G0 0.441  G-NP0 0.431  per seed -0.021 -0.014 -0.019 -0.003 -0.001  (below G0 in 5 of 5)
+      NF-BoT-IoT-v2            -> NF-CSE-CIC-IDS2018-v2    rf  G0 0.853  G-NP0 0.784  per seed -0.029 -0.011 -0.091 -0.050 -0.071  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v2    -> NF-ToN-IoT-v2            xgb G0 0.500  G-NP0 0.423  per seed -0.022 -0.066 -0.019 -0.043 -0.128  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v2    -> NF-BoT-IoT-v2            xgb G0 0.515  G-NP0 0.306  per seed -0.215 -0.017 -0.161 -0.271 -0.209  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v2    -> NF-ToN-IoT-v2            rf  G0 0.382  G-NP0 0.362  per seed -0.037 -0.012 -0.021 -0.015 +0.005  (below G0 in 4 of 5)
+      NF-CSE-CIC-IDS2018-v2    -> NF-BoT-IoT-v2            rf  G0 0.311  G-NP0 0.149  per seed -0.165 -0.141 -0.166 -0.018 -0.021  (below G0 in 5 of 5)
+      NF-ToN-IoT-v3            -> NF-BoT-IoT-v3            xgb G0 0.492  G-NP0 0.481  per seed -0.009 -0.000 -0.037 +0.077 -0.082  (below G0 in 4 of 5)
+      NF-ToN-IoT-v3            -> NF-CSE-CIC-IDS2018-v3    xgb G0 0.420  G-NP0 0.431  per seed +0.052 -0.014 +0.016 -0.044 +0.010  (below G0 in 2 of 5)
+      NF-ToN-IoT-v3            -> NF-BoT-IoT-v3            rf  G0 0.329  G-NP0 0.191  per seed -0.001 -0.157 -0.156 -0.159 -0.059  (below G0 in 5 of 5)
+      NF-ToN-IoT-v3            -> NF-CSE-CIC-IDS2018-v3    rf  G0 0.430  G-NP0 0.447  per seed +0.028 +0.030 -0.001 +0.023 -0.003  (below G0 in 2 of 5)
+      NF-BoT-IoT-v3            -> NF-ToN-IoT-v3            xgb G0 0.397  G-NP0 0.473  per seed +0.069 +0.124 +0.075 +0.057 +0.079  (below G0 in 0 of 5)
+      NF-BoT-IoT-v3            -> NF-CSE-CIC-IDS2018-v3    xgb G0 0.687  G-NP0 0.674  per seed -0.014 -0.059 +0.040 +0.033 +0.015  (below G0 in 2 of 5)
+      NF-BoT-IoT-v3            -> NF-ToN-IoT-v3            rf  G0 0.519  G-NP0 0.564  per seed +0.087 +0.002 -0.002 +0.076 +0.033  (below G0 in 1 of 5)
+      NF-BoT-IoT-v3            -> NF-CSE-CIC-IDS2018-v3    rf  G0 0.613  G-NP0 0.592  per seed -0.037 +0.012 -0.048 -0.021 +0.078  (below G0 in 3 of 5)
+      NF-CSE-CIC-IDS2018-v3    -> NF-ToN-IoT-v3            xgb G0 0.692  G-NP0 0.494  per seed -0.152 -0.150 -0.283 -0.198 -0.283  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v3    -> NF-BoT-IoT-v3            xgb G0 0.129  G-NP0 0.151  per seed +0.137 -0.210 -0.059 +0.041 -0.020  (below G0 in 3 of 5)
+      NF-CSE-CIC-IDS2018-v3    -> NF-ToN-IoT-v3            rf  G0 0.444  G-NP0 0.412  per seed -0.029 -0.035 -0.039 -0.068 -0.019  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v3    -> NF-BoT-IoT-v3            rf  G0 0.087  G-NP0 0.085  per seed +0.001 +0.001 -0.002 -0.003 -0.002  (below G0 in 3 of 5)
+  BIN G-NI0: target macro-F1 minus G0, median over 120 runs -0.045 [-0.443, +0.145]; runs below G0 90, above 30
+      in-domain (same test rows) minus G0: median -0.004 [-0.447, +0.148]
+      NF-ToN-IoT-v2            -> NF-BoT-IoT-v2            xgb G0 0.331  G-NI0 0.315  per seed -0.174 -0.016 -0.019 +0.037 -0.240  (below G0 in 4 of 5)
+      NF-ToN-IoT-v2            -> NF-CSE-CIC-IDS2018-v2    xgb G0 0.451  G-NI0 0.466  per seed +0.075 +0.017 +0.006 +0.000 +0.015  (below G0 in 0 of 5)
+      NF-ToN-IoT-v2            -> NF-BoT-IoT-v2            rf  G0 0.080  G-NI0 0.043  per seed -0.217 -0.038 -0.021 +0.014 -0.134  (below G0 in 4 of 5)
+      NF-ToN-IoT-v2            -> NF-CSE-CIC-IDS2018-v2    rf  G0 0.519  G-NI0 0.463  per seed -0.082 -0.056 -0.053 -0.052 -0.039  (below G0 in 5 of 5)
+      NF-BoT-IoT-v2            -> NF-ToN-IoT-v2            xgb G0 0.463  G-NI0 0.407  per seed -0.065 -0.046 -0.075 -0.046 -0.044  (below G0 in 5 of 5)
+      NF-BoT-IoT-v2            -> NF-CSE-CIC-IDS2018-v2    xgb G0 0.813  G-NI0 0.604  per seed -0.195 -0.238 -0.209 -0.185 -0.188  (below G0 in 5 of 5)
+      NF-BoT-IoT-v2            -> NF-ToN-IoT-v2            rf  G0 0.441  G-NI0 0.419  per seed -0.025 -0.026 -0.042 -0.017 -0.017  (below G0 in 5 of 5)
+      NF-BoT-IoT-v2            -> NF-CSE-CIC-IDS2018-v2    rf  G0 0.853  G-NI0 0.538  per seed -0.304 -0.256 -0.324 -0.319 -0.320  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v2    -> NF-ToN-IoT-v2            xgb G0 0.500  G-NI0 0.444  per seed -0.041 +0.000 -0.023 -0.061 -0.063  (below G0 in 4 of 5)
+      NF-CSE-CIC-IDS2018-v2    -> NF-BoT-IoT-v2            xgb G0 0.515  G-NI0 0.166  per seed -0.337 -0.157 -0.179 -0.443 -0.362  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v2    -> NF-ToN-IoT-v2            rf  G0 0.382  G-NI0 0.372  per seed -0.021 -0.031 -0.017 +0.011 +0.023  (below G0 in 3 of 5)
+      NF-CSE-CIC-IDS2018-v2    -> NF-BoT-IoT-v2            rf  G0 0.311  G-NI0 0.282  per seed -0.019 -0.150 -0.022 +0.123 -0.028  (below G0 in 4 of 5)
+      NF-ToN-IoT-v3            -> NF-BoT-IoT-v3            xgb G0 0.492  G-NI0 0.395  per seed -0.102 -0.113 +0.037 -0.009 -0.030  (below G0 in 4 of 5)
+      NF-ToN-IoT-v3            -> NF-CSE-CIC-IDS2018-v3    xgb G0 0.420  G-NI0 0.312  per seed -0.124 -0.060 -0.106 -0.078 -0.122  (below G0 in 5 of 5)
+      NF-ToN-IoT-v3            -> NF-BoT-IoT-v3            rf  G0 0.329  G-NI0 0.172  per seed -0.156 -0.156 -0.156 -0.176 -0.073  (below G0 in 5 of 5)
+      NF-ToN-IoT-v3            -> NF-CSE-CIC-IDS2018-v3    rf  G0 0.430  G-NI0 0.345  per seed -0.066 -0.085 -0.037 -0.067 -0.151  (below G0 in 5 of 5)
+      NF-BoT-IoT-v3            -> NF-ToN-IoT-v3            xgb G0 0.397  G-NI0 0.484  per seed +0.110 +0.145 +0.131 +0.060 +0.086  (below G0 in 0 of 5)
+      NF-BoT-IoT-v3            -> NF-CSE-CIC-IDS2018-v3    xgb G0 0.687  G-NI0 0.557  per seed -0.131 -0.071 -0.040 -0.094 -0.131  (below G0 in 5 of 5)
+      NF-BoT-IoT-v3            -> NF-ToN-IoT-v3            rf  G0 0.519  G-NI0 0.570  per seed +0.087 -0.090 -0.011 +0.087 +0.056  (below G0 in 2 of 5)
+      NF-BoT-IoT-v3            -> NF-CSE-CIC-IDS2018-v3    rf  G0 0.613  G-NI0 0.563  per seed -0.058 -0.015 -0.090 -0.060 -0.048  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v3    -> NF-ToN-IoT-v3            xgb G0 0.692  G-NI0 0.540  per seed -0.051 -0.044 -0.202 -0.152 -0.208  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v3    -> NF-BoT-IoT-v3            xgb G0 0.129  G-NI0 0.239  per seed +0.126 -0.143 +0.120 +0.110 +0.133  (below G0 in 1 of 5)
+      NF-CSE-CIC-IDS2018-v3    -> NF-ToN-IoT-v3            rf  G0 0.444  G-NI0 0.489  per seed +0.045 -0.034 +0.032 +0.039 -0.012  (below G0 in 2 of 5)
+      NF-CSE-CIC-IDS2018-v3    -> NF-BoT-IoT-v3            rf  G0 0.087  G-NI0 0.087  per seed -0.001 +0.001 -0.001 +0.000 +0.003  (below G0 in 2 of 5)
+
+  CORE G-NP0: target macro-F1 minus G0, median over 120 runs -0.001 [-0.331, +0.073]; runs below G0 94, above 20
+      in-domain (same test rows) minus G0: median -0.000 [-0.141, +0.005]
+      NF-ToN-IoT-v2            -> NF-BoT-IoT-v2            xgb G0 0.003  G-NP0 0.002  per seed -0.000 +0.000 -0.000 -0.000 -0.000  (below G0 in 4 of 5)
+      NF-ToN-IoT-v2            -> NF-CSE-CIC-IDS2018-v2    xgb G0 0.283  G-NP0 0.277  per seed -0.008 -0.007 -0.003 -0.004 -0.009  (below G0 in 5 of 5)
+      NF-ToN-IoT-v2            -> NF-BoT-IoT-v2            rf  G0 0.003  G-NP0 0.003  per seed +0.000 +0.000 +0.000 +0.000 +0.000  (below G0 in 0 of 5)
+      NF-ToN-IoT-v2            -> NF-CSE-CIC-IDS2018-v2    rf  G0 0.292  G-NP0 0.292  per seed -0.001 -0.001 +0.001 -0.000 +0.000  (below G0 in 3 of 5)
+      NF-BoT-IoT-v2            -> NF-ToN-IoT-v2            xgb G0 0.286  G-NP0 0.272  per seed -0.017 -0.014 -0.013 -0.011 -0.012  (below G0 in 5 of 5)
+      NF-BoT-IoT-v2            -> NF-CSE-CIC-IDS2018-v2    xgb G0 0.444  G-NP0 0.327  per seed -0.136 -0.010 -0.117 -0.086 -0.142  (below G0 in 5 of 5)
+      NF-BoT-IoT-v2            -> NF-ToN-IoT-v2            rf  G0 0.277  G-NP0 0.272  per seed -0.007 -0.006 -0.003 -0.007 -0.004  (below G0 in 5 of 5)
+      NF-BoT-IoT-v2            -> NF-CSE-CIC-IDS2018-v2    rf  G0 0.437  G-NP0 0.329  per seed -0.113 -0.022 -0.116 -0.107 -0.018  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v2    -> NF-ToN-IoT-v2            xgb G0 0.278  G-NP0 0.273  per seed -0.005 -0.001 -0.001 -0.006 -0.002  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v2    -> NF-BoT-IoT-v2            xgb G0 0.003  G-NP0 0.002  per seed -0.000 -0.000 -0.331 -0.000 -0.000  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v2    -> NF-ToN-IoT-v2            rf  G0 0.274  G-NP0 0.273  per seed -0.004 -0.001 -0.001 -0.001 -0.002  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v2    -> NF-BoT-IoT-v2            rf  G0 0.003  G-NP0 0.002  per seed -0.000 -0.000 -0.000 -0.000 -0.000  (below G0 in 5 of 5)
+      NF-ToN-IoT-v3            -> NF-BoT-IoT-v3            xgb G0 0.018  G-NP0 0.003  per seed -0.002 -0.160 -0.051 -0.000 -0.016  (below G0 in 5 of 5)
+      NF-ToN-IoT-v3            -> NF-CSE-CIC-IDS2018-v3    xgb G0 0.296  G-NP0 0.297  per seed -0.001 +0.003 +0.003 +0.002 +0.001  (below G0 in 1 of 5)
+      NF-ToN-IoT-v3            -> NF-BoT-IoT-v3            rf  G0 0.003  G-NP0 0.002  per seed -0.000 -0.000 -0.001 -0.000 -0.001  (below G0 in 5 of 5)
+      NF-ToN-IoT-v3            -> NF-CSE-CIC-IDS2018-v3    rf  G0 0.298  G-NP0 0.300  per seed +0.001 +0.002 +0.001 +0.001 -0.000  (below G0 in 1 of 5)
+      NF-BoT-IoT-v3            -> NF-ToN-IoT-v3            xgb G0 0.303  G-NP0 0.290  per seed -0.086 +0.026 +0.073 -0.059 -0.014  (below G0 in 3 of 5)
+      NF-BoT-IoT-v3            -> NF-CSE-CIC-IDS2018-v3    xgb G0 0.394  G-NP0 0.378  per seed -0.051 +0.019 -0.023 -0.026 -0.015  (below G0 in 4 of 5)
+      NF-BoT-IoT-v3            -> NF-ToN-IoT-v3            rf  G0 0.310  G-NP0 0.307  per seed +0.015 -0.009 -0.001 -0.001 +0.014  (below G0 in 3 of 5)
+      NF-BoT-IoT-v3            -> NF-CSE-CIC-IDS2018-v3    rf  G0 0.377  G-NP0 0.362  per seed -0.035 -0.008 +0.040 +0.001 -0.005  (below G0 in 3 of 5)
+      NF-CSE-CIC-IDS2018-v3    -> NF-ToN-IoT-v3            xgb G0 0.295  G-NP0 0.294  per seed -0.010 -0.013 -0.001 -0.000 -0.000  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v3    -> NF-BoT-IoT-v3            xgb G0 0.003  G-NP0 0.003  per seed -0.000 -0.002 -0.000 -0.002 +0.001  (below G0 in 4 of 5)
+      NF-CSE-CIC-IDS2018-v3    -> NF-ToN-IoT-v3            rf  G0 0.296  G-NP0 0.285  per seed -0.008 -0.013 -0.022 -0.003 -0.022  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v3    -> NF-BoT-IoT-v3            rf  G0 0.003  G-NP0 0.003  per seed -0.000 +0.000 -0.000 -0.000 +0.000  (below G0 in 3 of 5)
+  CORE G-NI0: target macro-F1 minus G0, median over 120 runs -0.000 [-0.331, +0.124]; runs below G0 77, above 39
+      in-domain (same test rows) minus G0: median -0.001 [-0.051, +0.015]
+      NF-ToN-IoT-v2            -> NF-BoT-IoT-v2            xgb G0 0.003  G-NI0 0.003  per seed +0.000 -0.000 -0.000 -0.000 +0.000  (below G0 in 3 of 5)
+      NF-ToN-IoT-v2            -> NF-CSE-CIC-IDS2018-v2    xgb G0 0.283  G-NI0 0.287  per seed +0.114 +0.002 -0.003 +0.013 +0.000  (below G0 in 1 of 5)
+      NF-ToN-IoT-v2            -> NF-BoT-IoT-v2            rf  G0 0.003  G-NI0 0.003  per seed -0.000 +0.000 +0.000 -0.000 +0.000  (below G0 in 2 of 5)
+      NF-ToN-IoT-v2            -> NF-CSE-CIC-IDS2018-v2    rf  G0 0.292  G-NI0 0.314  per seed +0.112 +0.021 +0.011 +0.124 +0.010  (below G0 in 0 of 5)
+      NF-BoT-IoT-v2            -> NF-ToN-IoT-v2            xgb G0 0.286  G-NI0 0.272  per seed -0.017 -0.014 -0.013 -0.010 -0.014  (below G0 in 5 of 5)
+      NF-BoT-IoT-v2            -> NF-CSE-CIC-IDS2018-v2    xgb G0 0.444  G-NI0 0.331  per seed -0.130 -0.009 -0.116 -0.084 -0.138  (below G0 in 5 of 5)
+      NF-BoT-IoT-v2            -> NF-ToN-IoT-v2            rf  G0 0.277  G-NI0 0.271  per seed -0.007 -0.006 -0.003 -0.007 -0.004  (below G0 in 5 of 5)
+      NF-BoT-IoT-v2            -> NF-CSE-CIC-IDS2018-v2    rf  G0 0.437  G-NI0 0.331  per seed -0.116 -0.018 -0.112 -0.101 -0.015  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v2    -> NF-ToN-IoT-v2            xgb G0 0.278  G-NI0 0.276  per seed -0.002 +0.000 +0.003 -0.001 -0.001  (below G0 in 3 of 5)
+      NF-CSE-CIC-IDS2018-v2    -> NF-BoT-IoT-v2            xgb G0 0.003  G-NI0 0.003  per seed -0.000 +0.000 -0.331 +0.000 +0.000  (below G0 in 2 of 5)
+      NF-CSE-CIC-IDS2018-v2    -> NF-ToN-IoT-v2            rf  G0 0.274  G-NI0 0.274  per seed -0.001 -0.000 -0.000 +0.000 -0.000  (below G0 in 4 of 5)
+      NF-CSE-CIC-IDS2018-v2    -> NF-BoT-IoT-v2            rf  G0 0.003  G-NI0 0.002  per seed -0.000 -0.000 -0.000 -0.000 -0.000  (below G0 in 5 of 5)
+      NF-ToN-IoT-v3            -> NF-BoT-IoT-v3            xgb G0 0.018  G-NI0 0.003  per seed -0.001 -0.160 -0.056 -0.000 -0.015  (below G0 in 5 of 5)
+      NF-ToN-IoT-v3            -> NF-CSE-CIC-IDS2018-v3    xgb G0 0.296  G-NI0 0.295  per seed -0.003 +0.001 -0.002 -0.000 +0.001  (below G0 in 3 of 5)
+      NF-ToN-IoT-v3            -> NF-BoT-IoT-v3            rf  G0 0.003  G-NI0 0.003  per seed -0.000 -0.000 -0.000 -0.000 -0.000  (below G0 in 5 of 5)
+      NF-ToN-IoT-v3            -> NF-CSE-CIC-IDS2018-v3    rf  G0 0.298  G-NI0 0.294  per seed -0.004 -0.005 -0.005 -0.004 -0.005  (below G0 in 5 of 5)
+      NF-BoT-IoT-v3            -> NF-ToN-IoT-v3            xgb G0 0.303  G-NI0 0.286  per seed -0.074 -0.022 +0.065 -0.006 -0.017  (below G0 in 4 of 5)
+      NF-BoT-IoT-v3            -> NF-CSE-CIC-IDS2018-v3    xgb G0 0.394  G-NI0 0.419  per seed +0.001 +0.033 +0.083 -0.022 -0.039  (below G0 in 2 of 5)
+      NF-BoT-IoT-v3            -> NF-ToN-IoT-v3            rf  G0 0.310  G-NI0 0.308  per seed +0.021 -0.005 -0.002 -0.003 +0.017  (below G0 in 3 of 5)
+      NF-BoT-IoT-v3            -> NF-CSE-CIC-IDS2018-v3    rf  G0 0.377  G-NI0 0.387  per seed +0.006 +0.016 +0.020 +0.019 +0.011  (below G0 in 0 of 5)
+      NF-CSE-CIC-IDS2018-v3    -> NF-ToN-IoT-v3            xgb G0 0.295  G-NI0 0.291  per seed -0.011 -0.006 -0.013 -0.004 -0.002  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v3    -> NF-BoT-IoT-v3            xgb G0 0.003  G-NI0 0.005  per seed +0.003 +0.001 +0.002 +0.001 +0.003  (below G0 in 0 of 5)
+      NF-CSE-CIC-IDS2018-v3    -> NF-ToN-IoT-v3            rf  G0 0.296  G-NI0 0.291  per seed -0.009 -0.012 -0.013 -0.001 -0.007  (below G0 in 5 of 5)
+      NF-CSE-CIC-IDS2018-v3    -> NF-BoT-IoT-v3            rf  G0 0.003  G-NI0 0.004  per seed +0.002 +0.002 +0.001 +0.002 +0.001  (below G0 in 0 of 5)
+
+Part 3. BIN sign test of G-NP0 and G-NI0 without the cases whose source model loses more than 0.05 in-domain
+  (median over seeds, same test rows as G0), so a worse transfer cannot come from a weaker source model
+  G-NP0 thr 0.00: 18 cases, better 4, similar 0, worse 14, p 0.031
+  G-NP0 thr 0.02: 18 cases, better 1, similar 6, worse 11, p 0.0063
+    sources left out: NF-BoT-IoT-v2 xgb (-0.443); NF-BoT-IoT-v3 rf (-0.078); NF-BoT-IoT-v3 xgb (-0.059)
+  G-NI0 thr 0.00: 20 cases, better 4, similar 0, worse 16, p 0.012
+  G-NI0 thr 0.02: 20 cases, better 2, similar 4, worse 14, p 0.0042
+    sources left out: NF-BoT-IoT-v3 rf (-0.079); NF-BoT-IoT-v3 xgb (-0.062)

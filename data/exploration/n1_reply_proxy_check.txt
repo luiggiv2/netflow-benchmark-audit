@@ -1,0 +1,78 @@
+N1 check: features that encode the missing reply (second reviewer report, 2026-10-07)
+Generated: 2026-10-07T19:21:27.465078+00:00
+
+== Part 1: exact relations on all rows (cache values)
+  NF-ToN-IoT-v2: 16,940,496 rows; OUT_PKTS == 0 in 6,269,875 (37.01%)
+    OUT_PKTS == 0 and MIN_IP_PKT_LEN == 0: 6,269,786 | OUT_PKTS == 0 and MIN_IP_PKT_LEN > 0: 89 | OUT_PKTS > 0 and MIN_IP_PKT_LEN == 0: 0 | OUT_PKTS > 0 and MIN_IP_PKT_LEN > 0: 10,670,621
+    with a reply, MIN_IP_PKT_LEN == SHORTEST_FLOW_PKT: 10,670,621 of 10,670,621 (100.0000%)
+    MAX_IP_PKT_LEN == LONGEST_FLOW_PKT: 16,940,496 of 16,940,496 (100.0000%)
+    sum of NUM_PKTS_* bins == IN_PKTS + OUT_PKTS: 99.4171%; == IN_PKTS: 37.0145%
+  NF-BoT-IoT-v2: 37,763,497 rows; OUT_PKTS == 0 in 33,212,624 (87.95%)
+    OUT_PKTS == 0 and MIN_IP_PKT_LEN == 0: 33,212,624 | OUT_PKTS == 0 and MIN_IP_PKT_LEN > 0: 0 | OUT_PKTS > 0 and MIN_IP_PKT_LEN == 0: 0 | OUT_PKTS > 0 and MIN_IP_PKT_LEN > 0: 4,550,873
+    with a reply, MIN_IP_PKT_LEN == SHORTEST_FLOW_PKT: 4,550,873 of 4,550,873 (100.0000%)
+    MAX_IP_PKT_LEN == LONGEST_FLOW_PKT: 37,763,497 of 37,763,497 (100.0000%)
+    sum of NUM_PKTS_* bins == IN_PKTS + OUT_PKTS: 99.9960%; == IN_PKTS: 87.9490%
+  NF-CSE-CIC-IDS2018-v2: 18,893,708 rows; OUT_PKTS == 0 in 1,185,447 (6.27%)
+    OUT_PKTS == 0 and MIN_IP_PKT_LEN == 0: 1,185,438 | OUT_PKTS == 0 and MIN_IP_PKT_LEN > 0: 9 | OUT_PKTS > 0 and MIN_IP_PKT_LEN == 0: 0 | OUT_PKTS > 0 and MIN_IP_PKT_LEN > 0: 17,708,261
+    with a reply, MIN_IP_PKT_LEN == SHORTEST_FLOW_PKT: 17,708,261 of 17,708,261 (100.0000%)
+    MAX_IP_PKT_LEN == LONGEST_FLOW_PKT: 18,893,708 of 18,893,708 (100.0000%)
+    sum of NUM_PKTS_* bins == IN_PKTS + OUT_PKTS: 94.0575%; == IN_PKTS: 6.2742%
+  NF-ToN-IoT-v3: 27,520,260 rows; OUT_PKTS == 0 in 11,838,182 (43.02%)
+    OUT_PKTS == 0 and MIN_IP_PKT_LEN == 0: 11,838,122 | OUT_PKTS == 0 and MIN_IP_PKT_LEN > 0: 60 | OUT_PKTS > 0 and MIN_IP_PKT_LEN == 0: 0 | OUT_PKTS > 0 and MIN_IP_PKT_LEN > 0: 15,682,078
+    with a reply, MIN_IP_PKT_LEN == SHORTEST_FLOW_PKT: 15,682,078 of 15,682,078 (100.0000%)
+    MAX_IP_PKT_LEN == LONGEST_FLOW_PKT: 27,520,260 of 27,520,260 (100.0000%)
+    sum of NUM_PKTS_* bins == IN_PKTS + OUT_PKTS: 99.4598%; == IN_PKTS: 43.0179%
+  NF-BoT-IoT-v3: 16,933,808 rows; OUT_PKTS == 0 in 12,102,947 (71.47%)
+    OUT_PKTS == 0 and MIN_IP_PKT_LEN == 0: 12,102,947 | OUT_PKTS == 0 and MIN_IP_PKT_LEN > 0: 0 | OUT_PKTS > 0 and MIN_IP_PKT_LEN == 0: 0 | OUT_PKTS > 0 and MIN_IP_PKT_LEN > 0: 4,830,861
+    with a reply, MIN_IP_PKT_LEN == SHORTEST_FLOW_PKT: 4,830,861 of 4,830,861 (100.0000%)
+    MAX_IP_PKT_LEN == LONGEST_FLOW_PKT: 16,933,808 of 16,933,808 (100.0000%)
+    sum of NUM_PKTS_* bins == IN_PKTS + OUT_PKTS: 99.9920%; == IN_PKTS: 71.4722%
+  NF-CSE-CIC-IDS2018-v3: 20,115,529 rows; OUT_PKTS == 0 in 1,975,367 (9.82%)
+    OUT_PKTS == 0 and MIN_IP_PKT_LEN == 0: 1,975,355 | OUT_PKTS == 0 and MIN_IP_PKT_LEN > 0: 12 | OUT_PKTS > 0 and MIN_IP_PKT_LEN == 0: 0 | OUT_PKTS > 0 and MIN_IP_PKT_LEN > 0: 18,140,162
+    with a reply, MIN_IP_PKT_LEN == SHORTEST_FLOW_PKT: 18,140,162 of 18,140,162 (100.0000%)
+    MAX_IP_PKT_LEN == LONGEST_FLOW_PKT: 20,115,529 of 20,115,529 (100.0000%)
+    sum of NUM_PKTS_* bins == IN_PKTS + OUT_PKTS: 94.5307%; == IN_PKTS: 9.8200%
+
+== Part 2: Q4 verdicts recounted from the stored top-5 (CORE G0 XGBoost -> NF-BoT-IoT DoS/DDoS)
+  verdict: supported if >= 3 reply features in the top-5, refuted if <= 1, inconclusive with 2; majority over seeds
+  NF-ToN-IoT-v2
+    original                   counts [1, 1, 1, 1, 1] -> ['refuted', 'refuted', 'refuted', 'refuted', 'refuted']  majority: refuted (5 of 5)
+    original + MIN_IP_PKT_LEN  counts [2, 2, 1, 2, 2] -> ['inconclusive', 'inconclusive', 'refuted', 'inconclusive', 'inconclusive']  majority: inconclusive (4 of 5)
+    expanded                   counts [1, 1, 1, 1, 1] -> ['refuted', 'refuted', 'refuted', 'refuted', 'refuted']  majority: refuted (5 of 5)
+    expanded + MIN_IP_PKT_LEN  counts [2, 2, 1, 2, 2] -> ['inconclusive', 'inconclusive', 'refuted', 'inconclusive', 'inconclusive']  majority: inconclusive (4 of 5)
+  NF-CSE-CIC-IDS2018-v2
+    original                   counts [0, 0, 2, 0, 1] -> ['refuted', 'refuted', 'inconclusive', 'refuted', 'refuted']  majority: refuted (4 of 5)
+    original + MIN_IP_PKT_LEN  counts [0, 0, 2, 0, 1] -> ['refuted', 'refuted', 'inconclusive', 'refuted', 'refuted']  majority: refuted (4 of 5)
+    expanded                   counts [1, 1, 2, 1, 2] -> ['refuted', 'refuted', 'inconclusive', 'refuted', 'inconclusive']  majority: refuted (3 of 5)
+    expanded + MIN_IP_PKT_LEN  counts [1, 1, 2, 1, 2] -> ['refuted', 'refuted', 'inconclusive', 'refuted', 'inconclusive']  majority: refuted (3 of 5)
+  NF-ToN-IoT-v3
+    original                   counts [1, 0, 0, 1, 1] -> ['refuted', 'refuted', 'refuted', 'refuted', 'refuted']  majority: refuted (5 of 5)
+    original + MIN_IP_PKT_LEN  counts [1, 0, 0, 1, 1] -> ['refuted', 'refuted', 'refuted', 'refuted', 'refuted']  majority: refuted (5 of 5)
+    expanded                   counts [1, 0, 0, 1, 1] -> ['refuted', 'refuted', 'refuted', 'refuted', 'refuted']  majority: refuted (5 of 5)
+    expanded + MIN_IP_PKT_LEN  counts [1, 0, 0, 1, 1] -> ['refuted', 'refuted', 'refuted', 'refuted', 'refuted']  majority: refuted (5 of 5)
+  NF-CSE-CIC-IDS2018-v3
+    original                   counts [0, 0, 0, 0, 0] -> ['refuted', 'refuted', 'refuted', 'refuted', 'refuted']  majority: refuted (5 of 5)
+    original + MIN_IP_PKT_LEN  counts [0, 0, 0, 0, 0] -> ['refuted', 'refuted', 'refuted', 'refuted', 'refuted']  majority: refuted (5 of 5)
+    expanded                   counts [1, 1, 1, 1, 1] -> ['refuted', 'refuted', 'refuted', 'refuted', 'refuted']  majority: refuted (5 of 5)
+    expanded + MIN_IP_PKT_LEN  counts [1, 1, 1, 1, 1] -> ['refuted', 'refuted', 'refuted', 'refuted', 'refuted']  majority: refuted (5 of 5)
+  Totals over the 20 seeds:
+    original                   refuted 19, inconclusive 1, supported 0
+    original + MIN_IP_PKT_LEN  refuted 15, inconclusive 5, supported 0
+    expanded                   refuted 18, inconclusive 2, supported 0
+    expanded + MIN_IP_PKT_LEN  refuted 14, inconclusive 6, supported 0
+
+== Part 3: separation of no-reply flows (OUT_PKTS == 0) by the features of the no-reply retraining
+  balanced CORE sample, 100,000 rows per class (seed 7); max(AUC, 1 - AUC); top 10
+  NF-ToN-IoT-v2 (30 kept features of 40); no reply: Benign 55.5%, DoS 11.2%, DDoS 1.5%
+    MIN_IP_PKT_LEN 1.000; MAX_IP_PKT_LEN 0.883; LONGEST_FLOW_PKT 0.883; NUM_PKTS_UP_TO_128_BYTES 0.840; L4_DST_PORT 0.833; SHORTEST_FLOW_PKT 0.799; SRC_TO_DST_SECOND_BYTES 0.778; IN_BYTES 0.768; DNS_QUERY_ID 0.673; DNS_QUERY_TYPE 0.668
+  NF-BoT-IoT-v2 (30 kept features of 40); no reply: Benign 16.6%, DoS 88.4%, DDoS 99.8%
+    MIN_IP_PKT_LEN 1.000; L4_DST_PORT 0.871; CLIENT_TCP_FLAGS 0.859; TCP_WIN_MAX_IN 0.852; MIN_TTL 0.847; MAX_TTL 0.847; IN_PKTS 0.833; DURATION_IN 0.829; SRC_TO_DST_SECOND_BYTES 0.826; IN_BYTES 0.781
+  NF-CSE-CIC-IDS2018-v2 (30 kept features of 40); no reply: Benign 6.8%, DoS 0.5%, DDoS 2.1%
+    MIN_IP_PKT_LEN 1.000; MAX_IP_PKT_LEN 0.983; LONGEST_FLOW_PKT 0.983; NUM_PKTS_512_TO_1024_BYTES 0.888; CLIENT_TCP_FLAGS 0.852; NUM_PKTS_256_TO_512_BYTES 0.848; SRC_TO_DST_SECOND_BYTES 0.822; NUM_PKTS_UP_TO_128_BYTES 0.802; IN_BYTES 0.798; MAX_TTL 0.785
+  NF-ToN-IoT-v3 (34 kept features of 48); no reply: Benign 62.0%, DoS 31.2%, DDoS 5.9%
+    MIN_IP_PKT_LEN 1.000; L4_DST_PORT 0.822; SRC_TO_DST_SECOND_BYTES 0.755; MAX_IP_PKT_LEN 0.737; LONGEST_FLOW_PKT 0.737; NUM_PKTS_UP_TO_128_BYTES 0.691; L7_PROTO 0.672; SHORTEST_FLOW_PKT 0.645; CLIENT_TCP_FLAGS 0.602; DNS_TTL_ANSWER 0.598
+  NF-BoT-IoT-v3 (34 kept features of 48); no reply: Benign 26.8%, DoS 75.3%, DDoS 83.8%
+    MIN_IP_PKT_LEN 1.000; SRC_TO_DST_SECOND_BYTES 0.950; CLIENT_TCP_FLAGS 0.819; IN_PKTS 0.781; TCP_WIN_MAX_IN 0.777; PROTOCOL 0.777; SRC_TO_DST_IAT_MIN 0.754; SRC_TO_DST_AVG_THROUGHPUT 0.749; MAX_IP_PKT_LEN 0.724; LONGEST_FLOW_PKT 0.724
+  NF-CSE-CIC-IDS2018-v3 (34 kept features of 48); no reply: Benign 11.2%, DoS 3.3%, DDoS 1.0%
+    MIN_IP_PKT_LEN 1.000; MAX_IP_PKT_LEN 0.958; LONGEST_FLOW_PKT 0.958; NUM_PKTS_UP_TO_128_BYTES 0.903; IN_BYTES 0.882; NUM_PKTS_512_TO_1024_BYTES 0.812; MAX_TTL 0.801; MIN_TTL 0.801; IN_PKTS 0.789; L4_DST_PORT 0.786
+

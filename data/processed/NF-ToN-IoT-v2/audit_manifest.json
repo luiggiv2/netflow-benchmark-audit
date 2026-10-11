@@ -1,0 +1,475 @@
+{
+  "dataset": "NF-ToN-IoT-v2",
+  "generated_utc": "2026-10-01T22:25:45.082185+00:00",
+  "script": "scripts/17_reproducibility_audit.py",
+  "results": [
+    {
+      "check": "I1",
+      "name": "raw CSV SHA-1 matches loader manifest",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "I2",
+      "name": "data.parquet SHA-1 matches loader manifest",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "I3",
+      "name": "tabular.parquet SHA-1 matches tabular manifest",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "I5",
+      "name": "values of data.parquet equal the raw CSV (all numeric columns)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "C1",
+      "name": "row counts equal in data and tabular",
+      "ok": true,
+      "detail": "data=16940496 tabular=16940496"
+    },
+    {
+      "check": "C2",
+      "name": "metadata SHA-1 identical in data and tabular",
+      "ok": true,
+      "detail": "data=4385d877b946bef6c7bd8168368901f2ad34cbae tabular=4385d877b946bef6c7bd8168368901f2ad34cbae"
+    },
+    {
+      "check": "C3",
+      "name": "canonical x split crosstab identical in data and tabular",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "N1",
+      "name": "tabular.parquet holds no Inf",
+      "ok": true,
+      "detail": "Inf found: 0"
+    },
+    {
+      "check": "N2",
+      "name": "tabular values equal normalised data.parquet values",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "N5",
+      "name": "no feature vector appears in more than one split",
+      "ok": true,
+      "detail": "hashes in >1 split: 0; exact sample: {'test_rows_total': 2534998, 'sampled_distinct_test_vectors': 19560, 'sampled_vectors_found_in_train': 0}"
+    }
+  ],
+  "measurements": {
+    "file_sha1": {
+      "raw_csv": "c0e014512c9a825146c52982d3cf12d3fce1ccc9",
+      "data.parquet": "d65614dbed3ba677f8ab1900cdf4650c11ff42ce",
+      "tabular.parquet": "c0f6552fbe2eedd11124be78d13d3c78b2585c23"
+    },
+    "row_counts": {
+      "raw_csv": 16940496,
+      "data.parquet": 16940496,
+      "tabular.parquet": 16940496
+    },
+    "metadata_sha1": {
+      "data.parquet": "4385d877b946bef6c7bd8168368901f2ad34cbae",
+      "tabular.parquet": "4385d877b946bef6c7bd8168368901f2ad34cbae"
+    },
+    "crosstab": {
+      "": {
+        "train": 1726007,
+        "val": 369885,
+        "test": 370276
+      },
+      "Benign": {
+        "train": 4267507,
+        "val": 916776,
+        "test": 915186
+      },
+      "CredentialAttack": {
+        "train": 808622,
+        "val": 172752,
+        "test": 171949
+      },
+      "DDoS": {
+        "train": 1417717,
+        "val": 304649,
+        "test": 303868
+      },
+      "DoS": {
+        "train": 498853,
+        "val": 106695,
+        "test": 107061
+      },
+      "Injection": {
+        "train": 479097,
+        "val": 102956,
+        "test": 102412
+      },
+      "Reconnaissance": {
+        "train": 2649694,
+        "val": 569931,
+        "test": 561794
+      },
+      "Bot_or_Backdoor": {
+        "train": 11822,
+        "val": 2535,
+        "test": 2452
+      }
+    },
+    "raw_column_stats": {
+      "L4_SRC_PORT": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 65535,
+        "sum": 734440323471
+      },
+      "L4_DST_PORT": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 65535,
+        "sum": 157246248510
+      },
+      "PROTOCOL": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 1,
+        "max": 58,
+        "sum": 129010929
+      },
+      "L7_PROTO": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0.0,
+        "max": 248.0,
+        "sum": 233324992.48199996
+      },
+      "IN_BYTES": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 4,
+        "max": 301926201,
+        "sum": 12304733803
+      },
+      "IN_PKTS": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 1,
+        "max": 469281,
+        "sum": 107733793
+      },
+      "OUT_BYTES": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 164468797,
+        "sum": 14172451000
+      },
+      "OUT_PKTS": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 410903,
+        "sum": 54481688
+      },
+      "TCP_FLAGS": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 223,
+        "sum": 216819072
+      },
+      "CLIENT_TCP_FLAGS": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 223,
+        "sum": 160752161
+      },
+      "SERVER_TCP_FLAGS": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 223,
+        "sum": 186786649
+      },
+      "FLOW_DURATION_MILLISECONDS": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 4294966,
+        "sum": 13431442116531
+      },
+      "DURATION_IN": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 119574,
+        "sum": 693473904
+      },
+      "DURATION_OUT": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 119558,
+        "sum": 642940844
+      },
+      "MIN_TTL": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 255,
+        "sum": 403763145
+      },
+      "MAX_TTL": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 255,
+        "sum": 404162718
+      },
+      "LONGEST_FLOW_PKT": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 28,
+        "max": 65535,
+        "sum": 4577007450
+      },
+      "SHORTEST_FLOW_PKT": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 28,
+        "max": 3990,
+        "sum": 843367083
+      },
+      "MIN_IP_PKT_LEN": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 597,
+        "sum": 544456186
+      },
+      "MAX_IP_PKT_LEN": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 28,
+        "max": 65535,
+        "sum": 4577007450
+      },
+      "SRC_TO_DST_SECOND_BYTES": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0.0,
+        "max": 8.912111521067714e+304,
+        "sum": 8.912111521067714e+304
+      },
+      "DST_TO_SRC_SECOND_BYTES": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0.0,
+        "max": 1.8721638351044493e+257,
+        "sum": 1.8721869767115998e+257
+      },
+      "RETRANSMITTED_IN_BYTES": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 8205181,
+        "sum": 326537493
+      },
+      "RETRANSMITTED_IN_PKTS": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 13796,
+        "sum": 820938
+      },
+      "RETRANSMITTED_OUT_BYTES": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 7243909,
+        "sum": 1005846674
+      },
+      "RETRANSMITTED_OUT_PKTS": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 5080,
+        "sum": 2597193
+      },
+      "SRC_TO_DST_AVG_THROUGHPUT": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 4276296000,
+        "sum": 39795161814528
+      },
+      "DST_TO_SRC_AVG_THROUGHPUT": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 4294328704,
+        "sum": 48481061145664
+      },
+      "NUM_PKTS_UP_TO_128_BYTES": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 475657,
+        "sum": 1529675847
+      },
+      "NUM_PKTS_128_TO_256_BYTES": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 73465,
+        "sum": 7214654
+      },
+      "NUM_PKTS_256_TO_512_BYTES": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 47667,
+        "sum": 7425639
+      },
+      "NUM_PKTS_512_TO_1024_BYTES": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 25527,
+        "sum": 3352477
+      },
+      "NUM_PKTS_1024_TO_1514_BYTES": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 200984,
+        "sum": 8589044
+      },
+      "TCP_WIN_MAX_IN": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 65535,
+        "sum": 180308319069
+      },
+      "TCP_WIN_MAX_OUT": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 65535,
+        "sum": 175574925127
+      },
+      "ICMP_TYPE": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 65286,
+        "sum": 7208992895
+      },
+      "ICMP_IPV4_TYPE": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 255,
+        "sum": 28160100
+      },
+      "DNS_QUERY_ID": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 65535,
+        "sum": 78937842381
+      },
+      "DNS_QUERY_TYPE": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 255,
+        "sum": 26161801
+      },
+      "DNS_TTL_ANSWER": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 6048000,
+        "sum": 69780168664
+      },
+      "FTP_COMMAND_RET_CODE": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0.0,
+        "max": 553.0,
+        "sum": 24956166.0
+      },
+      "Label": {
+        "nan": 0,
+        "posinf": 0,
+        "neginf": 0,
+        "min": 0,
+        "max": 1,
+        "sum": 10841027
+      }
+    },
+    "nonfinite_per_feature_in_data": {},
+    "unique_feature_vectors": 13135881,
+    "vectors_in_more_than_one_split": 0,
+    "exact_test_train_sample": {
+      "test_rows_total": 2534998,
+      "sampled_distinct_test_vectors": 19560,
+      "sampled_vectors_found_in_train": 0
+    }
+  },
+  "elapsed_seconds": 52.3,
+  "passed": 10,
+  "failed": 0,
+  "total_checks": 10
+}

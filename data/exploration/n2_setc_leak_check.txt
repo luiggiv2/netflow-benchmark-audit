@@ -1,0 +1,84 @@
+N2 check: set-C probes on the common split (keyed on set A) with and without set-C copies in training
+Generated: 2026-10-08T15:01:03.290604+00:00
+Depth-3 trees, balanced samples as in 34_shortcut_probes.py --common. 'C copy tr': share of test rows whose
+set-C vector is in the training sample; 'C copy part': in the whole train partition of the probe sample;
+'A copy tr': same for set A. 'no copy': test rows without a set-C copy in the training sample.
+
+== NF-ToN-IoT-v2
+  class                           test C copy tr C copy part A copy tr   all: A    C   A-C | no copy: rows    A    C   A-C
+  backdoor                      12,986     41.3%       43.7%      0.0%    1.00  1.00 +0.00 |        7,622  1.00  1.00 +0.00
+  ddos                         187,056     48.1%       48.5%      0.0%    0.96  0.93 +0.03 |       97,116  0.97  0.90 +0.07
+  dos                          200,000     93.3%       93.8%      0.0%    0.97  0.98 -0.01 |       13,421  0.53  0.74 -0.21
+  injection                    200,000     50.3%       50.8%      0.0%    0.96  0.97 -0.01 |       99,469  0.89  0.89 -0.00
+  mitm                           2,226     74.0%       76.8%      0.0%    0.96  0.96 +0.01 |          578  0.91  0.90 +0.01
+  password                     200,000     45.0%       45.4%      0.0%    0.98  0.97 +0.02 |      109,944  0.92  0.92 +0.01
+  ransomware                       780     42.2%       45.5%      0.0%    0.98  0.97 +0.01 |          451  0.92  0.88 +0.04
+  scanning                     200,000     92.1%       92.6%      0.0%    0.95  0.95 +0.00 |       15,719  0.49  0.48 +0.01
+  xss                          199,522     69.2%       69.6%      0.0%    0.98  0.96 +0.03 |       61,366  0.97  0.85 +0.12
+
+== NF-BoT-IoT-v2
+  class                           test C copy tr C copy part A copy tr   all: A    C   A-C | no copy: rows    A    C   A-C
+  DDoS                          42,142     41.6%       41.6%      0.0%    1.00  1.00 +0.00 |       24,599  0.99  0.99 +0.00
+  DoS                           42,142     41.6%       41.6%      0.0%    0.96  1.00 -0.04 |       24,600  0.84  1.00 -0.16
+  Reconnaissance                42,142     65.7%       65.8%      0.0%    0.99  0.99 +0.00 |       14,440  0.99  0.99 +0.00
+  Theft                            288     36.8%       44.1%      0.0%    0.98  0.98 +0.00 |          182  0.98  0.98 +0.00
+
+== NF-CSE-CIC-IDS2018-v2
+  class                           test C copy tr C copy part A copy tr   all: A    C   A-C | no copy: rows    A    C   A-C
+  Bot                            2,656     37.1%       38.1%      0.0%    1.00  1.00 +0.00 |        1,671  1.00  1.00 +0.00
+  Brute Force -Web                 636     21.9%       39.2%      0.0%    0.99  0.97 +0.03 |          497  1.00  0.95 +0.04
+  Brute Force -XSS                 288     16.7%       37.5%      0.0%    0.99  0.99 +0.00 |          240  1.00  1.00 +0.00
+  DDOS attack-HOIC             199,720     37.3%       37.9%      0.0%    1.00  1.00 +0.00 |      125,249  1.00  1.00 +0.00
+  DDOS attack-LOIC-UDP             660     23.0%       38.9%      0.0%    1.00  1.00 +0.00 |          508  1.00  1.00 +0.00
+  DDoS attacks-LOIC-HTTP        96,740     37.3%       37.9%      0.0%    0.75  0.75 +0.00 |       60,697  0.60  0.60 +0.00
+  DoS attacks-GoldenEye          8,316     33.4%       37.7%      0.0%    1.00  1.00 +0.00 |        5,541  1.00  1.00 +0.00
+  DoS attacks-Hulk             130,530     37.2%       37.9%      0.0%    1.00  1.00 +0.00 |       81,910  1.00  1.00 +0.00
+  DoS attacks-SlowHTTPTest       8,026     30.0%       38.0%      0.0%    1.00  1.00 +0.00 |        5,621  1.00  1.00 +0.00
+  DoS attacks-Slowloris            346     28.0%       37.6%      0.0%    1.00  1.00 +0.00 |          249  1.00  1.00 +0.00
+  FTP-BruteForce                 4,620     33.0%       37.7%      0.0%    1.00  1.00 +0.00 |        3,094  1.00  1.00 +0.00
+  Infiltration                  37,584     78.1%       80.0%      0.0%    0.67  0.65 +0.02 |        8,223  0.74  0.60 +0.14
+  SQL Injection                    154     10.4%       42.2%      0.0%    0.95  0.94 +0.01 |          138  0.94  0.93 +0.01
+  SSH-Bruteforce                21,096     35.4%       37.8%      0.0%    1.00  1.00 +0.00 |       13,618  1.00  1.00 +0.00
+
+== NF-ToN-IoT-v3
+  class                           test C copy tr C copy part A copy tr   all: A    C   A-C | no copy: rows    A    C   A-C
+  Backdoor                      71,676     52.8%       53.2%      0.0%    1.00  0.92 +0.07 |       33,840  0.99  0.80 +0.20
+  ddos                          53,824     56.0%       56.3%      0.0%    0.94  0.88 +0.06 |       23,708  0.91  0.76 +0.15
+  dos                           60,716     92.4%       92.7%      0.0%    0.96  0.97 -0.00 |        4,610  0.82  0.87 -0.05
+  injection                    114,854     48.3%       48.6%      0.0%    0.97  0.96 +0.00 |       59,345  0.94  0.88 +0.07
+  mitm                           1,844     50.7%       53.4%      0.0%    0.96  0.97 -0.00 |          910  0.92  0.85 +0.07
+  password                     167,716     44.6%       44.9%      0.0%    0.99  0.99 +0.01 |       92,891  0.97  0.94 +0.03
+  ransomware                     1,030     42.1%       46.1%      0.0%    0.98  0.98 +0.00 |          596  0.95  0.94 +0.01
+  scanning                     132,988     85.4%       86.0%      0.0%    0.79  0.79 -0.00 |       19,425  0.62  0.63 -0.00
+  xss                          198,208     67.2%       67.5%      0.0%    0.98  0.97 +0.01 |       65,045  0.94  0.91 +0.04
+
+== NF-BoT-IoT-v3
+  class                           test C copy tr C copy part A copy tr   all: A    C   A-C | no copy: rows    A    C   A-C
+  DDoS                          14,588     38.4%       38.4%      0.0%    1.00  0.99 +0.00 |        8,985  0.99  0.99 +0.00
+  DoS                           14,588     38.4%       38.4%      0.0%    0.99  0.99 +0.00 |        8,986  0.98  0.98 +0.00
+  Reconnaissance                14,588     85.4%       85.8%      0.0%    0.93  0.92 +0.01 |        2,135  0.90  0.86 +0.04
+  Theft                            134     39.6%       41.0%      0.0%    1.00  0.98 +0.02 |           81  1.00  0.94 +0.06
+
+== NF-CSE-CIC-IDS2018-v3
+  class                           test C copy tr C copy part A copy tr   all: A    C   A-C | no copy: rows    A    C   A-C
+  Bot                           21,642     23.4%       25.4%      0.0%    1.00  0.99 +0.01 |       16,584  1.00  0.99 +0.01
+  Brute_Force_-Web                 322     34.8%       55.9%      0.0%    0.91  0.91 +0.00 |          210  0.91  0.91 -0.00
+  Brute_Force_-XSS             too few class rows in train or test
+  DDOS_attack-HOIC             194,640     24.3%       25.7%      0.0%    1.00  1.00 +0.00 |      147,319  1.00  1.00 +0.00
+  DDOS_attack-LOIC-UDP             964     12.8%       24.4%      0.0%    1.00  1.00 +0.00 |          841  1.00  1.00 +0.00
+  DDoS_attacks-LOIC-HTTP        84,772     24.4%       25.8%      0.0%    0.98  0.97 +0.01 |       64,079  0.97  0.97 +0.00
+  DoS_attacks-GoldenEye         20,152     30.3%       34.4%      0.0%    1.00  0.98 +0.01 |       14,043  1.00  0.99 +0.01
+  DoS_attacks-Hulk              29,936     22.6%       25.9%      0.0%    1.00  1.00 +0.00 |       23,169  1.00  1.00 +0.00
+  DoS_attacks-SlowHTTPTest     too few class rows in train or test
+  DoS_attacks-Slowloris          4,564     21.1%       25.9%      0.0%    0.96  0.97 -0.01 |        3,603  0.96  0.96 -0.00
+  FTP-BruteForce               too few class rows in train or test
+  Infiltration                  57,580     59.5%       62.0%      0.0%    0.67  0.67 +0.00 |       23,332  0.63  0.63 -0.00
+  SQL_Injection                     28      0.0%       28.6%      0.0%    0.89  0.89 +0.00 |           28  0.89  0.89 +0.00
+  SSH-Bruteforce                59,760     23.7%       25.8%      0.0%    1.00  1.00 +0.00 |       45,571  1.00  1.00 +0.00
+
+Summary (depth 3; classes with macro-F1 >= 0.95 / classes scored; A - C loss median and max)
+  NF-v2: all test rows: A 23/27, C 22/27; loss median 0.000, max 0.028
+         no-copy rows (27 classes scorable): A 17/27, C 16/27; loss median 0.000, max 0.135; share of test rows with a set-C copy: median 37.3%, max 93.3%
+  NF-v3: all test rows: A 18/24, C 17/24; loss median 0.002, max 0.075
+         no-copy rows (24 classes scorable): A 14/24, C 10/24; loss median 0.002, max 0.197; share of test rows with a set-C copy: median 39.0%, max 92.4%
+Stored common-split values reproduced in 51 of 51 classes

@@ -1,0 +1,94 @@
+{
+  "dataset": "NF-CSE-CIC-IDS2018-v2",
+  "generated_utc": "2026-10-02T18:16:04.220830+00:00",
+  "rows": 18893708,
+  "class_rows": {
+    "SSH-Bruteforce": 94979,
+    "Benign": 16635567,
+    "DDoS attacks-LOIC-HTTP": 307300,
+    "DDOS attack-HOIC": 1080858,
+    "DoS attacks-Slowloris": 9512,
+    "DoS attacks-Hulk": 432648,
+    "FTP-BruteForce": 25933,
+    "Infiltration": 116361,
+    "Bot": 143097,
+    "DoS attacks-GoldenEye": 27723,
+    "Brute Force -Web": 2143,
+    "DoS attacks-SlowHTTPTest": 14116,
+    "SQL Injection": 432,
+    "DDOS attack-LOIC-UDP": 2112,
+    "Brute Force -XSS": 927
+  },
+  "checks": {
+    "rate_over_100gbps": {
+      "rows": 13493,
+      "per_class": {
+        "DDoS attacks-LOIC-HTTP": 4386,
+        "SSH-Bruteforce": 7983,
+        "Benign": 915,
+        "DDOS attack-LOIC-UDP": 80,
+        "DDOS attack-HOIC": 96,
+        "Brute Force -XSS": 11,
+        "Infiltration": 3,
+        "Brute Force -Web": 19
+      }
+    },
+    "duration_near_2p32": {
+      "rows": 2527996,
+      "per_class": {
+        "DDoS attacks-LOIC-HTTP": 262114,
+        "DDOS attack-HOIC": 1080858,
+        "Benign": 661213,
+        "DoS attacks-Hulk": 416965,
+        "FTP-BruteForce": 25933,
+        "SSH-Bruteforce": 16222,
+        "Bot": 8684,
+        "DoS attacks-GoldenEye": 26701,
+        "Brute Force -Web": 1874,
+        "DoS attacks-SlowHTTPTest": 14116,
+        "DoS attacks-Slowloris": 3579,
+        "Infiltration": 6441,
+        "SQL Injection": 375,
+        "DDOS attack-LOIC-UDP": 2110,
+        "Brute Force -XSS": 811
+      }
+    },
+    "size_bins_gt_pkts": {
+      "rows": 1121927,
+      "per_class": {
+        "Benign": 1111253,
+        "Infiltration": 10674
+      }
+    }
+  },
+  "constant_features": [
+    "FTP_COMMAND_RET_CODE"
+  ],
+  "constant_values": {
+    "FTP_COMMAND_RET_CODE": 0.0
+  },
+  "duration_near_2p32_values": {
+    "4294951": 398653,
+    "4294952": 243408,
+    "4294964": 111969,
+    "4294963": 110263,
+    "4294936": 95510
+  },
+  "service_ports": {
+    "FTP-BruteForce": {
+      "rows": 25933,
+      "expected_port_share": 1.0,
+      "top_ports": {
+        "21": 25933
+      }
+    },
+    "SSH-Bruteforce": {
+      "rows": 94979,
+      "expected_port_share": 0.9996841407047874,
+      "top_ports": {
+        "22": 94949,
+        "21": 30
+      }
+    }
+  }
+}

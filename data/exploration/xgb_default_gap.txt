@@ -1,0 +1,14 @@
+In-domain XGBoost runs more than 10 macro-F1 points below the random forest (same condition, task, seed)
+Generated: 2026-10-08T18:54:02.773863+00:00
+
+== XGBoost library default (in_domain_xgbdefault)
+  NF-ToN-IoT-v2            BIN: 2 of 25 runs; G-NI s5 0.433 vs RF 0.974; G-NP s1 0.447 vs RF 0.969
+  NF-ToN-IoT-v2            CAN: 1 of 25 runs; G-NP s1 0.719 vs RF 0.866
+  NF-CSE-CIC-IDS2018-v3    CAN: 14 of 35 runs; G-ND s1 0.254 vs RF 0.878; G-NI s4 0.372 vs RF 0.884; G-NI s5 0.218 vs RF 0.909; G-NP s1 0.420 vs RF 0.842; G-TS s1 0.781 vs RF 0.999; G-TS s2 0.469 vs RF 0.997; G-TS s3 0.672 vs RF 0.992; G-TS s4 0.341 vs RF 0.994; G-TS s5 0.129 vs RF 0.999; G0 s3 0.088 vs RF 0.633; R0 s1 0.459 vs RF 0.824; R0 s2 0.700 vs RF 0.814; R0 s3 0.637 vs RF 0.825; R0 s5 0.616 vs RF 0.826
+  total: 17 of 360 runs
+
+== XGBoost max_delta_step=1 (paper) (in_domain)
+  NF-ToN-IoT-v2            BIN: 2 of 25 runs; G-NI s5 0.393 vs RF 0.974; G-NP s5 0.390 vs RF 0.916
+  NF-ToN-IoT-v2            CAN: 1 of 25 runs; G-NP s1 0.715 vs RF 0.866
+  total: 3 of 360 runs
+

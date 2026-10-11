@@ -1,0 +1,41 @@
+RQ4 trace checks (reviewer point e)
+Generated: 2026-10-08T23:35:07.593042+00:00
+
+1. XGBoost top-1 feature (mean |SHAP|, source test rows) per seed; '=' marks one feature in all seeds
+  = NF-BoT-IoT-v2            G0   BIN  L4_DST_PORT                  5/5 seeds
+    NF-BoT-IoT-v2            G0   CAN  L4_DST_PORT                  4/5 seeds  (others: {'L4_DST_PORT': 4, 'FLOW_DURATION_MILLISECONDS': 1})
+  = NF-BoT-IoT-v2            G0   CORE L4_DST_PORT                  5/5 seeds
+    NF-BoT-IoT-v3            G-TS BIN  FLOW_START_MILLISECONDS      3/5 seeds  (others: {'FLOW_START_MILLISECONDS': 3, 'L4_DST_PORT': 2})
+  = NF-BoT-IoT-v3            G-TS CAN  FLOW_START_MILLISECONDS      5/5 seeds
+  = NF-BoT-IoT-v3            G0   BIN  L4_DST_PORT                  5/5 seeds
+  = NF-BoT-IoT-v3            G0   CAN  L4_DST_PORT                  5/5 seeds
+    NF-BoT-IoT-v3            G0   CORE SRC_TO_DST_IAT_MIN           3/5 seeds  (others: {'SRC_TO_DST_IAT_MIN': 3, 'L4_DST_PORT': 2})
+  = NF-CSE-CIC-IDS2018-v2    G0   BIN  DURATION_IN                  5/5 seeds
+    NF-CSE-CIC-IDS2018-v2    G0   CAN  L4_DST_PORT                  4/5 seeds  (others: {'L4_DST_PORT': 4, 'L7_PROTO': 1})
+  = NF-CSE-CIC-IDS2018-v2    G0   CORE MIN_TTL                      5/5 seeds
+  = NF-CSE-CIC-IDS2018-v3    G-TS BIN  TCP_WIN_MAX_IN               5/5 seeds
+    NF-CSE-CIC-IDS2018-v3    G-TS CAN  FLOW_END_MILLISECONDS        3/5 seeds  (others: {'FLOW_END_MILLISECONDS': 3, 'FLOW_START_MILLISECONDS': 2})
+  = NF-CSE-CIC-IDS2018-v3    G0   BIN  TCP_WIN_MAX_IN               5/5 seeds
+  = NF-CSE-CIC-IDS2018-v3    G0   CAN  L4_DST_PORT                  5/5 seeds
+    NF-CSE-CIC-IDS2018-v3    G0   CORE TCP_WIN_MAX_IN               3/5 seeds  (others: {'TCP_FLAGS': 2, 'TCP_WIN_MAX_IN': 3})
+  = NF-ToN-IoT-v2            G0   BIN  L4_DST_PORT                  5/5 seeds
+  = NF-ToN-IoT-v2            G0   CAN  L4_DST_PORT                  5/5 seeds
+  = NF-ToN-IoT-v2            G0   CORE TCP_WIN_MAX_IN               5/5 seeds
+  = NF-ToN-IoT-v3            G-TS BIN  L4_DST_PORT                  5/5 seeds
+    NF-ToN-IoT-v3            G-TS CAN  FLOW_END_MILLISECONDS        3/5 seeds  (others: {'FLOW_END_MILLISECONDS': 3, 'FLOW_START_MILLISECONDS': 2})
+  = NF-ToN-IoT-v3            G0   BIN  L4_DST_PORT                  5/5 seeds
+  = NF-ToN-IoT-v3            G0   CAN  L4_DST_PORT                  5/5 seeds
+  = NF-ToN-IoT-v3            G0   CORE L4_DST_PORT                  5/5 seeds
+  G0 cells with L4_DST_PORT first in every seed: 10 of 18 (NF-BoT-IoT-v2 BIN; NF-BoT-IoT-v2 CORE; NF-BoT-IoT-v3 BIN; NF-BoT-IoT-v3 CAN; NF-CSE-CIC-IDS2018-v3 CAN; NF-ToN-IoT-v2 BIN; NF-ToN-IoT-v2 CAN; NF-ToN-IoT-v3 BIN; NF-ToN-IoT-v3 CAN; NF-ToN-IoT-v3 CORE)
+
+2. RF permutation importances (macro-F1 decrease): 3,960 values over the RF runs; exactly 0: 1,359 (34.3 %); <= 0: 2,509 (63.4 %)
+
+3. XGBoost ranking stability (median over cells of the per-cell medians): across seeds under G0 (18 cells) Jaccard@10 0.74, Spearman 0.96; other conditions against G0 (30 cells) Jaccard@10 0.67, Spearman 0.92
+   G-NP against G0 (12 cells): Jaccard@10 0.67, Spearman 0.93
+   G-NI against G0 (12 cells): Jaccard@10 0.67, Spearman 0.91
+   G-TS against G0 (6 cells): Jaccard@10 0.43, Spearman 0.89
+   G-NP and G-NI against G0 (24 cells): Jaccard@10 0.67, Spearman 0.93
+
+4. Same G0 XGBoost model, source test rows vs target rows (Q3; per-pair medians over seeds), median over pairs
+   BIN (12 pairs): Jaccard@10 0.54 (min 0.43), Spearman 0.91 (min 0.87)
+   CORE (12 pairs): Jaccard@10 0.67 (min 0.43), Spearman 0.97 (min 0.85)

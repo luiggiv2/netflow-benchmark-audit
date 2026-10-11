@@ -1,0 +1,9 @@
+Float32 resolution of the NF-v3 absolute timestamps in the model matrix (offsets from the dataset minimum)
+Generated: 2026-10-08T23:39:24.390472+00:00
+
+  NF-ToN-IoT-v3            FLOW_START_MILLISECONDS  dtype float32; offsets 0.00 to 6.03 days; coarsest float32 spacing 32 ms; distinct values 6,763,989 of 27,520,260 rows
+  NF-ToN-IoT-v3            FLOW_END_MILLISECONDS    dtype float32; offsets 0.00 to 6.03 days; coarsest float32 spacing 32 ms; distinct values 6,880,252 of 27,520,260 rows
+  NF-BoT-IoT-v3            FLOW_START_MILLISECONDS  dtype float32; offsets 0.00 to 35.16 days; coarsest float32 spacing 256 ms; distinct values 235,264 of 16,933,808 rows
+  NF-BoT-IoT-v3            FLOW_END_MILLISECONDS    dtype float32; offsets 0.00 to 35.16 days; coarsest float32 spacing 256 ms; distinct values 243,583 of 16,933,808 rows
+  NF-CSE-CIC-IDS2018-v3    FLOW_START_MILLISECONDS  dtype float32; offsets 0.00 to 16.32 days; coarsest float32 spacing 128 ms; distinct values 5,582,165 of 20,115,529 rows
+  NF-CSE-CIC-IDS2018-v3    FLOW_END_MILLISECONDS    dtype float32; offsets 0.00 to 16.32 days; coarsest float32 spacing 128 ms; distinct values 5,857,310 of 20,115,529 rows

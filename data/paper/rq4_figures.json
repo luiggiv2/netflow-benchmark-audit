@@ -1,0 +1,288 @@
+{
+ "provenance": {
+  "commit": "058136dbca63437fc75bbc4287391fe69775f2ec",
+  "dirty": false,
+  "script_sha1": "d2ec1e8e3dd29a51593feb51cbdb4f07b64a41ab",
+  "generated_utc": "2026-10-10T17:21:05.765282+00:00"
+ },
+ "F9": {
+  "NF-ToN-IoT-v2 G0 BIN": {
+   "ports and service": 0.4,
+   "identity": 0.12,
+   "timestamps": 0.0,
+   "other": 0.48
+  },
+  "NF-ToN-IoT-v2 G0 CAN": {
+   "ports and service": 0.32,
+   "identity": 0.36,
+   "timestamps": 0.0,
+   "other": 0.32
+  },
+  "NF-BoT-IoT-v2 G0 BIN": {
+   "ports and service": 0.4,
+   "identity": 0.0,
+   "timestamps": 0.0,
+   "other": 0.6
+  },
+  "NF-BoT-IoT-v2 G0 CAN": {
+   "ports and service": 0.32,
+   "identity": 0.0,
+   "timestamps": 0.0,
+   "other": 0.68
+  },
+  "NF-CSE-CIC-IDS2018-v2 G0 BIN": {
+   "ports and service": 0.28,
+   "identity": 0.36,
+   "timestamps": 0.0,
+   "other": 0.36
+  },
+  "NF-CSE-CIC-IDS2018-v2 G0 CAN": {
+   "ports and service": 0.4,
+   "identity": 0.52,
+   "timestamps": 0.0,
+   "other": 0.08
+  },
+  "NF-ToN-IoT-v3 G0 BIN": {
+   "ports and service": 0.36,
+   "identity": 0.2,
+   "timestamps": 0.0,
+   "other": 0.44
+  },
+  "NF-ToN-IoT-v3 G0 CAN": {
+   "ports and service": 0.2,
+   "identity": 0.2,
+   "timestamps": 0.0,
+   "other": 0.6
+  },
+  "NF-BoT-IoT-v3 G0 BIN": {
+   "ports and service": 0.2,
+   "identity": 0.0,
+   "timestamps": 0.0,
+   "other": 0.8
+  },
+  "NF-BoT-IoT-v3 G0 CAN": {
+   "ports and service": 0.2,
+   "identity": 0.0,
+   "timestamps": 0.0,
+   "other": 0.8
+  },
+  "NF-CSE-CIC-IDS2018-v3 G0 BIN": {
+   "ports and service": 0.32,
+   "identity": 0.44,
+   "timestamps": 0.0,
+   "other": 0.24
+  },
+  "NF-CSE-CIC-IDS2018-v3 G0 CAN": {
+   "ports and service": 0.24,
+   "identity": 0.6,
+   "timestamps": 0.0,
+   "other": 0.16
+  },
+  "NF-ToN-IoT-v3 G-TS BIN": {
+   "ports and service": 0.4,
+   "identity": 0.04,
+   "timestamps": 0.4,
+   "other": 0.16
+  },
+  "NF-ToN-IoT-v3 G-TS CAN": {
+   "ports and service": 0.2,
+   "identity": 0.0,
+   "timestamps": 0.4,
+   "other": 0.4
+  },
+  "NF-BoT-IoT-v3 G-TS BIN": {
+   "ports and service": 0.2,
+   "identity": 0.2,
+   "timestamps": 0.36,
+   "other": 0.24
+  },
+  "NF-BoT-IoT-v3 G-TS CAN": {
+   "ports and service": 0.2,
+   "identity": 0.2,
+   "timestamps": 0.4,
+   "other": 0.2
+  },
+  "NF-CSE-CIC-IDS2018-v3 G-TS BIN": {
+   "ports and service": 0.24,
+   "identity": 0.32,
+   "timestamps": 0.36,
+   "other": 0.08
+  },
+  "NF-CSE-CIC-IDS2018-v3 G-TS CAN": {
+   "ports and service": 0.2,
+   "identity": 0.2,
+   "timestamps": 0.4,
+   "other": 0.2
+  }
+ },
+ "F10": [
+  [
+   "BIN",
+   "NF-BoT-IoT-v2",
+   "NF-CSE-CIC-IDS2018-v2",
+   17.6,
+   0.875
+  ],
+  [
+   "BIN",
+   "NF-BoT-IoT-v2",
+   "NF-ToN-IoT-v2",
+   52.6,
+   0.94
+  ],
+  [
+   "BIN",
+   "NF-BoT-IoT-v3",
+   "NF-CSE-CIC-IDS2018-v3",
+   14.0,
+   0.922
+  ],
+  [
+   "BIN",
+   "NF-BoT-IoT-v3",
+   "NF-ToN-IoT-v3",
+   42.9,
+   0.911
+  ],
+  [
+   "BIN",
+   "NF-CSE-CIC-IDS2018-v2",
+   "NF-BoT-IoT-v2",
+   46.6,
+   0.909
+  ],
+  [
+   "BIN",
+   "NF-CSE-CIC-IDS2018-v2",
+   "NF-ToN-IoT-v2",
+   48.1,
+   0.905
+  ],
+  [
+   "BIN",
+   "NF-CSE-CIC-IDS2018-v3",
+   "NF-BoT-IoT-v3",
+   81.6,
+   0.886
+  ],
+  [
+   "BIN",
+   "NF-CSE-CIC-IDS2018-v3",
+   "NF-ToN-IoT-v3",
+   25.3,
+   0.937
+  ],
+  [
+   "BIN",
+   "NF-ToN-IoT-v2",
+   "NF-BoT-IoT-v2",
+   64.7,
+   0.919
+  ],
+  [
+   "BIN",
+   "NF-ToN-IoT-v2",
+   "NF-CSE-CIC-IDS2018-v2",
+   52.7,
+   0.876
+  ],
+  [
+   "BIN",
+   "NF-ToN-IoT-v3",
+   "NF-BoT-IoT-v3",
+   35.1,
+   0.874
+  ],
+  [
+   "BIN",
+   "NF-ToN-IoT-v3",
+   "NF-CSE-CIC-IDS2018-v3",
+   42.2,
+   0.879
+  ],
+  [
+   "CORE",
+   "NF-BoT-IoT-v2",
+   "NF-CSE-CIC-IDS2018-v2",
+   23.9,
+   0.921
+  ],
+  [
+   "CORE",
+   "NF-BoT-IoT-v2",
+   "NF-ToN-IoT-v2",
+   39.6,
+   0.97
+  ],
+  [
+   "CORE",
+   "NF-BoT-IoT-v3",
+   "NF-CSE-CIC-IDS2018-v3",
+   60.1,
+   0.965
+  ],
+  [
+   "CORE",
+   "NF-BoT-IoT-v3",
+   "NF-ToN-IoT-v3",
+   69.2,
+   0.98
+  ],
+  [
+   "CORE",
+   "NF-CSE-CIC-IDS2018-v2",
+   "NF-BoT-IoT-v2",
+   99.7,
+   0.981
+  ],
+  [
+   "CORE",
+   "NF-CSE-CIC-IDS2018-v2",
+   "NF-ToN-IoT-v2",
+   72.2,
+   0.983
+  ],
+  [
+   "CORE",
+   "NF-CSE-CIC-IDS2018-v3",
+   "NF-BoT-IoT-v3",
+   98.7,
+   0.977
+  ],
+  [
+   "CORE",
+   "NF-CSE-CIC-IDS2018-v3",
+   "NF-ToN-IoT-v3",
+   69.5,
+   0.985
+  ],
+  [
+   "CORE",
+   "NF-ToN-IoT-v2",
+   "NF-BoT-IoT-v2",
+   98.1,
+   0.928
+  ],
+  [
+   "CORE",
+   "NF-ToN-IoT-v2",
+   "NF-CSE-CIC-IDS2018-v2",
+   70.1,
+   0.855
+  ],
+  [
+   "CORE",
+   "NF-ToN-IoT-v3",
+   "NF-BoT-IoT-v3",
+   90.8,
+   0.885
+  ],
+  [
+   "CORE",
+   "NF-ToN-IoT-v3",
+   "NF-CSE-CIC-IDS2018-v3",
+   63.0,
+   0.915
+  ]
+ ]
+}

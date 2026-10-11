@@ -1,0 +1,78 @@
+=== NF-ToN-IoT-v2 (9bafce9d380588c2_MOHANAD_A4706)
+payload (manifest-sha1.txt):
+  OK   data/NF-ToN-IoT-v2.csv  c0e014512c9a825146c52982d3cf12d3fce1ccc9
+  OK   data/NetFlow_v2_Features.csv  6cf84d2d76c29321175d9429996d7cda2f3b15d6
+tag files (tagmanifest-sha1.txt):
+  OK   bag-info.txt  ddb2ad408d6a57f612ff306734674c3e9dfc701f
+  OK   bagit.txt  a7b95616bf7307fc398baeb04ce60a88ed370f51
+  OK   manifest-sha1.txt  1ccc167f1dd82d07409862e9292ca6699ba1fe0f
+FurtherInformation: For full metadata and information about this dataset, including licensing details, please see https://espace.library.uq.edu.au/view/UQ:38a2d07.
+columns: 45
+  in NF-v3 but not in this file: ['FLOW_START_MILLISECONDS', 'FLOW_END_MILLISECONDS', 'SRC_TO_DST_IAT_MIN', 'SRC_TO_DST_IAT_MAX', 'SRC_TO_DST_IAT_AVG', 'SRC_TO_DST_IAT_STDDEV', 'DST_TO_SRC_IAT_MIN', 'DST_TO_SRC_IAT_MAX', 'DST_TO_SRC_IAT_AVG', 'DST_TO_SRC_IAT_STDDEV']
+  in this file but not in NF-v3: []
+rows: 16,940,496 (published total 16,940,496; match)
+Attack counts:
+  Benign                          6,099,469   36.01 %
+  scanning                        3,781,419   22.32 %
+  xss                             2,455,020   14.49 %
+  ddos                            2,026,234   11.96 %
+  password                        1,153,323    6.81 %
+  dos                               712,609    4.21 %
+  injection                         684,465    4.04 %
+  backdoor                           16,809    0.10 %
+  mitm                                7,723    0.05 %
+  ransomware                          3,425    0.02 %
+Label == 0 iff Attack == 'Benign': 16,940,496 of 16,940,496 rows agree
+
+=== NF-CSE-CIC-IDS2018-v2 (b3427ed8ad063a09_MOHANAD_A4706)
+payload (manifest-sha1.txt):
+  OK   data/NF-CSE-CIC-IDS2018-v2.csv  80ff7fd07e2bc31164197f07fe9d9606ee565f9a
+  OK   data/NetFlow_v2_Features.csv  6cf84d2d76c29321175d9429996d7cda2f3b15d6
+tag files (tagmanifest-sha1.txt):
+  OK   bag-info.txt  23d1fc2bed44845c61a515165155a5a4524c804b
+  OK   bagit.txt  a7b95616bf7307fc398baeb04ce60a88ed370f51
+  OK   manifest-sha1.txt  ad6793bca01b655fa76b017924287dce103ee5a0
+FurtherInformation: For full metadata and information about this dataset, including licensing details, please see https://espace.library.uq.edu.au/view/UQ:e9636b7.
+columns: 45
+  in NF-v3 but not in this file: ['FLOW_START_MILLISECONDS', 'FLOW_END_MILLISECONDS', 'SRC_TO_DST_IAT_MIN', 'SRC_TO_DST_IAT_MAX', 'SRC_TO_DST_IAT_AVG', 'SRC_TO_DST_IAT_STDDEV', 'DST_TO_SRC_IAT_MIN', 'DST_TO_SRC_IAT_MAX', 'DST_TO_SRC_IAT_AVG', 'DST_TO_SRC_IAT_STDDEV']
+  in this file but not in NF-v3: []
+rows: 18,893,708 (published total 18,893,708; match)
+Attack counts:
+  Benign                         16,635,567   88.05 %
+  DDOS attack-HOIC                1,080,858    5.72 %
+  DoS attacks-Hulk                  432,648    2.29 %
+  DDoS attacks-LOIC-HTTP            307,300    1.63 %
+  Bot                               143,097    0.76 %
+  Infilteration                     116,361    0.62 %
+  SSH-Bruteforce                     94,979    0.50 %
+  DoS attacks-GoldenEye              27,723    0.15 %
+  FTP-BruteForce                     25,933    0.14 %
+  DoS attacks-SlowHTTPTest           14,116    0.07 %
+  DoS attacks-Slowloris               9,512    0.05 %
+  Brute Force -Web                    2,143    0.01 %
+  DDOS attack-LOIC-UDP                2,112    0.01 %
+  Brute Force -XSS                      927    0.00 %
+  SQL Injection                         432    0.00 %
+Label == 0 iff Attack == 'Benign': 18,893,708 of 18,893,708 rows agree
+
+=== NF-BoT-IoT-v2 (befb58edf3428167_MOHANAD_A4706)
+payload (manifest-sha1.txt):
+  OK   data/NF-BoT-IoT-v2.csv  cddcc616a032f55a6a5ab3e382093636449653d6
+  OK   data/NetFlow_v2_Features.csv  6cf84d2d76c29321175d9429996d7cda2f3b15d6
+tag files (tagmanifest-sha1.txt):
+  OK   bag-info.txt  33840f3ca437c37233c693e50ae4d2dc51d91401
+  OK   bagit.txt  a7b95616bf7307fc398baeb04ce60a88ed370f51
+  OK   manifest-sha1.txt  906206fc39d1f19dfacbe270b1da6c6d1774b967
+FurtherInformation: For full metadata and information about this dataset, including licensing details, please see https://espace.library.uq.edu.au/view/UQ:ec73920.
+columns: 45
+  in NF-v3 but not in this file: ['FLOW_START_MILLISECONDS', 'FLOW_END_MILLISECONDS', 'SRC_TO_DST_IAT_MIN', 'SRC_TO_DST_IAT_MAX', 'SRC_TO_DST_IAT_AVG', 'SRC_TO_DST_IAT_STDDEV', 'DST_TO_SRC_IAT_MIN', 'DST_TO_SRC_IAT_MAX', 'DST_TO_SRC_IAT_AVG', 'DST_TO_SRC_IAT_STDDEV']
+  in this file but not in NF-v3: []
+rows: 37,763,497 (published total 37,763,497; match)
+Attack counts:
+  DDoS                           18,331,847   48.54 %
+  DoS                            16,673,183   44.15 %
+  Reconnaissance                  2,620,999    6.94 %
+  Benign                            135,037    0.36 %
+  Theft                               2,431    0.01 %
+Label == 0 iff Attack == 'Benign': 37,763,497 of 37,763,497 rows agree
+

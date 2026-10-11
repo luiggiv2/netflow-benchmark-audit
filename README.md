@@ -21,6 +21,7 @@ data partition used. The datasets themselves are not redistributed (see [Data](#
 | `data/exploration/` | Outputs of the focused checks |
 | `data/paper/` | Values plotted in the figures and tabulated in the tables of the article |
 | `data/schemas/` | Class mappings, partition hashes and `MANIFEST.txt` (SHA-1 of every artefact) |
+| `manuscript/figures/` | Figures 1 to 10 of the article (PDF and PNG), as produced by scripts `51` to `55` |
 | `manuscript/tables/T5_findings.csv` | Source of Table 5 (findings by origin) |
 
 ## Data

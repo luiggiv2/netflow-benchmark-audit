@@ -159,7 +159,10 @@ splits without running any model:
 
 ## Citation
 
-Please cite this archive through its Zenodo record (see `CITATION.cff`) and the article once it is published.
+Please cite this archive through its Zenodo record and the article once it is published:
+
+- all versions: [10.5281/zenodo.23291191](https://doi.org/10.5281/zenodo.23291191);
+- version v1.0.0, used in the article: [10.5281/zenodo.23291192](https://doi.org/10.5281/zenodo.23291192).
 
 ## Licence
 

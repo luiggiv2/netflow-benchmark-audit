@@ -22,4 +22,9 @@ keywords:
   - cross-dataset evaluation
   - shortcut learning
 version: "v1.0.0"
+doi: "10.5281/zenodo.23291191"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23291192"
+    description: "Version v1.0.0, the version used in the article"
 date-released: "2026-10-11"
